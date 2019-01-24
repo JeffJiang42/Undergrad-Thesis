@@ -208,10 +208,54 @@
 %\graphicspath{ {images/} }
 
 \begin{document}
+%
 \author{Jeffrey Jiang}
+%
 \title{Undergraduate Thesis Notes}
+%
 \maketitle
 %
+\setcounter{section}{1}
+%
+\section*{Week 1}
+%
+\begin{exer}
+Prove a small lemma
+\begin{lem*}
+Let $G$ be a group, and $V$ a finite dimensional irreducible complex representation. Then elements of $Z(G)$ act by scalars.
+\end{lem*}
+\end{exer}
+\begin{proof}
+Let $z \in Z(G)$, then since $z$ commutes with the action of $G$, it determines a $G$-module isomorphism $\varphi_z : V \to V$. Then $\varphi_z$ admits some eigenvalue $\lambda$, and the $\lambda$ eigenspace of $\varphi_z$ is $G$-invariant, so $\varphi_z$ must be the map $\lambda \id_V$.
+\end{proof}
+%
+%
+\begin{exer}
+Consider the groups $\Pin_{p,q}$ and $\Spin_{p,q}$, which lie in the Clifford algebra $\Cliff_{p,q}$. A \ib{Pin representation} is a representation $V$ of $\Pin_{p,q}$ that extends to an irreducible Clifford module. Likewise, a \ib{Spin representation} is a representation $V$ of $\Spin_{p,q}$ that extends to an irreducible $\Cliff_{p,q}^0$ module. Find some of these representations.
+\end{exer}
+%
+Since all Clifford algebras arise (as ungraded algebras) as direct sums of matrix algebras over $\R$, $\C$, or $\H$, it will be useful to characterize the irreducible modules of these matrix algebras. In the case of $\H$, we use the convention that scalar multiplication on a quaternionic vector space acts on the right, so quaternionic matrices can act on the left.
+%
+\begin{prop} \enumbreak
+\begin{enumerate}
+\item The only irreducible $M_n\R$  module is $\R^n$.
+\item The only irredu
+\end{enumerate}
+\end{prop}
+%
+\begin{proof}
+We see that there is an increasing chain of left ideals 
+\[
+0 = I_0 \subset I_1 \subset \ldots \subset I_n = M_n\R
+\]
+where $I_k$ is the ideal of matrices where all the entries past the $k^{th}$ column are $0$. In addition, we have that this chain of ideals has the property that the quotient space $I_{k+1} / I_k \cong \R^n$ as a left $M_n\R$ module. We note that $\R^n$ is most certainly irreducible, since the orbit of any nonzero vector $v \in \R^n$ is all of $\R^n$. \\
 
+Then let $W$ denote an arbitrary nontrivial irreducible $M_n\R$ module. Fix $w \in W$. Then the orbit of $w$ under the action of $M_n\R$, and since the module is nontrivial, it must be all of $W$. Therefore, the mapping 
+\begin{align*}
+\varphi : M_n\R &\to W \\
+M &\mapsto M \cdot w
+\end{align*}
+is a surjective map of left $M_n\R$ modules. Since this map is surjective, there exists some $k$ such that $\varphi(I_k) \neq 0$. Let $k$ denote the smallest such $k$. Since $\varphi(I_{k-1})$, this map factors through the quotient $I_k / I_{k-1}$, which is isomorphic to $R^n$ as a left module. Then since both $\R^n$ and $W$ are irreducible, this implies that the map $I_k/I_{k-1} \to W$ is an isomorphism, so $W \cong \R^n$.
+\end{proof}
 %
 \end{document}
