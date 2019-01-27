@@ -259,7 +259,7 @@ We then plan to use this basis to construct the irreducible $\Cliff(2n, \C)$ mod
 \[
 \C^{2n} = W \oplus W'
 \]
-where $W = \spn\set{e_i}$. We claim that $\Cliff(2n, \C) \cong \End(\Lambda^\bullet(W))$. where $\Lambda^\bullet(W)$ denotes the exterior algebra of $W$. To construct a map $\Cliff(2n, \C) \to \End(\Lambda^\bullet(W))$, we need to provide maps $\varphi : W \to \End(\Lambda^\bullet(W))$ and $\varphi' : W' \to \End(\Lambda^\bullet(W))$ satisfying the Clifford relations, i.e.
+where $W = \spn\set{e_i}$. We claim that $\Cliff(2n, \C) \cong \End(\Lambda^\bullet W)$. where $\Lambda^\bullet W$ denotes the exterior algebra of $W$. To construct a map $\Cliff(2n, \C) \to \End(\Lambda^\bullet W)$, we need to provide maps $\varphi : W \to \End(\Lambda^\bullet W)$ and $\varphi' : W' \to \End(\Lambda^\bullet W)$ satisfying the Clifford relations, i.e.
 %
 \begin{enumerate}
 \item $\varphi(w)^2 = \varphi'(w')^2 = 0$
@@ -288,8 +288,51 @@ We compute the desired quantity to be
 &\left( (-1)^{i-1} 2\langle w', v_i \rangle w \wedge v_1 \wedge \cdots \hat{v_i} \cdots \wedge v_k \right) + \left( 2\langle w', w \rangle v_1 \wedge \cdots \wedge v_k \right) + \left( \sum_j (-1)^j 2\langle w', v_j \rangle v_1 \wedge \cdots \hat{v_j} \cdots \wedge v_k  \right) \\
 &= 2\langle w' w \rangle v_1 \wedge \cdots \wedge v_k
 \end{align*}
-Noting that the first and last summations are identical, except that each term has the opposite sign. Finally, we must also show that $\varphi_w \circ \varphi_p = 0$ and $\varphi'_{w'} \circ \varphi'_{p'} = 0$. The first is clear from the skew symmetry of the wedge product. The second follows from a similar argument that $(\varphi'_{w'})^2 = 0$, which involves two summations being the same, but with opposite signs. Therefore, the maps we have given determine a map $\psi : \Cliff(2n, \C) \to \End(\Lambda^\bullet(W))$. This map is an isomorphism (still need to check this), and is in fact an isomorphism of graded algebras, where $\Lambda^\bullet(W)$ has the grading given by parity (also need to check this). We then see that every even complex Clifford algebra has a unique irreducible module, since it is a matrix algebra. \\
-
+Noting that the first and last summations are identical, except that each term has the opposite sign. Finally, we must also show that $\varphi_w \circ \varphi_p = 0$ and $\varphi'_{w'} \circ \varphi'_{p'} = 0$. The first is clear from the skew symmetry of the wedge product. The second follows from a similar argument that $(\varphi'_{w'})^2 = 0$, which involves two summations being the same, but with opposite signs. Therefore, the maps we have given determine a map $\psi : \Cliff(2n, \C) \to \End(\Lambda^\bullet W)$. This map is an isomorphism (still need to check this), and is in fact an isomorphism of graded algebras, where $\Lambda^\bullet W$ has the grading given by parity (also need to check this). We then see that every even complex Clifford algebra has a unique irreducible module, since it is a matrix algebra.
+%
+\begin{exmp}
+The computation for the case $n = 2$ is simple. The set $\set{1, e_1}$ forms a basis for $\Lambda^\bullet W$, and the action of $\Cliff(2,\C)$ is given by
+\[
+1 = \begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix} \qquad e_1 = \begin{pmatrix}
+0 & 0 \\
+1 & 0
+\end{pmatrix} \qquad f_1 = \begin{pmatrix}
+0 & 2 \\
+0 & 0 \\
+\end{pmatrix} \qquad e_1f_1 = \begin{pmatrix}
+0 & 0 \\
+0 & 2
+\end{pmatrix}
+\]
+In the case of $n=4$, we pick the ordered basis $(1, e_1 \wedge e_2, e_1, e_2)$ for $\Lambda^\bullet W$, so the even endormorphisms will be block diagonal, and the odd ones will be block antidiagonal. Then the matrices of the generators will be given by
+\[
+e_1 = \begin{pmatrix}
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix} \qquad e_2 = \begin{pmatrix}
+0 & 0 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & 0 \\
+1 & 0 & 0 & 0 
+\end{pmatrix} \qquad f_1 = \begin{pmatrix}
+0 & 0 & 2 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 2 & 0 & 0
+\end{pmatrix} \qquad f_2 = \begin{pmatrix}
+0 & 0 & 0 & 2 \\
+0 & 0 & 0 & 0 \\
+0 & 2 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix}
+\]
+\end{exmp}
+%
 We now consider the odd case of $\Cliff(2n + 1, \C)$. In this case, we have a decomposition 
 \[
 \C^{2n+1} = W \oplus W' \oplus U
