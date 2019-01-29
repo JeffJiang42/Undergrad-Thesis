@@ -1,4 +1,4 @@
-\documentclass[psamsfonts]{amsart}
+\documentclass[reqno]{amsbook}
 %
 %-------Packages---------
 %
@@ -206,10 +206,22 @@
 %--------Graphics--------
 %
 %\graphicspath{ {images/} }
-
+%
+\numberwithin{equation}{chapter}
+%
 \begin{document}
+\frontmatter
+%
 \author{Jeffrey Jiang}
+%
 \title{Thesis}
+%
 \maketitle
-
+%
+\tableofcontents
+%
+\mainmatter
+%
+\include{src/preliminaries}
+%
 \end{document}
