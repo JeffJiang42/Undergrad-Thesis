@@ -370,9 +370,11 @@ The algebra $A = M_n\F \oplus M_n\F$ (where $\F = \R$, $\C$, or $\H$) has two ir
 \end{lem}
 %
 \begin{proof}
-We first note that the left ideals $0 \oplus M_n\F$ and $M_n\F \oplus 0$ both admit a chain of left ideals as we did above, which we denote as $I_k$ and $J_k$ respectively, which satisfy $I_{k+1} / I_k \cong \F^n$ and $J_{k+1} / J_k \cong \F^n$ as $A$ modules. where the former has the action of the right factor, and the latter has the action of the right factor. \\
-
-Then let $W$ be some nontrivial irreducible $A$ module, and $w \in W$ some nonzero element. Then the map $\varphi : A \to W$ defined by $A \mapsto A \cdot w$ is surjective, and there must exist some smallest $k$ such that $\varphi(I_k)$ or $\varphi(J_k)$ is nonzero. Then $\varphi$ factors through the quotient $I_{k} / I_{k-1}$ or $J_{k} / J_{k-1}$, which is irreducible, so the map must be an isomorphism. \\
+We first note that the left ideals $0 \oplus M_n\F$ and $M_n\F \oplus 0$ both admit a chain of left ideals as we did above, which we denote as $I_k$ and $J_k$ respectively, which satisfy $I_{k+1} / I_k \cong \F^n$ and $J_{k+1} / J_k \cong \F^n$ as $A$ modules. where the former has the action of the right factor, and the latter has the action of the right factor. We denote the modules as $R$ and $L$ respectively. We also have an ascending chain of left ideals
+\[
+0 \subset J_1 \oplus 0 \subset \ldots \subset M_n\F \oplus 0 \subset M_n\F \oplus I_1 \subset \ldots \subset M_n\F \oplus M_n\F
+\]
+Se note that for the first half of the chain, we have that each successive quotient is isomorphic to $R$. and for the second half, the successive quotients are isomorphic to $L$. Then given a nontrivial irreducible module $W$ and a nonzero $w \in W$, we know that it's orbit under the algebra action must be all of $W$, so the map $A \to W$ given by $(M,T) \mapsto (M,T) \cdot w$ is a surjective map of left $A$ modules. Then we know for some ideal in the chain, the map is nonzero, and then the map will factor through the quotient of that ideal by the previous ideal, giving an isomorphism with either $R$ or $L$.\\
 
 We then need to show that these modules are not isomorphic. Any such isomorphism would be a linear map $\varphi : \F^n \to \F^n$ satisfying
 \[
