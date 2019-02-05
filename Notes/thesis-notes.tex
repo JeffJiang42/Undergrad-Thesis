@@ -422,6 +422,7 @@ Since anything off of the Clifford chessboard involves tensoring with $M_{16}\R$
 \item $M_n\F \hookrightarrow M_n\F'$ where $\F = \R$ or $\C$ and $\F' = \C$ or $\H$ is the division algebra that is twice the dimension of $\F$ as an $\R$ algebra.
 \item $M_n\F \times M_n\F \hookrightarrow M_{2n}\F$.
 \item $M_{n}\F' \hookrightarrow M_{2n}\F$, where $\F$ and $\F'$ are the same as in (1).
+\item $M_n\F \hookrightarrow M_n\F \times M_n\F$.
 \end{enumerate}
 %
 Computing the cokernel of the induced map of modules can be done essentially by dimension counting
@@ -435,9 +436,22 @@ A & 0 \\
 \end{pmatrix}
 \]
 where $A,B \in M_n\F$. From this we see that $\F^{2n}$ decomposes into a copy of each irreducible module for $M_n\F$, so the module homomorphism $\N \to \N\times\N$ is given by $1 \mapsto (1,1)$, and the cokernel is $\Z$.
-\item In this case, the irreducible modules $(\F')^n$ and $\F^{2n}$ are the same dimension of real vector spaces, so the module homomorphism is the identity map $\N \to \N$, and the cokernel is trivial. 
+\item In this case, the irreducible modules $(\F')^n$ and $\F^{2n}$ are the same dimension of real vector spaces, so the module homomorphism is the identity map $\N \to \N$, and the cokernel is trivial.
+\item In this case, each irreducible module of $M_n\F \times M_n\F$ is the same dimension as the irreducible module for $M_n\F$, so the module homomorphism $\N \times \N \to \N$ is given by $(1,0) \mapsto 1$ and $(0,1) \mapsto 1$, so the cokernel is trivial.
 \end{enumerate}
 %
 In each case, we get a group out of our monoid, and in case (2), the cokernel is actuall the Grothendieck completion of $\N$.
+%
+\begin{exer}[\ib{Reduction of Structure Group}]
+Given a subgroup $G \subset GL_n\R$, come up with a way to construct a principal $G$ bundle from the bundle of frames $\B(M)$ over an $n$ dimensional manifold $M$.
+\end{exer}
+%
+The injection $G \hookrightarrow GL_n\R$ gives a free action of $G$ on $\B(M)$, so we can take the quotient $\B(M) / G$, with the quotient projection $q : \B(M) \to \B(M) / G$. In addition, since the action of $G$ preserves the fibers of the principal bundle $\pi : \B(M) \to M$, we have that $\pi$ factors through the quotient, giving a fiber bundle $\tilde{\pi}: \B(M) / G \to M$ with model fiber $GL_n\R / G$. The quotient projection gives $\B(M)$ the structure of a principal $G$ bundle over $\B(M) / G$ (since the action is free). All in all, we have 
+\[
+\begin{tikzcd}
+\B(M) \ar[r, "q"] \ar[rr, bend right=30, "\pi"'] & \B(M) / G \ar[r, "\tilde{\pi}"] & M
+\end{tikzcd}
+\]
+Then suppose we get a section $\sigma : M \to \B(M) / G$. This gives us a pullback bundle $\sigma*\B(M)$, which assigns to each point $p \in M$ the fiber $q\inv(\sigma(p))$, giving us a principal $G$ bundle over $M$. From this we see that the reduction of structure group from $GL_n\R$ to $G$ is the data of a global section of $\B(M) / G \to M$.
 %
 \end{document}
