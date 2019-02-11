@@ -85,8 +85,8 @@ There is an extremely nice relationship between a Clifford algebra and it's
 even subalgebra.
 %
 \begin{thm}
-The even subalgebra $\Cliff_{p,q}^0(\R)$ is isomorphic to both $\Cliff_{p-1,q}$
-and $\Cliff_{p,q-1}$ as ungraded algebras (as long as $p-1 > 0$ and $q-1 > 0$.)
+The even subalgebra $\Cliff_{p,q}^0(\R)$ is isomorphic to both $\Cliff_{q, p-1}$
+and $\Cliff_{p,q-1}$ as ungraded algebras (as long as $p-1 > 0$ or $q-1 > 0$.)
 \end{thm}
 %
 \begin{proof}
@@ -111,8 +111,18 @@ $\Cliff^0_{p,q}(\R) \to \Cliff_{p,q-1}$ via the mappings
 e_1^-e_j^+ &\mapsto e_j^+ \\
 e_1^-e_k^- &\mapsto e_{k-1}^-
 \end{align*}
-In the case $p \neq 0$, we can give a similar isomorphism, with all the plus
-signs swapped with the minus signs.
+In the case where $p \neq 0$, we have that an equally good generating set for
+$\Cliff_{p,q}^0(\R)$ is
+\[
+\set{e^+_1e_j^+ ~:~ 2 \leq j \leq p} \cup \set{e_1^+e_i^- ~:~ 1 \leq i \leq q}
+\]
+Where the elements in the first set square to $-1$ and the elements of the second
+set square to $1$. Then the mappings
+\begin{align*}
+e_1^+e_j^+ \mapsto e_{j-1}^- \\
+e_1^+e_j^- \mapsto e_j^+
+\end{align*}
+gives the isomorphism $\Cliff_{p,q}^0(\R) \to \Cliff_{q, p-1}$.
 \end{proof}
 %
 Given two $\R$-algebras $A$ and $B$, we can form their tensor product
