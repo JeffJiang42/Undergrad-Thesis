@@ -143,12 +143,22 @@ $A \otimes B$, but the multiplication is given by
 \]
 We see that in the multiplication, we are formally commuting the elements of
 $b$ and $c$, and we want to introduce a sign whenever elements are moved past
-each other. This is the \ib{Koszul sign rule}.\\
+each other. This is the \ib{Koszul sign rule}. Another concept that needs
+a slight modification in the graded case is the opposite algebra. In the
+normal case, given an $\R$-algebra $A$, the \ib{opposite algebra} is
+the algebra $A^{\text{op}}$ with the same underlying vector space, but
+the multiplication in $A^\text{op}$ is given by $a * b = ba$, where $ba$
+is the multiplication in $A$. In doing so, we are formally commuting $a$
+and $b$, so in the graded situation, we invoke the Koszul sign rule when
+defining the opposite algebra, and define the multiplication in $A^{\text{op}}$
+to be $a * b = (-1)^{|a||b|} ba$.\\
 
 One remarkable fact is that Clifford algebras are closed under the graded
 tensor product, i.e. the graded tensor products of two Clifford algebras is
-another Clifford algebra. For the remainder of this section,
-we will let $\otimes$ denote the graded tensor product.
+another Clifford algebra. Likewise, the graded opposite algebra of a Clifford
+algebra is again a Clifford algebra. For the remainder of this section,
+we will let $\otimes$ denote the graded tensor product, and the superscript
+$\text{op}$ will denote the graded opposite algebra.
 %
 \begin{thm}
 $\Cliff_{p+t,q+s}(\R) \cong \Cliff_{p,q}(\R) \otimes \Cliff_{t,s}(\R)$
@@ -203,7 +213,16 @@ anticommute are exactly the same.
 %
 \end{proof}
 %
-Because of this theorem, once we compute a few of the lower dimensional
+\begin{thm}
+The graded opposite algebra $\Cliff_{p,q}^{\text{op}}$ is isomorphic to
+$\Cliff_{q,p}$.
+\end{thm}
+%
+\begin{proof}
+TODO
+\end{proof}
+%
+Because of these theorems, once we compute a few of the lower dimensional
 Clifford algebras, we will have enough data to fully classify all Clifford
 algebras over $\R$. In the case $p = q = 0$, we let $\Cliff_{0,0}(\R) = \R$.
 %
@@ -320,7 +339,7 @@ $k$ such that $\varphi(I_k)$ is nonzero, and by construction,
 $\varphi\vert_{I_k}$ factors through the quotient $I_k / I_{k-1}$, which
 is isomorphic to $\F^n$ with the standard action. Then since $\F^n$ is irreducible,
 this gives us a nontrivial map between irreducible modules, which is an isomorphism
-by Shur's Lemma.
+by Schur's Lemma.
 \end{proof}
 %
 \begin{thm}

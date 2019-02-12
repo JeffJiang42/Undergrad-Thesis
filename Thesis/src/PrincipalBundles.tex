@@ -1,16 +1,30 @@
 \section{Principal Bundles}
 %
 \begin{defn}
+Let $M$ and $F$ be smooth manifolds. Then a \ib{fiber bundle} over $M$ with
+model fiber $F$ is a the data of a smooth manifold $E$ with a smooth map
+$\pi : E \to M$ such that for every point $p \in M$, there is a neighborhood
+$U \subset M$ containing $p$ such that there exists an diffeomorphism
+$\varphi : \pi\inv(U) \to U \times F$ such that the diagram
+\[\begin{tikzcd}
+\pi\inv(U) \ar[rr, "\varphi"] \ar[dr, "\pi"']&& U \times F \ar[dl, "p_U"] \\
+& U
+\end{tikzcd}\]
+Where $P_U$ denotes projection onto the first factor. The map $\varphi$ is
+called a \ib{local trivialization} of the fiber bundle $\pi : E \to M$.
+\end{defn}
+%
+\begin{defn}
 Let $G$ be a Lie group, and $M$ a smooth manifold. A \ib{Principal } $G$\ib{-bundle}
 over $M$ is the data of
 %
 \begin{enumerate}
   \item A smooth manifold $P$ with a map $\pi : P \to M$.
-  \item A smooth right $G$-action on $P$ that is free an transitive on the fibers
-  of $\pi$.
-  \item For every point $p \in M$, a neighborhood $U \subset M$ of $p$ and
-  a $G$-equivariant diffeomorphism $\pi\inv(U) \to U \times G$ (where the
-  right action on $U \times G$ is right multiplication on the second factor)
+  \item A smooth right $G$-action on $P$ that is free and transitive on the
+  fibers of $\pi$.
+  \item For every point $p \in M$, a neighborhood $U \subset M$ containing $p$ and
+  a $G$-equivariant diffeomorphism $\varphi: \pi\inv(U) \to U \times G$ (where
+  the right action on $U \times G$ is right multiplication on the second factor)
   such that we get the commutative diagram
   \[\begin{tikzcd}
   \pi\inv(U) \ar[dr, "\pi"']\ar[rr, "\varphi"]&& U \times G \ar[dl, "p_U"]\\
@@ -29,7 +43,7 @@ $\mathcal{B}(M)$ is the disjoint union
 \[
 \mathcal{B}(M) = \coprod_{p \in M}\mathcal{B}_p
 \]
-where $\pi$ denotes the projection $(p,b) \mapsto p$. Then $\mathcal{B}(M)$
+where $\pi$ is the projection map $(p,b) \mapsto p$. Then $\mathcal{B}(M)$
 is a principal $GL_n\R$ bundle over $M$.
 \end{exmp}
 %
@@ -50,3 +64,19 @@ bundle}, denoted $P \times_G F$, is the set
 P \times_G F = P \times G / (p,g) \sim (p\cdot h, h\inv g)
 \]
 \end{defn}
+%
+\begin{defn}
+Let $\pi : P \to M$ be a principal $G$-bundle, and $\rho : H \to G$ a group
+homomorphism. The map $\rho$ gives $P$ a left $H$ action where
+$h \cdot p = \rho(h) \cdot p$. A \ib{reduction of structure group} is the
+data of a principal $H$ bundle $\varphi : Q \to M$ and an $H$ equivariant map
+$F : Q \to P$.
+\end{defn}
+%
+The map $F : Q \to P$ induces a map $\tilde{F} : Q \times_H G$, where we
+map the equivalence class $[q,g]$ to $F(q) g$. This is well defined
+on equivalences classes since
+\[
+(q \cdot h, \rho(h)\inv g) \mapsto F(q \cdot h)\rho(h)\inv g = F(q)\rho(h)\rho(h)\inv g
+= F(q)g
+\]
