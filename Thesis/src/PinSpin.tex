@@ -20,6 +20,23 @@ products of basis vectors. In other words, $\Spin_{p,q} = \Pin_{p,q} \cap \Cliff
 we let $\Pin_n^+ = \Pin_{n,0}$ and $\Pin_n^- = \Pin_{0,n}$.
 \end{defn}
 %
+\begin{thm}
+$\Spin_{0,n} \cong \Spin_{n,0}$.
+\end{thm}
+%
+\begin{proof}
+Recall that we have an isomorphism $\Cliff_{p,q}^{\text{op}} \to \Cliff_{q,p}$
+where $e_i^\pm \mapsto e_i^\mp$. In addition, the even subalgebra $\Cliff_{q,p}^0$
+is isomorphic to the (ungraded) opposite algebra of the even subalgebra
+$\Cliff_{p,q}^0$. Therefore, the Spin group $\Spin_{q,p} \subset \Cliff_{q,p}$
+is isomorphic to the opposite group $\Spin_{p,q}^\text{op}$. We then know
+that every group is isomorphic to its opposite group via the map $g \mapsto g\inv$,
+giving us the desired isomorphism.
+\end{proof}
+%
+In particular, this implies that the Spin groups in definite signatures are
+isomorphic, so we will henceforth denote them as $\Spin_n$.
+%
 To show that the Pin and Spin groups cover $O_{p,q}$ and $\Spin_{p,q}$, we make
 a short digression. Given a vector $v \in \R^{p,q}$, we can define a reflection
 map $R_v : \R^{p,q} \to \R^{p,q}$ given by $R_v(w) = w - 2\langle v,w \rangle v$,
