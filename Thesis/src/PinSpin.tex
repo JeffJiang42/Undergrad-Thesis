@@ -126,14 +126,26 @@ theorem, and it can be verified that the kernel is $\set{\pm 1}$.
 %
 \end{proof}
 %
-Since $SO_2 \cong \mathbb{T}$, where $\mathbb{T} = \set{z \in \C ~:~ |z| = 1}$,
+Most of the constructions carry over to the complex Clifford algebras,
+giving us the complex Pin and Spin groups, denoted $\Pin_n\C$ and $\Spin_n\C$,
+which double cover the complex orthogonal groups $O_n\C$ and $SO_n\C$
+respectively.\\\\
+
+Two simple examples of spin groups occur in dimensions $2$ and $3$.
+Since $SO_2 \cong \mathbb{T}$, where
+\[
+\mathbb{T} = \set{z \in \C ~:~ |z| = 1}
+\]
 we have that $\Spin_2 \cong \mathbb{T}$, where the covering map is given
 by $z \mapsto z^2$. In the case of $SO_3$, we consider the unit quaternions,
 which form a Lie group isomorphic to the group $SU_2$. Then given $q \in SU_2$, we define
 the map $\varphi_q : \R^3 \to \R^3$ where $\varphi_q(v) = qv\bar{q}$, where
 $\bar{q}$ is the quaternionic conjugate of $q$ (e.g. $\overline{a + bi + cj +dk}
 = a -bi -cj -dk$), and $v = v^ie_i$ is idenitified with $v^1 i + v^2j + v^3k \in \H$.
-The mapping $q \mapsto \varphi_q$ then gives a double cover $SU_2 \to SO_3$. \\
+The mapping $q \mapsto \varphi_q$ then gives a double cover $SU_2 \to SO_3$.
+In particular, $SU_2$ is diffeomorphic to the sphere $S^3$, so the double
+covering realizes $SO_3$ as the quotient of $S^3$ by the antipodal map,
+giving us that $SO_3 \cong \RP^3$. \\
 
 Many examples of low dimensional Spin groups arise from investigating the
 relationship between a $4$ dimensional complex vector space $V$ and it's second

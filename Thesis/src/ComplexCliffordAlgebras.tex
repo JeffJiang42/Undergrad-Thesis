@@ -56,9 +56,60 @@ that $\Cliff_{2n}(\C)$ is isomorphic to the endomorphism algebra
 $\End(\Lambda^\bullet W)$. To give a map $\Cliff_{2n}(\C) \to
 \End(\Lambda^\bullet W)$, we need to specify two maps
 $\varphi : W \to \End(\Lambda^\bullet W)$ and
-$\varphi' : W' \to \End(\Lambda^\bullet W)$ satisfying
+$\varphi' : W' \to \End(\Lambda^\bullet W)$ such that for all $w,p \in W$ and
+$w',p' \in W'$ we have
 %
 \begin{enumerate}
-  \item $\varphi^2 = (\varphi')^2 = 0$.
-  \item
+  \item $\varphi(w) \circ \varphi(p) + \varphi(p) \circ \varphi(w) = 0$
+  \item $\varphi'(w') \circ \varphi(p') + \varphi(p') \circ \varphi(w') = 0$
+  \item $\varphi(w) \circ \varphi'(w') + \varphi'(w') \circ \varphi(w) =
+  2\langle w,w' \rangle$
 \end{enumerate}
+where we use the fact that $\langle \cdot,\cdot \rangle$ vanishes on $W$ and
+$W'$. For notational convenience, we will denote $\varphi(w)$ as $\varphi_w$, and
+will do the same with $\varphi'$. Define
+$\varphi_w : \Lambda^\bullet W \to \Lambda^\bullet W$ by
+$\varphi_w(\alpha) = w \wedge \alpha$ and $\varphi'(w')$ by
+\[
+\varphi'_{w'}(v_1 \wedge \cdots \wedge v_k) = 2\sum_i(-1)^{i-1}\langle w',v_i\rangle
+v_1 \wedge \cdots \widehat{v_i} \cdots \wedge v_k
+\]
+which will satisfy these relations, and these two maps define the desired
+isomorphism $\Cliff_{2n}(\C) \to \End(\Lambda^\bullet W)$. \\
+
+In the odd dimensional case of $\C^{2n + 1}$, we can decompose $\C^{2n + 1}$ as
+$\C^{2n + 1} = W \oplus W' \oplus U$, where $W$ and $W'$ are the same as in the
+decomposition in the even case, and $U$ is the orthogonal complement to
+$W \oplus W'$. We then define the maps from $W$ and $W'$ into
+$\End(\Lambda^\bullet W)$, and then define a map $U \to \End(\Lambda^\bullet W)$
+where a unit vector in $U$ acts by identity on the odd elements of $\Lambda^\bullet W$
+and by negative identity on the even elements. This then defines a map
+$\varphi : \Cliff_{2n + 1}(\C) \to \End(\Lambda^\bullet W)$. Repeating this with
+$\End(\Lambda^\bullet W')$ gives another map
+$\psi : \Cliff_{2n+1}(\C) \to \End(\Lambda^\bullet W')$. Then the product map
+$\varphi \times \psi : \Cliff_{2n+1}(\C) \to \End(\Lambda^\bullet W) \times
+\End(\Lambda^\bullet W')$ is the desired isomorphism. \\
+
+
+
+
+\iffalse
+We then claim that these two maps satisfy the relations specified above. From
+the skew symmetry of the wedge product,
+$\varphi(w) \circ \varphi(p) + \varphi(p) \circ \varphi(w) = 0$. For
+the second relation, we compute
+%
+\begin{align*}
+&\varphi'(w') \circ \varphi(p')  =
+2\sum_i (-1)^{i-1} \langle p',v_i\rangle\varphi'_{w'}(v_1 \wedge \cdots
+\widehat{v_i} \cdots \wedge v_k) \\
+= 2 \sum_i (-1)^{i-1} \langle p',v_i \rangle &\left( \left(2\sum_{j < i}(-1)^{j-1}
+\langle w',v_j\rangle v_1 \wedge \cdots \widehat{v_j} \cdots \widehat{v_i}
+\cdots \wedge v_k \right) + \left( 2\sum_{j > i} (-1)^{j} \langle w',v_j\rangle
+v_1 \wedge \cdots \widehat{v_i} \cdots \widehat{v_j} \cdots \wedge v_k\right)\right)
+\end{align*}
+%
+computing $\varphi'(p') \circ \varphi'(w')$ then gives a similar result,
+with the roles of $p'$ and $w'$ reversed, which gives the same result with a
+reversed sign.
+\fi
