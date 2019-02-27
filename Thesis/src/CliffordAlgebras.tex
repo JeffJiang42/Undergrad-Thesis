@@ -273,7 +273,7 @@ $M_8\C$ & $M_8\H$ & $M_8\H \times M_8\H$ & $M_{16}\H$ & $M_{32}\C$ & $M_{64}\R$ 
 \hline
 $M_4\H$ & $M_4\H \times M_4\H$ & $M_8\H$ & $M_{16}\C$ & $M_{32}\R$ & $M_{32}\R \times M_{32}\R$ & $M_{64}\R$ & $M_{64}\C$ \\
 \hline
-$M_2\H \times M_2\H$ & $M_4\H$ & $M_8\C$ & $M_{16}\R$ & $M_{16}\R \times M_{16}\R$ & $M_{32}\R$ & $M_{32}\C$ & $M_{32}H$ \\
+$M_2\H \times M_2\H$ & $M_4\H$ & $M_8\C$ & $M_{16}\R$ & $M_{16}\R \times M_{16}\R$ & $M_{32}\R$ & $M_{32}\C$ & $M_{32}\H$ \\
 \hline
 $M_2\H$ & $M_4\C$ & $M_8\R$ & $M_8\R \times M_8\R$ & $M_{16}\R$ & $M_{16}\C$ & $M_{16}\H$ & $M_{16}\H \times M_{16}\H$ \\
 \hline
@@ -294,86 +294,4 @@ increments the signature $(p,q)$ to $(p+1,q)$. Any other Clifford algebra
 can be obtained from an algebra on this table by tensoring with $M_{16}\R$, since
 incremeting the signature by $8$ (by adding to either $p$ or $q$) results in
 tensoring with $M_{16}\R$.
-%
-\begin{defn}
-A (left) \ib{Clifford module} for the Clifford algebra $\Cliff_{p,q}(\R)$ is a module
-for $\Cliff_{p,q}(\R)$ in the usual sense i.e. a real vector space $V$ equipped
-with an algebra action $\bullet: \Cliff_{p,q} \times V \to V$ satisfying
-\begin{enumerate}
-  \item Every element of $\Cliff_{p,q}(\R)$ acts linearly on $V$.
-  \item $(AB) \cdot v = A\cdot(B \cdot v)$ for all $v \in V$.
-  \item $(A + B) \cdot v = A\cdot v + B\cdot V$ for all $v \in V$.
-\end{enumerate}
-Equivalently, it is the data of a real vector space $V$ and a homomorphism
-$\Cliff_{p,q}(\R) \to \End(V)$.
-\end{defn}
-%
-\begin{defn}
-A Clifford module is \ib{irreducible} if there exist no proper nontrivial submodules.
-\end{defn}
-%
-From the classification of Clifford algebras, all the Clifford algebras are either
-matrix algebras $M_n\F$, where $\F = \R$, $\C$, or $\H$, or products
-$M_n\F \times M_n\F$ of two copies of the same matrix algebra. This is sufficient
-to conclude that Clifford algebras are semisimple, so all Clifford modules
-will be direct sums of irreducible modules. Therefore, classifying all Clifford
-modules reduces to classifying the irreducible Clifford modules.
-%
-\begin{thm}
-Let $\F = \R$, $\C$, or $\H$. Then any nontrivial irreducible module for
-$M_n\F$ is isomorphic to $\F^n$ with the standard action.
-\end{thm}
-%
-\begin{proof}
-We first note that $M_n\F$ acts transitively on $\F^n$, which implies that
-it is irreducible. We then must show that $\F^n$ is, up to isomorphism, the only
-irreducible $M_n\F$ module. The matrix algebra $M_n\F$ admits an increasing
-chain of left ideals
-\[
-0 = I_0 \subset I_1 \subset \ldots \subset I_n = M_n\F
-\]
-where $I_k$ is the set of matrices where only the first $k$ columns are nonzero.
-These ideals have the property that the quotient $I_k / I_{k-1}$ is isomorphic
-to $\F^n$ as a left $M_n\F$ module. Then let $M$ be some nontrivial irreducible
-$M_n\F$ module, and fix $m \in M$. Then the orbit $M_n\F \cdot m$ of $m$
-under the algebra action is a nonzero submodule, so it must be all of $M$.
-Then the map $\varphi : M_n\F \to M$ given by $A \mapsto A \cdot m$ is
-a surjective map of left $M_n\F$ modules. Then there must exist some smallest
-$k$ such that $\varphi(I_k)$ is nonzero, and by construction,
-$\varphi\vert_{I_k}$ factors through the quotient $I_k / I_{k-1}$, which
-is isomorphic to $\F^n$ with the standard action. Then since $\F^n$ is irreducible,
-this gives us a nontrivial map between irreducible modules, which is an isomorphism
-by Schur's Lemma.
-\end{proof}
-%
-\begin{thm}
-Any nontrivial irreducible module for $M_n\F \times M_n\F$ is isomorphic to
-either $\F^n$ where the left factor acts in the usual way, and the right factor
-acts by $0$, or $\F^n$ where the left factor acts by $0$ and the right factor
-acts in the usual way.
-\end{thm}
-%
-\begin{proof}
-Let $R$ denote $\F^n$ where the right factor acts nontrivially, and let $L$
-denote $\F^n$ where the left factor acts nontrivially. Both $L$ and $R$ are
-irreducible since $M_n\F \times M_n\F$ acts transitively on them. To show
-that they are the only irreducible modules up to isomorphism, we use a similar
-techinique as above. Let $I_k$ denote the chain of increasing ideals in $M_n\F$,
-as we used above. Then $M_n\F \times M_n\F$ admits a chain of increasing left
-ideals $J_k$
-\[
-0 = J_0 \subset I_1 \times \set{0} \subset \ldots \subset M_n\F \times \set{0}
-\subset M_n\F \times I_1 \subset \ldots \subset M_n\F \times M_n\F = J_{2n}
-\]
-We note that for $1 \leq k \leq n$, we have that $J_k / J_{k-1}$ is isomorphic to
-$L$, and for $n+1 \leq k \leq 2n$, we have that $J_k / J_{k-1}$ is isomorphic to
-$R$. Then given a nontrivial irreducible module $M$ and a nonzero element $m$,
-we get a surjective map $\varphi : M_n\F \times M_n\F$ where $A \mapsto A\cdot m$.
-Like before, there exists some smallest $k$ such that $\varphi(J_k)$ is nonzero,
-which then factors through to an isomorphism $J_k / J_{k-1} \to M$, so $M$
-is either isomorphic to $R$ or $L$.
-\end{proof}
-%
-This then gives a full classification of the irreducible ungraded Clifford
-modules.
 %
