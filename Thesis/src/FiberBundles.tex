@@ -1,4 +1,4 @@
-\section{Principal Bundles}
+\section{Fiber Bundles}
 %
 \begin{defn}
 Let $M$ and $F$ be smooth manifolds. Then a \ib{fiber bundle} over $M$ with
@@ -13,6 +13,60 @@ $\varphi : \pi\inv(U) \to U \times F$ such that the diagram
 Where $P_U$ denotes projection onto the first factor. The map $\varphi$ is
 called a \ib{local trivialization} of the fiber bundle $\pi : E \to M$.
 \end{defn}
+%
+Given a fiber bundle $\pi : E \to M$ we often denote the fiber $\pi\inv(p)$
+by $E_p$.
+%
+\begin{defn}
+Let $\pi : E \to M$ be a fiber bundle. A \ib{local section} of $\pi : E \to M$
+is a smooth map $\sigma : U \to E$ of an open set $U \subset M$ such that
+$\pi \circ \sigma = \id_U$. If $U = M$, the section is called a \ib{global section}.
+Equivalently, it is the smooth assignment of an element in $E_p$ to each point
+$p \in U$. We denote the set of sections of $\pi : E \to M$ over a set $U$
+as $\Gamma_U(E)$.
+\end{defn}
+%
+A fiber bundle is a very general construction in which the fibers $F$ do
+not necessarily admit extra structure. A special case of a fiber bundle
+is a vector bundle, where the fibers are vector spaces.
+%
+\begin{defn}
+Let $M$ be a smooth manifold. A \ib{vector bundle} over $M$ is fiber bundle
+$\pi : E \to M$ with model fiber $\R^n$ (or $\C^n)$ such that the local
+trivializations $\varphi : \pi\inv(U) \to U \times \R^n$ (or $\C^n$)
+restrict to linear isomorphisms on the fibers, i.e. for all $p \in U$, the restriction
+$\varphi\vert_{\pi\inv(p)}$ is an isomorphism $\pi\inv(p) \to \set{p} \times \R^n$
+(or $\C^n$). The dimension $n$ of the fibers is called the \ib{rank} of the
+vector bundle.
+\end{defn}
+%
+\begin{exmp} \enumbreak
+\begin{enumerate}
+  \item Given a smooth manifold $M$, the tangent bundle $TM = \coprod_p T_pM$
+  is a vector bundle, where the rank is the dimension of $M$.
+  \item The \ib{tautological bundle} over $\RP^n$ is the vector bundle that
+  assigns to each subspace $\ell \in \RP^n$ itself as it's fiber. An analgous
+  construction defines the tautological bundle over the Grassmannian
+  $\mathrm{Gr}_k(\R^n)$.
+\end{enumerate}
+\end{exmp}
+%
+\begin{defn}
+A \ib{Lie group} is a smooth manifold $G$ with a group structure such that the
+multiplication map $(g,h) \mapsto gh$ and the inversion map $g \mapsto g\inv$
+are smooth.
+\end{defn}
+%
+\begin{exmp} \enumbreak
+\begin{enumerate}
+  \item The group $GL_n\R$ of invertible $n \times n$ matrices is an open
+  subset of $M_n\R$, and therefore a smooth $n^2$ dimensional manifold.
+  \item The group $SL_n\R$ of $n\times n$ matrices with determinant $1$ is a
+  closed submanifold of $GL_\R$.
+  \item The orthogonal groups $O_n$ and special orthogonal groups $SO_n$ are Lie groups.
+  \item The unitary groups $U_n$ and special unitary groups $SU_n$ are Lie groups.
+\end{enumerate}
+\end{exmp}
 %
 \begin{defn}
 Let $G$ be a Lie group, and $M$ a smooth manifold. A \ib{Principal } $G$\ib{-bundle}
@@ -57,13 +111,33 @@ $\mathcal{B}_O(M)$, which is a principal $O_n$ bundle.
 \end{exmp}
 %
 \begin{defn}
-Let $\pi : P \to m$ be a principal $G$-bundle over $M$, and let $F$ be a
+Let $\pi : P \to M$ be a principal $G$-bundle over $M$, and let $F$ be a
 smooth manifold with a smooth left $G$ action. Then the \ib{associated fiber
 bundle}, denoted $P \times_G F$, is the set
 \[
 P \times_G F = P \times G / (p,g) \sim (p\cdot h, h\inv g)
 \]
 \end{defn}
+%
+\begin{prop}
+Let $P \to M$ be a principal $G$-bundle and $F$ a manifold with a left $G$ action.
+then the associated bundle $P \times_G F$ is indeed a fiber bundle with
+model fiber $F$.
+\end{prop}
+%
+%TODO PROOF
+%
+There is a correspondence between sections of an associated bundle and
+$G$-equivariant maps $P \to F$.
+%
+\begin{prop}
+There is a bijection
+\[
+\set{G\text{-equivariant maps } P \to F} \longleftrightarrow \Gamma_M(P \times_G F)
+\]
+\end{prop}
+%
+%TODO PROOF
 %
 \begin{defn}
 Let $\pi : P \to M$ be a principal $G$-bundle, and $\rho : H \to G$ a group

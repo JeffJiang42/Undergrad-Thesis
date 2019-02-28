@@ -1,0 +1,151 @@
+%
+\section{Projective Spin Representations}
+%
+Using the isomorphisms of the Clifford algebras with matrix algebras
+or products of matrix algebras along with the identification of the
+even subalgebra with another Clifford algebra, we have a complete classification
+of the irreducible modules over the even subalgebras $\Cliff^0_{n}(\R)$.
+Restricting to the Spin group $\Spin_n \subset \Cliff^0_n(\R)$, this gives us
+the Spin representations. These Spin representations define projective
+representations of the group $SO_n$.
+%
+\begin{prop}
+Let $G$ be a group, and $V$ a finite dimensional irreducible representation of $G$.
+Then every element of the center acts by scalars, i.e. for $g \in Z(G)$, there
+exists a scalar $\lambda_g$ such that for all $v$ in $V$, we have
+\[
+g \cdot v = \lambda_g v
+\]
+\end{prop}
+%
+\begin{proof}
+Let $g \in Z(G)$. Then for every $h \in G$ and $v \in V$, we have that
+\[
+h \cdot (g\cdot v) = g \cdot (h\cdot v)
+\]
+Therefore, the action of $g$ defines a $G$-equivariant map $V \to V$, which
+by Schur's lemma must necessarilly be a scalar multiple of the identity.
+\end{proof}
+%
+Given a Spin representation $\S$, we have that that the elements
+$\pm 1$ act by scalars. Then since $SO_n$ is the quotient of $\Spin_n$ by the
+subgroup $\set{\pm 1}$ of the center, we get a projective representation of
+$SO_n$ on the projectivization $\P\S$ in the following way:
+Given an element $A \in SO_n$, we have that $A$ lifts to two elements
+$\set{\pm \tilde{A}} \subset \Spin_n$ which differ by $-1$. Since $-1$
+acts by a scalar on $\S$, these elements determine the same action of
+$\P\S$, giving us a well defined action of $SO_n$ on $\P\S$.
+
+In some sense, the Spin representation $\S$ is not realized canonically,
+while the projective Spin representation $\P\S$ is canonical. Given
+an isomorphism $\varphi : V \to W$, this induces a unique algebra isomorphism
+$\End V \to \End W$ where $A \in \End V$ is mapped to
+$\varphi \circ A \circ \varphi\inv$. However, the converse is not true.
+%
+\begin{prop}
+Let $\varphi : \End V \to \End W$ be an algebra isomorphism. Then there does
+not exist a unique isomorphism $\psi : V \to W$ inducing $\varphi$.
+\end{prop}
+%
+To prove this, we need a lemma.
+%
+\begin{lem}
+The group of algebra automorphisms $\Aut(M_n\F)$ is isomorphic to the
+projective general linear group $PGL_n\F = GL_n\F / Z(GL_n\F)$.
+\end{lem}
+%
+\begin{proof}
+Let $\alpha : M_n\F \to M_n\F$ be an algebra automorphism. We know that
+$M_n\F$ admits a single irreducible module $M$, which is $\F^n$ with the
+standard action. Then $\alpha$ defines another module $M^\alpha$, which
+is the same underlying vector space as $M$, with the algebra action given
+by $M \cdot v = \alpha(M)v$, where the right hand side is the action of
+$\alpha(M)$ on the module $M$. Since $\alpha$ is an algebra automorphism,
+$M_n\F$ acts transitively on $M^\alpha$, so it is also an irreducible module,
+which must be isomorphic to $M$. Therefore, there exists a module isomorphism
+$A : M \to M^\alpha$. Since $M$ and $M^\alpha$ are the same underlying vector
+space, $A$ is also a linear isomorphism $A : M \to M$, thought of as a vector space
+instead of a module. Then since $A$ is a module homomorphism. we have that
+for any $M \in M_n\F$,
+\[
+A \circ M = \alpha(M) \circ A \implies A \circ M \circ A\inv = \alpha(M)
+\]
+so $\alpha$ is given by conjugation by $A \in GL(M)$. In a basis, this
+tells us that the map $GL_n\F \to M_n\F$ given by conjugation is surjective,
+and the kernel of this map is the center of $GL_n\F$, so by the first isomorphism
+theorem, we have that $\Aut(M_n\F) \cong PGL_n\F$.
+\end{proof}
+%
+\begin{proof}[Proof of Proposition]
+Fix bases $\F^n \to V$ and $\F^n \to W$. This induces isomorphisms
+$M_n\F \to V$ and $M_n\F \to W$. Then in these bases, the algebra
+isomorphism $\varphi$ is given by an automorphism $M_n\F \to M_n\F$, and
+the question now translates to asking whether this automorphism induces
+an isomorphism $\F^n \to \F^n$. From the lemma, we know this is false -- an
+automorphism of $M_n\F$ only determines an element of $PGL_n\F$, so it
+is induced by an entire family of automorphisms differing by $Z(GL_n\F)$.
+\end{proof}
+%
+However, an isomorphism $\varphi : \End V \to \End W$ does induce an isomorphism
+$\P V \to \P W$ of projective spaces. To see, this we make an identification
+between $1$ dimensional subspaces of $V$ with maximal left ideals of $\End V$.
+%
+\begin{prop}
+There is a bijection
+\[
+\set{\text{Maximal left ideals of } \End V} \longleftrightarrow \P V
+\]
+\end{prop}
+%
+\begin{proof}
+Given a line $L \in \P V$, the \ib{annihilator} of $L$ is the set
+\[
+\mathrm{Ann}(L) = \set{M \in \End V ~:~ M(L) = 0}
+\]
+In fact, $\mathrm{Ann}(L)$
+is a left ideal in $\End V$, since given $A \in \End V$ and $M \in \mathrm{Ann}(L)$,
+$L$ lies in the kernel of $A \circ M$. We claim that $\mathrm{Ann}(L)$ is maximal.
+Suppose $\mathrm{Ann}(L) \subset I$ is properly contained in a left ideal $I$.
+Fix an ordered basis for $V$ in which the first basis element is a
+nonzero element of $L$, then elements of $\mathrm{Ann}(L)$ are represented by
+matrices with all zeroes in the first column. Then since $\mathrm{Ann}(L)$ is
+properly contained in $I$, there exists some $M \in I$ such that
+$M \notin \mathrm{Ann}(L)$, which implies that as a matrix, the first column
+of $M$ is nonzero. Then pick a matrix $A \in \mathrm{Ann}(L)$ in which
+the nonzero columns complete the first column into a basis for $\R^n$. Then
+$A + M$ is an invertible element of $\End V$, so $I$ must be all of $\End V$.
+Therefore $\mathrm{Ann}(L)$ is maximal. To show that the mapping
+$L \mapsto \mathrm{Ann}(L)$ is a bijection, we produce an inverse. Let
+$I \subset \End V$ be a maximal ideal. Then we claim that the subspace
+\[
+\V(I) = \bigcap_{M \in I}\ker M
+\]
+is a $1$ dimensional subspace of $V$. We note that $\V(I)$ cannot be trivial,
+since this would imply that $I$ would contain an invertible element, contradicting
+that it is a proper ideal. We also see that it cannot be higher than $2$ dimensional,
+since otherwise, $I$ woud be contained in the annihilator of a proper nontrivial
+subspace of $\V(I)$, contradicting maximality of $I$. We then claim that
+these two mappings are inverses. We certainly have that
+$\mathrm{Ann}(\V(I)) \supset I$, so by maximality, this must be $I$. In addition
+it is clear that $\V(\mathrm{Ann}(L)) = L$ by the definition of $\V(I)$ and
+the annihilator. Therefore, these mappings are inverses.
+\end{proof}
+%
+Therefore, given an algebra isomorphism $\varphi : \End V \to \End W$, this
+induces a map $\P V \to \P W$ since the image of a maximal ideal under an
+isomorphism is a maximal ideal. In addition, the induced map is a bijection,
+since it has an inverse given by the induced map of $\varphi\inv$. In
+addition, the group of units $GL(V)$ acts on $\P V$ by right multiplication --
+given a maximal ideal $I$ and $A \in GL(V)$, the ideal $I \cdot A$ is also
+a maximal left ideal. \\
+
+This gives us a canonical realization of the Spin representations. In the
+case that the even subalgebra is isomorphic to a matrix algebra $M_n\F$,
+the projective Spin representation is restriction of the action of
+$\Cliff_n^0(\R)$ on maximal left ideals of $\Cliff_n^0(\F)$. In the case
+that the even subalgebra is isomorphic to a product $M_n\F \times M_n$,
+the irreducible modules identify the subalgebras $L$ and $R$
+isomorphic to $M_n\F \times \set{0}$ and $\set{0} \times M-n\F$ by finding the
+maximal subalgebra that acts nontrivially. Looking at the maximal left ideals
+of these subalgebras then identifies the two projective Spin representations.
+%
