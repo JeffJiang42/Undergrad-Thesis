@@ -27,7 +27,7 @@ as $\Gamma_U(E)$.
 \end{defn}
 %
 A fiber bundle is a very general construction in which the fibers $F$ do
-not necessarily admit extra structure. A special case of a fiber bundle
+not necessarily admit extra structure. An important special case of a fiber bundle
 is a vector bundle, where the fibers are vector spaces.
 %
 \begin{defn}
@@ -67,6 +67,9 @@ are smooth.
   \item The unitary groups $U_n$ and special unitary groups $SU_n$ are Lie groups.
 \end{enumerate}
 \end{exmp}
+%
+Another important class of fiber bundles are principal bundles, in which
+the fibers have the structure of $G$-torsors.
 %
 \begin{defn}
 Let $G$ be a Lie group, and $M$ a smooth manifold. A \ib{Principal } $G$\ib{-bundle}
@@ -117,27 +120,146 @@ bundle}, denoted $P \times_G F$, is the set
 \[
 P \times_G F = P \times G / (p,g) \sim (p\cdot h, h\inv g)
 \]
+Since the group action on $P$ preserves the fibers, the projection
+$p_1 : P \times F \to P$ composed with the projection $\pi : P \to M$
+descends to the quotient, givng us a projection map
+$P \times_G F \to M$.
 \end{defn}
 %
+The first thing to check is that $P \times_G F$ is a fiber bundle, justifying
+the name.
+%
 \begin{prop}
-Let $P \to M$ be a principal $G$-bundle and $F$ a manifold with a left $G$ action.
-then the associated bundle $P \times_G F$ is indeed a fiber bundle with
+Let $\pi : P \to M$ be a principal $G$-bundle and $F$ a manifold with a left $G$ action.
+then the associated bundle $ \Phi : P \times_G F \to M$ is a fiber bundle with
 model fiber $F$.
 \end{prop}
 %
-%TODO PROOF
+\begin{proof}
+We wish to provide local trivializations  $\Phi\inv(U) \to U \times F$ for the
+associated bundle. Fix a local trivialization  $\psi : \pi\inv(U) \to U \times G$.
+Then $\psi$ is of the form $\psi(p) = (\pi(p), \tilde{\psi}(p))$
+for some $\tilde{\psi} : \pi\inv(U) \to G$, and
+$\tilde{\psi}(p\cdot g) = \tilde{\psi}(p)g$.
+Define
+\begin{align*}
+\varphi : \Phi\inv(U) &\to U \times F \\
+[p,f] &\mapsto (\pi(p), \tilde{\psi}(p)\cdot f)
+\end{align*}
+We first note that this is well defined on equivalence classes, since
+\[
+[p\cdot g, g\inv \cdot f] \mapsto (\pi(p \cdot g), \tilde{\psi}(p \cdot g)
+\cdot g\inv \cdot f)
+= (\pi(p), \psi(p)\cdot f)
+\]
+So $\varphi$ is well defined. We also note that $\Phi(\varphi[p,f]) = \pi(p)$
+by how $\Phi$ was defined, so $\varphi$ is a local trivialization provided
+it is a homeomorphism. To show this, we construct an inverse.
+Define $\alpha : U \times F \to \Phi\inv(U)$
+by $\alpha(u,f) = [\psi\inv(u,e), f]$, where $e$ denotes the identity element
+of $G$. We then claim that $\alpha$ is the inverse. We compute
+%
+\begin{align*}
+(\varphi \circ \alpha)(u,f) &= \varphi[\psi\inv(u,e),f] \\
+&= (u, e\cdot f)\\
+&= (u,f)
+\end{align*}
+%
+In the other direction, we compute
+%
+\begin{align*}
+(\alpha \circ \varphi)[p,f] &= \alpha(\pi(p), \tilde{\psi}(p)) \\
+&= [\psi\inv(\pi(p), e), f] \\
+&= [p, f]
+\end{align*}
+%
+Therefore, $\varphi$ is a local trivialization, giving us that
+$\Phi: P \times_G F \to M$ is a fiber bundle with model fiber $F$.
+%
+\end{proof}
 %
 There is a correspondence between sections of an associated bundle and
 $G$-equivariant maps $P \to F$.
 %
 \begin{prop}
-There is a bijection
+Let $\pi : P \to M$ be a principal $G$-bundle. Then there is a bijection
 \[
 \set{G\text{-equivariant maps } P \to F} \longleftrightarrow \Gamma_M(P \times_G F)
 \]
 \end{prop}
 %
-%TODO PROOF
+\begin{proof}
+Since $F$ has a left $G$-action, we first convert this to a right $G$-action
+by $f \cdot g = g\inv f$. Then what we mean by a $G$-equivariant map is
+a map $\varphi : P \to F$ such that
+\[
+\varphi(p\cdot g) = g\inv\cdot \varphi(p)
+\]
+We then wish to use $G$-equivariant map $\varphi$ to produce a section
+$\tilde{\varphi} : M \to P \times_G F$ of the associated bundle. For a
+point $x \in M$, pick any $p \in \pi\inv(x)$ in the fiber. Then define
+\[
+\tilde{\varphi}(x) = [p, \varphi(p)]
+\]
+where $[p, \varphi(p)]$ denotes the equivalence class of $(p, \varphi(p))$ in
+$P \times_G F$. We first claim that this map is well defined, i.e. it is
+independent of our choice of point $p \in \pi\inv(x)$. We know that $G$ acts
+freely and transitively on $\pi\inv(x)$, so all points in the fiber are of
+the form $p \cdot g$ for a unique $g \in G$. Then we have that for any $g \in G$
+\[
+(p\cdot g, \varphi(p \cdot g)) = (p \cdot g, g\inv \cdot \varphi(p)) \sim (p, \varphi(p))
+\]
+where we use the $G$-equivariance of $\varphi$ and the definition of the equivalence
+relation on the associated bundle. In addition, this induced map is
+a section of $P \times_G F \to M$, since the image is reprsented by an
+element of $P \times F$ with an element of the fiber $\pi\inv(x)$ in the first
+factor. \\
+
+Conversely, given a section $\sigma : M \to P \times_G F$, we wish to produce
+a $G$-equivariant map $P \to F$. Given such a section, and a point $x \in M$,
+we have that $\sigma(x) = [p, f]$ for some $p \in P$ and $f \in F$. Then
+define $\tilde{\sigma} : P \to F$ such that $\tilde{\sigma}(p) = f$, and
+$\tilde{\sigma}(p \cdot g) = g\inv \cdot f$. Since $G$ acts freely and transitively
+on the fibers, this is well defined, and specifies the map on every
+point of $P$. In addition, $\tilde{\sigma}$ is $G$-equivariant by construction.
+Then the maps
+\[
+\set{G\text{-equivariant maps } P \to F} \longleftrightarrow \Gamma_M(P \times_G F)
+\]
+we provided are easily verified to be inverses to each other, giving us the
+correspondence.
+\end{proof}
+%
+In some sense, the geometry of the associated fiber bundle $P \times_G F$
+is controlled by the group $G$, as $G$ determines a disinguished
+group of symmetries of the fiber $F$.
+%TODO Finish this example
+\begin{exmp}
+Given a manifold $M$, we can take the frame bundle $\pi : \B(M) \to M$, which is a
+principal $GL_n\R$ bundle. The group $GL_n\R$ acts linearly on $\R^n$ in the
+standard way, giving us an associated vector bundle $\B(M) \times_{GL_n\R} \R^n$.
+We claim that this bundle is isomorphic to the tangent bundle $TM$, i.e. there
+exists an diffeomorphism $\varphi : \B(M) \times_{GL_n\R} \R^n \to TM$ that
+restricts to linear isomorphisms on the fibers and the diagram
+\[\begin{tikzcd}
+\B(M) \times_{GL_n\R} \R^n \ar[rr, "\varphi"] \ar[dr] && TM \ar[dl] \\
+& M
+\end{tikzcd}\]
+commutes, where the maps to $M$ are the bundle projections. Recall that
+elements of $\B(M) \times_{GL_n\R} R^n$ are represented by pairs $(b, v)$,
+where $b: \R^n \to T_{\pi(b)}M$ is a linear isomorphism, and $v$ is a vector in $\R^n$.
+Then define $\varphi$ by
+\[
+\varphi[b,v] = (\pi(b), b(v))
+\]
+This is well defined, since $\varphi[b\circ g, g\inv(v)] = (\pi(b \circ g),
+(b\circ g)(g\inv(v))) = (\pi(b), b(v))$. This is an isomorphism, where the
+inverse mapping maps $(p,v) \in TM$ to $(b, \tilde{v})$ where $b$ is any
+basis of $T_pM$ and $\tilde{v}$ is the coordinate representation of $v$ in the
+basis $b$. In this example, we see that the associated bundle identifies the same vector
+under different coordinate transformations, which defines the symmetries of
+$TM$.
+\end{exmp}
 %
 \begin{defn}
 Let $\pi : P \to M$ be a principal $G$-bundle, and $\rho : H \to G$ a group
@@ -147,10 +269,17 @@ data of a principal $H$ bundle $\varphi : Q \to M$ and an $H$ equivariant map
 $F : Q \to P$.
 \end{defn}
 %
-The map $F : Q \to P$ induces a map $\tilde{F} : Q \times_H G$, where we
+The map $F : Q \to P$ induces a map $\tilde{F} : Q \times_H G \to P$, where we
 map the equivalence class $[q,g]$ to $F(q) g$. This is well defined
 on equivalences classes since
+%TODO this next line might be unnecesary, since it is the same map
+%constructed using the correspondence with sections -- double check this.
 \[
 (q \cdot h, \rho(h)\inv g) \mapsto F(q \cdot h)\rho(h)\inv g = F(q)\rho(h)\rho(h)\inv g
 = F(q)g
 \]
+% TODO EXAMPLE OF THIS (USE O_n, SO_n)
+\begin{exmp}[Reduction from $GL_n\R$ to $O_n$]
+Let $M$ be a smooth manifold
+\end{exmp}
+%
