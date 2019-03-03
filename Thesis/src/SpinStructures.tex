@@ -22,7 +22,7 @@ $P \times_{\Spin_n} \S$.
 The group $\Spin_1$ is equal to $\set{\pm 1}$, so a principal $\Spin_1$-bundle
 over $\S^1$ is a double cover $\pi : P \to \S^1$ along with a $\Spin_1$-equivariant
 map $P \to \B_{SO_1}(S^1)$. Since $SO_1 = 1$, $\B_{SO}(S^1)$ is the trivial
-bundle $S^1 \times \set{1}$. Therefore, specifying a $G$-equivariant map
+bundle $S^1 \times \set{1}$. Therefore, specifying a $\Spin_1$-equivariant map
 $P \to \S^1 \times \set{1}$ is no additional data, since we are forced to map
 all of the fiber $\pi\inv(x)$ to $(x,1)$ for any $x \in S^1$. Consequently,
 all double covers give rise to a reduction of structure group to $\Spin_1$.
@@ -35,7 +35,7 @@ $\theta \in [0, 4\pi)$, so the covering map is given by $\theta \mapsto e^{i\the
 The Spin representation is the sign representation on $\R$, where $-1$
 acts by multiplication by $-1$, and the complexifying gives us an action on
 $\C$ where $-1$ acts by multiplication by $-1$, giving us two spinor bundles
-$P_1 \times_{\Spin_1} \C$ and $P_2 \times_{\Spin_1} \C$. \\
+$P_1 \times_{\Spin_1} \C$ and $P_2 \times_{\Spin_1} \C$.
 
 In the first case,the associated bundle is a trivial bundle. Using the identification
 with $\Spin_1$-equivariant maps $P_1 \to \C$ with sections of the associated
@@ -46,12 +46,55 @@ The $\Spin_1$ action is then given by $\theta \mapsto -\varphi$ and
 $\varphi \mapsto -\theta$. Then the mappings $\theta \mapsto e^{i\theta}$
 and $\varphi \mapsto e^{-i\varphi}$ define a $\Spin_1$-equivariant map
 $P_1 \to \C$, giving us a trivialization of the associated bundle
-$P_1 \times_{\Spin_1} \C$. \\
+$P_1 \times_{\Spin_1} \C$. In addition, we see that sections of $P_1\times_{\Spin_1}\C$
+are equivalent data to maps $S^1 \to \C$, since once we map one of the components
+of $P_1$ into $\C$, this entirely determines how we need to map the other component
+in order to remain $\Spin_1$-equivariant. This further allows us to identify
+sections of the spinor bundle with $2\pi$-periodic functions $\R \to \C$.
 
-In the second case, the bundle is also trivial!
-%TODO finish this
-The Clifford algebra $\Cliff_{0,1}(\R)$ is isomorphic to $\C$ as an
-$\R$-algebra via the mappings $1\mapsto 1$, $e_1 \mapsto i$, so
-the Dirac operator on $\R$ can also be written as $i \frac{d}{dt}$.
+In the second case, the bundle is also trivial! We again contruct a trivialization
+for the associated bundle by providing a $\Spin_1$-equivariant map
+$\sigma : P_2 \to \C$. Using the parameterization of $P_2$ with angles
+$\theta \in [0,4\pi)$, the $\Spin_1$ action on $P_2$ is given by
+$-1 \cdot \theta = \theta + 2\pi \mod 4\pi$. Then define $\sigma$ by
+$\sigma(\theta) = e^{i\theta/2}$. This map is $\Spin_1$-equivariant, so
+it produces a trivialization of the spinor bundle $P_2 \times_{\Spin_1} \C$.
+In addition, we see that sections of the spinor bundle correspond
+with $2\pi$-antiperiodic functions, i.e. functions $\psi : \R \to \C$ such that
+$f(\theta) = -f(\theta + 2\pi)$, using the fact that we parameterized $P_2$
+with angles from $[0, 4\pi)$. Another way to write a $2\pi$-antiperiodic map
+$\psi$ is as a product $\psi(\theta) = e^{i\theta/2}f(\theta)$ for a $2\pi$-periodic
+function $f$, which is the representation of the section with respect to the
+trivialization $\sigma$ defined above.
+
+The two different spin structures produced two isomorphic vector bundles,
+but there is still a way to distinguish between the two -- their Dirac operators.
+The Clifford algebra $\Cliff_{0,1}(\R)$ is isomorphic to $\C$ as an $\R$-algebra
+via the mappings $1 \mapsto 1$, and $e_1 \mapsto i$, so the Dirac operator on
+$\R$ can also be written as $i \frac{d}{dt}$. We can then use our identifications
+of sections of the spinor bundles with functions $\R \to \C$ to investigate the
+Dirac operators on each bundle. In the case of the disconnected double cover $P_1$,
+we have the identifications of sections of $P_1 \times{\Spin_1} \C$ with
+$2\pi$-periodic functions $\R \to \C$. Then given a section $\psi$, we
+can identify it as a function $\R \to \C$, and use the Dirac operator in $\R$,
+which will again be a $2\pi$-periodic function, giving us another section,
+ginving us that the Dirac operator $D_1$ on sections of $P_1 \times_{\Spin_1} \C$
+is just $i\frac{d}{d\theta}$. For the connected double cover, we identified
+sections of $P_2 \times_{\Spin_1} \C$ as products
+$\psi(\theta) = e^{i\theta/2}f(\theta)$ for a $2\pi$-periodic function $f : \R \to \C$.
+Then applying the Dirac operator from $\R$ to this function, we get
+%
+\begin{align*}
+D\psi(\theta) &= i\frac{d}{d\theta}\left( e^{i\theta/2}f(\theta) \right) \\
+&= e^{i\theta/2}\frac{\partial f}{\partial \theta} - \frac{1}{2}e^{i\theta/2}
+\end{align*}
+%
+In the local trivialization $\sigma(\theta) = e^{i\theta/2}$, the operator $D_2$
+operates on $2\pi$-periodic functions, just like $D_1$, and is given by
+$D_2 = \partial_\theta - \frac{1}{2}$. In particular, the first operator $D_1$ has
+integer spectrum, and the spectrum of $D_2$ is the spectrum of $D_1$ shifted by
+$\frac{1}{2}$, which allows us to distinguish to two Spin structures on $S^1$
+by their Dirac operators.
+%
 \end{exmp}
 %
