@@ -1,0 +1,51 @@
+%
+\section{Dirac Operators}
+%
+A physical motivation for Clifford algebras and the Spin group comes from
+physics. In the process of developing a relativistic equation for the electron,
+Paul Dirac saw the need for a first order differential operator $D$ such
+that $D$ squared to the Laplace operator.
+\[
+\Delta = -\sum_i \frac{\partial^2}{\partial(x^i)^2}
+\footnote{Our reasoning for choosing this sign convention for $\Delta$ is twofold
+-- one reason is that the spectrum of $\Delta$ is positive with this choice
+of sign, and the second is that this definition coincides with a generalized
+Laplacian on a Riemannian manifold.}
+\]
+If $D$ were the be first order, it would have to be written as
+\[
+D = a^i \frac{\partial}{\partial x^i}
+\]
+for some coefficients $a^i$. However, it is clear that choosing scalar coefficients
+for the $a^i$ will not suffice. For example, in $\R^2$ with the standard coordinates
+$x$ and $y$, we see that given any first order operator
+$D = a^1\partial_x + a^2\partial_y$ satisfies
+\[
+D^2 = \left(a^1\frac{\partial}{\partial x} + a^2\frac{\partial}{\partial y}\right)^2
+= (a^1)^2\frac{\partial^2}{\partial x^2} + a^1a^2\frac{\partial^2}{\partial x \partial y}
++ a^2a^1 \frac{\partial^2}{\partial y \partial x} + (a^2)^2 \frac{\partial^2}{\partial y^2}
+\]
+From this equation, we see that the $a^i$ must square to $-1$, and we must also
+have that $a^1a^2 + a^2a^1 = 0$ in order for the mixed partial terms to vanish.
+This is not possible if the $a^i$ are scalars (in either $\R$ or $\C$).
+However, the required relations are exactly the relations between orthogonal
+basis vectors in the Clifford algebra $\Cliff_{0,n}(\R)$!
+%
+\begin{defn}
+Let $\set{e_i}$ be the standard basis for $\R^n$, $\set{e^i}$ its dual basis, and
+$x^1, \ldots ,x^n$ the standard coordinates on $\R^n$.
+The \ib{Dirac operator} on $\R^n$ is the first order differential operator
+\[
+D = e^i\frac{\partial}{\partial x^i}
+\]
+\end{defn}
+%
+It is not clear from the definition what function space $D$ should act on.
+The partial derivative operators make sense for any vector valued function, but
+multiplcation by $e^i$ does not make sense an arbitrary vector space -- it must
+be a Clifford module. Therefore, $D$ is an operator
+$D: C^\infty(\R^n, M) \to C^\infty(\R^n, M)$ on smooth functions from $\R^n$
+to a Clifford module $M$.
+%
+%TODO More stuff later
+%

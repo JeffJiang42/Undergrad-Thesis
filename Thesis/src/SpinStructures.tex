@@ -1,5 +1,57 @@
 %
 \section{Spin Structures}
 %
+Every manifold $M$ admits a Riemannian metric, so there always exists a
+reduction of structure group from $GL_n\R$ to $O_n$. If $M$ is orientable,
+we can reduce the structure group further to $SO_n$, which corresponds to a
+choice of orientation on $M$. A \ib{Spin structure} on $M$
+is a further reduction of structure group to $\Spin_n$, with respect to the
+double cover $\Spin_n \to SO_n$, i.e. the data of a principal $\Spin_n$ bundle
+$P \to M$, along with a $\Spin_n$-equivariant map $P \to \B_{SO}(M)$, where
+$\B_{SO}(M)$ denotes the bundle of positively oriented orthonomal frames.
+Depending on the value $n$, there exist either one or two Spin representations
+for $\Spin_n$. Let $\S$ denote the direct sum all of all the Spin representations
+for $\Spin_n$, i.e. $\S$ is equal to the single Spin representation in the
+case that $\Spin_n$ only admits one representation, and $\S = \S^+ \oplus \S^-$
+in the case that $\Spin_n$ admits two inequivalent Spin representations $\S^+$
+and $\S^-$. Then given a Spin structure on $M$ with a principal $\Spin_n$ bundle
+$P$, the \ib{spinor bundle} over $M$ is the associated vector bundle
+$P \times_{\Spin_n} \S$.
+%TODO finish this
+\begin{exmp}[Spin structures on $S^1$]
+The group $\Spin_1$ is equal to $\set{\pm 1}$, so a principal $\Spin_1$-bundle
+over $\S^1$ is a double cover $\pi : P \to \S^1$ along with a $\Spin_1$-equivariant
+map $P \to \B_{SO_1}(S^1)$. Since $SO_1 = 1$, $\B_{SO}(S^1)$ is the trivial
+bundle $S^1 \times \set{1}$. Therefore, specifying a $G$-equivariant map
+$P \to \S^1 \times \set{1}$ is no additional data, since we are forced to map
+all of the fiber $\pi\inv(x)$ to $(x,1)$ for any $x \in S^1$. Consequently,
+all double covers give rise to a reduction of structure group to $\Spin_1$.
+There are only two double covers of $\Spin_1$. One of them is the disconnected
+double cover, which is the disjoint union $S^1 \coprod S^1$, which we denote
+as $\pi_1 : P_1 \to S^1$. The other is the connected double cover, which the
+circle covering itself via the map $z \mapsto z^2$, which we denote as
+$\pi_2 : P_2 \to S^1$. For convenience, we parameterize $P_2$ with angles
+$\theta \in [0, 4\pi)$, so the covering map is given by $\theta \mapsto e^{i\theta}$.
+The Spin representation is the sign representation on $\R$, where $-1$
+acts by multiplication by $-1$, and the complexifying gives us an action on
+$\C$ where $-1$ acts by multiplication by $-1$, giving us two spinor bundles
+$P_1 \times_{\Spin_1} \C$ and $P_2 \times_{\Spin_1} \C$. \\
 
+In the first case,the associated bundle is a trivial bundle. Using the identification
+with $\Spin_1$-equivariant maps $P_1 \to \C$ with sections of the associated
+bundle, it suffices to find such a map to produce a global section of
+$\pi_1 : P_1 \to S^1$. Write $P_1$ as the disjoint union $S_1 \coprod S_1$,
+with the circles parameterized by angles $\theta,\varphi \in [0,2\pi)$.
+The $\Spin_1$ action is then given by $\theta \mapsto -\varphi$ and
+$\varphi \mapsto -\theta$. Then the mappings $\theta \mapsto e^{i\theta}$
+and $\varphi \mapsto e^{-i\varphi}$ define a $\Spin_1$-equivariant map
+$P_1 \to \C$, giving us a trivialization of the associated bundle
+$P_1 \times_{\Spin_1} \C$. \\
+
+In the second case, the bundle is also trivial!
+%TODO finish this
+The Clifford algebra $\Cliff_{0,1}(\R)$ is isomorphic to $\C$ as an
+$\R$-algebra via the mappings $1\mapsto 1$, $e_1 \mapsto i$, so
+the Dirac operator on $\R$ can also be written as $i \frac{d}{dt}$.
+\end{exmp}
 %

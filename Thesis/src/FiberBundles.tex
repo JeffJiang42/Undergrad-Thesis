@@ -18,6 +18,28 @@ Given a fiber bundle $\pi : E \to M$ we often denote the fiber $\pi\inv(p)$
 by $E_p$.
 %
 \begin{defn}
+let $\pi : E \to M$ and $p : L \to M$ be fiber bundles with model fiber $F$
+over $M$. A \ib{bundle homomorphism} is a smooth map $\varphi : E \to L$ such
+that the following diagram commutes
+\[\begin{tikzcd}
+E \ar[dr, "\pi"']\ar[rr,"\varphi"] & & L \ar[dl, "p"] \\
+& M
+\end{tikzcd}\]
+\end{defn}
+%
+An important property of fiber bundles is that they pull back.
+\begin{defn}
+Let $\pi : E \to M$ be a fiber bundle with model fiber $F$
+and let $f : X \to M$ be a smooth map. Then the \ib{pullback} of $E$ by $f$ is
+the data of a smooth manifold
+\[
+f^*E = \set{(x, p)~:~ x \in X, p \in \pi\inv(f(x) }
+\]
+along with the projection $f^*E \to M$ given by $(x,p) \mapsto x$, giving
+$f^*E \to X$ the structure of a fiber bundle over $X$ with model fiber $F$.
+\end{defn}
+%
+\begin{defn}
 Let $\pi : E \to M$ be a fiber bundle. A \ib{local section} of $\pi : E \to M$
 is a smooth map $\sigma : U \to E$ of an open set $U \subset M$ such that
 $\pi \circ \sigma = \id_U$. If $U = M$, the section is called a \ib{global section}.
@@ -37,12 +59,14 @@ trivializations $\varphi : \pi\inv(U) \to U \times \R^n$ (or $\C^n$)
 restrict to linear isomorphisms on the fibers, i.e. for all $p \in U$, the restriction
 $\varphi\vert_{\pi\inv(p)}$ is an isomorphism $\pi\inv(p) \to \set{p} \times \R^n$
 (or $\C^n$). The dimension $n$ of the fibers is called the \ib{rank} of the
-vector bundle.
+vector bundle. A \ib{vector bundle homomorphism} $\varphi : E \to L$ is a bundle
+homomorphism with the added stipulation that $\varphi\vert_{E_x}$ is a linear
+map.
 \end{defn}
 %
 \begin{exmp} \enumbreak
 \begin{enumerate}
-  \item Given a smooth manifold $M$, the tangent bundle $TM = \coprod_p T_pM$
+  \item Given a smooth manifold $M$, the tangent bundle $TM = \coprod_{p \in M} T_pM$
   is a vector bundle, where the rank is the dimension of $M$.
   \item The \ib{tautological bundle} over $\RP^n$ is the vector bundle that
   assigns to each subspace $\ell \in \RP^n$ itself as it's fiber. An analgous
@@ -89,6 +113,8 @@ over $M$ is the data of
   \end{tikzcd}\]
   where $p_U$ denotes projection onto the first factor.
 \end{enumerate}
+A \ib{principal bundle homomorphism} is a bundle homomorphism $\varphi : P \to Q$
+that is $G$-equivariant.
 \end{defn}
 %
 \begin{exmp}
@@ -107,10 +133,12 @@ is a principal $GL_n\R$ bundle over $M$.
 \begin{exmp}
 Given a smooth manifold $M$ with a Riemannian metric $g$, this induces an inner
 product on each tangent space. Then the set of orthonormal bases of $T_pM$ is the
-set of all linear isometries $T_pM \to \R^n$, where $\R^n$ is equipped with the
-standard inner product. Then the disjoint union over all points $p$ of
-orthonormal bases for the tangent spaces forms the \ib{orthonormal frame bundle}
-$\mathcal{B}_O(M)$, which is a principal $O_n$ bundle.
+set of all linear isometries $(\R^n, \langle\cdot,\cdot\rangle) \to (M, g_p)$
+where $\langle\cdot,\cdot\rangle$ is the standard inner product on $\R^n$ and
+$g_p$ is the Riemannian metric evaluated at $p$. Then the disjoint union over
+all points $p$ of orthonormal bases for the tangent spaces forms the
+\ib{orthonormal frame bundle} $\mathcal{B}_O(M)$, which is a principal $O_n$
+bundle.
 \end{exmp}
 %
 \begin{defn}
@@ -211,7 +239,7 @@ the form $p \cdot g$ for a unique $g \in G$. Then we have that for any $g \in G$
 \]
 where we use the $G$-equivariance of $\varphi$ and the definition of the equivalence
 relation on the associated bundle. In addition, this induced map is
-a section of $P \times_G F \to M$, since the image is reprsented by an
+a section of $P \times_G F \to M$, since the image is represented by an
 element of $P \times F$ with an element of the fiber $\pi\inv(x)$ in the first
 factor. \\
 
@@ -233,8 +261,8 @@ correspondence.
 In some sense, the geometry of the associated fiber bundle $P \times_G F$
 is controlled by the group $G$, as $G$ determines a disinguished
 group of symmetries of the fiber $F$.
-%TODO Finish this example
-\begin{exmp}
+%
+\begin{exmp}[The tangent bundle as an associated bundle]
 Given a manifold $M$, we can take the frame bundle $\pi : \B(M) \to M$, which is a
 principal $GL_n\R$ bundle. The group $GL_n\R$ acts linearly on $\R^n$ in the
 standard way, giving us an associated vector bundle $\B(M) \times_{GL_n\R} \R^n$.
@@ -261,12 +289,17 @@ under different coordinate transformations, which defines the symmetries of
 $TM$.
 \end{exmp}
 %
+In general, given a rank $n$ vector bundle $E \to M$, we can construct the
+frame bundle  $\B(E)$ for $E$ and recover $E$ by taking the associated bundle
+$\B(E) \times_{GL_n\R} \R^n$, so the process of taking frames and constructing
+associated bundles are inverses.
+%
 \begin{defn}
 Let $\pi : P \to M$ be a principal $G$-bundle, and $\rho : H \to G$ a group
 homomorphism. The map $\rho$ gives $P$ a left $H$ action where
 $h \cdot p = \rho(h) \cdot p$. A \ib{reduction of structure group} is the
-data of a principal $H$ bundle $\varphi : Q \to M$ and an $H$ equivariant map
-$F : Q \to P$.
+data of a principal $H$ bundle $\varphi : Q \to M$ and an $H$ equivariant bundle
+homomorphism $F : Q \to P$.
 \end{defn}
 %
 The map $F : Q \to P$ induces a map $\tilde{F} : Q \times_H G \to P$, where we
@@ -278,8 +311,25 @@ on equivalences classes since
 (q \cdot h, \rho(h)\inv g) \mapsto F(q \cdot h)\rho(h)\inv g = F(q)\rho(h)\rho(h)\inv g
 = F(q)g
 \]
-% TODO EXAMPLE OF THIS (USE O_n, SO_n)
+%
 \begin{exmp}[Reduction from $GL_n\R$ to $O_n$]
-Let $M$ be a smooth manifold
+Let $M$ be a smooth manifold, and $\pi : \B(M) \to M$ it's bundle of frames.
+The inclusion map $\iota: O_n \hookrightarrow GL_n\R$ gives an action of $O_n$ on
+$\B(M)$, where given $b \in \B(M)$ and $T \in O_n$, $b \cdot T = b \cdot \iota(T)$.
+We then take the quotient by this $O_n$ action, giving us a quotient map
+$q : \B(M) / O_n$. Since the inclusion is injective, the $O_n$ action
+is free on $\B(M)$, so this gives $q : \B(M) \to \B(M) / O_n$ the structure of a
+$O_n$ bundle. In addition, the action of $O_n$ preserves the fibers of
+$\pi : \B(M) \to M$, so $\pi$ descends to the quotient, so $\B(M) / O_n \to M$
+is a fiber bundle with model fiber $GL_n\R / O_n$. Since $GL_n\R$ deformation
+retracts onto $O_n$ via the Gram-Schmidit algorithm, $GL_n\R / O_n$ is
+contractible, so the fiber bundle $\B(M)/ O_n \to M$ admits global sections.
+Then given a section $\sigma : M \to \B(M) / O_n$, this gives an $O_n$ bundle
+over $M$ via the pullback $\sigma^*\B(M)$. In addition, we get a $O_n$-equivariant
+map $\sigma^*\B(M) \to \B(M)$ given by $(p, b) \mapsto (p, \iota(b))$. The
+bubdle $\sigma^*\B(M)$ can be thought of as the bundle of orthonormal frames
+with respect to some Riemannian metric on $M$, and the fact that $\B(M) / O_n$
+admits sections corresponds to the fact that every manifold admits a Riemannian
+metric.
 \end{exmp}
 %
