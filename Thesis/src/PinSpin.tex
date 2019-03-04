@@ -4,7 +4,7 @@
 The group of invertible elements in $\Cliff_{p,q}(\R)$, denoted
 $\Cliff_{p,q}^\times(\R)$ contains a group $\Pin_{p,q}$, which a double
 cover of the group $O_{p,q}$ of matrices preserving the standard bilinear
-form $\langle \cdot,\cdot \rangle$ on $\R^{p|q}$. Inside of $\Pin_{p,q}$,
+form $\langle \cdot,\cdot \rangle$ on $\R^{p,q}$. Inside of $\Pin_{p,q}$,
 there exists a subgroup $\Spin_{p,q} \subset \Pin_{p,q}$, which double covers
 the group $SO_{p,q}$, which consists of the subgroup of $O_{p,q}$ where
 all the elements have determinant equal to $1$.
@@ -50,8 +50,8 @@ composition of $0$ reflections.
 %
 \begin{proof}
 We prove this by induction on $n = p+q$. The case $n=1$ is trivial, since
-$O_1 = \set{\pm 1}$. Then given $A \in O_{p,q}$, fix some nonzero $v \in \R^{p|q}$.
-Then define $R : \R^{p|q} \to \R^{p|q}$ by
+$O_1 = \set{\pm 1}$. Then given $A \in O_{p,q}$, fix some nonzero $v \in \R^{p,q}$.
+Then define $R : \R^{p,q} \to \R^{p,q}$ by
 \[
 R(w) = w - 2 \frac{\langle Av - v,w \rangle}{\langle Av -v, Av - v\rangle}(Av - v)
 \]
@@ -59,11 +59,11 @@ Then $R$ will be a reflection about the hyperplane orthogonal to $Av - v$,
 and will interchange $v$ and $Av$. Therefore, $RA$ is an orthogonal transformation
 fixing $v$. Since $RA$ is orthogonal, it will also fix the orthogonal complement
 $v^\perp$, so it will restrict to an orthgonal transformation on $v^\perp$. We
-then see that $v^\perp$ is $1$ dimension lower thant $\R^{p|q}$, and restricting
+then see that $v^\perp$ is $1$ dimension lower thant $\R^{p,q}$, and restricting
 the bilinear form to $v^\perp$, we know by the inductive hypotehsis that
 $RA\vert_{v^\perp}$ can be written as at most $n-1$ hyperplane reflections in
 $v^\perp$. Since $RA$ fixes $v$, we can extend all of these transformations to
-a hyperplane reflection on all of $\R^{p|q}$, by taking the span of each hyperplane
+a hyperplane reflection on all of $\R^{p,q}$, by taking the span of each hyperplane
 wiht $v$, giving us that $RA$ is a composition of at most $n-1$ reflections. Finally,
 composing $RA$ with $R$ gives us that $A$ can be written as a composition of at most
 $n$ hyperplane reflections.
@@ -83,7 +83,7 @@ $\Spin_{p,q} \to SO_{p,q}$, i.e. there exist short exact sequences of groups
 %
 \begin{proof}
 We first consider the case of $\Pin_{p,q}$. To do this, we need to construct
-a group action where $\Pin_{p,q}$ acts on $\R^{p|q}$ by orthogonal transformations.
+a group action where $\Pin_{p,q}$ acts on $\R^{p,q}$ by orthogonal transformations.
 There exists an involution $T : \Cliff_{p,q}(\R) \to \Cliff_{p,q}(\R)$, where given
 the standard orthogonal basis $\set{e_1, \ldots, e_{p+1}}$, we define
 \[
@@ -91,18 +91,18 @@ T(e_{i_1}\cdots e_{i_k}) = e_{i_k}\cdots e_{i_1}
 \]
 and extending linearly to the remainder of $\Cliff_{p,q}(\R)$. Given $a \in
 \Cliff_{p,q}(\R)$, we denote $T(a)$ by $a^T$. We note that for a vector
-$v \in \R^{p|q}$, identifying $\R^{p|q}$ as a subspace of $\Cliff_{p,q}(\R)$,
+$v \in \R^{p,q}$, identifying $\R^{p,q}$ as a subspace of $\Cliff_{p,q}(\R)$,
 satisfying $\langle v,v \rangle = \pm 1$, we have that $v^T = v$ and
-$v\inv = \pm v$. Then given $g \in \Pin_{p,q}$, and $v \in \R^{p|q}$, we claim
+$v\inv = \pm v$. Then given $g \in \Pin_{p,q}$, and $v \in \R^{p,q}$, we claim
 that the left action
 \[
 g \cdot v = -gvg\inv
 \]
 defines the group action we desire. To show this, we must show that this indeed
-maps $\R^{p|q}$ back into itself, and that the group elements act by orthogonal
+maps $\R^{p,q}$ back into itself, and that the group elements act by orthogonal
 trasnformations. It suffices to check this on the generating set of elements
 $v$ with $\langle v,v \rangle = \pm 1$. First assume that $\langle v,v \rangle = 1$.
-Then given $w \in \R^{p|q}$, we compute
+Then given $w \in \R^{p,q}$, we compute
 %
 \begin{align*}
 -vwv\inv &= -vwv \\
