@@ -59,11 +59,11 @@ Let $M$ be a smooth manifold. A \ib{vector bundle} over $M$ is fiber bundle
 $\pi : E \to M$ with model fiber $\R^n$ (or $\C^n)$ such that the local
 trivializations $\varphi : \pi\inv(U) \to U \times \R^n$ (or $\C^n$)
 restrict to linear isomorphisms on the fibers, i.e. for all $p \in U$, the restriction
-$\varphi\vert_{\pi\inv(p)}$ is an isomorphism $\pi\inv(p) \to \set{p} \times \R^n$
-(or $\C^n$). The dimension $n$ of the fibers is called the \ib{rank} of the
-vector bundle. A \ib{vector bundle homomorphism} $\varphi : E \to L$ is a bundle
-homomorphism with the added stipulation that $\varphi\vert_{E_x}$ is a linear
-map.
+$\varphi\vert_{\pi\inv(p)} : \pi\inv(p) \to \set{p} \times \R^n$
+(or $\C^n$) is an isomorphism. The dimension $n$ of the fibers is called the
+\ib{rank} of the vector bundle. A \ib{vector bundle homomorphism}
+$\varphi : E \to L$ is a bundle homomorphism with the added stipulation that
+the restrictions to the fibers $\varphi\vert_{E_x}$ are linear maps.
 \end{defn}
 %
 \begin{exmp} \enumbreak
@@ -71,7 +71,7 @@ map.
   \item Given a smooth manifold $M$, the tangent bundle $TM = \coprod_{p \in M} T_pM$
   is a vector bundle, where the rank is the dimension of $M$.
   \item The \ib{tautological bundle} over $\RP^n$ is the vector bundle that
-  assigns to each subspace $\ell \in \RP^n$ itself as it's fiber. An analgous
+  assigns to each subspace $\ell \in \RP^n$ itself as its fiber. An analgous
   construction defines the tautological bundle over the Grassmannian
   $\mathrm{Gr}_k(\R^n)$.
 \end{enumerate}
@@ -315,7 +315,7 @@ on equivalences classes since
 \]
 %
 \begin{exmp}[Reduction from $GL_n\R$ to $O_n$]
-Let $M$ be a smooth manifold, and $\pi : \B(M) \to M$ it's bundle of frames.
+Let $M$ be a smooth manifold, and $\pi : \B(M) \to M$ its bundle of frames.
 The inclusion map $\iota: O_n \hookrightarrow GL_n\R$ gives an action of $O_n$ on
 $\B(M)$, where given $b \in \B(M)$ and $T \in O_n$, $b \cdot T = b \cdot \iota(T)$.
 We then take the quotient by this $O_n$ action, giving us a quotient map
