@@ -118,5 +118,35 @@ $T_p\partial M$ is given locally by the inclusion
 \end{align*}
 %
 and the outward normal is the unit length vector with a positive first component.
+This defines a vector field $N$ along $\partial M$, where the value $N_p$
+of $N$ at the point $p$ is the outward normal vector in $T_pM$.
+On the boundary $\partial M$, we can restrict the frame bundle $\B_{SO}(M)$
+to $\partial M$ by pulling back by the inclusion $\partial M \hookrightarrow M$,
+giving us the restricted bundle $\B_{SO}(M)\vert_{\partial M}$, which is a principal
+$SO_n$-bundle over $\partial M$. An element $b \in \B_{SO}(M)$ is an orientation
+preserving linear isometry $(\R, \langle \cdot,\cdot\rangle) \to (T_pM, g_p)$, and
+using the normal vector, we can define a subbundle
+$\B_{SO}(\partial M) \subset \B_{SO}(M)\vert_{\partial M}$ by
+\[
+\B_{SO}(\partial M) = \set{b \in \B_{SO}(M)\vert_{\partial M} ~:~
+b(e_1) = N_{\pi(e_1)}}
+\]
+where $e_1$ denotes the first standard basis vector of $\R^n$, and $\pi$ is
+the bundle projection. We then get an $SO_{n-1}$ action on $\B_{SO}(\partial M)$,
+where we include $SO_{n-1} \hookrightarrow SO_n$ as matrices of the form
+\[
+\begin{pmatrix}
+1 & 0 \\
+0 & A
+\end{pmatrix}
+\]
+Where $A \in SO_{n-1}$. This then acts on each fiber of $\B_{SO}(\partial M)$
+by precomposition. This action is free and transitive, so this gives
+$\B_{SO}(\partial M)$ the stucture of a principal $SO_{n-1}$-bundle over
+$\partial M$. In this way, we see that an orientation on $M$ determines
+an orientation on the boundary. \\
 %TODO Spin structure on M induces a Spin structure on the boundary of M.
+
+In a similar fashion, a Spin structure on $M$ will also induce a Spin structure
+on $\partial M$, though the process is slightly more involved.
 %

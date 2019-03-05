@@ -52,6 +52,9 @@
   breakatwhitespace=true,
   tabsize=3
   }
+
+% Marker for end of environments
+\newcommand{\exampleQED}{\smash\adfhalfleftarrowhead}
 %
 %--------Theorem Environments--------
 %
@@ -64,12 +67,16 @@
 \newtheorem{conj}[thm]{Conjecture}
 \newtheorem*{quest}{Question}
 %
+\newenvironment{exmp}
+  {\pushQED{\qed}\renewcommand{\qedsymbol}{\exampleQED}\exampx}
+  {\popQED\endexampx}
 \theoremstyle{definition}
 \newtheorem{defn}[thm]{Definition}
 \newtheorem*{defn*}{Definition}
 \newtheorem{defns}[thm]{Definitions}
 \newtheorem{con}[thm]{Construction}
-\newtheorem{exmp}[thm]{Example}
+\newtheorem{exampx}[equation]{Example}
+%\newtheorem{exmp}[thm]{Example}
 \newtheorem{exmps}[thm]{Examples}
 \newtheorem{notn}[thm]{Notation}
 \newtheorem{notns}[thm]{Notations}
