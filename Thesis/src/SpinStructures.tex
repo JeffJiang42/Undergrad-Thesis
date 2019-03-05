@@ -64,7 +64,7 @@ with $2\pi$-antiperiodic functions, i.e. functions $\psi : \R \to \C$ such that
 $f(\theta) = -f(\theta + 2\pi)$, using the fact that we parameterized $P_2$
 with angles from $[0, 4\pi)$. Another way to write a $2\pi$-antiperiodic map
 $\psi$ is as a product $\psi(\theta) = e^{i\theta/2}f(\theta)$ for a $2\pi$-periodic
-function $f$, which is the representation of the section with respect to the
+function $f$, which is the representation of the section $\psi$ with respect to the
 trivialization $\sigma$ defined above.
 
 The two different spin structures produced two isomorphic vector bundles,
@@ -78,7 +78,7 @@ we have the identifications of sections of $P_1 \times{\Spin_1} \C$ with
 $2\pi$-periodic functions $\R \to \C$. Then given a section $\psi$, we
 can identify it as a function $\R \to \C$, and use the Dirac operator in $\R$,
 which will again be a $2\pi$-periodic function, giving us another section,
-ginving us that the Dirac operator $D_1$ on sections of $P_1 \times_{\Spin_1} \C$
+giving us that the Dirac operator $D_1$ on sections of $P_1 \times_{\Spin_1} \C$
 is just $i\frac{d}{d\theta}$. For the connected double cover, we used the
 global section associated to $\sigma(\theta) = e^{i\theta /2}$ to identify
 sections of $P_2 \times_{\Spin_1} \C$ as products
@@ -98,4 +98,25 @@ $\frac{1}{2}$, which allows us to distinguish to two Spin structures on $S^1$
 by their Dirac operators.
 %
 \end{exmp}
+%
+%TODO Orientation on M induces an orientation on the boundary of M.
+Given an orientable manifold $M$, we can reduce the structure group
+of the frame bundle $\B(M)$ to $SO_n$, giving us a principal $SO_n$ bundle
+$\B_{SO}(M)$. If $M$ has a nonempty boundary, this induces an orientation on
+$\partial M$ in the following way: by first reducing the structure group to $O_n$,
+we get a Riemannian metric $g$ on $M$. Then given a point $p \in \partial M$,
+the tangent space of the boundary $T_p\partial M$ is a codimension $1$ subspace
+of $T_pM$. The Riemannian metric $g$ allows us to pick a distinguished complementary
+subspace to $T_p\partial M$ -- the orthogonal complement $(T_p \partial M)^\perp$.
+From this subspace, we have a distinguished choice of vector -- the outward
+normal vector. In appropriate coordinates, the inclusion of the tangent space
+$T_p\partial M$ is given locally by the inclusion
+%
+\begin{align*}
+\R^{n-1} &\hookrightarrow \R^n \\
+(x^1, \ldots, x^{n-1}) &\mapsto (0, x^1, \ldots, x^{n-1]})
+\end{align*}
+%
+and the outward normal is the unit length vector with a positive first component.
+%TODO Spin structure on M induces a Spin structure on the boundary of M.
 %
