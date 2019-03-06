@@ -50,8 +50,15 @@ the data of a smooth manifold
 \[
 f^*E = \set{(x, p)~:~ x \in X, p \in \pi\inv(f(x) }
 \]
-along with the projection $f^*E \to M$ given by $(x,p) \mapsto x$, giving
+along with the projection $p : f^*E \to M$ given by $(x,p) \mapsto x$, giving
 $f^*E \to X$ the structure of a fiber bundle over $X$ with model fiber $F$.
+The bundle $f^*E$ also comes equipped with a natural map $\alpha : f^*E \to E$
+where $\alpha(x,p) = p$. Pullbacks give rise to the diagram
+\[\begin{tikzcd}
+f^*E \ar[d, "p"']\ar[r, "\alpha"] & E \ar[d, "\pi"] \\
+X \ar[r, "f"']& M
+\end{tikzcd}\]
+and are an instance of a general construction called the \ib{fibered product}.
 \end{defn}
 %
 \begin{defn}

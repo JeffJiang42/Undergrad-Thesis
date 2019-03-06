@@ -8,7 +8,9 @@ choice of orientation on $M$. A \ib{Spin structure} on $M$
 is a further reduction of structure group to $\Spin_n$, with respect to the
 double cover $\Spin_n \to SO_n$, i.e. the data of a principal $\Spin_n$ bundle
 $P \to M$, along with a $\Spin_n$-equivariant map $P \to \B_{SO}(M)$, where
-$\B_{SO}(M)$ denotes the bundle of positively oriented orthonomal frames.
+$\B_{SO}(M)$ denotes the bundle of positively oriented orthonomal frames. In
+particular, this map is a double cover, and fiber-wise is the double covering
+$\Spin_n \to SO_n$.
 Depending on the value $n$, there exist either one or two Spin representations
 for $\Spin_n$. Let $\S$ denote the direct sum all of all the Spin representations
 for $\Spin_n$, i.e. $\S$ is equal to the single Spin representation in the
@@ -120,7 +122,7 @@ $T_p\partial M$ is given locally by the inclusion
 and the outward normal is the unit length vector with a positive first component.
 This defines a vector field $N$ along $\partial M$, where the value $N_p$
 of $N$ at the point $p$ is the outward normal vector in $T_pM$.
-On the boundary $\partial M$, we can restrict the frame bundle $\B_{SO}(M)$
+On the boundary $\partial M$, we restrict the frame bundle $\B_{SO}(M)$
 to $\partial M$ by pulling back by the inclusion $\partial M \hookrightarrow M$,
 giving us the restricted bundle $\B_{SO}(M)\vert_{\partial M}$, which is a principal
 $SO_n$-bundle over $\partial M$. An element $b \in \B_{SO}(M)$ is an orientation
@@ -144,9 +146,69 @@ Where $A \in SO_{n-1}$. This then acts on each fiber of $\B_{SO}(\partial M)$
 by precomposition. This action is free and transitive, so this gives
 $\B_{SO}(\partial M)$ the stucture of a principal $SO_{n-1}$-bundle over
 $\partial M$. In this way, we see that an orientation on $M$ determines
-an orientation on the boundary. \\
+an orientation on the boundary. The preceding discussion can be summarized in
+the diagram
+\[\begin{tikzcd}
+\B_{SO}(\partial M) \ar[r, hookrightarrow] \ar[dr] &
+\B_{SO}(M)\vert_{\partial M} \ar[d] \ar[r, hookrightarrow] & \B_{SO}(M) \ar[d] \\
+& \partial M \ar[r, hookrightarrow] & M
+\end{tikzcd}\]
 %TODO Spin structure on M induces a Spin structure on the boundary of M.
 
 In a similar fashion, a Spin structure on $M$ will also induce a Spin structure
-on $\partial M$, though the process is slightly more involved.
+on $\partial M$, though the process is slightly more involved. Given a Spin
+manifold $M$, it comes equipped with a principal $\Spin_n$-bundle $\B_{\Spin}(M)$
+along with a $\Spin_n$-equivariant map $\B_{\Spin}(M) \to \B_{SO}(M)$, where
+the Spin action on $\B_{SO}(M)$ is induced by the double cover $\Spin_n \to SO_n$.
+Just as before, we pullback both $\B_{SO}(M)$ and $\B_{\Spin}(M)$ along
+the inclusion $\partial M \hookrightarrow M$. In addition, we construct the
+$SO_{n-1}$-bundle $\B_{SO}(\partial M)$, which gives us the diagram
+\[\begin{tikzcd}
+&\B_{\Spin}(M)\vert_{\partial M} \ar[r, hookrightarrow]\ar[d] & \B_{\Spin}(M) \ar[d] \\
+\B_{SO}(\partial M) \ar[r, hookrightarrow] \ar[dr] &\B_{SO}(M)\vert_{\partial M}
+\ar[d] \ar[r, hookrightarrow] & \B_{SO}(M) \ar[d] \\
+&\partial M \ar[r, hookrightarrow] & M
+\end{tikzcd}\]
+This diagram tells us the exact ingredients we need to construct the
+$\Spin_{n-1}$-bundle over $\partial M$ -- it must be the pullback of
+$\B_{\Spin}(M)\vert_{\partial M}$ along the inclusion
+$\B_{SO}(\partial M) \hookrightarrow B_{SO}(M)\vert_{\partial M}$, so it fits
+into the commutative square
+\[\begin{tikzcd}
+\B_{\Spin}(\partial M) \ar[d] \ar[r, hookrightarrow] &
+\B_{\Spin}(M)\vert_{\partial M}\ar[d] \\
+\B_{SO}(\partial M) \ar[r, hookrightarrow] & \B_{\Spin}(M)\vert_{\partial M}
+\end{tikzcd}\]
+In addition, it comes equipped with a map $p : \B_{\Spin}(\partial M) \to \partial M$
+by composing the map $\B_{\Spin}(\partial M) \to \B_{SO}(\partial M)$ with the projection
+$\pi : \B_{SO}(\partial M)$. However, it is not immediately clear that the pullback
+bundle, (which we will suggestively denote by $\B_{\Spin}(\partial M)$) is
+indeed a principal $\Spin_{n-1}$-bundle over $\partial M$. As a principal
+$\Spin_n$-bundle, $\B_{\Spin}(M)\vert_{\partial M}$ comes equipped with an
+action of $\Spin_n$. We then take the subgroup $G \subset \Spin_n$ of elements
+that preserve the fibers of the map $p$. Since the $\Spin_n$ action on
+$\B_{\Spin}(M)$ is free and transtive on the fibers of
+$\B_{\Spin}(M)\vert_{\partial M} \to \partial M$, the action of $G$ on
+$\B_{\Spin}(\partial M)$ will be as well, giving it the structure of a principal
+$G$-bundle over $\partial M$. We then claim that $G \cong \Spin_{n-1}$. Since
+the fibers are $G$-torsors, it suffices to check on a single fiber of the map
+$\B_{\Spin}(M) \to \partial M$. Fix point $x \in \partial M$, and an
+oriented orthonormal frame $b \in \pi\inv(x)$. This then determines a diffeomorphism
+$\varphi : SO_{n-1} \to \pi\inv(x)$. where $\varphi(g) = g \cdot x$. This
+diffeomorphism induces a group stucture on the fiber $\pi\inv(x)$ such
+that $\varphi$ is a group isomorphism. Then the restriction of the double cover
+$\B_{\Spin}(M)\vert_{\partial M} \to \B_{SO}(M)\vert_{\partial M}$ to
+$\B_{\Spin}(\partial M)$ is also a double cover. Fixing a point $b'$ in the
+preimage of $b$ under $\B_{\Spin}(\partial M) \to B_{SO}(\partial M)$ then
+determines an isomorphism of the fiber with $G$, which shows that $G$ double
+covers $SO_{n-1}$. Therefore, $G \cong \Spin_{n-1}$. and $\B_{Spin}(\partial M)$
+determines a Spin structure on $\partial M$. All in all, the construction
+is summarized by the diagram
+\[\begin{tikzcd}
+\B_{\Spin}(\partial M) \ar[d] \ar[r, hookrightarrow] & \B_{\Spin}(M)\vert_{\partial M}
+\ar[r, hookrightarrow]\ar[d] & \B_{\Spin}(M) \ar[d] \\
+\B_{SO}(\partial M) \ar[r, hookrightarrow] \ar[dr] &\B_{SO}(M)\vert_{\partial M}
+\ar[d] \ar[r, hookrightarrow] & \B_{SO}(M) \ar[d] \\
+&\partial M \ar[r, hookrightarrow] & M
+\end{tikzcd}\]
 %

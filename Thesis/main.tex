@@ -14,6 +14,7 @@
 \usepackage{yfonts}
 \usepackage{enumitem}
 \usepackage{mathrsfs}
+\usepackage{pifont}
 \usepackage{fourier-orns}
 \usepackage{adforn}
 \usepackage[all]{xy}
@@ -53,8 +54,9 @@
   tabsize=3
   }
 
-% Marker for end of environments
+% Markers for end of environments
 \newcommand{\exampleQED}{\smash\adfhalfleftarrowhead}
+\newcommand{\defnQED}{\ding{118}}
 %
 %--------Theorem Environments--------
 %
@@ -70,14 +72,18 @@
 \newenvironment{exmp}
   {\pushQED{\qed}\renewcommand{\qedsymbol}{\exampleQED}\exampx}
   {\popQED\endexampx}
+\newenvironment{defn}
+  {\pushQED{\qed}\renewcommand{\qedsymbol}{\defnQED}\defnx}
+  {\popQED\enddefnx}
 \theoremstyle{definition}
-\newtheorem{defn}[thm]{Definition}
-\newtheorem*{defn*}{Definition}
-\newtheorem{defns}[thm]{Definitions}
+%\newtheorem{defn}[thm]{Definition}
+\newtheorem{defnx}[equation]{Definition}
+%\newtheorem*{defn*}{Definition}
+%\newtheorem{defns}[thm]{Definitions}
 \newtheorem{con}[thm]{Construction}
-\newtheorem{exampx}[equation]{Example}
+\newtheorem{exampx}[thm]{Example}
 %\newtheorem{exmp}[thm]{Example}
-\newtheorem{exmps}[thm]{Examples}
+%\newtheorem{exmps}[thm]{Examples}
 \newtheorem{notn}[thm]{Notation}
 \newtheorem{notns}[thm]{Notations}
 \newtheorem{addm}[thm]{Addendum}
