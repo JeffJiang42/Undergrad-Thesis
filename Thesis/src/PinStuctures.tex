@@ -1,0 +1,22 @@
+%
+\section{$\Pin^\pm_n$ Structures}
+%
+The same general construction for Spin structures works for $\Pin^\pm_n$ as well.
+%
+\begin{defn}
+Let $M$ be a smooth manifold. Then a \ib{$\Pin_n^\pm$ structure} on $M$ is the
+data of a principal $\Pin_n^\pm$-bundle $P \to M$, along with a
+$\Pin^\pm_n$-equivariant map $P \to \B_O(M)$, where the $\Pin^\pm_n$ action on
+$\B_O(M)$ is given by the double cover $\Pin^\pm_n \to O_n$.
+\end{defn}
+%
+Just like with Spin, a $\Pin^\pm_n$ structure on $M$ induces a $\Pin^\pm_{n-1}$
+on the boundary using the outward unit normal, which gives the analogous diagram
+\[\begin{tikzcd}
+\B_{\Pin^\pm}(\partial M) \ar[d]\ar[r, hookrightarrow] & \B_{\Pin^\pm}(M)\vert_{\partial M}
+\ar[d]\ar[r, hookrightarrow] & \B_{\Pin^\pm}(M) \ar[d]\\
+\B_O(\partial M) \ar[dr]\ar[r, hookrightarrow] & \B_O(M)\vert_{\partial M} 
+\ar[d]\ar[r, hookrightarrow] & \B_O(M) \ar[d]\\
+& \partial M \ar[r, hookrightarrow]& M
+\end{tikzcd}\]
+%
