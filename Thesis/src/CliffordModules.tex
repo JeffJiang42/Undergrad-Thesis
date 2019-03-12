@@ -81,5 +81,64 @@ is either isomorphic to $R$ or $L$.
 \end{proof}
 %
 This then gives a full classification of the irreducible ungraded Clifford
-modules.
+modules.\\
+
+%TODO Classify graded modules
+Since the Clifford algebras are $\Z/2\Z$ graded, we have an analogous notion
+of a graded Clifford module.
+%
+\begin{defn}
+Let $A = A^0 \oplus A^1$ be a $\Z/2\Z$ graded algebra. Then a $\Z/2\Z$
+\ib{graded module} for $A$ is a module $M = M^0 \oplus M^1$ for $A$ such that
+$A^i \cdot M^j \subset M^{i + j \mod 2}$.
+\end{defn}
+%
+A \ib{graded Clifford module} is then a $\Z/2\Z$ graded module for a Clifford
+algebra $\Cliff_{p,q}(\R)$. We already have all the ingredients we need
+to classify all of the graded Clifford modules : we have a complete
+classification of the ungraded Clifford modules, and we have the relationship
+between $\Cliff_{p,q}(\R)$ and its even subalgebra $\Cliff_{p,q}^0(\R)$.
+%
+\begin{thm}
+There is a bijective correspondence
+\[
+\set{\text{Ungraded Clifford modules over } \Cliff_{p,q}^0(\R)} \longleftrightarrow
+\set{\text{Graded Clifford modules over} \Cliff_{p,q}(\R)}
+\]
+\end{thm}
+%
+\begin{proof}
+We provide maps in both directions. Let $M = M^0 \oplus M^1$ be a graded
+module for $\Cliff_{p,q}(\R)$. The action of $\Cliff_{p,q}^0(\R)$ preserves
+the even subspace $M^0$, which gives $M^0$ the structure of an ungraded
+$\Cliff_{p,q}^0(\R)$ module. Let $r$ denote the mapping $M \mapsto M^0$. \\
+
+In the other direction, let $V$ be an ungraded module over $\Cliff_{p,q}^0(\R)$.
+Then let $t$ denote the mapping
+$V \mapsto V' = \Cliff_{p,q}(\R) \otimes_{\Cliff_{p,q}^0(\R)} V$.
+Where we treat $\Cliff_{p,q}(\R)$ as a left module under multiplication by
+elements of $\Cliff_{p,q}^0(\R)$. We then endow $V'$ the structure of a
+$\Cliff_{p,q}(\R)$ module, where $\Cliff_{p,q}(\R)$ acts on the $\Cliff_{p,q}(\R)$
+factor by left multiplication. We further impose the grading on $V'$ where
+\[
+V' = ( \Cliff^0_{p,q}(\R) \otimes_{\Cliff^0_{p,q}(\R)} V) \oplus
+(\Cliff^1_{p,q}(\R) \otimes_{\Cliff^1_{p,q}(\R)} V)
+\]
+We then claim that these two maps are inverses, which we will verify by showing
+that the compositions $r \circ t$ and $t \circ r$ are identity. We first show
+that $r \circ t$ is identity. Let $V$ be an ungraded module over $\Cliff_{p,q}^0(\R)$.
+Then the even subalgebra of $t(V) = \Cliff_{p,q} \otimes_{\Cliff_{p,q}^0(\R)} V$
+is $\Cliff^0_{p,q}(\R) \otimes_{\Cliff^0_{p,q}(\R)} V$, which is naturally isomorphic
+to $V$ itself. In the other direction, let $M = M^0 \otimes M^1$ be a module for
+$\Cliff_{p,q}(\R)$. Showing that $t \circ r$ is the identity then amounts to showing
+that $\Cliff_{p,q}(\R) \otimes_{\Cliff_{p,q}^0(\R)} M^0$ is isomorphic to $M$.
+The desired isomorphism is explicitly determined by the mapping
+$a \otimes m \mapsto a \cdot m$.
+\end{proof}
+%
+From this theorem, understanding graded Clifford modules is equivalent to understanding
+the ungraded modules, since the even subalgebra of a Clifford algebra is isomorphic
+as ungraded algebras with a smaller Clifford algebra. Putting everything together
+gives us the complete classification of graded Clifford modules.
+%TODO The Bott song!
 %
