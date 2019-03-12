@@ -27,7 +27,7 @@ $\varphi : \pi\inv(U) \to U \times F$ such that the diagram
 \pi\inv(U) \ar[rr, "\varphi"] \ar[dr, "\pi"']&& U \times F \ar[dl, "p_U"] \\
 & U
 \end{tikzcd}\]
-Where $P_U$ denotes projection onto the first factor. The map $\varphi$ is
+commutes, where $P_U$ denotes projection onto the first factor. The map $\varphi$ is
 called a \ib{local trivialization} of the fiber bundle $\pi : E \to M$.
 \end{defn}
 %
@@ -50,7 +50,7 @@ Let $\pi : E \to M$ be a fiber bundle with model fiber $F$
 and let $f : X \to M$ be a smooth map. Then the \ib{pullback} of $E$ by $f$ is
 the data of a smooth manifold
 \[
-f^*E = \set{(x, p)~:~ x \in X, p \in \pi\inv(f(x) }
+f^*E = \set{(x, p)~:~ x \in X, p \in \pi\inv(f(x)) }
 \]
 along with the projection $p : f^*E \to M$ given by $(x,p) \mapsto x$, giving
 $f^*E \to X$ the structure of a fiber bundle over $X$ with model fiber $F$.
@@ -144,7 +144,7 @@ that is $G$-equivariant.
 \begin{exmp}
 Given a smooth manifold $M$ and a point $p \in M$, a basis of the
 tangent space is a linear isomorphism $b : \R^n \to T_pM$. The group
-$GL_n\R$ acts on the set of bases $\mathcal{B}_p$  on the right by
+$GL_n\R$ acts freely and transitively on the set of bases $\mathcal{B}_p$ on the right by
 $b \cdot g = b \circ g$. Then the \ib{frame bundle} of $M$, denoted
 $\mathcal{B}(M)$ is the disjoint union
 \[
@@ -155,14 +155,14 @@ is a principal $GL_n\R$ bundle over $M$.
 \end{exmp}
 %
 \begin{exmp}
-Given a smooth manifold $M$ with a Riemannian metric $g$, this induces an inner
-product on each tangent space. Then the set of orthonormal bases of $T_pM$ is the
+Given a smooth manifold $M$, a Riemannian metric $g$ induces an inner product
+$g_p$ on each tangent space $T_pM$, where $g_p$ denotes the metric $g$ evaluated
+at $p$. Then the set of orthonormal bases of $T_pM$ is the
 set of all linear isometries $(\R^n, \langle\cdot,\cdot\rangle) \to (M, g_p)$
-where $\langle\cdot,\cdot\rangle$ is the standard inner product on $\R^n$ and
-$g_p$ is the Riemannian metric evaluated at $p$. Then the disjoint union over
-all points $p$ of orthonormal bases for the tangent spaces forms the
-\ib{orthonormal frame bundle} $\mathcal{B}_O(M)$, which is a principal $O_n$
-bundle.
+where $\langle\cdot,\cdot\rangle$ is the standard inner product on $\R^n$.
+Then taking the disjoint union over all points $p\in M$ of orthonormal bases
+for the tangent spaces $T_pM$ forms the \ib{orthonormal frame bundle}
+$\mathcal{B}_O(M)$, which is a principal $O_n$ bundle.
 \end{exmp}
 %
 \begin{defn}
@@ -175,7 +175,7 @@ P \times_G F = P \times G / (p,g) \sim (p\cdot h, h\inv g)
 Since the group action on $P$ preserves the fibers, the projection
 $p_1 : P \times F \to P$ composed with the projection $\pi : P \to M$
 descends to the quotient, givng us a projection map
-$P \times_G F \to M$.
+$\Phi : P \times_G F \to M$.
 \end{defn}
 %
 The first thing to check is that $P \times_G F$ is a fiber bundle, justifying
@@ -190,9 +190,8 @@ model fiber $F$.
 \begin{proof}
 We wish to provide local trivializations  $\Phi\inv(U) \to U \times F$ for the
 associated bundle. Fix a local trivialization  $\psi : \pi\inv(U) \to U \times G$.
-Then $\psi$ is of the form $\psi(p) = (\pi(p), \tilde{\psi}(p))$
-for some $\tilde{\psi} : \pi\inv(U) \to G$, and
-$\tilde{\psi}(p\cdot g) = \tilde{\psi}(p)g$.
+Then $\psi$ is of the form $\psi(p) = (\pi(p), \tilde{\psi}(p))$ for some
+$\tilde{\psi} : \pi\inv(U) \to G$, satisfying $\tilde{\psi}(p\cdot g) = \tilde{\psi}(p)g$.
 Define
 \begin{align*}
 \varphi : \Phi\inv(U) &\to U \times F \\
@@ -242,7 +241,7 @@ Let $\pi : P \to M$ be a principal $G$-bundle. Then there is a bijection
 %
 \begin{proof}
 Since $F$ has a left $G$-action, we first convert this to a right $G$-action
-by $f \cdot g = g\inv f$. Then what we mean by a $G$-equivariant map is
+by $f \cdot g = g\inv \cdot f$. Then what we mean by a $G$-equivariant map is
 a map $\varphi : P \to F$ such that
 \[
 \varphi(p\cdot g) = g\inv\cdot \varphi(p)

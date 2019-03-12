@@ -30,7 +30,36 @@ V \ar[dr, "\varphi"] \ar[d, "i"'] \\
 \end{tikzcd}\]
 \end{defn}
 %
-Explicitly, we can construct $\Cliff(V,b)$ as a quotient of the tensor algebra
+This universal property uniquely characterizes the Clifford algebra $\Cliff(V,b)$
+up to unique isomorphism.
+%
+\begin{thm}
+The Clifford algebra is unique up to unique isomorphism, i.e. given
+another unital associative algebra $C$ equipped with a linear map $j : V \to C$
+satisfying the universal property, there exists a unique algebra isomorphism
+$\varphi : \Cliff(V,b) \to C$.
+\end{thm}
+%
+\begin{proof}
+Given such an algebra $C$ with a map $j: V \to C$, the map $j$
+satisfies the Clifford relation $j(v)^2 = b(v,v)$, so it induces a unique map
+$\varphi : \Cliff(V,b) \to C$. The map $i : V \to \Cliff(V,b)$ also
+satisfies the Clifford relation, so it induces a map $\psi : C \to \Cliff(V,b)$.
+We claim that these maps are inverses. To do so, we show the compositions
+$\varphi \circ \psi$ and $\psi \circ \varphi$ are identity. Using the
+universal property of the Clifford algebra once more, the map $i$ induces
+a unique map $\Cliff(V,b) \to \Cliff(V,b)$ such that
+\[\begin{tikzcd}
+V \ar[dr, "i"] \ar[d, "i"'] \\
+\Cliff(V,b) \ar[r] & \Cliff(V,b)
+\end{tikzcd}\]
+commutes. The identity map makes this diagram commute, so by uniqueness, this is
+the induced map. The map $\psi \circ \varphi$ also makes this diagram commute,
+so it must be identity by uniqueness. An identical proof shows that
+$\varphi \circ \psi$ is the identity map $\id_C$.
+\end{proof}
+%
+Explicitly, $\Cliff(V,b)$ is realized as a quotient of the tensor algebra
 \[
 \mathcal{T}(V) = \bigoplus_{n \in \Z^{\geq 0}} V^{\otimes n}
 \]
@@ -63,7 +92,8 @@ Any bilinear form $b$ of signature $(p,q)$ admits a basis $\set{e_i}$ satisfying
   \item For $i \neq j$, we have $b(e_i,e_j) = 0$
 \end{enumerate}
 %
-Any such basis then determines an isomorphism $(V,b) \to \R^{p,q}$.
+Any such basis then determines an isomorphism $(V,b) \to \R^{p,q}$.\, and we
+call such a basis an \ib{orthogonal basis} for $(V,b)$.
 In addition, we get a basis for $\Cliff(V,b)$, given by
 \[
 \set{e_{i_1}e_{i_2}\cdots e_{i_k}~:~ 0 \leq k \leq n, ~ 1 \leq i_j \leq n}
@@ -87,28 +117,31 @@ if $i \neq j$.
 \begin{defn}\footnote{It is common in the literature to refer to $\Z/2\Z$
 graded vector spaces as super vector spaces. The ``super" prefix often refers
 to a $\Z/2\Z$ grading on the relevant object.}
-Let $V$ be a vector space. A $\Z /2\Z$ \ib{grading} on $V$ is a decomposition
-$V = V^0 \oplus V^1$. Equivalently, it is the data of a linear map
-$\varepsilon : V \to V$ such that $\varepsilon$ acts by identity on a subspace $V^0$
-of $V$ and negative identity on a complementary subspace $V^1$, which gives us the
-desired direct sum decomposition of $V$ as the $\pm 1$ eigenspaces of $\varepsilon$.
-The map $\varepsilon$ is called the \ib{grading operator}. Elements of $V^0$
-are said to be \ib{even} and elements of $V^1$ are said to be \ib{odd}. Elements
-of the even and odd subspaces are said to be \ib{homogeneous}. Given an homogeneous
-element $v \in V$, define its \ib{parity}, denoted $|v|$ by
+Let $V$ be a vector space. A $\Z /2\Z$ \ib{grading} on $V$ is a direct sum
+decomposition $V = V^0 \oplus V^1$. Elements of $V^0$ are said to be \ib{even}
+and elements of $V^1$ are said to be \ib{odd}. Elements of the even and odd
+subspaces are said to be \ib{homogeneous}. Given an homogeneous element
+$v \in V$, define its \ib{parity}, denoted $|v|$ by
 \[
 |v| = \begin{cases}
 0 & v \in V^0 \\
 1 & v \in V^1
 \end{cases}
 \]
+Equivalently, it is the data of a linear map
+$\varepsilon : V \to V$ such that $\varepsilon$ acts by identity on a subspace $V^0$
+of $V$ and negative identity on a complementary subspace $V^1$, which gives us the
+desired direct sum decomposition of $V$ as the $\pm 1$ eigenspaces of $\varepsilon$.
+The map $\varepsilon$ is called the \ib{grading operator}.
+
 \end{defn}
 %
 \begin{defn}
 A $\Z/2\Z$ \ib{graded algebra} $A$ over $\R$ (often called a superalgebra) is
 an $\R$-algebra $A$ equipped with a grading $A = A^0 \oplus A^1$ such that
-the multiplication respects the grading, i.e. given elements $a,b \in A$, Their
-product $ab$ is an element of $A^{|a| + |b|}$ where the addition is done mod $2$.
+the multiplication respects the grading, i.e. given homogeneous elements
+$a,b \in A$, Their product $ab$ is an element of $A^{|a| + |b|}$ where the
+addition is done mod $2$.
 \end{defn}
 %
 \begin{exmp}\enumbreak
@@ -117,9 +150,9 @@ product $ab$ is an element of $A^{|a| + |b|}$ where the addition is done mod $2$
   $A^0 = A$ and $A^1 = 0$.
   \item The exterior algebra $\Lambda^\bullet V$ of a vector space $V$ is
   a $\Z/2\Z$ graded algebra (in fact, it is $\Z$ graded), where the grading is
-  $\Lambda^\bullet V = \Lambda^0 V \oplus \Lambda^1 V$ where $\Lambda^0 V$
-  is the subspace spanned by even products of vectors and $\Lambda^1 V$ is the
-  subspace spanned by odd products of vectors.
+  $\Lambda^\bullet V = \Lambda^{\text{even}} V \oplus \Lambda^{\text{odd}} V$
+  where $\Lambda^0 V$ is the subspace spanned by even products of vectors and
+  $\Lambda^1 V$ is the subspace spanned by odd products of vectors.
 \end{enumerate}
 \end{exmp}
 %
@@ -127,13 +160,14 @@ For the most part, the algebras we work with will be $\Z/2\Z$ graded, so
 the term ``graded" may be used in lieu of ``$\Z/2\Z$ graded." In the case of
 ambiguity, we will specify the grading. \\
 The Clifford algebra $\Cliff(V,b)$ is naturally a $\Z/2\Z$ graded algebra. Fix
-a basis $\set{e_i}$ for $\Cliff(V,b)$. We then define a grading
+a basis $\set{e_i}$ for $\Cliff(V,b)$. We then define the grading
 \[
 \Cliff(V,b) = \Cliff^0(V,b) \oplus \Cliff^1(V,b)
 \]
 Where $\Cliff^0(V,b)$ is the $\R$-span of all even products of basis vectors,
-and $\Cliff^1(V,b)$ is the $\R$-span of all odd products of basis vectors. In
-particular, $\Cliff^0(V,b)$ forms a subalgebra, and is called the \ib{even
+and $\Cliff^1(V,b)$ is the $\R$-span of all odd products of basis vectors.
+Since the product of even elements is again even, the subspace
+$\Cliff^0(V,b)$ forms a subalgebra, and is called the \ib{even
 subalgebra}. There is an extremely nice relationship between a Clifford algebra
 and its even subalgebra.
 %
@@ -144,7 +178,7 @@ and $\Cliff_{p,q-1}$ as ungraded algebras (as long as $p-1 > 0$ or $q-1 > 0$.)
 %
 \begin{proof}
 Fix a basis $\set{e_1^+, \ldots e_p^+, e_1^- \ldots e_q^-}$ for $\R^{p,q}$, where
-$(e_i^+)^2 = 1$ and $(e_i^-)^2 = -1$. Then a quick computation shows that
+$(e_i^+)^2 = 1$ and $(e_i^-)^2 = -1$. We then compute
 %
 \begin{align*}
 (e_i^+e_j^+)^2 &= -(e_i^+)^2(e_j^+)^2 = -1 \\
@@ -186,7 +220,12 @@ multiplication is defined as
 \]
 In the case that both $A$ and $B$ are $\Z/2\Z$ graded algebras, we have an alternate
 version of the tensor product, where the underlying vector space is also
-$A \otimes B$, but the multiplication is given by
+$A \otimes B$. The grading on the tensor product is the decomposition
+\[
+A \otimes B = (A^0 \otimes B^0 \oplus A^1 \otimes A^1) \oplus (A^0 \otimes B^1
+\oplus A^1 \otimes B^0)
+\]
+and the multiplication of homogeneous elements is given by
 \[
 (a \otimes b)(c \otimes d) = (-1)^{|b||c|}(ac \otimes bd)
 \]
@@ -199,8 +238,8 @@ the algebra $A^{\text{op}}$ with the same underlying vector space, but
 the multiplication in $A^\text{op}$ is given by $a * b = ba$, where $ba$
 is the multiplication in $A$. In doing so, we are formally commuting $a$
 and $b$, so in the graded situation, we invoke the Koszul sign rule when
-defining the opposite algebra, and define the multiplication in $A^{\text{op}}$
-to be $a * b = (-1)^{|a||b|} ba$.\\
+defining multiplication in the opposite algebra, and define the multiplication
+of homogeneous elements in $A^{\text{op}}$ to be $a * b = (-1)^{|a||b|} ba$.\\
 
 One remarkable fact is that Clifford algebras are closed under the graded
 tensor product, i.e. the graded tensor products of two Clifford algebras is
@@ -215,8 +254,8 @@ $\Cliff_{p+t,q+s}(\R) \cong \Cliff_{p,q}(\R) \otimes \Cliff_{t,s}(\R)$
 %
 \begin{proof}
 To give a map $\varphi : \Cliff_{p+t,q+s}(\R) \to \Cliff_{p,q}(\R) \otimes
-\Cliff_{t,s}(\R)$, it is sufficient to specify its action on $\R^{p+t,q+s}$, to
-check that the Clifford relations hold. Let
+\Cliff_{t,s}(\R)$, it is sufficient to specify its action on $\R^{p+t,q+s}$ and
+to check that the Clifford relations hold. Let
 $\set{b_1^+,\ldots, b_{p+t}^+, b_1^-, \ldots b_{q+s}^-}$ denote the standard
 orthogonal basis for $\R^{p+t|q+s}$ where $(b_i^+)^2 = 1$ and $(b_i^-)^2 = -1$.
 We then define the bases $\set{e_i^\pm}$ and $\set{f_i^\pm}$ analogously for
@@ -235,7 +274,7 @@ e_i^- \otimes 1 & 1 \leq i \leq q \\
 %
 This map is injective on generators, so if we show that this satisfies the
 Clifford relations, then the map given by extending the map to all of
-$\Cliff_{p+t,q+s}(\R)$ will be an isomorphism by dimension reasons. Showing
+$\Cliff_{p+t,q+s}(\R)$ will be an isomorphism by a dimension count. Showing
 the Clifford relations amounts to showing
 %
 \begin{enumerate}
@@ -256,7 +295,7 @@ $1 \leq i \leq p$ and $p+1 \leq j \leq p+t$, we compute
 &= e_i^+ \otimes f_j^+ - e_i^+ \otimes f_j^+
 \end{align*}
 where we use the Koszul sign rule for the second term, noting that $f_j+$ and
-$e_i^+$ are both odd. The proof that the images of the $b_i^-$ anti commute with
+$e_i^+$ are both odd elements. The proof that the images of the $b_i^-$ anti commute with
 each other, as well as the proof that the images of the $b_i^+$ and $b_i^-$
 anticommute are exactly the same.
 %
@@ -270,7 +309,7 @@ $\Cliff_{q,p}$.
 \begin{proof}
 Fix an orthgonal basis $\set{e_i^\pm}$ for $\R^{p,q}$, where
 $(e_i^\pm)^2 = \pm 1$. We note that since the $e_i^\pm$ are odd elements,
-they square to $e_i^\mp$ in the opposite algebra. Indeed, the mapping
+they square to $\mp 1$ in the opposite algebra. Indeed, the mapping
 $e_i^\pm \to e_i^\mp$ defines the isomorphism
 $\Cliff_{p,q}^\text{op} \to \Cliff_{q,p}$.
 \end{proof}
