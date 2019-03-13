@@ -139,6 +139,122 @@ $a \otimes m \mapsto a \cdot m$.
 From this theorem, understanding graded Clifford modules is equivalent to understanding
 the ungraded modules, since the even subalgebra of a Clifford algebra is isomorphic
 as ungraded algebras with a smaller Clifford algebra. Putting everything together
-gives us the complete classification of graded Clifford modules.
+gives us the complete classification of graded Clifford modules.\\
 %TODO The Bott song!
+%
+Given a ring homomorphism $\varphi : A \to B$, this induces a pullback map
+${}_A\mathsf{Mod} \to {}_B\mathsf{Mod}$ of modules. Given a $B$ module $M$,
+we get an $A$ module via $\varphi$ by defining the ring action on the underlying
+abelian group of $M$ to be $a \cdot m = \varphi(a)m$, where the right hand side
+is the ring action from $B$. This pullback map reveals a beautiful periodicity
+among the Clifford algebras and their modules, which is one of the many forms
+of \ib{Bott periodicity}. The Clifford modules over a fixed Clifford algebra
+$\Cliff_{p,q}(\R)$ form a commutative monoid under the direct sum, which
+we denote $\M_{p,q}$. The inclusion $\R^{p,q} \hookrightarrow \R^{p,q+1}$ induces
+an inclusion $\Cliff_{p,q}(\R) \hookrightarrow \Cliff_{p,q+1}(\R)$, which then
+induces a monoid homomorphism $\M_{p,q+1} \to \M_{p,q}$. Likewise, the inclusion
+$\R^{p,q}\hookrightarrow \R^{p+1,q}$ induces a monoid homomorphism
+$\M_{p+1,q} \to \M_{q,p+1}$. Since these monoid maps are induced by
+inclusions, they represent the restriction of Clifford modules. We can then
+compute the cokernels of these restrictions, which computes the degree to
+which Clifford modules of $\Cliff_{p,q}(\R)$ fail to extend to Clifford modules
+over $\Cliff_{p+1,q}(\R)$ and $\Cliff_{p,q+1}(\R)$. To compute these cokernels,
+it suffices to compute it for the table, since tensoring with $M_{16}\R$ will
+result in the pattern in the chessboard to repeat. From the Clifford chessboard,
+we observe that the inclusion of $\Cliff_{p,q}(\R)$ into $\Cliff_{p+1,q}(\R)$
+and $\Cliff_{p,q+1}$ falls into one of the following four cases.
+%
+\begin{enumerate}
+  \item $M_n\F \hookrightarrow M_n\F'$ where $\F = \R$ or $\C$, and $\F' = \C$
+  or $\H$ is the division algebra of twice the dimension of $\F$ as a
+  vector space over $\R$.
+  \item $M_n\F \times M_n\F \hookrightarrow M_{2n}\F$.
+  \item $M_n\F' \hookrightarrow M_{2n}\F$, where $\F$ and $\F'$ are defined as above.
+  \item $M_n\F \hookrightarrow M_n\F \times M_n\F$.
+\end{enumerate}
+%
+Using semisimplicity of the Clifford algebras, along with out classification of
+the ungraded Clifford modules, we then compute the cokernels for all of these
+cases.
+%
+\begin{enumerate}
+  \item In this case, the irreducible module for $M_n\F'$ is $(F')^n$, which is
+  twice the dimension of $\F^n$ as an $\R$ vector space. Then since both
+  $M_n\F$ and $M_n\F'$ admit only a single irreducible module, the monoid homomorphism
+  is a map $\Z^{\geq 0} \to \Z^{\geq 0}$ where $1 \mapsto 2$. The cokernel is then
+  the group $\Z/2\Z$.
+  \item The algebra $M_n\F \times M_n\F$ injects into $M_{2n}\F$ as block matrices
+  of the form
+  \[
+  \begin{pmatrix}
+  A & 0 \\
+  0 & B
+  \end{pmatrix}
+  \]
+  with $A,B \in M_n\F$. From this, we see that the irreducible module $\F^{2n}$
+  decomposes into a direct sum of the two irreducible modules for $M_n\F \times M_n\F$.
+  The monoid homomorphism $\Z^{\geq 0} \to \Z^{\geq 0} \times \Z^{\geq 0}$ is
+  then given by $1 \mapsto (1,1)$, and the cokernel is the group $\Z$.
+  \item In this case, the irreduible modules $(\F')^n$ and $\F^{2n}$ are the
+  same dimension as vector spaces over $\R$, so the monoid homomorphism is given
+  by $1\mapsto 1$, so the cokernel is the trivial group $0$.
+  \item In this case, both irreducible modules for the product $M_n\F \times M_n\F$
+  are the same dimension as the irreducible module for $M_n\F$, so the monoid homomorphism
+  $\Z^{\geq 0 }\times \Z^{\geq 0} \to \Z^{\geq 0}$ is given by $(1,0) \mapsto 1$
+  and $(0,1) \mapsto 1$, so the cokernel is again the trivial group $0$.
+\end{enumerate}
+%
+With these cokernels in hand, we can fill in the table \\\\
+%
+\resizebox{.72\width}{!}{
+\centering
+\begin{tabular}{c |c|c|c|c|c|c|c|c|}
+\hline
+7 & \slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$0$} & \slashbox{$\Z$}{$\Z$} &
+\slashbox{$0$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} &
+\slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$\Z/2\Z$}\\
+\hline
+6 & \slashbox{$0$}{$0$} & \slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$0$} &
+\slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z$}{$\Z$} &
+\slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$\Z/2\Z$}\\
+\hline
+5 &  \slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} &
+\slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$\Z/2\Z$} &
+\slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$0$}\\
+\hline
+4 & \slashbox{$0$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} &
+\slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$\Z/2\Z$} &
+\slashbox{$0$}{$0$} & \slashbox{$\Z$}{$\Z$}\\
+\hline
+3 &  \slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z$}{$\Z$} &
+\slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$0$} &
+\slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$0$}\\
+\hline
+2 & \slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$\Z/2\Z$} &
+\slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$0$} & \slashbox{$\Z$}{$\Z$} &
+\slashbox{$0$}{$0$} & \slashbox{$\Z/2\Z$}{$0$}\\
+\hline
+1 & \slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$\Z/2\Z$} &
+\slashbox{$0$}{$0$} & \slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$0$} &
+\slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z/2\Z$}{$0$}\\
+\hline
+0 & \slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$\Z/2\Z$} & \slashbox{0}{0} &
+\slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} &
+\slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z$}{$\Z$}\\
+\hline
+\slashbox{p}{q} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7
+\end{tabular}
+} \\\\\\
+where the top left corner of each box is the cokernel for the monoid homomorphism
+incuded by the inclusion $\Cliff_{p,q}(\R) \hookrightarrow \Cliff_{p+1,q}(\R)$,
+and the bottom right  corner is the cokernel for the monoid homomorphism induced
+by the inclusion $\Cliff_{p,q}(\R) \hookrightarrow \Cliff_{p,q+1}(\R)$. There
+is an analogous table for the graded modules, where everything is shifted right
+one square. The periodicity patterns in this table are one of the many
+forms of \ib{Bott periodicity}, which has wide ranging implications in homotopy
+theory and $K$-theory. The sequence
+\[
+\Z/2\Z \qquad \Z/2\Z \qquad 0 \qquad \Z \qquad 0 \qquad 0 \qquad 0 \qquad \Z
+\]
+is affectionately called the \ib{Bott song}.
 %

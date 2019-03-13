@@ -9,7 +9,8 @@ the ``square root" of geometry and, just as understanding the concept of
 $\sqrt{-1}$ took centuries, the same might be true of spinors.} \\
 %
 \ib{-- ~ Sir Michael Atiyah}
-\subsectionend 
+%
+\subsectionend
 %
 \section{Clifford Algebras}
 %
@@ -329,7 +330,8 @@ algebras over $\R$.
   to $\C$, where the isomorphism is given by $e_1 \mapsto i$.
   \item As ungraded algebras, $\Cliff_{0,2}(\R)$ is isomorphic to the quaternions
   $\H$, where the isomorphism is given by $e_1 \mapsto i$ and $e_2 \mapsto j$.
-  \item As graded algebras, $\Cliff_{1,1}(\R)$ is isomorphic to $\End(\R^{1|1})$.
+  \item As graded algebras, $\Cliff_{1,1}(\R)$ is isomorphic to $\End(\R^{1|1})$,
+  where $\R^{1|1}$ denotes the $\Z/2\Z$ graded vector space $\R \oplus \R$.
   The isomorphism is given by
   \[
   e_1^+ \mapsto \begin{pmatrix}
@@ -358,26 +360,27 @@ algebras over $\R$.
 %
 To classify all Clifford algebras as ungraded algebras, it suffices to know
 the following table: \\\\
-\resizebox{.8\width}{!}{
+\resizebox{.72\width}{!}{
 \centering
-\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\begin{tabular}{c |c|c|c|c|c|c|c|c|}
 \hline
-$M_8\C$ & $M_8\H$ & $M_8\H \times M_8\H$ & $M_{16}\H$ & $M_{32}\C$ & $M_{64}\R$ & $M_{64}\R \times M_{64}\R$ & $M_{128}\R$ \\
+7 & $M_8\C$ & $M_8\H$ & $M_8\H \times M_8\H$ & $M_{16}\H$ & $M_{32}\C$ & $M_{64}\R$ & $M_{64}\R \times M_{64}\R$ & $M_{128}\R$ \\
 \hline
-$M_4\H$ & $M_4\H \times M_4\H$ & $M_8\H$ & $M_{16}\C$ & $M_{32}\R$ & $M_{32}\R \times M_{32}\R$ & $M_{64}\R$ & $M_{64}\C$ \\
+6 & $M_4\H$ & $M_4\H \times M_4\H$ & $M_8\H$ & $M_{16}\C$ & $M_{32}\R$ & $M_{32}\R \times M_{32}\R$ & $M_{64}\R$ & $M_{64}\C$ \\
 \hline
-$M_2\H \times M_2\H$ & $M_4\H$ & $M_8\C$ & $M_{16}\R$ & $M_{16}\R \times M_{16}\R$ & $M_{32}\R$ & $M_{32}\C$ & $M_{32}\H$ \\
+5 & $M_2\H \times M_2\H$ & $M_4\H$ & $M_8\C$ & $M_{16}\R$ & $M_{16}\R \times M_{16}\R$ & $M_{32}\R$ & $M_{32}\C$ & $M_{32}\H$ \\
 \hline
-$M_2\H$ & $M_4\C$ & $M_8\R$ & $M_8\R \times M_8\R$ & $M_{16}\R$ & $M_{16}\C$ & $M_{16}\H$ & $M_{16}\H \times M_{16}\H$ \\
+4 & $M_2\H$ & $M_4\C$ & $M_8\R$ & $M_8\R \times M_8\R$ & $M_{16}\R$ & $M_{16}\C$ & $M_{16}\H$ & $M_{16}\H \times M_{16}\H$ \\
 \hline
-$M_2\C$ & $M_4\R$ & $M_4\R \times M_4\R$ & $M_8\R$ & $M_8\C$ & $M_8\H$ & $M_8\H \times M_8\H$ & $M_{16}\H$ \\
+3 & $M_2\C$ & $M_4\R$ & $M_4\R \times M_4\R$ & $M_8\R$ & $M_8\C$ & $M_8\H$ & $M_8\H \times M_8\H$ & $M_{16}\H$ \\
 \hline
-$M_2\R$ & $M_2\R \times M_2\R$ & $M_4\R$ & $M_4\C$ & $M_4\H$ & $M_4\H \times M_4\H$ & $M_8\H$ & $M_{16}\C$ \\
+2 & $M_2\R$ & $M_2\R \times M_2\R$ & $M_4\R$ & $M_4\C$ & $M_4\H$ & $M_4\H \times M_4\H$ & $M_8\H$ & $M_{16}\C$ \\
 \hline
-$\R \times \R$ & $M_2\R$ & $M_2\C$ & $M_2\H$ & $M_2\H \times M_2\H$ & $M_4\H$ & $M_8\C$ & $M_{16}\R$ \\
+1 & $\R \times \R$ & $M_2\R$ & $M_2\C$ & $M_2\H$ & $M_2\H \times M_2\H$ & $M_4\H$ & $M_8\C$ & $M_{16}\R$ \\
 \hline
-$\R$ & $\C$ & $\H$ & $\H \times \H$ & $M_2\H$ & $M_4\C$ & $M_8\R$ & $M_8\R \times M_8\R$\\
+0 &  $\R$ & $\C$ & $\H$ & $\H \times \H$ & $M_2\H$ & $M_4\C$ & $M_8\R$ & $M_8\R \times M_8\R$\\
 \hline
+\slashbox{p}{q} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7
 \end{tabular}
 }
 $ $\\\\\\
