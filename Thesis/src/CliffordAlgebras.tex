@@ -2,7 +2,6 @@
 \chapter{Clifford Algebras and Spin Groups}
 %
 \subsectionend
-\iffalse
 $ $\\
 \emph{No one fully understands spinors. Their algebra is formally understood,
 but their geometrical significance is mysterious. In some sense they describe
@@ -10,8 +9,7 @@ the ``square root" of geometry and, just as understanding the concept of
 $\sqrt{-1}$ took centuries, the same might be true of spinors.} \\
 %
 \ib{-- ~ Sir Michael Atiyah}
-\subsectionend
-\fi
+\subsectionend 
 %
 \section{Clifford Algebras}
 %
@@ -21,8 +19,9 @@ symmetric bilinear form $b : V \times V \to \R$. Then the \ib{Clifford Algebra}
 of $V$ is the data of a unital associative $\R$-algebra $\Cliff(V,b)$ and a linear
 map $i : V \to \Cliff(V,b)$ satisfying the following universal property:
 Given any linear map $\varphi : V \to A$ of $V$ into any unital associative
-$\R$-algebra $A$ satisfying $\varphi(v)^2 = b(v,v)$, there exists a unique map
-$\tilde{\varphi}: \Cliff(V,b) \to A$ such that the following diagram commutes:
+$\R$-algebra $A$ satisfying $\varphi(v)^2 = b(v,v)$, there exists a unique algebra
+homomorphism $\tilde{\varphi}: \Cliff(V,b) \to A$ such that the following
+diagram commutes:
 %
 \[\begin{tikzcd}
 V \ar[dr, "\varphi"] \ar[d, "i"'] \\
@@ -72,7 +71,7 @@ quotient map. We identify $V$ with its image $i(V)$ as a subspace of $\Cliff(V,b
 \begin{defn}
 Define the bilinear form $b : \R^{p+q} \times \R^{p+q} \to \R$ by
 \[
-b(v,w) = \sum_{i = 1}^{p} v^iw^i - \sum_{i = p+1}^{p+1} v^iw^i
+b(v,w) = \sum_{i = 1}^{p} v^iw^i - \sum_{i = p+1}^{p+q} v^iw^i
 \]
 where the $v^i$ and $w^i$ are the components of $v$ and $w$ with respect to
 the standard basis on $\R^{p+q}$. We denote the vector space $\R^{p+q}$
@@ -82,7 +81,7 @@ equipped with this bilinear form as $\R^{p,q}$.
 Let $V$ be a vector space equipped with a nondegenerate bilinear form $b$ and
 fix a basis for $V$. Then the bilinear form $b$ is given by a symmetric
 invertible matrix $B$, which is conjugate to a diagonal matrix where all
-the diagonal entries are either $1$ or $-1$. If after conjugation $B$ has
+the diagonal entries are either $1$ or $-1$. If after conjugation, $B$ has
 $p$ positive entries and $q$ negative entries, we say $b$ has signature $(p,q)$.
 Any bilinear form $b$ of signature $(p,q)$ admits a basis $\set{e_i}$ satisfying
 %
@@ -94,7 +93,7 @@ Any bilinear form $b$ of signature $(p,q)$ admits a basis $\set{e_i}$ satisfying
 %
 Any such basis then determines an isomorphism $(V,b) \to \R^{p,q}$.\, and we
 call such a basis an \ib{orthogonal basis} for $(V,b)$.
-In addition, we get a basis for $\Cliff(V,b)$, given by
+In addition, we get a basis for $\Cliff(V,b)$ given by
 \[
 \set{e_{i_1}e_{i_2}\cdots e_{i_k}~:~ 0 \leq k \leq n, ~ 1 \leq i_j \leq n}
 \]
@@ -153,6 +152,11 @@ addition is done mod $2$.
   $\Lambda^\bullet V = \Lambda^{\text{even}} V \oplus \Lambda^{\text{odd}} V$
   where $\Lambda^0 V$ is the subspace spanned by even products of vectors and
   $\Lambda^1 V$ is the subspace spanned by odd products of vectors.
+  \item Let $V = V^0 \oplus V^1$ be a $\Z/2\Z$ graded vector space. Then the
+  algebra of endomorphisms $\End V$ can be endowed with the structure of a
+  graded algebra, where the even subspace consists of linear maps preserving
+  the decomposition $V^0 \oplus V^1$, and the odd subspace consists of
+  linear maps $T$ reversing the decomposition, i.e. $T(V^i) = V^{i + 1 \mod 2}$.
 \end{enumerate}
 \end{exmp}
 %

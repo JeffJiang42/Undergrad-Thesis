@@ -1,7 +1,90 @@
 %
 \chapter*{Introduction}
 %
-\subsectionend
+\subsectionend $ $\\
+\emph{Every morning in the early part of October 1843, on my coming down to
+breakfast, your brother William Edwin and yourself used to ask me: "Well,
+Papa, can you multiply triples?" Whereto I was always obliged to reply, with a
+sad shake of the head, "No, I can only add and subtract them."}\\
+%
+\ib{-- William Rowan Hamilton}
+%
+\subsectionend $ $\\
 %
 
+On October 16, 1843, William Rowan Hamilton famously carved the equations
+\[
+i^2 = j^2 = k^2 = ijk = -1
+\]
+into Broom Bridge, marking his discovery of the quaternions with an act of
+mathematical vandalism. It was well known at the time that the algebraic operations
+on the complex numbers $\C$ encoded a great deal of the geometry of the plane
+$\R^2$ -- addition corresponded to vector translation, and the multiplcation of
+complex numbers corresponded to scalings and rotations. After fruitlessly attempting
+to construct an analogous algebraic structure on $\R^3$, Hamilton came to the
+realization that he needed an additional dimension to encode the rotations
+of $\R^3$, therby constructing the quaternions $\H$.
+
+Later in the $19^{th}$ century, William Clifford further generalized the algebras
+$\C$ and $\H$ to higher dimensions when he constructed his geometric algebras,
+which now bear his name. Clifford's general construction created an $\R$-algebra
+that encoded the geometry of a vector space $V$ equipped with a nondegenerate
+quadratic form $Q : V \to \R$. Clifford algebras would prove to play a central
+part in the development of geometry, topology, and physics in the $20^{th}$
+century.
+
+Mathematicians in the early $20^{th}$ century were puzzled by an anomaly
+regarding linear representations of the special orthgonal groups $SO_n$.
+When studying the representations of the Lie algebras $\mathfrak{so}_n$,
+they realized that some of the Lie algebra representations failed to
+exponentiate to linear representations of the group $SO_n$, and instead
+gave rise to projective representations. The root of the problem was the
+fact that the special orthgonal groups were not simply connected --
+for $n > 2$, the fundamental group $\pi_1(SO_n)$ was isomorphic to
+$\Z/2\Z$\footnote{This can be illustrated in 3 dimensions with the well-known
+belt trick, in which a 360 degree rotation of a belt buckle leaves the
+belt twisted}, which indicated the existence of a simply connected double cover
+and explained the source of the missing representations.
+At this point, Clifford algebras came to the rescue, and these double
+covers were realized as subgroups of the multiplicative groups of Clifford
+algebras. These groups were dubbed the Spin groups, and the mysterious missing
+represenatations became the Spin representations.
+
+In $1928$, Paul Dirac was developing a relativistic theory of the electron
+when he realized he needed a first order differential operator that squared
+to the Laplacian. No first order operator with scalar coefficients was able
+to satisfy this, but Dirac realized the the problem could be ameliorated with
+the use of matrices, and constructed his gamma matrices. Remarkably, the
+relations
+\[
+\gamma^\mu\gamma^\nu + \gamma^\nu\gamma^\mu = 2\eta^{\mu\nu}I
+\]
+satisfied by Dirac's gamma matrices are exactly the defining relations for the
+Clifford algebra for Minkowski spacetime $\R^{1,3}$. Using these matrices, Dirac
+derived his famous equation
+\[
+(i\gamma^\mu\partial_\mu -m)\psi = 0
+\]
+where $\psi$ was an element of the Spin representation of the group $\Spin_{1,3}$.
+Spin groups and Clifford algebras would prove to be vital elements in the development
+of quantum field theory.
+
+Not to be outdone by the physicists, mathematicians also made extensive use
+of Clifford algebras and Spin groups to produce astounding results in geometry
+and topology. Through the work of many prominent mathematicians such as Michael
+Atiyah, Isadore Singer, and Raoul Bott, Clifford algebras and Spin groups saw
+remarkable applications in fields such as $K$-theory, homotopy theory, and
+gauge theory, producing numerous seminal theorems like the Atiyah-Singer index
+theorem and the Bott periodicity theorem. In particular, Atiyah and Singer
+generalized Dirac's differential operator to manifolds equipped with a Spin
+structure -- the Dirac operator. The methods and tools developed would prove
+to be fundamental to the rapid advancement in the fields of geometry and topology
+at the time, and remain important to this day. \\
+
+In this thesis we aim to explore and develop some of the theory of
+Clifford algebras, Spin and Pin groups, and Spin/Pin structures on manifolds.
+In particular, we plan to construct and classify Clifford algebras and their
+modules, and transport these constructions to the nonlinear world of manifolds.
+We will develop some of the general theory for Spin and Pin structures on manifolds,
+and will give several examples.
 %
