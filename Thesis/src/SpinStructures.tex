@@ -180,28 +180,28 @@ into the commutative square
 \end{tikzcd}\]
 In addition, it comes equipped with a map $p : \B_{\Spin}(\partial M) \to \partial M$
 by composing the map $\B_{\Spin}(\partial M) \to \B_{SO}(\partial M)$ with the projection
-$\pi : \B_{SO}(\partial M)$. However, it is not immediately clear that the pullback
-bundle, (which we will suggestively denote by $\B_{\Spin}(\partial M)$) is
-indeed a principal $\Spin_{n-1}$-bundle over $\partial M$. As a principal
-$\Spin_n$-bundle, $\B_{\Spin}(M)\vert_{\partial M}$ comes equipped with an
-action of $\Spin_n$. We then take the subgroup $G \subset \Spin_n$ of elements
-that preserve the fibers of the map $p$. Since the $\Spin_n$ action on
-$\B_{\Spin}(M)$ is free and transtive on the fibers of
-$\B_{\Spin}(M)\vert_{\partial M} \to \partial M$, the action of $G$ on
-$\B_{\Spin}(\partial M)$ will be as well, giving it the structure of a principal
-$G$-bundle over $\partial M$. We then claim that $G \cong \Spin_{n-1}$. Since
-the fibers are $G$-torsors, it suffices to check on a single fiber of the map
-$\B_{\Spin}(M) \to \partial M$. Fix point $x \in \partial M$, and an
-oriented orthonormal frame $b \in \pi\inv(x)$. This then determines a diffeomorphism
-$\varphi : SO_{n-1} \to \pi\inv(x)$. where $\varphi(g) = g \cdot x$. This
-diffeomorphism induces a group stucture on the fiber $\pi\inv(x)$ such
-that $\varphi$ is a group isomorphism. Then the restriction of the double cover
-$\B_{\Spin}(M)\vert_{\partial M} \to \B_{SO}(M)\vert_{\partial M}$ to
-$\B_{\Spin}(\partial M)$ is also a double cover. Fixing a point $b'$ in the
-preimage of $b$ under $\B_{\Spin}(\partial M) \to B_{SO}(\partial M)$ then
-determines an isomorphism of the fiber with $G$, which then determines a $2$-$1$
-group homomorphism  $G \to SO_{n-1}$. Therefore, $G \cong \Spin_{n-1}$
-and $\B_{Spin}(\partial M)$ determines a Spin structure on $\partial M$. All in
+$\pi : \B_{SO}(\partial M) \to \partial M$. However, it is not immediately clear
+that the pullback bundle, (which we will suggestively denote by
+$\B_{\Spin}(\partial M)$) is indeed a principal $\Spin_{n-1}$-bundle over
+$\partial M$. We have a $SO_{n-1}$ action on
+$\B_{SO}(\partial M) \subset \B_{SO}(M)\vert_{\partial M}$ via the subgroup of
+matrices of the form
+\[
+\set{\begin{pmatrix}
+1 & 0 \\
+0 & A
+\end{pmatrix} ~ : ~ A \in SO_{n-1}}
+\]
+The preimage of this subgroup under the double covering $\Spin_n \to SO_n$ is
+a subgroup isomorphic to $\Spin_{n-1}$, giving us an action of $\Spin_{n-1}$ on
+$\B_{\Spin}(M)\vert_{\partial M}$ by restriction. In addition, this action
+preserves the preimage of $\B_{SO}(M)\vert_{\partial M}$ under the double
+covering $\B_{\Spin}(M)\vert_{\partial M} \to \B_{SO}(M)\vert_{\partial M}$,
+which is exactly the pullback $\B_{\Spin}(\partial M)$. Then since the
+action of $\Spin_n$ is free, the restricted action of $\Spin_{n-1}$ on
+$\B_{\Spin}(\partial M) \subset \B_{\Spin}(M)\vert_{\partial M}$ is
+free, and is transitive by construction. Therefore, $\B_{\Spin}(\partial M)$
+is the principal $\Spin_{n-1}$-bundle over $\partial M$ that we desire. All in
 all, the construction is summarized by the diagram
 \[\begin{tikzcd}
 \B_{\Spin}(\partial M) \ar[d] \ar[r, hookrightarrow] & \B_{\Spin}(M)\vert_{\partial M}
