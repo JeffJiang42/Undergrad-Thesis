@@ -354,3 +354,95 @@ admits sections corresponds to the fact that every manifold admits a Riemannian
 metric.
 \end{exmp}
 %
+Principal bundles can be thought of as a generalization of covering spaces.
+For discrete groups $G$, the data of a principal $G$-bundle $P \to M$ is the
+data of a (possibly disconnected) $|G|$-fold cover of $M$ with deck transformation
+group isomorphic to $G$. Discreteness of $G$ allows for a very complete description
+of all principal $G$-bundles over a given manifold $M$.
+%
+\begin{defn}
+Let $(M,x_0)$ be a pointed topological space (in our case, usually a manifold),
+i.e. a space $M$ with a choice of distinguished basepoint $x_0 \in M$. Then
+a \ib{pointed principal $G$-bundle} over $M$ is the data of a principal $G$-bundle
+$\pi : P \to M$, along with a choice of basepoint $p_0 \in \pi\inv(x_0)$. We
+denote this as $\pi : (P,p_0) \to (M, x_0)$. We denote the set of pointed principal
+$G$-bundles over $(M,x_0)$ as $\Bun_G(M ,x_0)$.
+\end{defn}
+%
+We now recall some properties of covering spaces. A pointed covering space
+$\pi : (\tilde{M}, \tilde{x_0}) \to (M, x_0)$ has the \ib{path lifting} property,
+i.e. given a path $\gamma : I \to M$ with $\gamma(0) = x_0$, there exists a
+unique path $\tilde{\gamma} : I \to \tilde{M}$ with $\gamma(0) = \tilde{x_0}$
+such that $\pi \circ \tilde{\gamma} = \gamma$. In addition, the covering
+space has the \ib{homotopy lifting property}. Given paths
+$\gamma_1, \gamma_2 : I \to M$ with $\gamma_i(0) = x_0$ and a homotopy
+$F : I \times I \to M$ from $\gamma_1$ to $\gamma_2$, there exists a unique
+homotopy $\tilde{F} : I \times I \to \tilde{M}$ between $\tilde{\gamma}_1$
+and $\tilde{\gamma_2}$. These two facts define an action of $\pi_1(M, x_0)$
+on the fiber $\pi\inv(x_0)$ where given a homotopy class $[\gamma]$ of
+loops, the action of $[\gamma]$ on $p \in \pi\inv(x_0)$ is the endpoint
+of $\tilde{\gamma}(1)$ of the lifted loop $\tilde{\gamma}$. The unique
+path lifting and homotopy lifting properties guarantees that this defines
+a group action, called the \ib{holonomy} of the covering space. In the
+special case that our covering space is a principal $G$-bundle with a discrete $G$,
+the point $\tilde{\gamma}(1)$ is equal to $\tilde{x_0} \cdot g$ for a unique
+group element $g \in G$, so the holonomy action determines a group homomorphism
+$\pi_1(M, x_0) \to G$. In fact, the holonomy completely determines the
+%
+\begin{thm}
+For a discrete group $G$, there is a bijection
+\[
+\Bun_G(M,x_0) \longleftrightarrow \hom(\pi_1(M,x_0), G)
+\]
+\end{thm}
+%
+\begin{proof}
+We once more provide maps in both directions. Every pointed principal $G$-bundle
+$(P,p_0) \to (M, x_0)$ determines a group homomorphism $\pi_1(M,x_0) \to G$
+by the holonomy action. In the other direction, given a group homomorphism
+$\varphi : \pi_1(M, x_0) \to G$, we want to construct a pointed principal $G$
+bundle $(P, p_0) \to (M, x_0)$ with holonomy $\varphi$. Every pointed space
+$(M, x_0)$ has a \ib{universal cover} $(\tilde{M}, \tilde{x}_0) \to (M,x_0)$,
+which has a free and transitive action by $\pi_1(M,x_0)$, making it a pointed
+principal $\pi_1(M,x_0)$ bundle over $(M,x_0)$. In addition, the homomorphism
+$\varphi : \pi_1(M, x_0) \to G$ determines a left action of $\pi_1(M,x_0)$
+on $G$ by $[\gamma] \cdot g = \varphi[\gamma] g$. This allows us to define
+the associated bundle
+\[
+P = \tilde{M} \times_{\pi_1(M, x_0)} G = \tilde{X} \times G
+/ (x,g) \sim (x \cdot [\gamma], \varphi[\gamma]\inv g)
+\]
+where our distinguished basepoint $p_0 \in P$ is $p_0 = [\tilde{x}_0, e]$.
+This is a fiber bundle with model fiber $G$, and the right action of $G$
+on $\tilde{X} \times G$ descends to a free an transitive action on the quotient,
+making it a principal $G$-bundle. We then check the holonomy action of a
+loop $[\gamma] \in \pi_1(M, x_0)$. We compute for $p$ in the fiber over $x_0$
+\[
+p \cdot [\gamma] = [\tilde{x_0} \cdot [\gamma], h] \sim [x_0, \varphi[\gamma]\cdot h]
+\]
+So the holonomy is $\varphi$, giving us the desired correspondence.
+\end{proof}
+%
+The set $\Bun_G(M, x_0)$ comes equipped with an action of $G$, where the action
+of $g \in G$ on a pointed bundle $(P, p_0) \to (M, x_0)$  is by permuting basepoints,
+i.e. $(P, p_0) \cdot g = (P, p_0 \cdot g)$, where the covering map is left untouched.
+Quotienting by this group action gives us the identification of $\Bun_G(M,x_0) / G$
+with isomorphism classes of principal $G$-bundles $P \to M$. where the
+isomorphisms are without basepoints. From the perspective of pointed bundles
+$(P,p_0) \to (M, x_0)$ as homomorphisms $\varphi : \pi_1(M, x_0) \to G$,
+the group action of $G$ on $\Bun_G(M,x_0)$ is an action by conjugation.
+Given $(P, p_0) \to (M, x_0)$ with holonomy $\varphi : \pi_1(M, x_0) \to G$,
+we want to know the holonomy $\varphi_g$ of the bundle
+$(P, p_0 \cdot g) \to (M, x_0)$. Given a loop $\gamma$ based at $x_0$, let
+$\tilde{\gamma}$ denote its lift to $(P, p_0)$ by uniqueness of path lifting,
+the lift of $\gamma$ to $(P, p_0 \cdot g)$ is the path
+$\tilde{\gamma}_g(t) = \tilde{\gamma}(t) \cdot g$. Then
+%
+\begin{align*}
+\tilde{\gamma_g(1)} &= \tilde{\gamma}(1) \cdot g \\
+&= p_0 \cdot \varphi[\gamma] \cdot g \\
+&= p_0 \cdot g \cdot g\inv \cdot \varphi[\gamma] \cdot g
+\end{align*}
+%
+So $\varphi_g = g \inv\cdot\varphi\cdot g$.
+%

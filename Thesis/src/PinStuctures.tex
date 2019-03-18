@@ -23,20 +23,34 @@ on the boundary using the outward unit normal, which gives the analogous diagram
 \begin{exmp}[Pin structures on $S^1$] %TODO FIX THIS
 There are two problems to discuss here, since $\Pin_1^+$ and $\Pin_1^-$ are
 different groups, namely
+%
 \begin{align*}
 \Pin_1^+ &\cong \Z/2\Z \times \Z / 2\Z \\
 \Pin_1^- &\cong \Z/4\Z
 \end{align*}
+%
 We do the $\Pin_1^+$ case first. In this case, the Clifford algebra
 $\Cliff_{1,0}(\R)$ is isomorphic to $\R \times \R$, where the isomorphism is
 determined by $e_1 \mapsto (-1,1)$. There are two irreducible modules corresponding
 to projection onto one of the factors, so the Pinor representations are the one
 dimensional real representations $\P^+$ and $\P^-$, where the action of $e_1$ on
-$\P^\pm$ is by $\pm 1$. Let $\P = \P^+ \oplus \P^-$. In addition, we have two
-principal $\Pin^+_1$-bundles over $S^1$. One has $4$ components that are permuted
-by the action of $\Pin_1^+$, and the other has two components, which
-are both the double cover $z \mapsto z^2$.
+$\P^\pm$ is by $\pm 1$. Let $\P = \P^+ \oplus \P^-$. We then take inventory
+of all the principal $\Pin_1^+$-bundles over $S^1$. From before, we know that these
+are classified by homomorphisms $\pi_1(S^1, \theta_0) \to \Pin_1^+$ up to
+conjugation. Since $\Pin_1^+$ is abelian, the conjugation action is trivial,
+so principal $\Pin_1^+$-bundles are classified by homomorphisms
+$\pi_1(S^1,\theta_0) \to \Pin_1^+$. There are $4$ such homomorphisms,
+which are all determined by the image of the generator of $\pi_1(S^1,\theta_0)$,
+since the fundamental group is infinite cyclic.
 
+
+
+
+
+
+
+
+\iffalse
 Then for each $\Pin_1^+$-bundle,
 we take the associated bundle. For $P_1$, we have that sections of
 $P_1 \times_{\Pin_1^+} \P$ are equivalent to $\Pin_1^+$-equivariant maps
@@ -64,5 +78,6 @@ $\psi : \R \to \C$ where $f(\theta + 2\pi) = if(\theta)$. We can then write thes
 as $\psi = e^{i\theta/4}f$ for a $2\pi$-periodic function $f$, so under this
 trivialization of the associated bundle, the Dirac operator is given by
 $i\partial_\theta - \frac{1}{4}$.
+\fi
 \end{exmp}
 %
