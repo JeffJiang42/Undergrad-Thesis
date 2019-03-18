@@ -40,44 +40,94 @@ are classified by homomorphisms $\pi_1(S^1, \theta_0) \to \Pin_1^+$ up to
 conjugation. Since $\Pin_1^+$ is abelian, the conjugation action is trivial,
 so principal $\Pin_1^+$-bundles are classified by homomorphisms
 $\pi_1(S^1,\theta_0) \to \Pin_1^+$. There are $4$ such homomorphisms,
-which are all determined by the image of the generator of $\pi_1(S^1,\theta_0)$,
-since the fundamental group is infinite cyclic.
+which are all determined by the image of a generator $\alpha$ of $
+\pi_1(S^1,\theta_0)$, since the fundamental group is infinite cyclic. The bundle
+corresponding to the map $\alpha \mapsto 1$ is has $4$ connected components,
+each mapped onto diffeomorphically onto $S^1$, and the action of $\Pin_1^+$
+permutes these $4$ components. All the $\Pin_1^+$ bundles are diffeomorphic
+to two disjoint circles that both cover the circle via the map $z \mapsto z^2$,
+and are differentiated by the action of $\Pin_1^+$.
+%
+\begin{enumerate}
+  \item For the bundle corresponding to the homomorphism mapping
+  $\alpha \mapsto -1$, the element $-1$ acts by rotating both circles by $\pi$,
+  and the element $e_1$ exchanges the two circles.
+  \item For the bundle corresponding to $\alpha \mapsto e_1$, we then have that
+  $e_1$ rotates both circles by $\pi$, and $-1$ exchanges the two circles.
+  \item For the bundle corresponding to $\alpha \mapsto -e_1$, the element
+  $-e_1$ acts by rotation by $\pi$, and the element $-1$ exchanges the two
+  circles.
+\end{enumerate}
+%
+We denote all the bundles $P_g$, where $g$ is the image of $\alpha$ under
+the corresponding homomorphism. We then must determine which bundles admit
+$\Pin_1^+$-equivariant maps $P_g \to \B_O(S^1)$, which is a pair of disjoint
+circles permuted by $O_1 = \set{\pm 1}$. Under the double covering, the
+elements $\pm 1$ act trivially, while the elements $\pm e_1$ act by $-1$.
+%
+\begin{enumerate}
+  \item The bundle $P_1 \to S^1$ admits a $\Pin_1^+$-equivariant map
+  $P_1 \to \B_O(S^1)$. After mapping one of the components diffeomorphically
+  onto one of the components of $\B_O(S^1)$, we know how to map
+  the other $3$ components to make the map $\Pin_1^+$-equivariant.
+  \item The bundle $P_{-1} \to S^1$ can also define a $\Pin_1^+$ structure on
+  $S^1$. Since $-1$ rotates both circles by $\pi$, we map each component to
+  a componenet of $\B_O(S^1)$ via the double cover $z \mapsto z^2$.
+  \item The bundle $P_{e_1} \to S^1$ cannot determine a $\Pin^+_1$ structure.
+  The action of $e_1$ rotates both components of $P_{e_1}$ by $\pi$, but
+  permutes the components of $\B_O(S^1)$. Any $\Pin_1^+$-equivariant map
+  $P_{e_1} \to \B_O(S^1)$ must map one component of $P_{e_1}$ onto two
+  components of $\B_O(S^1)$, which is impossible
+  \item The bundle $P_{-e_1} \to S^1$ also cannot determine a $\Pin_1^+$
+  stucture by the same reason that $P_{e_1}$ cannot.
+\end{enumerate}
+%
+One thing to note is that an orientation of $S^1$ and a $\Pin_1^+$ structure
+on $S^1$ determine a Spin structure. A choice of component of $\B_O(S^1)$
+determines an orientation, and taking the preimage of that component
+under the maps $P_{\pm 1} \to \B_O(S^1)$, we recover a Spin structure. In
+particular, the bundle $P_1$ corresponds to the Spin structure with Dirac operator
+$i\partial_\theta$ and the bundle $P_{-1}$ corresponds to the Spin structure
+with Dirac operator $i\partial_\theta - \frac{1}{2}$.  Indeed, the associated
+bundles $P_{\pm 1} \times_{\Pin_1^+} \P$ have the same Dirac operators. \\
 
-
-
-
-
-
-
-
-\iffalse
-Then for each $\Pin_1^+$-bundle,
-we take the associated bundle. For $P_1$, we have that sections of
-$P_1 \times_{\Pin_1^+} \P$ are equivalent to $\Pin_1^+$-equivariant maps
-$P_1 \to P$. Since the action of $\Pin_1^+$ simply permutes the $4$ components
-of $P_1$ and all the components are diffeomorphic to $S^1$, we can map
-a single component to to $\P$, and this determines the map on the other $4$
-components. Therefore, sections are equivalent data to maps $S^1 \to \P$, i.e.
-$2\pi$-periodic maps $\R \to \P$. The Dirac operator $D$ for this bundle then
-given by $D = e_1\partial_\theta$. For the other bundle, there are two components,
-which are each the connected double cover of $S^1$. The element $-1$ acts in the same
-way as it did for the connected double cover, and the element $e_1$ permutes
-the two components. Then sections of the associated bundle are again equivalent
-data to $2\pi$-antiperiodic maps $S^1 \to \P$. The Dirac operator is then given
-by $i\partial_\theta - \frac{1}{2}$. \\
-
-For $\Pin_1^-$, we also have two principal bundles, which we again denote
-$P_1$ and $P_2$. The first is $P_1$, which has $4$ connected components that are cyclically
-permuted by the action of $\Pin_1^-$, and $P_2$ is the connected $4$-fold
-cover $z \mapsto z^4$. There is only a single irreducible module for $\Cliff_{0,1}(\R)$,
-which is $\C$, which is then the single Pinor representation $\P$ where
-$e_1$ acts by $i$. The associated bundle to $P_1$ is the trivial bundle with the
-Dirac operator being given by $D = i\partial_\theta$. For the second case,
-the sections of the associated bundle are determined by functions
-$\psi : \R \to \C$ where $f(\theta + 2\pi) = if(\theta)$. We can then write these
-as $\psi = e^{i\theta/4}f$ for a $2\pi$-periodic function $f$, so under this
-trivialization of the associated bundle, the Dirac operator is given by
-$i\partial_\theta - \frac{1}{4}$.
-\fi
+For the case of $\Pin_1^-$, there are again $4$ different principal $\Pin_1^-$
+bundles, classified by homomorphisms $\pi_1(S^1, \theta_0) \to \Pin_1^-$.
+As before, we let $\alpha$ denote a generator for $\pi_1(S^1, \theta_0)$, and
+let $P_g \to S^1$ denote the principal $\Pin_1^-$ bundle corresponding to
+the homomorphism mapping $\alpha \mapsto g$.
+%
+\begin{enumerate}
+  \item The bundle $P_1 \to S^1$ has $4$ components cyclically permuted
+  by the action of $e_1$.
+  \item The bundle $P_{-1} \to S^1$ has $2$ components, both double covering $S^1$.
+  the element $-1$ acts by rotation by $\pi$ on both factors, and the action
+  of $e_1$ permutes the two components.
+  \item The bundle $P_{e_1} \to S^1$ corresponds to the $4$-fold covering
+  $S^1 \to S^1$ given by $z \mapsto z^4$. The action of $e_1$ acts by
+  roation by $\pi / 2$.
+  \item The bundle $P_{-e_1} \to S^1$ also corresponds to a $4$-fold covering,
+  where the action of $-e_1$ is given by rotation by $\pi / 2$.
+\end{enumerate}
+%
+Again, we need to figure out which bundles can determine $\Pin_1^-$ structures
+on $S^1$.
+%
+\begin{enumerate}
+  \item The bundle $P_1$ admits a map $P_1 \to \B_O(S^1)$. After mapping any
+  component diffeomorphically onto a component of $\B_O(S^1)$, the rest of the
+  map is determined.
+  \item The bundle $P_{-1}$ admits a map $P_{-1} \to \B_O(S^1)$, where
+  each component maps onto a component of $\B_O(S^1)$ via the double cover
+  $z \mapsto z^2$.
+  \item This bundle cannot determine a $\Pin_1^-$ structure, since there
+  cannot exist a continuous surjective map from a connected space to a
+  disconnected space.
+  \item This bundle cannot determine a $\Pin_1^-$ structure by the same
+  reasoning as above.
+\end{enumerate}
+Again, we see that the $\Pin_1^-$ stuctures on $S^1$ correspond to $\Spin$
+stuctures once we fix an orientation, and the associated bundles to these
+$\Pin_1^-$-bundles will have the same Dirac operator.
 \end{exmp}
 %
