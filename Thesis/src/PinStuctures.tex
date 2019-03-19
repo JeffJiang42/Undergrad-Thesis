@@ -131,3 +131,69 @@ stuctures once we fix an orientation, and the associated bundles to these
 $\Pin_1^-$-bundles will have the same Dirac operator.
 \end{exmp}
 %
+On the circle, we observed that a $\Pin^\pm$ structure and and orientation
+are equivalent data to a Spin structure. This is true in general via the same
+construction. A $\Pin^\pm$ structure is the data of a principal
+$\Pin^\pm_n$-bundle $\B_{\Pin^\pm}(M) \to M$ along with a
+$\Pin^\pm_n$-equivariant map $\B_{\Pin^\pm}(M) \to \B_O(M)$. An orientation
+determines a subset $\B_{SO}(M) \subset \B_O(M)$ that is a principal
+$SO_n$-bundle over $M$, and taking the preimage of $\B_{SO}(M)$ under the
+map $\B_{\Pin^\pm}(M) \to \B_O(M)$ determines the desired Spin structure.
+%
+Unlike Spin structures, $\Pin^\pm$ structures do not require an orientation,
+and can be defined on nonorientable manifolds.
+%
+\begin{exmp}[$\Pin^\pm$ structures on the M\"obius band]
+Let $M$ denote the M\"obius band, which is the quotient space
+\[
+M = [-1,1] \times [-1,1] / (-1, x) \sim (1, -x)
+\]
+The square $S = [-1,1] \times [-1,1]$ inherits a Riemannian metric from $\R^2$,
+and the orthonormal frame bundle $\B_O(S)$ is isomorphic to
+the product $S \times O_2$. This the descends to $M$ after
+we specify gluing data for the identified edges of the square. The identification
+of the edges reverses the direction in the second factor, which corresponds to
+a transformation by the matrix
+\[
+A = \begin{pmatrix}
+1 & 0 \\
+0 & -1
+\end{pmatrix}
+\]
+Giving us that the orthonormal frame bundle $\B_O(M)$ of $M$ induced by the
+metric on $S$ is isomorphic to
+\[
+S\times O_2 / (-1,x, b) \sim (1,-x, A \cdot b)
+\]
+We do the $\Pin^+_2$ case first. Inside of $\Cliff_{2,0} \cong M_2\R$,
+the group $\Pin_2^+$ is topologically two disjoint circles. The identity component
+is \[
+\Spin_2 = \set{\cos\theta + \sin\theta e_1e_2 ~:~ \theta \in \R}
+\]
+and the second component is the subset $e_1 \cdot \Spin_2$. The square
+$S$ admits a single principal $\Pin_2^+$-bundle, which is the trivial bundle
+$S \times \Pin_2^+$, and any principal $\Pin_2^+$-bundle over $M$ will come
+by specifying gluing data of $S \times \Pin_2^+$ on the identified edges of $S$.
+More explicitly, any principal $\Pin_2^+$-bundle over $M$ will arise as a
+quotient
+\[
+S \times \Pin_2^+ / (-1,x,g) \sim (1, -x, \psi(g))
+\]
+Where $\psi : \Pin_2^+ \to \Pin_2^+$ is a $\Pin_2^+$-equivariant diffeomorphism.
+From this characterization, we can determine which maps $\psi$ determine
+a principal $\Pin^+_2$-bundle $P \to M$ that admit a $\Pin_2^+$-equivariant
+map $P \to \B_O(M)$. For points that that are not identified, i.e. points
+on $S$ with first component not equal to $\pm 1$, we can specify
+$P \to \B_O(M)$ fiberwise by the standard double cover $\Pin_2^+ \to O_2$. On
+the identified edges, in order for the map to be $\Pin_2^+$-equivariant, we
+require that the image of the equivalence class $[-1,x,g] \in P$ to be
+$[-1, x, \rho(g)]$, where $\rho : \Pin_2^+ \to O_2$ is the double cover. However,
+we have that $[-1,x,g] = [1, -x, \psi(g)]$ and
+$[-1,x,\rho(g)] = [1,-x, A \cdot \rho(g)]$, so we need $\psi(g)$ to be one
+of the preimages of $A \cdot \rho(g)$ under the double cover in order for this
+to be well defined. Since $A$ is an orthogonal transformation, it has two
+preimages under the double cover, which is $\rho\inv(A) = \pm e_1$. Therefore,
+$\psi$ must be left multiplication by either $\pm e_1$, giving us two
+$\Pin^+$ structures on $M$.
+\end{exmp}
+%
