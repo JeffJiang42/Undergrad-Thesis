@@ -38,12 +38,60 @@ D = e^i\frac{\partial}{\partial x^i}
 \]
 \end{defn}
 %
+The choice of using the dual basis elements $e^i$ instead of the $e_i$ is
+so that $D$ behaves tensorially with respect to coordinate change.
 It is not clear from the definition what function space $D$ should act on.
 The partial derivative operators make sense for any vector valued function, but
 multiplcation by $e^i$ does not make sense an arbitrary vector space -- it must
 be a Clifford module. Therefore, $D$ is an operator
 $D: C^\infty(\R^n, M) \to C^\infty(\R^n, M)$ on smooth functions from $\R^n$
-to a Clifford module $M$.
+to a Clifford module $M$. In fuller generality, functions from $\R^n \to M$
+are equivalent to smooth sections of $\R^n \times M \to \R^n$, which is a bundle
+of Clifford modules over $\R^n$. This viewpoint generalizes more naturally,
+and the Dirac operator defined on a general Riemannian manifold is an operator
+on sections of some bundle. \\
+
+The Dirac operators in dimensions $1$, $2$, and $3$ exhibit some extremely
+interesting behavior, corresponding to the appearances of $\C$ and $\H$
+when $\R^n$ is given a negative definite bilinear form. In $1$ dimension,
+the Clifford algebra $\Cliff_{0,1}(\R)$ admits the ordered basis $(1,e^1)$, which
+then gives a basis for $C^\infty(\R, \Cliff_{0,1}(\R))$ as a
+$\C^\infty(\R)$ module where for any $f : \R \to \Cliff_{0,1}(\R)$, we have the
+decomposition $f(x) = u(x) + e^1 v(x)$ , giving a column vector representation
+\[
+f = \begin{pmatrix}
+u \\
+v
+\end{pmatrix}
+\]
+The Dirac operator is $e^1\partial_x$, which is represented in matrix form as
+\[
+D = \begin{pmatrix}
+0 & -\partial_x \\
+\partial_x & 0
+\end{pmatrix}
+\]
+Note that the matrix is block off-diagonal. Since we picked the ordered basis $(1,e^1)$.
+for $\Cliff_{0,1}(\R)$, whose elements are even and odd respectively, this
+shows that $D$ is an odd operator, as it reverses the grading. \\
+
+In $2$ dimensions, $\Cliff_{0,2}(\R)$ has the ordered basis $(1, e^1e^2, e_1,e_2)$,
+where we choose the ordering by the parity of the elements. Again, we can
+write any function $f : \R^2 \to \Cliff_{0,2}(\R)$ in terms of this basis
+as \[
+f(x,y) = f_0(x,y) + e^1e^2f_{12}(x,y) + e^1f_1(x,y) + e^2f_2(x,y)
+\]
+where the component functions are all elements of $C^\infty(\R^2)$. In this
+basis, the action of the dirac operator $D = e^1]\partial_x + e^2\partial_y$
+is repreented by the matrix of differential operators
+\[
+D = \begin{pmatrix}
+0 & 0 & -\partial_x & -\partial_y \\
+0 & 0 & -\partial_y & \partial_x \\
+\partial_x & \partial_y & 0 & 0 \\
+\partial_y & -\partial_x & 0 & 0
+\end{pmatrix}
+\]
 %
 %TODO More stuff later, maybe in another section?
 %
