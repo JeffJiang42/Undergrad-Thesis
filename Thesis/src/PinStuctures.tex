@@ -372,6 +372,20 @@ double cover.
 \end{thm}
 %
 \begin{proof}
-Let 
+Let $ \pi : \tilde{M} \to M$ denote the orientation double cover. Fix a Riemannian
+metric $g$ on $M$. This induces a Riemannian metric on $\tilde{M}$, which
+is the pullback form $\pi^*g$. In addition, the orthonormal frame bundle
+$\B_O(\tilde{M})$ with respect to the metric $\pi^*g$ is isomorphic to the
+pullback bundle $\pi^*\B_O(M)$. Pulling back $\B_{\Pin^\pm}(M)$ along the map
+$\pi^*\B_O(\tilde{M})$, we get the a $\Pin^\pm$-bundle $\B_{\Pin^\pm}$ over
+$\tilde{M}$ with a map to $\pi^*\B_{O}(M) \cong \B_O(\tilde{M})$, so it defines
+a $\Pin^\pm$ structure on $\tilde{M}$, giving us the diagram
+\[\begin{tikzcd}
+\B_{\Pin^\pm}(\tilde{M}) \ar[d]\ar[r] & \B_{\Pin^\pm}(M) \ar[d]\\
+\pi^*\B_O(M) \ar[d]\ar[r] & \B_O(M) \ar[d]\\
+\tilde{M} \ar[r, "\pi"'] & M
+\end{tikzcd}\]
+Then since $\tilde{M}$ is oriented, and and orientation along with a $\Pin^\pm$
+structure determines a Spin structure, we get a Spin structure on $\tilde{M}$.
 \end{proof}
 %
