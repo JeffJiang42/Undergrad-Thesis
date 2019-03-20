@@ -194,6 +194,184 @@ of the preimages of $A \cdot \rho(g)$ under the double cover in order for this
 to be well defined. Since $A$ is an orthogonal transformation, it has two
 preimages under the double cover, which is $\rho\inv(A) = \pm e_1$. Therefore,
 $\psi$ must be left multiplication by either $\pm e_1$, giving us two
-$\Pin^+$ structures on $M$.
+$\Pin^+$ structures on $M$. \\
+
+We then want to determine the induced $\Pin_1^+$ structure on the boundary.
+Using the standard coordinates on $S$ inherited from $\R^2$, the outward normal
+on the top edge of the square points upwards, while the outward normal points
+downwards on the bottom edge of the square. Therefore, the fiber of a point
+on the top edge under $\B_O(M) \to M$ is the two point set
+\[
+\set{\begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}, \begin{pmatrix}
+0 & -1 \\
+1 & 0
+\end{pmatrix}}
+\]
+and the fiber over a point on the bottom edge is
+\[
+\set{\begin{pmatrix}
+0 & 1 \\
+-1 & 0
+\end{pmatrix}, \begin{pmatrix}
+0 & -1 \\
+-1 & 0
+\end{pmatrix}}
+\]
+and on the endpoints, we have the identifications
+\[
+\begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix} \sim \begin{pmatrix}
+0 & 1 \\
+-1 & 0
+\end{pmatrix} \qquad \begin{pmatrix}
+0 & -1 \\
+1 & 0
+\end{pmatrix} \sim \begin{pmatrix}
+0 & -1 \\
+-1 & 0
+\end{pmatrix}
+\]
+We then need to compute the preimages of the matrices under the double cover
+$\rho : \Pin_2^+ \to O_2$ to find the fiber under $\B_{\Pin^+}(M) \to M$. We
+compute
+%
+\begin{align*}
+\rho\inv\begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix} &= \set{\pm \frac{\sqrt{2}}{2}(e_1 + e_2)} \\[5pt]
+\rho\inv\begin{pmatrix}
+0 & -1 \\
+1 & 0
+\end{pmatrix} &= \set{\pm\frac{\sqrt{2}}{2}(-1 + e_1e_2)} \\[5pt]
+\rho\inv\begin{pmatrix}
+0 & 1 \\
+-1 & 0
+\end{pmatrix} &= \set{\pm\frac{\sqrt{2}}{2}(1 + e_1e_2)} \\[5pt]
+\rho\inv\begin{pmatrix}
+0 & -1 \\
+-1 & 0
+\end{pmatrix} &= \set{\pm\frac{\sqrt{2}}{2}(-e_1 + e_2)}
+\end{align*}
+%
+Depending on our choice of $\pm e_1$ for the gluing map at the end points, we
+get different identifications on the endpoints of the top edge and the
+endpoints on the bottom edge, but for either we choose, the resulting bundle
+over $\partial M \cong S^1$ is has four connected components, where each of the
+$4$ elements in the fibers of the top edge of the square pair with one of the
+elements in the fibers of the bottom edge, giving $4$ cicles. If we orient
+the boundary of $M$, this gives us the nonbounding Spin structure corresponding
+to the disconnected double cover of $S^1$. \\
+
+We now do the case of $\Pin^-_2$. Most of the discussion with $\Pin^+_2$ carries
+over to $\Pin^-_2$, up until the point where we compute the preimages of
+the matrices under double cover. Let $\varphi : \Pin_2^- \to O_2$ be the
+double cover. We compute the preimages
+%
+\begin{align*}
+\varphi\inv\begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix} &= \set{\pm \frac{\sqrt{2}}{2}(e_1 + e_2)} \\[5pt]
+\varphi\inv\begin{pmatrix}
+0 & -1 \\
+1 & 0
+\end{pmatrix} &= \set{\pm\frac{\sqrt{2}}{2}(1 + e_1e_2)} \\[5pt]
+\varphi\inv\begin{pmatrix}
+0 & 1 \\
+-1 & 0
+\end{pmatrix} &= \set{\pm\frac{\sqrt{2}}{2}(-1 + e_1e_2)} \\[5pt]
+\varphi\inv\begin{pmatrix}
+0 & -1 \\
+-1 & 0
+\end{pmatrix} &= \set{\pm\frac{\sqrt{2}}{2}(-e_1 + e_2)}
+\end{align*}
+%
+This defines a $\Pin^-_2$ structure on $\partial M$ that has two connected
+components. To see this, we glue the fiber over top right corner
+with the fiber over the bottom left corner vialeft multiplication by $e_1$,
+giving the identifications
+%
+\begin{align*}
+\pm \frac{\sqrt{2}}{2}(e_1 + e_2) &\sim \pm\frac{\sqrt{2}}{2}(-1 + e_1e_2) \\
+\pm\frac{\sqrt{2}}{2}(1 + e_1e_2) &\sim \mp\frac{\sqrt{2}}{2}(-e_1 + e_2)
+\end{align*}
+%
+The identifications of the fiber over the bottom right corner with the fiber
+over the top left corner are
+%
+\begin{align*}
+\pm\frac{\sqrt{2}}{2}(-1 + e_1e_2) &\sim \mp\frac{\sqrt{2}}{2}(e_1 + e_2)\\
+\pm\frac{\sqrt{2}}{2}(-e_1 + e_2) &\sim \pm\frac{\sqrt{2}}{2}(1 + e_1e_2)
+\end{align*}
+The two flipped signs connect two of the fibers together, giving two components
+instead of the four components in the case with $\Pin^+_2$, so after fixing
+an orienation of $\Pin_2^+$, we get the Spin structure corresponding to the
+boudning Spin structure, i.e. the Spin structure associated to the connected
+double cover of $S^1$.
+%
 \end{exmp}
+%
+To every smooth manifold $M$, there is an associated oriented manifold called the
+orientation double cover, which is a principal $\Z/2\Z$-bundle encoding
+information about the orientability of $M$.
+%
+\begin{defn}
+Let $M$ be a smooth manifold. Then the \ib{orientation double cover} is the set
+\[
+\tilde{M} = \set{(p, o) ~:~ p \in M, o \text{ is an orientation of } T_pM}
+\]
+This comes with a natural map $\tilde{M} \to M$ mapping $(p,o) \mapsto p$,
+and a natrual $\Z/2\Z$ action where $(p,o) \mapsto (p,-o)$. Local coordinates
+on $M$ induce local coordinates on $\tilde{M}$, which we can use to define the
+topology and smooth structure. Under this topology and smooth structure, the
+map $\tilde{M} \to M$ is a smooth double covering.
+\end{defn}
+%
+The double cover is a local diffeomorphism, so its differential induces
+identifications of tangent spaces $T_{(p,o)}\tilde{M} \to T_pM$, which allows
+us to define a canonical orientation on $\tilde{M}$ where we orient
+$T_{(p,o)}\tilde{M}$ with the orientation $o$. The orientation double cover
+detects orientability of $M$ in the following way
+%
+\begin{thm} \enumbreak
+\begin{enumerate}
+  \item If $M$ is orientable, $\tilde{M}$ is diffeomorphic the disconnected
+  double cover $M \coprod M$.
+  \item If $M$ is not orientable, $\tilde{M}$ is connected. Furthermore,
+  $\tilde{M}$ is unique in the following way: Given another double cover
+  $\hat{M} \to M$ of an oriented manifold $\hat{M}$ onto $M$, there is a unique
+  orientation preserving diffeomorphism $\varphi : \hat{M} \to \tilde{M}$ such
+  that
+  \[\begin{tikzcd}
+  \hat{M} \ar[dr]\ar[rr, "\varphi"] && \tilde{M}\ar[dl] \\
+   & M
+  \end{tikzcd}\]
+  commutes.
+\end{enumerate}
+\end{thm}
+%
+In particular, given an unorientable manifold $M$, any oriented double
+cover of $M$ is isomorphic orientation double cover.
+%
+\begin{exmp}
+The cylinder $S^1 \times I$ can be realized as the orientation double
+cover of the M\"obius band $M$. Let $f : S^1 \times I \to S^1 \times I$ be the
+mapp flipping the cylinder. Then the quotient space $S^1 \times I / (x \sim f(x))$
+is diffeomorphic to the M\"obius band, and the quotient map is the double cover.
+\end{exmp}
+%
+\begin{thm}
+A $\Pin^\pm$ structure on a manifold induces a Spin structure on the orientation
+double cover.
+\end{thm}
+%
+\begin{proof}
+Let 
+\end{proof}
 %

@@ -6,6 +6,12 @@
 \usepackage{amssymb,amsfonts}
 \usepackage[all,arc]{xy}
 \usepackage{tikz-cd}
+\usetikzlibrary{decorations.markings,arrows}
+\tikzset{
+    marrow/.style={decoration={markings,mark=at
+    position 0.3 with {\arrow{#1}}},
+    postaction=decorate}
+}
 \usepackage{enumerate}
 \usepackage{mathrsfs}
 \usepackage{amsthm}
