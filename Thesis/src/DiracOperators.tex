@@ -51,7 +51,7 @@ of Clifford modules over $\R^n$. This viewpoint generalizes more naturally,
 and the Dirac operator defined on a general Riemannian manifold is an operator
 on sections of some bundle. \\
 
-The Dirac operators in dimensions $1$, $2$, and $3$ exhibit some extremely
+The Dirac operators in dimensions $1$, $2$, and $4$ exhibit some extremely
 interesting behavior, corresponding to the appearances of $\C$ and $\H$
 when $\R^n$ is given a negative definite bilinear form. In $1$ dimension,
 the Clifford algebra $\Cliff_{0,1}(\R)$ admits the ordered basis $(1,e^1)$, which
@@ -72,7 +72,9 @@ D = \begin{pmatrix}
 \end{pmatrix}
 \]
 Note that the matrix is block off-diagonal. Since we picked the ordered basis $(1,e^1)$.
-for $\Cliff_{0,1}(\R)$, whose elements are even and odd respectively, this
+for $\Cliff_{0,1}(\R)$, whose elements are even and odd respectively. The action
+of the top right block is the action on the even subspace, and the action of
+the bottom left block is the action on the odd subspace. This
 shows that $D$ is an odd operator, as it reverses the grading. \\
 
 In $2$ dimensions, $\Cliff_{0,2}(\R)$ has the ordered basis $(1, e^1e^2, e_1,e_2)$,
@@ -82,8 +84,8 @@ as \[
 f(x,y) = f_0(x,y) + e^1e^2f_{12}(x,y) + e^1f_1(x,y) + e^2f_2(x,y)
 \]
 where the component functions are all elements of $C^\infty(\R^2)$. In this
-basis, the action of the dirac operator $D = e^1]\partial_x + e^2\partial_y$
-is repreented by the matrix of differential operators
+basis, the action of the Dirac operator $D = e^1\partial_x + e^2\partial_y$
+is represented by the matrix of differential operators
 \[
 D = \begin{pmatrix}
 0 & 0 & -\partial_x & -\partial_y \\
@@ -92,6 +94,54 @@ D = \begin{pmatrix}
 \partial_y & -\partial_x & 0 & 0
 \end{pmatrix}
 \]
+Which is actually a familiar differential operator in disguise. We make the
+identification of $\Cliff_{0,2}(\R)$ with the quaternions $\H$, which themselves
+have a direct sum decomposition $\H = \C \oplus \C$, giving it a $\Z/2\Z$-grading.
+The mappings $e_1e_2 \mapsto i$ and $e_2 \mapsto i$ determine vector space
+somorphisms of the even and odd subspaces of $\Cliff_{0,2}(\R)$ with $\C$,
+giving an isomorphism of $\Cliff_{0,2}(\R)$ with $\H = \C \oplus \C$. The
+operator in the top right block is then exactly twice the differential operator
+\[
+-\frac{\partial}{\partial z} = -\frac{1}{2}\left( \frac{\partial}{\partial x}
+- i \frac{\partial}{\partial y}\right)
+\]
+on functions $\R^2 \to \C$, and the operator in the bottom block is the twice
+the operator
+\[
+\frac{\partial}{\partial \overline{z}} = \frac{1}{2}\left( \frac{\partial}{\partial x}
++ i \frac{\partial}{\partial y}\right)
+\]
+So $D$ is more compactly represented under this identification as
+\[
+D = \begin{pmatrix}
+0 & 2\partial_z \\
+2\partial_{\overline{z}} & 0
+\end{pmatrix}
+\]
+In $4$ dimensions, the irreducible module over $\Cliff_{0,3} \cong M_2\H$ is
+$\H^2$. This has a direct sum decomposition as $\H^2 = \H \oplus \H$, allowing
+us to represent functions $f : \R^4 \to \H^2$ as pairs of functions $\R^4 \to \H$,
+which are the maps into the even and odd subspaces of $\H^2 = \H \oplus \H$.
+The quaternions admit operators similar to the operators $\partial_z$ and
+$\partial_{\overline{z}}$, which are
+%
+\begin{align*}
+\frac{\partial}{\partial q} &= \frac{1}{4}\left( \frac{\partial}{\partial x^1}
+- i \frac{\partial}{\partial x^2} - j\frac{\partial}{\partial x^3}
+- k \frac{\partial}{\partial x^4}\right) \\[5pt]
+\frac{\partial}{\partial \overline{q}} &= \frac{1}{4}\left( \frac{\partial}{\partial x^1}
++ i \frac{\partial}{\partial x^2} + j\frac{\partial}{\partial x^3}
++ k \frac{\partial}{\partial x^4}\right)
+\end{align*}
+%
+Using these identifications, the Dirac operator is compactly represented as
+\[
+D = \begin{pmatrix}
+0 & -4\partial_q \\
+4\partial_{\overline{q}} & 0
+\end{pmatrix}
+\]
+which encodes a sort of quaternionic Cauchy-Riemann operator.
 %
 %TODO More stuff later, maybe in another section?
 %
