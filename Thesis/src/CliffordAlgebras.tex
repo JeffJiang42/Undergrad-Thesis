@@ -130,8 +130,8 @@ $v \in V$, define its \ib{parity}, denoted $|v|$ by
 \]
 Equivalently, it is the data of a linear map
 $\varepsilon : V \to V$ such that $\varepsilon$ acts by identity on a subspace $V^0$
-of $V$ and negative identity on a complementary subspace $V^1$, which gives us the
-desired direct sum decomposition of $V$ as the $\pm 1$ eigenspaces of $\varepsilon$.
+of $V$ and negative identity on a complementary subspace $V^1$, which gives the
+direct sum decomposition of $V$ as the $\pm 1$ eigenspaces of $\varepsilon$.
 The map $\varepsilon$ is called the \ib{grading operator}.
 
 \end{defn}
@@ -149,15 +149,19 @@ addition is done mod $2$.
   \item Any $\R$-algebra $A$ can be made into a graded algebra where we let
   $A^0 = A$ and $A^1 = 0$.
   \item The exterior algebra $\Lambda^\bullet V$ of a vector space $V$ is
-  a $\Z/2\Z$ graded algebra (in fact, it is $\Z$ graded), where the grading is
+  a $\Z/2\Z$ graded algebra (in fact, it has a $\Z$ grading as well), where the
+  grading is
   $\Lambda^\bullet V = \Lambda^{\text{even}} V \oplus \Lambda^{\text{odd}} V$
-  where $\Lambda^0 V$ is the subspace spanned by even products of vectors and
-  $\Lambda^1 V$ is the subspace spanned by odd products of vectors.
+  where $\Lambda^{\text{even}} V$ is the subspace spanned by even products of
+  vectors and $\Lambda^{\text{odd}} V$ is the subspace spanned by odd products of vectors.
   \item Let $V = V^0 \oplus V^1$ be a $\Z/2\Z$ graded vector space. Then the
   algebra of endomorphisms $\End V$ can be endowed with the structure of a
   graded algebra, where the even subspace consists of linear maps preserving
   the decomposition $V^0 \oplus V^1$, and the odd subspace consists of
   linear maps $T$ reversing the decomposition, i.e. $T(V^i) = V^{i + 1 \mod 2}$.
+  In a ordered basis where the first elements are all even and the last
+  elements are all odd, the even elements of $\End V$ are block diagonal,
+  while the odd elements are block off-diagonal.
 \end{enumerate}
 \end{exmp}
 %
@@ -165,7 +169,7 @@ For the most part, the algebras we work with will be $\Z/2\Z$ graded, so
 the term ``graded" may be used in lieu of ``$\Z/2\Z$ graded." In the case of
 ambiguity, we will specify the grading. \\
 The Clifford algebra $\Cliff(V,b)$ is naturally a $\Z/2\Z$ graded algebra. Fix
-a basis $\set{e_i}$ for $\Cliff(V,b)$. We then define the grading
+a basis $\set{e_i}$ for $V$. We then define the grading
 \[
 \Cliff(V,b) = \Cliff^0(V,b) \oplus \Cliff^1(V,b)
 \]
@@ -262,7 +266,7 @@ To give a map $\varphi : \Cliff_{p+t,q+s}(\R) \to \Cliff_{p,q}(\R) \otimes
 \Cliff_{t,s}(\R)$, it is sufficient to specify its action on $\R^{p+t,q+s}$ and
 to check that the Clifford relations hold. Let
 $\set{b_1^+,\ldots, b_{p+t}^+, b_1^-, \ldots b_{q+s}^-}$ denote the standard
-orthogonal basis for $\R^{p+t|q+s}$ where $(b_i^+)^2 = 1$ and $(b_i^-)^2 = -1$.
+orthogonal basis for $\R^{p+t,q+s}$ where $(b_i^+)^2 = 1$ and $(b_i^-)^2 = -1$.
 We then define the bases $\set{e_i^\pm}$ and $\set{f_i^\pm}$ analogously for
 $\R^{p,q}$ and $\R^{t,s}$ respectively. Then define $\varphi$ by
 %
@@ -307,8 +311,8 @@ anticommute are exactly the same.
 \end{proof}
 %
 \begin{thm}
-The graded opposite algebra $\Cliff_{p,q}^{\text{op}}$ is isomorphic to
-$\Cliff_{q,p}$.
+The graded opposite algebra $\Cliff_{p,q}^{\text{op}}(\R)$ is isomorphic to
+$\Cliff_{q,p}(\R)$.
 \end{thm}
 %
 \begin{proof}

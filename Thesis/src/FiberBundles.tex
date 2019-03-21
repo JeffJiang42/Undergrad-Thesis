@@ -25,7 +25,7 @@ $\varphi : \pi\inv(U) \to U \times F$ such that the diagram
 \pi\inv(U) \ar[rr, "\varphi"] \ar[dr, "\pi"']&& U \times F \ar[dl, "p_U"] \\
 & U
 \end{tikzcd}\]
-commutes, where $P_U$ denotes projection onto the first factor. The map $\varphi$ is
+commutes, where $p_U$ denotes projection onto the first factor. The map $\varphi$ is
 called a \ib{local trivialization} of the fiber bundle $\pi : E \to M$.
 \end{defn}
 %
@@ -53,7 +53,7 @@ f^*E = \set{(x, p)~:~ x \in X, p \in \pi\inv(f(x)) }
 along with the projection $p : f^*E \to M$ given by $(x,p) \mapsto x$, giving
 $f^*E \to X$ the structure of a fiber bundle over $X$ with model fiber $F$.
 The bundle $f^*E$ also comes equipped with a natural map $\alpha : f^*E \to E$
-where $\alpha(x,p) = p$. Pullbacks give rise to the diagram
+where $\alpha(x,p) = p$. Pullbacks give rise to the commutative diagram
 \[\begin{tikzcd}
 f^*E \ar[d, "p"']\ar[r, "\alpha"] & E \ar[d, "\pi"] \\
 X \ar[r, "f"']& M
@@ -313,7 +313,7 @@ $TM$.
 In general, given a rank $n$ vector bundle $E \to M$, we can construct the
 frame bundle  $\B(E)$ for $E$ and recover $E$ by taking the associated bundle
 $\B(E) \times_{GL_n\R} \R^n$, so the process of taking frames and constructing
-associated bundles are inverses.
+associated bundles are inverses of each other.
 %
 \begin{defn}
 Let $\pi : P \to M$ be a principal $G$-bundle, and $\rho : H \to G$ a group
@@ -387,7 +387,7 @@ a group action, called the \ib{holonomy} of the covering space. In the
 special case that our covering space is a principal $G$-bundle with a discrete $G$,
 the point $\tilde{\gamma}(1)$ is equal to $\tilde{x_0} \cdot g$ for a unique
 group element $g \in G$, so the holonomy action determines a group homomorphism
-$\pi_1(M, x_0) \to G$. In fact, the holonomy completely determines the
+$\pi_1(M, x_0) \to G$. In fact, the holonomy completely determines the bundle.
 %
 \begin{thm}
 For a discrete group $G$ and a connected manifold $M$, there is a bijection

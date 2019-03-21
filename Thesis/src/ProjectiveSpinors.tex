@@ -65,20 +65,20 @@ $M_n\F$ acts transitively on $M^\alpha$, so it is also an irreducible module,
 which must be isomorphic to $M$. Therefore, there exists a module isomorphism
 $A : M \to M^\alpha$. Since $M$ and $M^\alpha$ are the same underlying vector
 space, $A$ is also a linear isomorphism $A : M \to M$, thought of as a vector space
-instead of a module. Then since $A$ is a module homomorphism. we have that
+instead of a module. Then since $A$ is a module homomorphism, we have that
 for any $T \in M_n\F$,
 \[
 A \circ T = \alpha(T) \circ A \implies A \circ T \circ A\inv = \alpha(T)
 \]
 so $\alpha$ is given by conjugation by $A \in GL(M)$. In a basis, this
-tells us that the map $GL_n\F \to M_n\F$ given by conjugation is surjective,
+tells us that the map $GL_n\F \to \Aut(M_n\F)$ given by conjugation is surjective,
 and the kernel of this map is the center of $GL_n\F$, so by the first isomorphism
 theorem, we have that $\Aut(M_n\F) \cong PGL_n\F$.
 \end{proof}
 %
 \begin{proof}[Proof of Proposition]
 Fix bases for $V$ and $W$. These bases then induces isomorphisms
-$M_n\F \to V$ and $M_n\F \to W$. Then in these bases, the algebra
+$M_n\F \to V$ and $M_n\F \to W$. In these bases, the algebra
 isomorphism $\varphi$ is given by an automorphism $M_n\F \to M_n\F$, and
 the question now translates to asking whether this automorphism induces
 an isomorphism $\F^n \to \F^n$. From the lemma, we know this is false -- an
@@ -132,8 +132,8 @@ the annihilator. Therefore, these mappings are inverses.
 \end{proof}
 %
 Therefore, given an algebra isomorphism $\varphi : \End V \to \End W$, this
-induces a map $\P V \to \P W$ since the image of a maximal ideal under an
-isomorphism is a maximal left ideal. In addition, the induced map is a bijection,
+induces a map $\P V \to \P W$ since the image of a maximal left ideal under an
+isomorphism is again a maximal left ideal. In addition, the induced map is a bijection,
 since it has an inverse given by the induced map of $\varphi\inv$. In
 addition, the group of units $GL(V)$ acts on $\P V$ by right multiplication --
 given a maximal ideal $I$ and $A \in GL(V)$, the ideal $I \cdot A$ is also

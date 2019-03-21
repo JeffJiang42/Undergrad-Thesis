@@ -30,16 +30,16 @@ However, the required relations are exactly the relations between orthogonal
 basis vectors in the Clifford algebra $\Cliff_{0,n}(\R)$!
 %
 \begin{defn}
-Let $\set{e_i}$ be the standard basis for $\R^n$, $\set{e^i}$ its dual basis, and
-$x^1, \ldots ,x^n$ the standard coordinates on $\R^n$.
+Let $\set{e_i}$ be the standard basis for $\R^n$, $\set{e^i}$
+\footnote{The choice of using the dual basis elements $e^i$ instead of the
+$e_i$ is so that $D$ behaves tensorially with respect to coordinate change.}
+its dual basis, and $x^1, \ldots ,x^n$ the standard coordinates on $\R^n$.
 The \ib{Dirac operator} on $\R^n$ is the first order differential operator
 \[
 D = e^i\frac{\partial}{\partial x^i}
 \]
 \end{defn}
 %
-The choice of using the dual basis elements $e^i$ instead of the $e_i$ is
-so that $D$ behaves tensorially with respect to coordinate change.
 It is not clear from the definition what function space $D$ should act on.
 The partial derivative operators make sense for any vector valued function, but
 multiplcation by $e^i$ does not make sense an arbitrary vector space -- it must
@@ -95,10 +95,10 @@ D = \begin{pmatrix}
 \end{pmatrix}
 \]
 Which is actually a familiar differential operator in disguise. We make the
-identification of $\Cliff_{0,2}(\R)$ with the quaternions $\H$, which themselves
-have a direct sum decomposition $\H = \C \oplus \C$, giving it a $\Z/2\Z$-grading.
+identification of $\Cliff_{0,2}(\R)$ with the quaternions $\H$, which
+have a direct sum decomposition $\H = \C \oplus \C$, giving a $\Z/2\Z$-grading.
 The mappings $e_1e_2 \mapsto i$ and $e_2 \mapsto i$ determine vector space
-somorphisms of the even and odd subspaces of $\Cliff_{0,2}(\R)$ with $\C$,
+isomorphisms of the even and odd subspaces of $\Cliff_{0,2}(\R)$ with $\C$,
 giving an isomorphism of $\Cliff_{0,2}(\R)$ with $\H = \C \oplus \C$. The
 operator in the top right block is then exactly twice the differential operator
 \[
@@ -141,7 +141,7 @@ D = \begin{pmatrix}
 4\partial_{\overline{q}} & 0
 \end{pmatrix}
 \]
-which encodes a sort of quaternionic Cauchy-Riemann operator.
+which encodes quaternionic analogues of the Cauchy-Riemann equations.
 %
 %TODO More stuff later, maybe in another section?
 %

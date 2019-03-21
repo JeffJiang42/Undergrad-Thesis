@@ -4,13 +4,14 @@
 \begin{defn}
 A (left) \ib{Clifford module} for the Clifford algebra $\Cliff_{p,q}(\R)$ is a module
 for $\Cliff_{p,q}(\R)$ in the usual sense i.e. a real vector space $V$ equipped
-with an algebra action $\bullet: \Cliff_{p,q} \times V \to V$ satisfying
+with an algebra action $\bullet: \Cliff_{p,q}(\R) \times V \to V$ satisfying
+the following properties
 \begin{enumerate}
   \item Every element of $\Cliff_{p,q}(\R)$ acts linearly on $V$.
   \item $(AB) \cdot v = A\cdot(B \cdot v)$ for all $v \in V$.
   \item $(A + B) \cdot v = A\cdot v + B\cdot V$ for all $v \in V$.
 \end{enumerate}
-Equivalently, it is the data of a real vector space $V$ and a homomorphism
+Equivalently, it is the data of a real vector space $V$ and an algebra homomorphism
 $\Cliff_{p,q}(\R) \to \End(V)$.
 \end{defn}
 %
@@ -141,9 +142,9 @@ the ungraded modules, since the even subalgebra of a Clifford algebra is isomorp
 as ungraded algebras with a smaller Clifford algebra. Putting everything together
 gives us the complete classification of graded Clifford modules.\\
 %TODO The Bott song!
-%
+
 Given a ring homomorphism $\varphi : A \to B$, this induces a pullback map
-${}_A\mathsf{Mod} \to {}_B\mathsf{Mod}$ of modules. Given a $B$ module $M$,
+${}_A\mathsf{Mod} \to {}_B\mathsf{Mod}$ of left modules. Given a $B$ module $M$,
 we get an $A$ module via $\varphi$ by defining the ring action on the underlying
 abelian group of $M$ to be $a \cdot m = \varphi(a)m$, where the right hand side
 is the ring action from $B$. This pullback map reveals a beautiful periodicity
@@ -178,7 +179,7 @@ the ungraded Clifford modules, we then compute the cokernels for all of these
 cases.
 %
 \begin{enumerate}
-  \item In this case, the irreducible module for $M_n\F'$ is $(F')^n$, which is
+  \item In this case, the irreducible module for $M_n\F'$ is $(\F')^n$, which is
   twice the dimension of $\F^n$ as an $\R$ vector space. Then since both
   $M_n\F$ and $M_n\F'$ admit only a single irreducible module, the monoid homomorphism
   is a map $\Z^{\geq 0} \to \Z^{\geq 0}$ where $1 \mapsto 2$. The cokernel is then

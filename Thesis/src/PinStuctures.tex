@@ -309,11 +309,11 @@ over the top left corner are
 \pm\frac{\sqrt{2}}{2}(-1 + e_1e_2) &\sim \mp\frac{\sqrt{2}}{2}(e_1 + e_2)\\
 \pm\frac{\sqrt{2}}{2}(-e_1 + e_2) &\sim \pm\frac{\sqrt{2}}{2}(1 + e_1e_2)
 \end{align*}
-The two flipped signs connect two of the fibers together, giving two components
-instead of the four components in the case with $\Pin^+_2$, so after fixing
-an orienation of $\Pin_2^+$, we get the Spin structure corresponding to the
-boudning Spin structure, i.e. the Spin structure associated to the connected
-double cover of $S^1$.
+The two flipped signs connects two of the components of the fiber togther,
+giving two components instead of the four components in the case with
+$\Pin^+_2$, so after fixing an orientation of $\partial M$, we get the Spin
+structure corresponding to the bounding Spin structure, i.e. the Spin structure
+associated to the connected double cover of $S^1$.
 %
 \end{exmp}
 %
@@ -327,7 +327,7 @@ Let $M$ be a smooth manifold. Then the \ib{orientation double cover} is the set
 \tilde{M} = \set{(p, o) ~:~ p \in M, o \text{ is an orientation of } T_pM}
 \]
 This comes with a natural map $\tilde{M} \to M$ mapping $(p,o) \mapsto p$,
-and a natrual $\Z/2\Z$ action where $(p,o) \mapsto (p,-o)$. Local coordinates
+and a natural $\Z/2\Z$ action where $(p,o) \mapsto (p,-o)$. Local coordinates
 on $M$ induce local coordinates on $\tilde{M}$, which we can use to define the
 topology and smooth structure. Under this topology and smooth structure, the
 map $\tilde{M} \to M$ is a smooth double covering.
@@ -362,7 +362,7 @@ cover of $M$ is isomorphic orientation double cover.
 \begin{exmp}
 The cylinder $S^1 \times I$ can be realized as the orientation double
 cover of the M\"obius band $M$. Let $f : S^1 \times I \to S^1 \times I$ be the
-mapp flipping the cylinder. Then the quotient space $S^1 \times I / (x \sim f(x))$
+map flipping the cylinder. Then the quotient space $S^1 \times I / (x \sim f(x))$
 is diffeomorphic to the M\"obius band, and the quotient map is the double cover.
 \end{exmp}
 %
@@ -374,10 +374,10 @@ double cover.
 \begin{proof}
 Let $ \pi : \tilde{M} \to M$ denote the orientation double cover. Fix a Riemannian
 metric $g$ on $M$. This induces a Riemannian metric on $\tilde{M}$, which
-is the pullback form $\pi^*g$. In addition, the orthonormal frame bundle
+is the pullback metric $\pi^*g$. In addition, the orthonormal frame bundle
 $\B_O(\tilde{M})$ with respect to the metric $\pi^*g$ is isomorphic to the
 pullback bundle $\pi^*\B_O(M)$. Pulling back $\B_{\Pin^\pm}(M)$ along the map
-$\pi^*\B_O(\tilde{M})$, we get the a $\Pin^\pm$-bundle $\B_{\Pin^\pm}$ over
+$\pi^*\B_O(\tilde{M})$, we get the a $\Pin^\pm_n$-bundle $\B_{\Pin^\pm}$ over
 $\tilde{M}$ with a map to $\pi^*\B_{O}(M) \cong \B_O(\tilde{M})$, so it defines
 a $\Pin^\pm$ structure on $\tilde{M}$, giving us the diagram
 \[\begin{tikzcd}
