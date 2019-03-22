@@ -69,6 +69,40 @@ $i: V \to \mathcal{T}(V) / (v \otimes v - b(v,v))$
 is given by the inclusion $V \hookrightarrow \mathcal{T}(V)$ followed by the
 quotient map. We identify $V$ with its image $i(V)$ as a subspace of $\Cliff(V,b)$.
 %
+\begin{thm}
+The Clifford algebra is functorial in the following way: Given vector spaces
+$V$ and $V'$ equipped with nondegenerate symmetric bilinear forms $b$ and $b'$
+respectively and a linear map $T: V \to V'$ such that $b(v,w) = b'(Tv,Tw)$
+for all $v,w \in V$, there exists a unique algebra homomorphism
+$T_* : \Cliff(V,b) \to \Cliff(V',b')$
+such that
+\[\begin{tikzcd}
+V \ar[r, "T"] \ar[d, "i"']& V' \ar[d, "i'"]\\
+\Cliff(V,b) \ar[r, "T_*"'] & \Cliff(V',b')
+\end{tikzcd}\]
+commutes, where $i$ and $i'$ are the inclusions of $V$ and $V'$ into their
+respective Clifford algebras.
+\end{thm}
+%
+\begin{proof}
+We use the realization of $\Cliff(V,b)$ as the quotient
+\[
+\Cliff(V,b) = \mathcal{T}(V) / (v \otimes v - b(v,v))
+\]
+The map $T$ induces a map $\tilde{T} : \mathcal{T}(V) \to \mathcal{T}(V')$
+where the action on homogeneous elements is given by
+\[
+\tilde{T}(v_1 \otimes \cdots \otimes v_k) = Tv_1 \otimes \cdots \otimes Tv_k
+\]
+The fact that $b(v,w) = b'(Tv, Tw)$ implies that $\tilde{T}$ maps the
+ideal $(v \otimes v - b(v,v))$ to the ideal $(v' \otimes v' - b'(v',b'))$, so
+the map $\tilde{T}$ descends to the quotient, giving a map
+$T_* : \Cliff(V,b) \to \Cliff(V',b')$. The fact that the diagram commutes
+follows from the fact that the maps $i$ and $i'$ are the inclusions of
+$V$ and $V'$ into their respective tensor algebras, followed by the quotient
+maps into $\Cliff(V,b)$ and $\Cliff(V', b')$ respectively.
+\end{proof}
+%
 \begin{defn}
 Define the bilinear form $b : \R^{p+q} \times \R^{p+q} \to \R$ by
 \[

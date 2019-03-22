@@ -2,7 +2,7 @@
 %
 \subsectionend $ $\\
 %
-\emph{Not all the geometrical structures are``equal". It would seem that the
+\emph{Not all the geometrical structures are ``equal". It would seem that the
 Riemannian and complex structures, with their contacts with other fields of
 mathematics and with their richness in results, should occupy a central position
 in differential geometry. A unifying idea is the notion of a $G$-structure, which
@@ -12,6 +12,7 @@ in its various special cases by \'Elie Cartan.} \\
 \ib{-- ~ Shiing-Shen Chern}
 %
 \subsectionend
+%TODO motivate some of the definitions (add some flavor)
 %
 \section{Fiber Bundles}
 %
@@ -89,12 +90,22 @@ the restrictions to the fibers $\varphi\vert_{E_x}$ are linear maps.
 \begin{exmp} \enumbreak
 \begin{enumerate}
   \item Given a smooth manifold $M$, the tangent bundle $TM = \coprod_{p \in M} T_pM$
-  is a vector bundle, where the rank is the dimension of $M$.
-  \item The \ib{tautological bundle} over $\RP^n$ is the vector bundle that
-  assigns to each subspace $\ell \in \RP^n$ itself as its fiber. An analgous
-  construction defines the tautological bundle over the Grassmannian
-  $\mathrm{Gr}_k(\R^n)$.
-\end{enumerate}
+  is a vector bundle, where the projection $\pi : TM \to M$ is the mapping
+  $(p,v) \mapsto p$. The rank of $TM$ is the dimension of $M$.
+  Local coordinates on $(x^i)$ on $U \subset M$ induce maps
+  $\pi\inv(U) \to U \times \R^n$, where
+  $(p,v) \mapsto (x^1(p), \ldots x^n(p), v^1, \ldots v^n)$, where the $v^i$ are
+  the components of $v$ with respect to the coordinate bases $\partial_i$.
+  These maps define a basis for a topology on $TM$, which we then give
+  a smooth structure by declaring the projection $\pi : TM \to M$ to be
+  smooth. In addition, these maps define local trivializations for $TM$,
+  showing that it is a vector bundle.
+  \item A point in $\RP^n$ is a line $\ell$ in $\R^{n+1}$. The \ib{tautological
+  bundle} over $\RP^n$ is the bundle where the fiber over $\ell$ is the subspace
+  $\ell$ itself. An analogous construction can be done for Grassmannians
+  $\mathrm{Gr}_k(V)$, which parameterize $k$-dimensional subspaces of
+  a vector space $V$.
+\qedhere\end{enumerate}
 \end{exmp}
 %
 \begin{defn}
@@ -103,28 +114,29 @@ multiplication map $(g,h) \mapsto gh$ and the inversion map $g \mapsto g\inv$
 are smooth.
 \end{defn}
 %
+Almost all of the groups we have discussed previously are Lie groups.
 \begin{exmp} \enumbreak
 \begin{enumerate}
-  \item The group $GL_n\R$ of invertible $n \times n$ matrices is an open
-  subset of $M_n\R$, and therefore a smooth $n^2$ dimensional manifold.
-  \item The group $SL_n\R$ of $n\times n$ matrices with determinant $1$ is a
-  closed submanifold of $GL_\R$.
   \item The orthogonal groups $O_n$ and special orthogonal groups $SO_n$ are Lie groups.
   \item The unitary groups $U_n$ and special unitary groups $SU_n$ are Lie groups.
-\end{enumerate}
+\qedhere\end{enumerate}
 \end{exmp}
 %
-Another important class of fiber bundles are principal bundles, in which
-the fibers have the structure of $G$-torsors.
+Another important class of fiber bundles are principal bundles. Given a
+Lie group $G$, the fibers of a principal $G$-bundle are $G$-torsors --
+manifiolds with a smooth free and transtive right (or left) $G$-action.
+Given a $G$ torsor $M$ and a point $p$ in $M$, there is a diffeomorphism
+$G \to M$, where $g \mapsto p \cdot g$. A $G$-torsor can be thought
+of as $G$ without a distinguished identity element.
 %
 \begin{defn}
-Let $G$ be a Lie group, and $M$ a smooth manifold. A \ib{Principal } $G$\ib{-bundle}
+Let $G$ be a Lie group, and $M$ a smooth manifold. A \ib{principal } $G$\ib{-bundle}
 over $M$ is the data of
 %
 \begin{enumerate}
   \item A smooth manifold $P$ with a map $\pi : P \to M$.
-  \item A smooth right $G$-action on $P$ that is free and transitive on the
-  fibers of $\pi$.
+  \item A smooth right $G$-action on $P$ that preserves the fibers of $\pi$ and
+  is free and transitive on the fibers of $\pi$.
   \item For every point $p \in M$, a neighborhood $U \subset M$ containing $p$ and
   a $G$-equivariant diffeomorphism $\varphi: \pi\inv(U) \to U \times G$ (where
   the right action on $U \times G$ is right multiplication on the second factor)
@@ -148,8 +160,11 @@ $\mathcal{B}(M)$ is the disjoint union
 \[
 \mathcal{B}(M) = \coprod_{p \in M}\mathcal{B}_p
 \]
-where $\pi$ is the projection map $(p,b) \mapsto p$. Then $\mathcal{B}(M)$
-is a principal $GL_n\R$ bundle over $M$.
+where $\pi$ is the projection map $(p,b) \mapsto p$. Like with the tangent
+bundle, we use local coordinates on $M$ to give maps $\pi\inv(U) \to U \times GL_n\R$.
+These maps can then be used to define a topology and smooth structure, and
+form local trivializations of $\B(M)$, giving it the structure of a principal
+$\GL_n\R$-bundle over $M$.
 \end{exmp}
 %
 \begin{exmp}
@@ -238,7 +253,7 @@ Let $\pi : P \to M$ be a principal $G$-bundle. Then there is a bijection
 \end{prop}
 %
 \begin{proof}
-Since $F$ has a left $G$-action, we first convert this to a right $G$-action
+Since $F$ has a left $G$-action, we use it to define a right $G$-action
 by $f \cdot g = g\inv \cdot f$. Then what we mean by a $G$-equivariant map is
 a map $\varphi : P \to F$ such that
 \[
@@ -269,7 +284,7 @@ a $G$-equivariant map $P \to F$. Given such a section, and a point $x \in M$,
 we have that $\sigma(x) = [p, f]$ for some $p \in P$ and $f \in F$. Then
 define $\tilde{\sigma} : P \to F$ such that $\tilde{\sigma}(p) = f$, and
 $\tilde{\sigma}(p \cdot g) = g\inv \cdot f$. Since $G$ acts freely and transitively
-on the fibers, this is well defined, and specifies the map on every
+on the fibers, this specifies the map on every
 point of $P$. In addition, $\tilde{\sigma}$ is $G$-equivariant by construction.
 Then the maps
 \[
@@ -295,7 +310,7 @@ restricts to linear isomorphisms on the fibers and the diagram
 & M
 \end{tikzcd}\]
 commutes, where the maps to $M$ are the bundle projections. Recall that
-elements of $\B(M) \times_{GL_n\R} R^n$ are represented by pairs $(b, v)$,
+elements of $\B(M) \times_{GL_n\R} \R^n$ are represented by pairs $(b, v)$,
 where $b: \R^n \to T_{\pi(b)}M$ is a linear isomorphism, and $v$ is a vector in $\R^n$.
 Then define $\varphi$ by
 \[
@@ -311,7 +326,9 @@ $TM$.
 \end{exmp}
 %
 In general, given a rank $n$ vector bundle $E \to M$, we can construct the
-frame bundle  $\B(E)$ for $E$ and recover $E$ by taking the associated bundle
+frame bundle  $\B(E)$ for $E$, where the fiber over $x \in M$ is the
+$\GL_n\R$-torsor of bases for the fiber $E_x$. We can then
+recover $E$ by taking the associated bundle
 $\B(E) \times_{GL_n\R} \R^n$, so the process of taking frames and constructing
 associated bundles are inverses of each other.
 %
@@ -401,7 +418,7 @@ We once more provide maps in both directions. Every pointed principal $G$-bundle
 $(P,p_0) \to (M, x_0)$ determines a group homomorphism $\pi_1(M,x_0) \to G$
 by the holonomy action. In the other direction, given a group homomorphism
 $\varphi : \pi_1(M, x_0) \to G$, we want to construct a pointed principal $G$
-bundle $(P, p_0) \to (M, x_0)$ with holonomy $\varphi$. Every pointed space
+bundle $(P, p_0) \to (M, x_0)$ with holonomy $\varphi$. Every pointed manifold
 $(M, x_0)$ has a \ib{universal cover} $(\tilde{M}, \tilde{x}_0) \to (M,x_0)$,
 which has a free and transitive action by $\pi_1(M,x_0)$, making it a pointed
 principal $\pi_1(M,x_0)$ bundle over $(M,x_0)$. In addition, the homomorphism
@@ -409,12 +426,12 @@ $\varphi : \pi_1(M, x_0) \to G$ determines a left action of $\pi_1(M,x_0)$
 on $G$ by $[\gamma] \cdot g = \varphi[\gamma] g$. This allows us to define
 the associated bundle
 \[
-P = \tilde{M} \times_{\pi_1(M, x_0)} G = \tilde{X} \times G
+P = \tilde{M} \times_{\pi_1(M, x_0)} G = \tilde{M} \times G
 / (x,g) \sim (x \cdot [\gamma], \varphi[\gamma]\inv g)
 \]
 where our distinguished basepoint $p_0 \in P$ is $p_0 = [\tilde{x}_0, e]$.
 This is a fiber bundle with model fiber $G$, and the right action of $G$
-on $\tilde{X} \times G$ descends to a free an transitive action on the quotient,
+on $\tilde{M} \times G$ descends to a free an transitive action on the quotient,
 making it a principal $G$-bundle. We then check the holonomy action of a
 loop $[\gamma] \in \pi_1(M, x_0)$. We compute for $p$ in the fiber over $x_0$
 \[

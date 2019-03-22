@@ -3,12 +3,23 @@
 %
 Every manifold $M$ admits a Riemannian metric, so there always exists a
 reduction of structure group from $GL_n\R$ to $O_n$. If $M$ is orientable,
-we can reduce the structure group further to $SO_n$, which corresponds to a
-choice of orientation on $M$. A \ib{Spin structure} on $M$
-is a further reduction of structure group to $\Spin_n$ with respect to the
-double cover $\Spin_n \to SO_n$, i.e. the data of a principal $\Spin_n$ bundle
-$P \to M$, along with a $\Spin_n$-equivariant map $P \to \B_{SO}(M)$, where
-$\B_{SO}(M)$ denotes the bundle of positively oriented orthonomal frames
+%TODO explain how orientation is a reduction of structure group to SO
+over each point $p \in M$, we have a preferred set of orthonormal bases of
+$T_pM$, which correspond to a choice of component of the $O_n$-torsor of
+orthonormal frames of $T_pM$. Doing this for each point $p \in M$, this
+determines a subbundle $P$ of $\B_O(M)$. In addition, each fiber
+has a free and transitive action of $SO_n$ via the inclusion
+$SO_n \hookrightarrow O_n$, giving it the structure of a principal $SO_n$-bundle
+over $M$. In addition, the inclusion $P \hookrightarrow \B_O(M)$ is
+$SO_n$-equivariant, so it defines a reduction of structure group from $O_n$
+to $SO_n$. We denote $P = \B_{SO}(M)$, and call it the \ib{bundle of oriented
+orthonormal frames}.
+
+A \ib{Spin structure} on $M$ is a further reduction of structure group to
+$\Spin_n$ with respect to the double cover $\Spin_n \to SO_n$, i.e. the data of
+a principal $\Spin_n$ bundle $P \to M$, along with a $\Spin_n$-equivariant map
+$P \to \B_{SO}(M)$, where $\B_{SO}(M)$ denotes the bundle of positively oriented
+orthonomal frames
 and $\Spin_n$ acts on $\B_{SO}(M)$ through the double cover $\Spin_n \to SO_n$. In
 particular, this map is a double cover, and fiber-wise is the double covering
 $\Spin_n \to SO_n$.
@@ -19,17 +30,18 @@ case that $\Spin_n$ only admits one representation, and $\S = \S^+ \oplus \S^-$
 in the case that $\Spin_n$ admits two inequivalent Spin representations $\S^+$
 and $\S^-$. Then given a Spin structure on $M$ with a principal $\Spin_n$ bundle
 $P$, the \ib{spinor bundle} over $M$ is the associated vector bundle
-$P \times_{\Spin_n} \S$.
+$P \times_{\Spin_n} \S$, which can be thought of as a Spin analogue to
+the tangent bundle of $M$.
 %
 \begin{exmp}[Spin structures on $S^1$]
 The group $\Spin_1$ is equal to $\set{\pm 1}$, so a Spin structure on $S^1$.
-is a double cover $\pi : P \to \S^1$ along with a $\Spin_1$-equivariant
+is a double cover $\pi : P \to S^1$ along with a $\Spin_1$-equivariant
 map $P \to \B_{SO_1}(S^1)$. Since $SO_1 = 1$, $\B_{SO}(S^1)$ is the trivial
 bundle $S^1 \times \set{1}$. Therefore, specifying a $\Spin_1$-equivariant map
-$P \to \S^1 \times \set{1}$ is no additional data, since we are forced to map
+$P \to S^1 \times \set{1}$ is no additional data, since we are forced to map
 all of the fiber $\pi\inv(x)$ to $(x,1)$ for any $x \in S^1$. Consequently,
 all double covers give rise to a reduction of structure group to $\Spin_1$.
-There are only two double covers of $S^1$. One of them is the disconnected
+There are only two double covers of $S^1$ up to isomorphism. One of them is the disconnected
 double cover, which is the disjoint union $S^1 \coprod S^1$, which we denote
 as $\pi_1 : P_1 \to S^1$. The other is the connected double cover, which the
 circle covering itself via the map $z \mapsto z^2$, which we denote as
@@ -40,12 +52,12 @@ acts by multiplication by $-1$, and the complexifying gives us an action on
 $\C$ where $-1$ acts by multiplication by $-1$, giving us two spinor bundles
 $P_1 \times_{\Spin_1} \C$ and $P_2 \times_{\Spin_1} \C$.
 
-In the first case,the associated bundle is a trivial bundle. Using the identification
+In the first case, the associated bundle is a trivial bundle. Using the identification
 with $\Spin_1$-equivariant maps $P_1 \to \C$ with sections of the associated
 bundle, it suffices to find such a map to produce a global section of
 $\pi_1 : P_1 \to S^1$. Write $P_1$ as the disjoint union $S_1 \coprod S_1$,
 with the circles parameterized by angles $\theta,\varphi \in [0,2\pi)$.
-The $\Spin_1$ action is then given by $\theta \mapsto \varphi$ and
+The action of $-1$ is given by $\theta \mapsto \varphi$ and
 $\varphi \mapsto \theta$. Then the mappings $\theta \mapsto e^{i\theta}$
 and $\varphi \mapsto e^{i\varphi}$ define a $\Spin_1$-equivariant map
 $P_1 \to \C$, giving us a trivialization of the associated bundle
@@ -59,7 +71,7 @@ In the second case, the bundle is also trivial! We again contruct a trivializati
 for the associated bundle by providing a $\Spin_1$-equivariant map
 $\sigma : P_2 \to \C$. Using the parameterization of $P_2$ with angles
 $\theta \in [0,4\pi)$, the $\Spin_1$ action on $P_2$ is given by
-$-1 \cdot \theta = \theta + 2\pi \mod 4\pi$. Then define $\sigma$ by
+$-1 \cdot \theta = \theta + 2\pi \bmod 4\pi$. Then define $\sigma$ by
 $\sigma(\theta) = e^{i\theta/2}$. This map is $\Spin_1$-equivariant, so
 it produces a trivialization of the spinor bundle $P_2 \times_{\Spin_1} \C$.
 In addition, we see that sections of the spinor bundle correspond
@@ -103,7 +115,7 @@ by their Dirac operators.
 \end{exmp}
 %
 %TODO Orientation on M induces an orientation on the boundary of M.
-Given an orientable manifold $M$, we can reduce the structure group
+Given an oriented manifold $M$, we get a reduction of structure group
 of the frame bundle $\B(M)$ to $SO_n$, giving us a principal $SO_n$ bundle
 $\B_{SO}(M)$. If $M$ has a nonempty boundary, this induces an orientation on
 $\partial M$ in the following way: by first reducing the structure group to $O_n$,
@@ -131,8 +143,8 @@ preserving linear isometry $(\R, \langle \cdot,\cdot\rangle) \to (T_pM, g_p)$, a
 using the normal vector, we define a subbundle
 $\B_{SO}(\partial M) \subset \B_{SO}(M)\vert_{\partial M}$ by
 \[
-\B_{SO}(\partial M) = \set{b \in \B_{SO}(M)\vert_{\partial M} ~:~
-b(e_1) = N_{\pi(e_1)}}
+\B_{SO}(\partial M) = \set{(p,b) \in \B_{SO}(M)\vert_{\partial M} ~:~
+b(e_1) = N_p}
 \]
 where $e_1$ denotes the first standard basis vector of $\R^n$, and $\pi$ is
 the bundle projection. We then get an $SO_{n-1}$ action on $\B_{SO}(\partial M)$,
@@ -143,12 +155,14 @@ where we include $SO_{n-1} \hookrightarrow SO_n$ as matrices of the form
 0 & A
 \end{pmatrix}
 \]
-Where $A \in SO_{n-1}$. This then acts on each fiber of $\B_{SO}(\partial M)$
+where $A \in SO_{n-1}$. This then acts on each fiber of $\B_{SO}(\partial M)$
 by precomposition. This action is free and transitive, so this gives
 $\B_{SO}(\partial M)$ the stucture of a principal $SO_{n-1}$-bundle over
-$\partial M$. In this way, we see that an orientation on $M$ determines
-an orientation on the boundary. The preceding discussion is summarized in
-the diagram
+$\partial M$. In addition, this bundle comes with a natural map to
+$\B_O(\partial M)$, which is just the inclusion map, so it is a reduction
+of structure group of $O_{n-1}$ to $SO_{n-1}$ In this way, we see that an
+orientation on $M$ determines an orientation on the boundary. The preceding
+discussion is summarized in the diagram
 \[\begin{tikzcd}
 \B_{SO}(\partial M) \ar[r, hookrightarrow] \ar[dr] &
 \B_{SO}(M)\vert_{\partial M} \ar[d] \ar[r, hookrightarrow] & \B_{SO}(M) \ar[d] \\
