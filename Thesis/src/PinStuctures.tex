@@ -2,12 +2,12 @@
 \section{$\Pin^\pm_n$ Structures}
 %
 The same general construction for Spin structures works for $\Pin^\pm_n$ as well.
+When we refer to $\Pin^\pm_n$, we refer to a fixed choice of $\Pin^+_n$ or
+$\Pin^-_n$.
 %
 \begin{defn}
-Let $M$ be a smooth manifold. Then a \ib{$\Pin_n^\pm$ structure} on $M$ is the
-data of a principal $\Pin_n^\pm$-bundle $P \to M$, along with a
-$\Pin^\pm_n$-equivariant map $P \to \B_O(M)$, where the $\Pin^\pm_n$ action on
-$\B_O(M)$ is given by the double cover $\Pin^\pm_n \to O_n$.
+Let $M$ be a smooth manifold. Then a \ib{$\Pin_n^\pm$ structure} on $M$ is
+a reduction of structure group for $O_n$ to $\Pin^\pm_n$.
 \end{defn}
 %
 Just like with Spin, a $\Pin^\pm_n$ structure on $M$ induces a $\Pin^\pm_{n-1}$
@@ -20,7 +20,7 @@ on the boundary using the outward unit normal, which gives the analogous diagram
 & \partial M \ar[r, hookrightarrow]& M
 \end{tikzcd}\]
 %
-\begin{exmp}[Pin structures on $S^1$] %TODO FIX THIS
+\begin{exmp}[Pin structures on $S^1$]
 There are two problems to discuss here, since $\Pin_1^+$ and $\Pin_1^-$ are
 different groups, namely
 %
@@ -28,10 +28,14 @@ different groups, namely
 \Pin_1^+ &\cong \Z/2\Z \times \Z / 2\Z \\
 \Pin_1^- &\cong \Z/4\Z
 \end{align*}
+The isomorphism $\Pin^+_1$ maps $-1 \mapsto (1,0)$ and $e_1 \mapsto (0,1)$,
+and the isomorphism $\Pin^-_1$ maps $e_1 \mapsto 1$.
 %
+
 We do the $\Pin_1^+$ case first. In this case, the Clifford algebra
-$\Cliff_{1,0}(\R)$ is isomorphic to $\R \times \R$, where the isomorphism is
-determined by $e_1 \mapsto (-1,1)$. There are two irreducible modules corresponding
+$\Cliff_{1,0}(\R)$ is isomorphic to $\R \times \R$, where on the basis $\set{1,e_1}$,
+we map $1\mapsto 1$ and $e_1 \mapsto (-1,1)$. There are two irreducible
+modules corresponding
 to projection onto one of the factors, so the Pinor representations are the one
 dimensional real representations $\P^+$ and $\P^-$, where the action of $e_1$ on
 $\P^\pm$ is by $\pm 1$. Let $\P = \P^+ \oplus \P^-$. We then take inventory
@@ -41,29 +45,29 @@ conjugation. Since $\Pin_1^+$ is abelian, the conjugation action is trivial,
 so principal $\Pin_1^+$-bundles are classified by homomorphisms
 $\pi_1(S^1,\theta_0) \to \Pin_1^+$. There are $4$ such homomorphisms,
 which are all determined by the image of a generator $\alpha$ of $
-\pi_1(S^1,\theta_0)$, since the fundamental group is infinite cyclic. The bundle
-corresponding to the map $\alpha \mapsto 1$ is has $4$ connected components,
-each mapped onto diffeomorphically onto $S^1$, and the action of $\Pin_1^+$
-permutes these $4$ components. All the $\Pin_1^+$ bundles are diffeomorphic
-to two disjoint circles that both cover the circle via the map $z \mapsto z^2$,
-and are differentiated by the action of $\Pin_1^+$.
+\pi_1(S^1,\theta_0)$, since the fundamental group is infinite cyclic.
+We denote all the bundles $P_g \to S^1$, where $g$ is the image of $\alpha$ under
+the corresponding homomorphism.
 %
 \begin{enumerate}
-  \item For the bundle corresponding to the homomorphism mapping
-  $\alpha \mapsto -1$, the element $-1$ acts by rotating both circles by $\pi$,
-  and the element $e_1$ exchanges the two circles.
-  \item For the bundle corresponding to $\alpha \mapsto e_1$, we then have that
+  \item The bundle $P_1 \to S^1$ has $4$ connected components,
+  each mapped onto diffeomorphically onto $S^1$, and the action of $\Pin_1^+$
+  permutes these $4$ components. All the $\Pin_1^+$ bundles are diffeomorphic
+  to two disjoint circles that both cover the circle via the map $z \mapsto z^2$,
+  and are differentiated by the action of $\Pin_1^+$.
+  \item For the bundle $P_{-1} \to S^1$, the element $-1$ acts by rotating both
+  circles by $\pi$, and the element $e_1$ exchanges the two circles.
+  \item For the bundle $P_{e_1} \to S^1$, the action of
   $e_1$ rotates both circles by $\pi$, and $-1$ exchanges the two circles.
-  \item For the bundle corresponding to $\alpha \mapsto -e_1$, the element
-  $-e_1$ acts by rotation by $\pi$, and the element $-1$ exchanges the two
+  \item For $P_{-e_1} \to S^1$, the element $-e_1$ acts by rotation by $\pi$,
+  and the element $-1$ exchanges the two
   circles.
 \end{enumerate}
 %
-We denote all the bundles $P_g$, where $g$ is the image of $\alpha$ under
-the corresponding homomorphism. We then must determine which bundles admit
+We then must determine which bundles admit
 $\Pin_1^+$-equivariant maps $P_g \to \B_O(S^1)$, which is a pair of disjoint
 circles permuted by $O_1 = \set{\pm 1}$. Under the double covering, the
-elements $\pm 1$ act trivially, while the elements $\pm e_1$ act by $-1$.
+elements $\pm 1 \in \Pin_1^+$ act trivially, while the elements $\pm e_1$ act by $-1$.
 %
 \begin{enumerate}
   \item The bundle $P_1 \to S^1$ admits a $\Pin_1^+$-equivariant map
@@ -72,7 +76,7 @@ elements $\pm 1$ act trivially, while the elements $\pm e_1$ act by $-1$.
   the other $3$ components to make the map $\Pin_1^+$-equivariant.
   \item The bundle $P_{-1} \to S^1$ can also define a $\Pin_1^+$ structure on
   $S^1$. Since $-1$ rotates both circles by $\pi$, we map each component to
-  a componenet of $\B_O(S^1)$ via the double cover $z \mapsto z^2$.
+  a component of $\B_O(S^1)$ via the double cover $z \mapsto z^2$.
   \item The bundle $P_{e_1} \to S^1$ cannot determine a $\Pin^+_1$ structure.
   The action of $e_1$ rotates both components of $P_{e_1}$ by $\pi$, but
   permutes the components of $\B_O(S^1)$. Any $\Pin_1^+$-equivariant map
@@ -89,7 +93,8 @@ under the maps $P_{\pm 1} \to \B_O(S^1)$, we recover a Spin structure. In
 particular, the bundle $P_1$ corresponds to the Spin structure with Dirac operator
 $i\partial_\theta$ and the bundle $P_{-1}$ corresponds to the Spin structure
 with Dirac operator $i\partial_\theta - \frac{1}{2}$.  Indeed, the associated
-bundles $P_{\pm 1} \times_{\Pin_1^+} \P$ have the same Dirac operators. \\
+bundles $P_{\pm 1} \times_{\Pin_1^+} \P$ have the same Dirac operators as
+their corresponding Spin structures.\\
 
 For the case of $\Pin_1^-$, there are again $4$ different principal $\Pin_1^-$
 bundles, classified by homomorphisms $\pi_1(S^1, \theta_0) \to \Pin_1^-$.
@@ -105,7 +110,7 @@ the homomorphism mapping $\alpha \mapsto g$.
   of $e_1$ permutes the two components.
   \item The bundle $P_{e_1} \to S^1$ corresponds to the $4$-fold covering
   $S^1 \to S^1$ given by $z \mapsto z^4$. The action of $e_1$ acts by
-  roation by $\pi / 2$.
+  rotation by $\pi / 2$.
   \item The bundle $P_{-e_1} \to S^1$ also corresponds to a $4$-fold covering,
   where the action of $-e_1$ is given by rotation by $\pi / 2$.
 \end{enumerate}
@@ -138,7 +143,11 @@ $\Pin^\pm_n$-bundle $\B_{\Pin^\pm}(M) \to M$ along with a
 $\Pin^\pm_n$-equivariant map $\B_{\Pin^\pm}(M) \to \B_O(M)$. An orientation
 determines a subset $\B_{SO}(M) \subset \B_O(M)$ that is a principal
 $SO_n$-bundle over $M$, and taking the preimage of $\B_{SO}(M)$ under the
-map $\B_{\Pin^\pm}(M) \to \B_O(M)$ determines the desired Spin structure.
+map $\B_{\Pin^\pm}(M) \to \B_O(M)$ is a principal $\Spin_n$-bundle over $M$,
+since the preimage of $SO_n \subset O_n$ under the double covers
+$\Pin^\pm_n \to O_n$ is a subgroup isomorphic to $\Spin_n$.
+The restriction of $\B_{\Pin^\pm}(M) \to \B_O(M)$ then determines the
+desired Spin structure.
 %
 Unlike Spin structures, $\Pin^\pm$ structures do not require an orientation,
 and can be defined on nonorientable manifolds.
@@ -160,7 +169,7 @@ A = \begin{pmatrix}
 0 & -1
 \end{pmatrix}
 \]
-Giving us that the orthonormal frame bundle $\B_O(M)$ of $M$ induced by the
+giving us that the orthonormal frame bundle $\B_O(M)$ of $M$ induced by the
 metric on $S$ is isomorphic to
 \[
 S\times O_2 / (-1,x, b) \sim (1,-x, A \cdot b)
@@ -179,7 +188,7 @@ quotient
 \[
 S \times \Pin_2^+ / (-1,x,g) \sim (1, -x, \psi(g))
 \]
-Where $\psi : \Pin_2^+ \to \Pin_2^+$ is a $\Pin_2^+$-equivariant diffeomorphism.
+where $\psi : \Pin_2^+ \to \Pin_2^+$ is a $\Pin_2^+$-equivariant diffeomorphism.
 From this characterization, we can determine which maps $\psi$ determine
 a principal $\Pin^+_2$-bundle $P \to M$ that admit a $\Pin_2^+$-equivariant
 map $P \to \B_O(M)$. For points that that are not identified, i.e. points
@@ -192,8 +201,8 @@ we have that $[-1,x,g] = [1, -x, \psi(g)]$ and
 $[-1,x,\rho(g)] = [1,-x, A \cdot \rho(g)]$, so we need $\psi(g)$ to be one
 of the preimages of $A \cdot \rho(g)$ under the double cover in order for this
 to be well defined. Since $A$ is an orthogonal transformation, it has two
-preimages under the double cover, which is $\rho\inv(A) = \pm e_1$. Therefore,
-$\psi$ must be left multiplication by either $\pm e_1$, giving us two
+preimages under the double cover, which are $\rho\inv(A) = \pm e_1$. Therefore,
+$\psi$ must be left multiplication by either $e_1$ or $-e_1$, giving us two
 $\Pin^+$ structures on $M$. \\
 
 We then want to determine the induced $\Pin_1^+$ structure on the boundary.
@@ -259,10 +268,10 @@ compute
 \end{pmatrix} &= \set{\pm\frac{\sqrt{2}}{2}(-e_1 + e_2)}
 \end{align*}
 %
-Depending on our choice of $\pm e_1$ for the gluing map at the end points, we
+Depending on our choice of $\pm e_1$ for the gluing map at the endpoints, we
 get different identifications on the endpoints of the top edge and the
 endpoints on the bottom edge, but for either we choose, the resulting bundle
-over $\partial M \cong S^1$ is has four connected components, where each of the
+over $\partial M \cong S^1$ has four connected components, where each of the
 $4$ elements in the fibers of the top edge of the square pair with one of the
 elements in the fibers of the bottom edge, giving $4$ cicles. If we orient
 the boundary of $M$, this gives us the nonbounding Spin structure corresponding
@@ -294,7 +303,7 @@ double cover. We compute the preimages
 %
 This defines a $\Pin^-_2$ structure on $\partial M$ that has two connected
 components. To see this, we glue the fiber over top right corner
-with the fiber over the bottom left corner vialeft multiplication by $e_1$,
+with the fiber over the bottom left corner viacleft multiplication by $e_1$,
 giving the identifications
 %
 \begin{align*}
@@ -337,11 +346,11 @@ The double cover is a local diffeomorphism, so its differential induces
 identifications of tangent spaces $T_{(p,o)}\tilde{M} \to T_pM$, which allows
 us to define a canonical orientation on $\tilde{M}$ where we orient
 $T_{(p,o)}\tilde{M}$ with the orientation $o$. The orientation double cover
-detects orientability of $M$ in the following way
+detects orientability of $M$ in the following way.
 %
 \begin{thm} \enumbreak
 \begin{enumerate}
-  \item If $M$ is orientable, $\tilde{M}$ is diffeomorphic the disconnected
+  \item If $M$ is orientable, $\tilde{M}$ is to diffeomorphic the disconnected
   double cover $M \coprod M$.
   \item If $M$ is not orientable, $\tilde{M}$ is connected. Furthermore,
   $\tilde{M}$ is unique in the following way: Given another double cover
@@ -357,7 +366,7 @@ detects orientability of $M$ in the following way
 \end{thm}
 %
 In particular, given an unorientable manifold $M$, any oriented double
-cover of $M$ is isomorphic orientation double cover.
+cover of $M$ is isomorphic to the orientation double cover.
 %
 \begin{exmp}
 The cylinder $S^1 \times I$ can be realized as the orientation double
