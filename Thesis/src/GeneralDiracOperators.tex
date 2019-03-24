@@ -4,7 +4,7 @@
 %
 \emph{Mathematics is a part of physics. Physics is an experimental science, a part of natural science. Mathematics is the part of physics where experiments are cheap.} \\
 %
-\ib{-- ~ V.I.Arnold}
+\ib{-- ~ V.I. Arnold}
 %
 \subsectionend
 %
@@ -15,4 +15,28 @@ instances of $D$ in low dimensions. The constructions implicitly used the
 Riemannian geometry on $\R^n$, along with its associated Spin structure.
 To explore the Dirac operator in more generality on manifolds, we need to
 develop some of the Riemannian geometry in the nonlinear world of manifolds.
+%TODO Motivate connections, distributions, generalization of vector fields
+%
+\begin{defn}
+Let $M$ be a smooth manifold. A \ib{distribution} on $X$ is a vector subbundle
+$E \subset TX$.
+\end{defn}
+%
+\begin{defn}
+let $\pi : E \to M$ be a fiber bundle. The map $\pi$ determines a distinguished
+subspace $\ker d\pi_e \subset T_eE$, called the \ib{vertical subspace}
+which defines a distribution $V$ over $E$ called the \ib{vertical distribution}.
+A \ib{connection} on $E$ is another distribution $H \subset TE$ such that
+at every point $e \in E$, we have $V_e \oplus H_e = T_eE$. In other words,
+it is a choice of splitting of the short exact sequence of vector bundles
+\[\begin{tikzcd}
+0 \ar[r] & V \ar[r] & TE \ar[r] & \pi^*TM \ar[r] & 0
+\end{tikzcd}\]
+If $E$ is a principal $G$-bundle, we ask for the horizontal distribution $H$
+to be $G$-invariant, i.e. $H_{p \cdot g} = d(R_g)_p(H_p)$, where $R_g : E \to E$
+denotes the right action of $g \in G$.
+\end{defn}
+%TODO Space of splittings is affine over Hom(T_{\pi(e)}M, V)
+%TODO, connections exist?
+%TODO identification of vertical spaces with the Lie algebra.
 %
