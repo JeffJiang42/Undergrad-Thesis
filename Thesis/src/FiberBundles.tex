@@ -1,4 +1,4 @@
-\chapter{Spin Structures on Manifolds}
+jjjjj\chapter{Spin Structures on Manifolds}
 %
 \subsectionend $ $\\
 %
@@ -16,6 +16,11 @@ in its various special cases by \'Elie Cartan.} \\
 %
 \section{Fiber Bundles}
 %
+In geometry and topology, we often want to consider families of objects
+(e.g. manifolds, vector spaces) that vary smoothly along a manifold like
+the tangent spaces of a manifold. This is best formalized in the construction
+of a fiber bundle.
+%
 \begin{defn}
 Let $M$ and $F$ be smooth manifolds. Then a \ib{fiber bundle} over $M$ with
 model fiber $F$ is a the data of a smooth manifold $E$ with a smooth map
@@ -27,7 +32,9 @@ $\varphi : \pi\inv(U) \to U \times F$ such that the diagram
 & U
 \end{tikzcd}\]
 commutes, where $p_U$ denotes projection onto the first factor. The map $\varphi$ is
-called a \ib{local trivialization} of the fiber bundle $\pi : E \to M$.
+called a \ib{local trivialization} of the fiber bundle $\pi : E \to M$. The
+manifold $M$ is called the \ib{base space}, while the manifold $E$ is
+called the \ib{total space}.
 \end{defn}
 %
 Given a fiber bundle $\pi : E \to M$ we often denote the fiber $\pi\inv(p)$
@@ -164,7 +171,7 @@ where $\pi$ is the projection map $(p,b) \mapsto p$. Like with the tangent
 bundle, we use local coordinates on $M$ to give maps $\pi\inv(U) \to U \times GL_n\R$.
 These maps can then be used to define a topology and smooth structure, and
 form local trivializations of $\B(M)$, giving it the structure of a principal
-$\GL_n\R$-bundle over $M$.
+$GL_n\R$-bundle over $M$.
 \end{exmp}
 %
 \begin{exmp}
@@ -327,7 +334,7 @@ $TM$.
 %
 In general, given a rank $n$ vector bundle $E \to M$, we can construct the
 frame bundle  $\B(E)$ for $E$, where the fiber over $x \in M$ is the
-$\GL_n\R$-torsor of bases for the fiber $E_x$. We can then
+$GL_n\R$-torsor of bases for the fiber $E_x$. We can then
 recover $E$ by taking the associated bundle
 $\B(E) \times_{GL_n\R} \R^n$, so the process of taking frames and constructing
 associated bundles are inverses of each other.
@@ -366,7 +373,7 @@ Then given a section $\sigma : M \to \B(M) / O_n$, this gives an $O_n$ bundle
 over $M$ via the pullback $\sigma^*\B(M)$. In addition, we get a $O_n$-equivariant
 map $\sigma^*\B(M) \to \B(M)$ given by $(p, b) \mapsto (p, \iota(b))$. The
 bundle $\sigma^*\B(M)$ can be thought of as the bundle of orthonormal frames
-with respect to some Riemannian metric on $M$, and the fact that $\B(M) / O_n$
+with respect to a Riemannian metric on $M$, and the fact that $\B(M) / O_n$
 admits sections corresponds to the fact that every manifold admits a Riemannian
 metric.
 \end{exmp}

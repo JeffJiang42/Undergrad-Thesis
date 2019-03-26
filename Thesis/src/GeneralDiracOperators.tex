@@ -38,5 +38,59 @@ denotes the right action of $g \in G$.
 \end{defn}
 %TODO Space of splittings is affine over Hom(T_{\pi(e)}M, V)
 %TODO, connections exist?
+Having defined a connection, we should check that such an object actually exists.
+To show this, we first need a few lemmas.
+%
+\begin{defn}
+Let
+\[\begin{tikzcd}
+0 \ar[r] & A \ar[r, "\varphi"] & B \ar[r, "\psi"] & C \ar[r] & 0
+\end{tikzcd}\]
+be a short exact sequence of vector spaces. A \ib{splitting} of this
+exact sequence is a map $i : C \to B$ such that $\varphi \circ i = \id_C$.
+If a splitting exists, we say that the short exact sequence splits.
+\end{defn}
+%
+\begin{lem}
+Every short exact sequence of vector spaces
+\[\begin{tikzcd}
+0 \ar[r] & A \ar[r, "\varphi"] & B \ar[r, "\psi"] & C \ar[r] & 0
+\end{tikzcd}\]
+splits.
+\end{lem}
+%
+\begin{proof} %TODO
+
+\end{proof}
+%
+\begin{lem}
+The space of splittings of a short exact sequence
+\[\begin{tikzcd}
+0 \ar[r] & A \ar[r, "\varphi"] & B \ar[r, "\psi"] & C \ar[r] & 0
+\end{tikzcd}\]
+is an affine space over $\hom(C,B)$,
+i.e. the difference $i - j$ can be canonically identified with an element of
+$\hom(C,A)$.
+\end{lem}
+%
+\begin{proof}
+Let $i,j : C \to B$ be splittings of the exact sequence, and let
+$c \in C$. Then since $i$ and $j$ are splittings,
+\[
+\psi((i-j)(c)) = \psi(i(c)) - \psi(j(c)) = c - c = 0
+\]
+Therefore, $(i-j)(c) \in \ker\psi$, so by exactness, there exists an $a \in A$
+such that $\varphi(a) = (i-j)(c)$. By exactness, we know $\varphi$ is injective,
+so this $a$ is unique. Therefore, the mapping $c \mapsto \varphi\inv((i-j)(c))$
+defines the desired linear map $C \to A$.
+\end{proof}
+%
+\begin{prop}
+Given a fiber bundle $\pi : E \to F$, a connection $H \subset TE$ exists.
+\end{prop}
+%
+\begin{proof}%TODO
+
+\end{proof}
 %TODO identification of vertical spaces with the Lie algebra.
 %
