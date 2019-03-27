@@ -2,7 +2,7 @@
 \section{The Pin and Spin Groups}
 %
 The group of invertible elements in $\Cliff_{p,q}(\R)$, denoted
-$\Cliff_{p,q}^\times(\R)$ contains a group $\Pin_{p,q}$, which a double
+$\Cliff_{p,q}^\times(\R)$ contains a group $\Pin_{p,q}$, which is a double
 cover of the group $O_{p,q}$ of matrices preserving the standard bilinear
 form $\langle \cdot,\cdot \rangle$ on $\R^{p,q}$. Inside of $\Pin_{p,q}$,
 there exists a subgroup $\Spin_{p,q} \subset \Pin_{p,q}$, which double covers
@@ -20,13 +20,16 @@ products of basis vectors, i.e.
 \[
 \Spin_{p,q} = \Pin_{p,q} \cap \Cliff_{p,q}^0(\R)
 \]
+In indefinite signatures. $SO_{p,q}$ has multiple components. Some conventions
+let $\Spin_{p,q}$ denote the double cover of the identity component $SO_{p,q}^+$,
+which is the identity component of $\Spin_{p,q}$, denoted $\Spin^0_{p,q}$.
 In the case that the bilinear form is definite, we let $\Pin_n^+ = \Pin_{n,0}$
 and $\Pin_n^- = \Pin_{0,n}$. There is no such distinction for the Spin groups
 in definite signatures.
 \end{defn}
 %
 \begin{thm}
-$\Spin_{0,n} \cong \Spin_{n,0}$.
+$\Spin_{p,q} \cong \Spin_{q,p}$.
 \end{thm}
 %
 \begin{proof}
@@ -38,6 +41,7 @@ is isomorphic to the opposite group $\Spin_{p,q}^\text{op}$. We then know
 that every group is isomorphic to its opposite group via the map $g \mapsto g\inv$,
 giving us the desired isomorphism.
 \end{proof}
+%
 %
 In particular, this implies that the Spin groups in definite signatures are
 isomorphic, so we will henceforth denote them as $\Spin_n$.
@@ -73,9 +77,20 @@ with $v$, giving us that $RA$ is a composition of at most $n-1$ reflections. Fin
 composing $RA$ with $R$ gives us that $A$ can be written as a composition of at most
 $n$ hyperplane reflections.
 \end{proof}
-%
+%TODO Twisted Adjoint action
 The Cartan-Dieudonn\'e theorem will be the central piece for showing that the
-Pin and Spin groups are double covers of the orthogonal groups.
+Pin and Spin groups are double covers of the orthogonal groups. The Clifford
+algebra has an automorphism
+$\alpha : \Cliff_{p,q}(\R) \to \Cliff_{p,q}(\R)$ that extends the mapping
+$v \mapsto v-$. The action of $\alpha$ on a product $v_1\cdots v_k$ of vectors
+$v_i \in \R^{p,q}$ is
+\[
+\alpha(v_1\cdots v_k) = (-1)^k v_1\cdots v_k
+\]
+the automorphism $\alpha$ gives another way to realize the grading on
+$\Cliff_{p,q}$ -- it is the grading operator. The $+1$-eigenspace of $\alpha$
+is exactly $\Cliff_{p,q}^0(\R)$, and the $-1$-eigenspace is the odd subspace
+$\Cliff_{p,q}^0(\R)$.
 %
 \begin{thm}
 There exist $2$-to-$1$ group homomorphisms $\Pin_{p,q} \to O_{p,q}$ and
@@ -105,13 +120,14 @@ satisfying $\langle v,v \rangle = \pm 1$, we have that
 $v\inv = \pm v$. Then given $g \in \Pin_{p,q}$, and $v \in \R^{p,q}$, we claim
 that the left action
 \[
-g \cdot v = -gvg\inv
+g \cdot v = \alpha(g)vg\inv
 \]
 defines the group action we desire. To show this, we must show that this indeed
 maps $\R^{p,q}$ back into itself, and that the group elements act by orthogonal
-trasnformations. It suffices to check this on the generating set of elements
-$v$ with $\langle v,v \rangle = \pm 1$. First assume that $\langle v,v \rangle = 1$.
-Then given $w \in \R^{p,q}$, we compute
+transformations. We first compute this actions on vectors $v \in \R^{p,q}$ with
+$\langle v,v \rangle = \pm 1$. In either case, since $v \in \R^{p,q}$, we have
+that $\alpha(v) = -v$. First assume that $\langle v,v \rangle = 1$. Then given
+$w \in \R^{p,q}$, we compute
 %
 \begin{align*}
 -vwv\inv &= -vwv \\
@@ -127,11 +143,21 @@ case that $\langle v,v \rangle = -1$, we compute
 &= (2\langle -v,w\rangle + wv)(-v) \\
 &= w - 2\langle -v,w \rangle(-v)
 \end{align*}
-which is hyperplane reflection about the orthogonal complement of $-v^\perp$,
-which is the same as the orthogonal complement of $v^\perp$. Therefore,
+which is hyperplane reflection about the orthogonal complement of $-v$,
+which is the same as the orthogonal complement of $v$. Then given two
+vectors $v_1,v_2 \in \R^{p,q}$, we have that $\alpha(v_1v_2) = v_1v_2$,
+so given $w \in \R^{p,q}$,
+\[
+\alpha(v_1v_2)w(v_1v_2)\inv = (-v_1)(-v_2)wv_2\inv v_1\inv
+\]
+which is exactly the composition of hyperplane reflection about $v_2^\perp$,
+with hyperplane reflection about $v_1^\perp$. Therefore,
 $\Pin_{p,q}$ acts by orthogonal transformations, giving us a homomorphism
 $\Pin_{p,q} \to O_{p,q}$. This map is surjective by the Cartan-Dieudonn\'e
-theorem, and it can be verified that the kernel is $\set{\pm 1}$.
+theorem, and it can be verified that the kernel is $\set{\pm 1}$. In addition,
+an even number of hyperplane reflections is orientation preserving, which gives
+a surjection $\Spin_{p,q} \to SO_{p,q}$, by restricting the map
+$\Pin_{p,q} \to O_{p,q}$. In addition, the kernel $\set{\pm 1}$ is contained in $\Spin_{p,q}$, so this map is also a double covering.
 %
 \end{proof}
 %
@@ -148,8 +174,11 @@ we have that $\Spin_2 \cong \mathbb{T}$, where the covering map is given
 by $z \mapsto z^2$. In the case of $SO_3$, we consider the unit quaternions,
 which form a Lie group isomorphic to the group $SU_2$. Then given $q \in SU_2$, we define
 the map $\varphi_q : \R^3 \to \R^3$ where $\varphi_q(v) = qv\bar{q}$, where
-$\bar{q}$ is the quaternionic conjugate of $q$ (e.g. $\overline{a + bi + cj +dk}
-= a -bi -cj -dk$), and $v = v^ie_i$ is idenitified with $v^1 i + v^2j + v^3k \in \H$.
+$\bar{q}$ is the quaternionic conjugate of $q$, i.e.
+\[
+\overline{a + bi + cj +dk} = a -bi -cj -dk
+\]
+and we identify $v = v^ie_i$ is  with $v^1 i + v^2j + v^3k \in \H$.
 The mapping $q \mapsto \varphi_q$ then gives a double cover $SU_2 \to SO_3$.
 In particular, $SU_2$ is diffeomorphic to the sphere $S^3$, so the double
 covering realizes $SO_3$ as the quotient of $S^3$ by the antipodal map,
@@ -166,7 +195,7 @@ on $\Lambda^2V$ by
 where $\langle \alpha \wedge \beta, \,u \rangle$ denotes the natural pairing of
 the vector space $\Lambda^4V$ with its dual $\Lambda^4V^*$. Fix a basis
 $\set{e_i}$ for $V$ where $\mu(e_1 \wedge e_2 \wedge e_3 \wedge e_4) = 1$. In this basis,
-we see that the group of transformations $\Aut(V, \mu)$ perserving $\mu$ is
+we see that the group of transformations $\Aut(V, \mu)$ preserving $\mu$ is
 isomorphic to the group $SL_4\C$. In addition, each map $T \in \Aut(V, \mu)$
 induces a map $\Lambda^2 T : \Lambda^2V \to \Lambda^2V$, which is determined
 by the formula $\Lambda^2 T(v \wedge w) = Tv \wedge Tw$. For any $T \in \Aut(V, \mu)$,
@@ -174,7 +203,7 @@ the induced map $\Lambda^2 T$ preserves the bilinear form on $\Lambda^2V$, so th
 mapping $T \mapsto \Lambda^2V$ determines a group homomorphism
 $\Aut(V, \mu) \to \Aut(\Lambda^2V, \langle \cdot,\cdot \rangle)$, where
 $\Aut(\Lambda^2V,\langle\cdot,\cdot\rangle)$ denotes the group of linear automorphisms
-perserving the bilinear form. The kernel of this map is $\set{\pm \id_V}$, and fixing
+preserving the bilinear form. The kernel of this map is $\set{\pm \id_V}$, and fixing
 an orthogonal basis for $\langle\cdot,\cdot\rangle$ gives us that this map is
 a double cover $SL_4\C \to SO_6\C$, so $SL_4\C$ is isomorphic to the
 complex spin group $\Spin_4\C$ \\
@@ -196,16 +225,18 @@ is isomorphic to $SO_6\C \cap U_6$, which is $SO_6\R$. This gives us that
 $SU_4 \cong \Spin_6$. \\
 
 In general, one can play the game of fixing additional structure on $V$
-(e.g. a real stucture, quaternionic structure, symplectic form) and look
+(e.g. a real structure, quaternionic structure, symplectic form) and look
 for the induced structure on $\Lambda^2V$. This then gives a map from
 automorphisms of $V$ preserving this additional structure to automorphisms
 of $\Lambda^2V$ preserving the induced structure. Playing this game then
 determines several other low dimensional Spin groups.
 %
 \begin{align*}
-&\Spin_5\C \cong Sp_4\C \qquad\Spin_4 \cong Sp(4) \qquad\:\:\:\Spin_4\C \cong SL_2\C \times
+&\Spin_5\C \cong Sp_4\C \qquad\Spin_4 \cong Sp(4)
+\qquad\:\:\:\Spin_4\C \cong SL_2\C \times
 SL_2\C \\
-&\Spin_{1,3} \cong SL_2\C \qquad\: \Spin_{1,2} \cong SL_2\R \qquad\Spin_{1,5} \cong SL_2\H
+&\Spin_{1,3}^0 \cong SL_2\C \qquad\: \Spin_{1,2}^0 \cong SL_2\R
+\qquad\Spin_{1,5}^0 \cong SL_2\H
 \end{align*}
 %
 Where $Sp_4\C$ denotes the group of $4\times4$ matrices preserving a symplectic

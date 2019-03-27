@@ -1,4 +1,4 @@
-jjjjj\chapter{Spin Structures on Manifolds}
+\chapter{Spin Structures on Manifolds}
 %
 \subsectionend $ $\\
 %
@@ -25,7 +25,7 @@ of a fiber bundle.
 Let $M$ and $F$ be smooth manifolds. Then a \ib{fiber bundle} over $M$ with
 model fiber $F$ is a the data of a smooth manifold $E$ with a smooth map
 $\pi : E \to M$ such that for every point $p \in M$, there is a neighborhood
-$U \subset M$ containing $p$ such that there exists an diffeomorphism
+$U \subset M$ containing $p$ and a diffeomorphism
 $\varphi : \pi\inv(U) \to U \times F$ such that the diagram
 \[\begin{tikzcd}
 \pi\inv(U) \ar[rr, "\varphi"] \ar[dr, "\pi"']&& U \times F \ar[dl, "p_U"] \\
@@ -66,7 +66,7 @@ where $\alpha(x,p) = p$. Pullbacks give rise to the commutative diagram
 f^*E \ar[d, "p"']\ar[r, "\alpha"] & E \ar[d, "\pi"] \\
 X \ar[r, "f"']& M
 \end{tikzcd}\]
-and are an instance of a general construction called the \ib{fibered product}.
+and are an instance of a general construction called the \ib{fiber product}.
 \end{defn}
 %
 \begin{defn}
@@ -131,7 +131,7 @@ Almost all of the groups we have discussed previously are Lie groups.
 %
 Another important class of fiber bundles are principal bundles. Given a
 Lie group $G$, the fibers of a principal $G$-bundle are $G$-torsors --
-manifiolds with a smooth free and transtive right (or left) $G$-action.
+manifolds with a smooth free and transitive right (or left) $G$-action.
 Given a $G$ torsor $M$ and a point $p$ in $M$, there is a diffeomorphism
 $G \to M$, where $g \mapsto p \cdot g$. A $G$-torsor can be thought
 of as $G$ without a distinguished identity element.
@@ -194,7 +194,7 @@ P \times_G F = P \times G / (p,g) \sim (p\cdot h, h\inv g)
 \]
 Since the group action on $P$ preserves the fibers, the projection
 $p_1 : P \times F \to P$ composed with the projection $\pi : P \to M$
-descends to the quotient, givng us a projection map
+descends to the quotient, giving us a projection map
 $\Phi : P \times_G F \to M$.
 \end{defn}
 %
@@ -291,8 +291,8 @@ a $G$-equivariant map $P \to F$. Given such a section, and a point $x \in M$,
 we have that $\sigma(x) = [p, f]$ for some $p \in P$ and $f \in F$. Then
 define $\tilde{\sigma} : P \to F$ such that $\tilde{\sigma}(p) = f$, and
 $\tilde{\sigma}(p \cdot g) = g\inv \cdot f$. Since $G$ acts freely and transitively
-on the fibers, this specifies the map on every
-point of $P$. In addition, $\tilde{\sigma}$ is $G$-equivariant by construction.
+on the fibers, this specifies the map on every point of $P$. In addition,
+$\tilde{\sigma}$ is $G$-equivariant by construction.
 Then the maps
 \[
 \set{G\text{-equivariant maps } P \to F} \longleftrightarrow \Gamma_M(P \times_G F)
@@ -302,7 +302,7 @@ correspondence.
 \end{proof}
 %
 In some sense, the geometry of the associated fiber bundle $P \times_G F$
-is controlled by the group $G$, as $G$ determines a disinguished
+is controlled by the group $G$, as $G$ determines a distinguished
 group of symmetries of the fiber $F$.
 %
 \begin{exmp}[The tangent bundle as an associated bundle]
@@ -350,7 +350,7 @@ homomorphism $F : Q \to P$.
 The map $F : Q \to P$ induces a map $\tilde{F} : Q \times_H G \to P$, where we
 map the equivalence class $[q,g]$ to $F(q) g$. This is well defined
 on equivalences classes since
-%TODO this next line might be unnecesary, since it is the same map
+%TODO this next line might be unnecessary, since it is the same map
 %constructed using the correspondence with sections -- double check this.
 \[
 (q \cdot h, \rho(h)\inv g) \mapsto F(q \cdot h)\rho(h)\inv g = F(q)\rho(h)\rho(h)\inv g
@@ -362,12 +362,12 @@ Let $M$ be a smooth manifold, and $\pi : \B(M) \to M$ its bundle of frames.
 The inclusion map $\iota: O_n \hookrightarrow GL_n\R$ gives an action of $O_n$ on
 $\B(M)$, where given $b \in \B(M)$ and $T \in O_n$, $b \cdot T = b \cdot \iota(T)$.
 We then take the quotient by this $O_n$ action, giving us a quotient map
-$q : \B(M) / O_n$. Since the inclusion is injective, the $O_n$ action
+$q : \B(M) \to \B(M) / O_n$. Since the inclusion is injective, the $O_n$ action
 is free on $\B(M)$, so this gives $q : \B(M) \to \B(M) / O_n$ the structure of a
 $O_n$ bundle. In addition, the action of $O_n$ preserves the fibers of
 $\pi : \B(M) \to M$, so $\pi$ descends to the quotient, so $\B(M) / O_n \to M$
-is a fiber bundle with model fiber $GL_n\R / O_n$. Since $GL_n\R$ deformation
-retracts onto $O_n$ via the Gram-Schmidit algorithm, $GL_n\R / O_n$ is
+is a fiber bundle over $M$ with model fiber $GL_n\R / O_n$. Since $GL_n\R$ deformation
+retracts onto $O_n$ via the Gram-Schmidt algorithm, $GL_n\R / O_n$ is
 contractible, so the fiber bundle $\B(M)/ O_n \to M$ admits global sections.
 Then given a section $\sigma : M \to \B(M) / O_n$, this gives an $O_n$ bundle
 over $M$ via the pullback $\sigma^*\B(M)$. In addition, we get a $O_n$-equivariant
@@ -380,17 +380,19 @@ metric.
 %
 Principal bundles can be thought of as a generalization of covering spaces.
 For discrete groups $G$, the data of a principal $G$-bundle $P \to M$ is the
-data of a (possibly disconnected) $|G|$-fold cover of $M$ with deck transformation
-group isomorphic to $G$. Discreteness of $G$ allows for a very complete description
-of all principal $G$-bundles over a given manifold $M$.
+data of a (possibly disconnected) cover of $M$ with a deck transformation
+group isomorphic to $G$ acting freely and transitively on the fibers. If
+$G$ is finite, this is a $|G|$-fold covering, and if $G$ is countable, the
+cover is an infinitely sheeted cover. Discreteness of $G$ allows for a very
+complete description of all principal $G$-bundles over a given manifold $M$.
 %
 \begin{defn}
 Let $(M,x_0)$ be a pointed topological space (in our case, usually a manifold),
 i.e. a space $M$ with a choice of distinguished basepoint $x_0 \in M$. Then
 a \ib{pointed principal $G$-bundle} over $M$ is the data of a principal $G$-bundle
 $\pi : P \to M$, along with a choice of basepoint $p_0 \in \pi\inv(x_0)$. We
-denote this as $\pi : (P,p_0) \to (M, x_0)$. We denote the set of pointed principal
-$G$-bundles over $(M,x_0)$ as $\Bun_G(M ,x_0)$.
+denote this as $\pi : (P,p_0) \to (M, x_0)$. We denote the set of isomorphism
+classes of pointed principal $G$-bundles over $(M,x_0)$ as $\Bun_G(M ,x_0)$.
 \end{defn}
 %
 We now recall some properties of covering spaces. A pointed covering space
@@ -425,7 +427,7 @@ We once more provide maps in both directions. Every pointed principal $G$-bundle
 $(P,p_0) \to (M, x_0)$ determines a group homomorphism $\pi_1(M,x_0) \to G$
 by the holonomy action. In the other direction, given a group homomorphism
 $\varphi : \pi_1(M, x_0) \to G$, we want to construct a pointed principal $G$
-bundle $(P, p_0) \to (M, x_0)$ with holonomy $\varphi$. Every pointed manifold
+bundle $(P, p_0) \to (M, x_0)$ with holonomy $\varphi$. Every connected pointed manifold
 $(M, x_0)$ has a \ib{universal cover} $(\tilde{M}, \tilde{x}_0) \to (M,x_0)$,
 which has a free and transitive action by $\pi_1(M,x_0)$, making it a pointed
 principal $\pi_1(M,x_0)$ bundle over $(M,x_0)$. In addition, the homomorphism

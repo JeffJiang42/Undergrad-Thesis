@@ -9,6 +9,7 @@ Restricting to the Spin group $\Spin_n \subset \Cliff^0_n(\R)$, this gives us
 the Spin representations. These Spin representations define projective
 representations of the group $SO_n$.
 %
+\iffalse
 \begin{prop}
 Let $G$ be a group, and $V$ a finite dimensional irreducible representation of $G$.
 Then every element of the center acts by scalars, i.e. for $g \in Z(G)$, there
@@ -26,10 +27,12 @@ h \cdot (g\cdot v) = g \cdot (h\cdot v)
 Therefore, the action of $g$ defines a $G$-equivariant map $V \to V$, which
 by Schur's Lemma must necessarily be a scalar multiple of the identity.
 \end{proof}
+\fi
 %
 Given a Spin representation $\S$, we have that the elements
-$\pm 1$ act by scalars. Then since $SO_n$ is the quotient of $\Spin_n$ by the
-subgroup $\set{\pm 1}$ of the center, we get a projective representation of
+$\pm 1$ act by scalars since they arise by restricting the action of a Clifford
+algebra on an irreducible module. Then since $SO_n$ is the quotient of $\Spin_n$
+by the subgroup $\set{\pm 1}$ of the center, we get a projective representation of
 $SO_n$ on the projectivization $\P\S$ in the following way:
 Given an element $A \in SO_n$, we have that $A$ lifts to two elements
 $\set{\pm \tilde{A}} \subset \Spin_n$ which differ by $-1$. Since $-1$
@@ -43,8 +46,8 @@ $\End V \to \End W$ where $A \in \End V$ is mapped to
 $\varphi \circ A \circ \varphi\inv$. However, the converse is not true.
 %
 \begin{prop}
-Let $\varphi : \End V \to \End W$ be an algebra isomorphism. Then there does
-not exist a unique isomorphism $\psi : V \to W$ inducing $\varphi$.
+An algebra isomorphism $\varphi : \End V \to \End W$ induces a $Z(\F)$-torsor
+of maps $V \to W$, where $Z(\F)$ is the center of $\F$.
 \end{prop}
 %
 To prove this, we need a lemma.
@@ -77,16 +80,17 @@ theorem, we have that $\Aut(M_n\F) \cong PGL_n\F$.
 \end{proof}
 %
 \begin{proof}[Proof of Proposition]
-Fix bases for $V$ and $W$. These bases then induces isomorphisms
+Fix bases for $V$ and $W$. These bases then induce isomorphisms
 $M_n\F \to V$ and $M_n\F \to W$. In these bases, the algebra
-isomorphism $\varphi$ is given by an automorphism $M_n\F \to M_n\F$, and
-the question now translates to asking whether this automorphism induces
-an isomorphism $\F^n \to \F^n$. From the lemma, we know this is false -- an
-automorphism of $M_n\F$ only determines an element of $PGL_n\F$, so it
-is induced by an entire family of automorphisms differing by $Z(GL_n\F)$.
+isomorphism $\varphi$ is given by an automorphism $M_n\F \to M_n\F$. From the
+lemma, we know that this automorphism is determined by an element of
+$PGL_n\F = GL_n\F / Z(GL_n\F)$. The center $Z(\GL_n\F)$ consists of
+scalar matrices $\lambda I$ with $\lambda \in Z(\F)$, which is acted on
+freely and transitiely by $Z(\F)$ by multiplication, giving it the structure
+of a $Z(\F)$-torsor.
 \end{proof}
 %
-However, an isomorphism $\varphi : \End V \to \End W$ does induce an isomorphism
+However, an isomorphism $\varphi : \End V \to \End W$ does induce a unique isomorphism
 $\P V \to \P W$ of projective spaces. To see, this we make an identification
 between $1$ dimensional subspaces of $V$ with maximal left ideals of $\End V$.
 %

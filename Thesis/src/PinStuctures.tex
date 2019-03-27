@@ -28,8 +28,8 @@ different groups, namely
 \Pin_1^+ &\cong \Z/2\Z \times \Z / 2\Z \\
 \Pin_1^- &\cong \Z/4\Z
 \end{align*}
-The isomorphism $\Pin^+_1$ maps $-1 \mapsto (1,0)$ and $e_1 \mapsto (0,1)$,
-and the isomorphism $\Pin^-_1$ maps $e_1 \mapsto 1$.
+The isomorphism $\Pin^+_1 \to \Z/2\Z \times \Z/2\Z$ maps $-1 \mapsto (1,0)$ and
+$e_1 \mapsto (0,1)$, and the isomorphism $\Pin^-_1 \to \Z/4\Z$ maps $e_1 \mapsto 1$.
 %
 
 We do the $\Pin_1^+$ case first. In this case, the Clifford algebra
@@ -50,18 +50,18 @@ We denote all the bundles $P_g \to S^1$, where $g$ is the image of $\alpha$ unde
 the corresponding homomorphism.
 %
 \begin{enumerate}
-  \item The bundle $P_1 \to S^1$ has $4$ connected components,
-  each mapped onto diffeomorphically onto $S^1$, and the action of $\Pin_1^+$
-  permutes these $4$ components. All the $\Pin_1^+$ bundles are diffeomorphic
-  to two disjoint circles that both cover the circle via the map $z \mapsto z^2$,
-  and are differentiated by the action of $\Pin_1^+$.
-  \item For the bundle $P_{-1} \to S^1$, the element $-1$ acts by rotating both
+  \item The bundle $P_1 \to S^1$ has $4$ connected components, each diffeomorphic
+  to a circle. The map $P-1 \to S^1$ maps each component diffeomorphically onto
+  $S^1$, and the action of $\Pin_1^+$ permutes these $4$ components.
+  \item The bundle $P_{-1} \to S^1$ has two components, each diffeomorphic to
+  a circle and double covering $S^1$. The element $-1$ acts by rotating both
   circles by $\pi$, and the element $e_1$ exchanges the two circles.
-  \item For the bundle $P_{e_1} \to S^1$, the action of
-  $e_1$ rotates both circles by $\pi$, and $-1$ exchanges the two circles.
-  \item For $P_{-e_1} \to S^1$, the element $-e_1$ acts by rotation by $\pi$,
-  and the element $-1$ exchanges the two
-  circles.
+  \item The bundle $P_{e_1} \to S^1$ has two components, each diffeomorphic to a
+  circle and double covering $S^1$. The action of $e_1$ rotates both circles by
+  $\pi$, and $-1$ exchanges the two circles.
+  \item The bundle $P_{-e_1} \to S^1$, has two components, each diffeomorphic
+  to a circle and double covering $S^1$. The element $-e_1$ acts by rotation by
+  $\pi$, and the element $-1$ exchanges the two circles.
 \end{enumerate}
 %
 We then must determine which bundles admit
@@ -83,7 +83,7 @@ elements $\pm 1 \in \Pin_1^+$ act trivially, while the elements $\pm e_1$ act by
   $P_{e_1} \to \B_O(S^1)$ must map one component of $P_{e_1}$ onto two
   components of $\B_O(S^1)$, which is impossible
   \item The bundle $P_{-e_1} \to S^1$ also cannot determine a $\Pin_1^+$
-  stucture by the same reason that $P_{e_1}$ cannot.
+  structure by the same reason that $P_{e_1}$ cannot.
 \end{enumerate}
 %
 One thing to note is that an orientation of $S^1$ and a $\Pin_1^+$ structure
@@ -111,8 +111,8 @@ the homomorphism mapping $\alpha \mapsto g$.
   \item The bundle $P_{e_1} \to S^1$ corresponds to the $4$-fold covering
   $S^1 \to S^1$ given by $z \mapsto z^4$. The action of $e_1$ acts by
   rotation by $\pi / 2$.
-  \item The bundle $P_{-e_1} \to S^1$ also corresponds to a $4$-fold covering,
-  where the action of $-e_1$ is given by rotation by $\pi / 2$.
+  \item The bundle $P_{-e_1} \to S^1$ also corresponds to the $4$-fold covering,
+  $S^1 \to S^1$, where the action of $-e_1$ is given by rotation by $\pi / 2$.
 \end{enumerate}
 %
 Again, we need to figure out which bundles can determine $\Pin_1^-$ structures
@@ -131,9 +131,10 @@ on $S^1$.
   \item This bundle cannot determine a $\Pin_1^-$ structure by the same
   reasoning as above.
 \end{enumerate}
-Again, we see that the $\Pin_1^-$ stuctures on $S^1$ correspond to $\Spin$
-stuctures once we fix an orientation, and the associated bundles to these
-$\Pin_1^-$-bundles will have the same Dirac operator.
+Again, we see that the $\Pin_1^-$ structures on $S^1$ correspond to $\Spin$
+structures once we fix an orientation, and the associated bundles to these
+$\Pin_1^-$-bundles will have the same Dirac operator as their corresponding
+spin structures.
 \end{exmp}
 %
 On the circle, we observed that a $\Pin^\pm$ structure and and orientation
@@ -147,8 +148,8 @@ map $\B_{\Pin^\pm}(M) \to \B_O(M)$ is a principal $\Spin_n$-bundle over $M$,
 since the preimage of $SO_n \subset O_n$ under the double covers
 $\Pin^\pm_n \to O_n$ is a subgroup isomorphic to $\Spin_n$.
 The restriction of $\B_{\Pin^\pm}(M) \to \B_O(M)$ then determines the
-desired Spin structure.
-%
+desired Spin structure.\\
+
 Unlike Spin structures, $\Pin^\pm$ structures do not require an orientation,
 and can be defined on nonorientable manifolds.
 %
@@ -159,7 +160,7 @@ M = [-1,1] \times [-1,1] / (-1, x) \sim (1, -x)
 \]
 The square $S = [-1,1] \times [-1,1]$ inherits a Riemannian metric from $\R^2$,
 and the orthonormal frame bundle $\B_O(S)$ is isomorphic to
-the product $S \times O_2$. This the descends to $M$ after
+the product bundle $S \times O_2$. This the descends to $M$ after
 we specify gluing data for the identified edges of the square. The identification
 of the edges reverses the direction in the second factor, which corresponds to
 a transformation by the matrix
@@ -273,7 +274,7 @@ get different identifications on the endpoints of the top edge and the
 endpoints on the bottom edge, but for either we choose, the resulting bundle
 over $\partial M \cong S^1$ has four connected components, where each of the
 $4$ elements in the fibers of the top edge of the square pair with one of the
-elements in the fibers of the bottom edge, giving $4$ cicles. If we orient
+elements in the fibers of the bottom edge, giving $4$ circles. If we orient
 the boundary of $M$, this gives us the nonbounding Spin structure corresponding
 to the disconnected double cover of $S^1$. \\
 
@@ -303,7 +304,7 @@ double cover. We compute the preimages
 %
 This defines a $\Pin^-_2$ structure on $\partial M$ that has two connected
 components. To see this, we glue the fiber over top right corner
-with the fiber over the bottom left corner viacleft multiplication by $e_1$,
+with the fiber over the bottom left corner via left multiplication by $e_1$,
 giving the identifications
 %
 \begin{align*}
@@ -318,7 +319,7 @@ over the top left corner are
 \pm\frac{\sqrt{2}}{2}(-1 + e_1e_2) &\sim \mp\frac{\sqrt{2}}{2}(e_1 + e_2)\\
 \pm\frac{\sqrt{2}}{2}(-e_1 + e_2) &\sim \pm\frac{\sqrt{2}}{2}(1 + e_1e_2)
 \end{align*}
-The two flipped signs connects two of the components of the fiber togther,
+The two flipped signs connects two of the components of the fiber together,
 giving two components instead of the four components in the case with
 $\Pin^+_2$, so after fixing an orientation of $\partial M$, we get the Spin
 structure corresponding to the bounding Spin structure, i.e. the Spin structure
@@ -394,7 +395,7 @@ a $\Pin^\pm$ structure on $\tilde{M}$, giving us the diagram
 \pi^*\B_O(M) \ar[d]\ar[r] & \B_O(M) \ar[d]\\
 \tilde{M} \ar[r, "\pi"'] & M
 \end{tikzcd}\]
-Then since $\tilde{M}$ is oriented, and and orientation along with a $\Pin^\pm$
+Then since $\tilde{M}$ is oriented, and an orientation along with a $\Pin^\pm$
 structure determines a Spin structure, we get a Spin structure on $\tilde{M}$.
 \end{proof}
 %

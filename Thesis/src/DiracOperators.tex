@@ -4,10 +4,9 @@
 One important application of Clifford algebras and Spin groups comes from
 physics. In the process of developing a relativistic equation for the electron,
 Paul Dirac saw the need for a first order differential operator $D$ such
-that $D$ squared to the Laplace operator\footnote{Our reasoning for choosing this sign
-convention for $\Delta$ is twofold -- one reason is that the spectrum of $\Delta$
-is positive with this choice of sign, and the second is that this definition
-coincides with a generalized Laplace operator on a Riemannian manifold.}.
+that $D$ squared to the Laplace operator.\footnote{One reason for choosing this sign
+convention for $\Delta$ is that the spectrum of $\Delta$
+is positive with this choice of sign}
 \[
 \Delta = -\sum_i \frac{\partial^2}{\partial(x^i)^2}
 \]
@@ -42,7 +41,7 @@ D = e^i\frac{\partial}{\partial x^i}
 %
 It is not clear from the definition what function space $D$ should act on.
 The partial derivative operators make sense for any vector valued function, but
-multiplcation by $e^i$ does not make sense an arbitrary vector space -- it must
+multiplication by $e^i$ does not make sense an arbitrary vector space -- it must
 be a Clifford module. Therefore, $D$ is an operator
 $D: C^\infty(\R^n, M) \to C^\infty(\R^n, M)$ on smooth functions from $\R^n$
 to a Clifford module $M$. In fuller generality, functions from $\R^n \to M$
@@ -71,11 +70,16 @@ D = \begin{pmatrix}
 \partial_x & 0
 \end{pmatrix}
 \]
-Note that the matrix is block off-diagonal. Since we picked the ordered basis $(1,e^1)$.
-for $\Cliff_{0,1}(\R)$, whose elements are even and odd respectively. The action
-of the top right block is the action on the even subspace, and the action of
-the bottom left block is the action on the odd subspace. This
-shows that $D$ is an odd operator, as it reverses the grading. \\
+Note that the matrix is block off-diagonal. The vector space
+$C^\infty(\R, \Cliff_{0,1}(\R))$ has a natural grading where the even elements
+are maps $\R \to \Cliff_{0,1}^0(\R)$ and the odd elements are maps
+$\R \to \Cliff_{0,1}^1(\R)$. Since we picked the ordered basis $(1,e^1)$
+for $\Cliff_{0,1}(\R)$, whose elements are even and odd respectively, the top
+right block of the matrix is action of $D$ as a map from the even subspace to
+the odd subspace, and the bottom left block of the matrix is the action of $D$
+as a map from the odd subspace to the even subspace.
+This shows that $D$ is an odd operator, as it reverses the grading on
+$C^\infty(\R, \Cliff_{0,1})$. \\
 
 In $2$ dimensions, $\Cliff_{0,2}(\R)$ has the ordered basis $(1, e^1e^2, e_1,e_2)$,
 where we choose the ordering by the parity of the elements. Again, we can
@@ -94,7 +98,7 @@ D = \begin{pmatrix}
 \partial_y & -\partial_x & 0 & 0
 \end{pmatrix}
 \]
-Which is actually a familiar differential operator in disguise. We make the
+which is actually a familiar differential operator in disguise. We make the
 identification of $\Cliff_{0,2}(\R)$ with the quaternions $\H$, which
 have a direct sum decomposition $\H = \C \oplus \C$, giving a $\Z/2\Z$-grading.
 The mappings $e_1e_2 \mapsto i$ and $e_2 \mapsto i$ determine vector space
