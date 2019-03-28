@@ -36,7 +36,6 @@ If $E$ is a principal $G$-bundle, we ask for the horizontal distribution $H$
 to be $G$-invariant, i.e. $H_{p \cdot g} = d(R_g)_p(H_p)$, where $R_g : E \to E$
 denotes the right action of $g \in G$.
 \end{defn}
-%TODO Space of splittings is affine over Hom(T_{\pi(e)}M, V)
 %TODO, connections exist?
 Having defined a connection, we should check that such an object actually exists.
 To show this, we first need a few lemmas.
@@ -51,6 +50,16 @@ exact sequence is a map $i : C \to B$ such that $\varphi \circ i = \id_C$.
 If a splitting exists, we say that the short exact sequence splits.
 \end{defn}
 %
+A splitting $i : C \to B$ can be thought of as equivalent data to an isomorphism
+$B \to A \oplus C$. Since the sequence is exact, the map $\varphi : A \to B$
+is injective, so we can identify $A$ with its image $\varphi(A) \subset B$.
+The splitting is also injective, giving an identifcation of $C$ with its
+image $i(C)$. Since $i$ is a splitting, $\psi \circ i = \id_C$, which implies
+that $i(C) \cap \ker\psi = \set{0}$, and since the sequence is exact,
+$\ker\psi = \varphi(A)$. Therefore, the map
+$\varphi \oplus i : A \oplus C \to B$ is injective, and by a dimension count,
+it is an isomorphism.
+%
 \begin{lem}
 Every short exact sequence of vector spaces
 \[\begin{tikzcd}
@@ -59,8 +68,12 @@ Every short exact sequence of vector spaces
 splits.
 \end{lem}
 %
-\begin{proof} %TODO
-
+\begin{proof}
+We want to define a map $i : C \to B$ such that $\psi \circ i = \id_C$. Let
+$\set{c_1, \ldots, c_n}$ be a basis for $C$. Since the sequence is exact,
+the map $\psi : B \to C$ is surjective, so for each $c_i$, we can pick an element
+$b_i \in B$ such that $\psi(b_i) = c_i$. Then define $i(c_i) = b_i$ and
+extend $i$ to all of $i$, giving the desired splitting.
 \end{proof}
 %
 \begin{lem}
@@ -89,9 +102,17 @@ defines the desired linear map $C \to A$.
 Given a fiber bundle $\pi : E \to F$, a connection $H \subset TE$ exists.
 \end{prop}
 %
-\begin{proof}%TODO
-Over any point $e \in E$, the space of splittings of
-$0 \to V_e \to TE_e \to (\pi^*TM)_e$ is affine over $\hom((\pi^*TM))_e \to V_e)$.
+\begin{proof}
+It suffices to show that the short exact sequence
+\[\begin{tikzcd}
+0 \ar[r] & V \ar[r] & TE \ar[r] & \pi^*TM \ar[r] & 0
+\end{tikzcd}\]
+splits. Over any point $e \in E$, the space of splittings of
+$0 \to V_e \to TE_e \to (\pi^*TM)_e$ is affine over the vector space
+$\hom((\pi^*TM))_e \to V_e)$. Doing this fiberwise, we get a fiber bundle
+$S \to E$ where the fiber over each $e \in E$ is the space of splittings
+of the exact sequence.
+
 \end{proof}
 %TODO identification of vertical spaces with the Lie algebra.
 %

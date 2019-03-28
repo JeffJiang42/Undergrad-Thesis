@@ -1,0 +1,78 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.7 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{nty/global/}
+    \entry{CliffMod}{article}{}
+      \name{author}{3}{}{%
+        {{hash=d3e66910599da234a4e237d3d81f0dd5}{%
+           family={Atiyah},
+           family_i={A\bibinitperiod},
+           given={M.\bibnamedelimi F.},
+           given_i={M\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=7bc41e2604aae0497317ed7fd48b641f}{%
+           family={Bott},
+           family_i={B\bibinitperiod},
+           given={R.},
+           given_i={R\bibinitperiod}}}%
+        {{hash=62c9214d61698421864e52918cc892bd}{%
+           family={Shapiro},
+           family_i={S\bibinitperiod},
+           given={A.},
+           given_i={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{ee561b8e387efb8b2d3abef3749683a9}
+      \strng{fullhash}{ee561b8e387efb8b2d3abef3749683a9}
+      \field{sortinit}{A}
+      \field{sortinithash}{b685c7856330eaee22789815b49de9bb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Topology}
+      \field{title}{Clifford modules}
+      \field{year}{1964}
+      \field{pages}{3\bibrangedash 38}
+      \range{pages}{36}
+    \endentry
+    \entry{SpinGeo}{book}{}
+      \name{author}{2}{}{%
+        {{hash=0599efd2a8be46c3fb9c73d7521beba9}{%
+           family={Lawson},
+           family_i={L\bibinitperiod},
+           given={H.\bibnamedelimi B.},
+           given_i={H\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=79056731cf99e5eb1506db92404ab6a9}{%
+           family={Michelsohn},
+           family_i={M\bibinitperiod},
+           given={M.\bibnamedelimi L.},
+           given_i={M\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{d63ce6e510b91bad31d26f57ae83788b}
+      \strng{fullhash}{d63ce6e510b91bad31d26f57ae83788b}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Princeton, UK: Univ. Pr. (1998) 427 p}
+      \field{title}{{Spin geometry}}
+      \field{year}{1998}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+
