@@ -10,7 +10,7 @@
 *.swp
 *.bcf
 *.blg
-*.bblcd
+*.bbl
 *.run.xml
 Statement.*
 
