@@ -8,4 +8,9 @@
 *.toc
 *.fls
 *.swp
+*.bcf
+*.blg
+*.bbl
+*.run.xml
+Statement.*
 

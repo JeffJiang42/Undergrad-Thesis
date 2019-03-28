@@ -17,6 +17,9 @@
 \usepackage{amsthm}
 \usepackage{mathpazo}
 \usepackage{slashbox}
+\usepackage[backend=biber]{biblatex}
+%\bibliography{bibliography}
+\addbibresource{bibliography.bib}
 %\usepackage{eulervm}
 \usepackage{yfonts}
 \usepackage{enumitem}
@@ -26,7 +29,6 @@
 \usepackage{adforn}
 \usepackage[all]{xy}
 \usepackage{hyperref}
-\usepackage{cite}
 \usepackage{url}
 \usepackage{mathtools}
 \usepackage{graphicx}
@@ -241,6 +243,7 @@
 \title{Clifford Algebras and Spin Geometry \\
 \large Senior Honors Thesis: supervised by Professor Daniel Freed}
 %
+%
 \maketitle
 %
 \tableofcontents
@@ -269,6 +272,9 @@
 %
 \input{src/PinStuctures}
 %
-%\input{src/GeneralDiracOperators}
+\input{src/GeneralDiracOperators}
+%
+\nocite{*}
+\printbibliography
 %
 \end{document}
