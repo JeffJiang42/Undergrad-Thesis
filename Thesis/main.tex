@@ -17,8 +17,8 @@
 \usepackage{amsthm}
 \usepackage{mathpazo}
 \usepackage{slashbox}
+\usepackage{accents}
 \usepackage[backend=biber]{biblatex}
-%\bibliography{bibliography}
 \addbibresource{bibliography.bib}
 %\usepackage{eulervm}
 \usepackage{yfonts}
@@ -143,6 +143,8 @@
 \newcommand{\g}{\mathfrak{g}}
 \newcommand{\Spin}{\mathrm{Spin}}
 \newcommand{\Pin}{\mathrm{Pin}}
+\newcommand*{\dt}[1]{%
+   \accentset{\mbox{\large\bfseries .}}{#1}}
 \newcommand{\inv}{^{-1}}
 \newcommand{\bra}[2]{ \left[ #1, #2 \right] }
 \newcommand{\ind}{\lambda \in \Lambda}
@@ -272,7 +274,7 @@
 %
 \input{src/PinStuctures}
 %
-\input{src/GeneralDiracOperators}
+\input{src/Connections}
 %
 \nocite{*}
 \printbibliography

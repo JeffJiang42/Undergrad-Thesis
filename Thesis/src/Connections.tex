@@ -50,10 +50,23 @@ exact sequence is a map $i : C \to B$ such that $\varphi \circ i = \id_C$.
 If a splitting exists, we say that the short exact sequence splits.
 \end{defn}
 %
+\begin{prop}
+Given a short exact sequence of vector spaces
+\[\begin{tikzcd}
+0 \ar[r] & A \ar[r, "\varphi"] & B \ar[r, "\psi"] & C \ar[r] & 0
+\end{tikzcd}\]
+A splitting $i : C \to B$ is equivalent to a linear map $j : B \to A$ with
+$\varphi \circ j = \id_B$.
+\end{prop}
+%
+\begin{proof} %TODO
+Let $i : C \to A$ be a splitting.
+\end{proof}
+%
 A splitting $i : C \to B$ can be thought of as equivalent data to an isomorphism
 $B \to A \oplus C$. Since the sequence is exact, the map $\varphi : A \to B$
 is injective, so we can identify $A$ with its image $\varphi(A) \subset B$.
-The splitting is also injective, giving an identifcation of $C$ with its
+The splitting is also injective, giving an identification of $C$ with its
 image $i(C)$. Since $i$ is a splitting, $\psi \circ i = \id_C$, which implies
 that $i(C) \cap \ker\psi = \set{0}$, and since the sequence is exact,
 $\ker\psi = \varphi(A)$. Therefore, the map
@@ -86,7 +99,7 @@ i.e. the difference $i - j$ can be canonically identified with an element of
 $\hom(C,A)$.
 \end{lem}
 %
-\begin{proof}
+\begin{proof} % Finish the proof that it is affine?
 Let $i,j : C \to B$ be splittings of the exact sequence, and let
 $c \in C$. Then since $i$ and $j$ are splittings,
 \[
@@ -99,20 +112,57 @@ defines the desired linear map $C \to A$.
 \end{proof}
 %
 \begin{prop}
-Given a fiber bundle $\pi : E \to F$, a connection $H \subset TE$ exists.
+Given a fiber bundle $\pi : E \to M$ with model fiber $F$, a connection
+$H \subset TE$ exists.
 \end{prop}
 %
 \begin{proof}
-It suffices to show that the short exact sequence
+It suffices to show that the short exact sequence of vector bundles
 \[\begin{tikzcd}
 0 \ar[r] & V \ar[r] & TE \ar[r] & \pi^*TM \ar[r] & 0
 \end{tikzcd}\]
 splits. Over any point $e \in E$, the space of splittings of
-$0 \to V_e \to TE_e \to (\pi^*TM)_e$ is affine over the vector space
+$0 \to V_e \to T_eE \to (\pi^*TM)_e$ is affine over the vector space
 $\hom((\pi^*TM))_e \to V_e)$. Doing this fiberwise, we get a fiber bundle
 $S \to E$ where the fiber over each $e \in E$ is the space of splittings
-of the exact sequence.
-
+of the exact sequence, which can be seen by working in local trivializations.
+Then let $\set{U_\alpha}$ be an open cover of $E$ equipped with local
+trivializations $\varphi_\alpha$ of $S \to E$. The exact sequence
+\[
+0 \to V\vert_{\pi\inv(U_\alpha)} \to TE\vert_{\pi\inv(U_\alpha)} \to
+\pi^*TM\vert_{\pi\inv(U_\alpha)}
+\]
+is modeled by the exact sequence $0 \to TF \to TU_\alpha \oplus TF \to TU_\alpha \to 0$,
+which has a natural splitting given by the inclusion
+$i_\alpha : TU_\alpha \hookrightarrow TU_\alpha \oplus TF$. The local trivialization
+$\varphi_\alpha$ then allows us to transport this to a splitting over $U_\alpha$.
+Then let $\set{\theta}$ be a partition of unity subordinate to $\set{U_\alpha}$.
+Since the space of splittings is an affine space, it is closed under affine
+combinations of splittings, so we can define a splitting
+$i : \pi^*TM \to TE$ by $i = \sum_\alpha i_\alpha$.
 \end{proof}
 %TODO identification of vertical spaces with the Lie algebra.
+%Discuss Lie algebra/exponential?
+We are mostly concerned with connections on principal bundles, which have a
+richer structure than connections on a general fiber bundle. Let $\pi : P \to M$
+be a principal $G$-bundle, and let $\mathfrak{g}$ denote the Lie algebra of $G$.
+Let $\exp : \g \to G$ denote the exponential map. Fix $x \in M$, a point
+$p \in \pi\inv(x)$, and an element $X \in \g$. This determines a curve
+$\gamma_X : I \to \pi\inv(x)$ with $\gamma_X(0) = p$ given by
+\[
+\gamma_X(t) = p \cdot \exp(tX)
+\]
+Since the action of $G$ preserves the fiber $\pi\inv(x)$, this curve lies
+entirely in the fiber $\pi\inv(x)$, so the tangent vector $\dt{\gamma}_X$
+at $t = 0$ is an element of the vertical space. In addition, since the
+action of $G$ is free, the tangent vector $\dt{\gamma}_X = 0$ if and only if
+$X = 0$, so the linear mapping $X \mapsto \dt{\gamma}_X$ is injective, and
+consequently, an isomorphism $\g \to V_p$. Doing this on all points of $P$
+then gives an isomorphism $\underline{\g} \to V$, where $\underline{\g}$ denotes
+the trivial bundle $M \times \g$. Under this isomorphism, the exact
+sequence of vector bundles becomes
+\[\begin{tikzcd}
+0 \ar[r] & \underline{\g} \ar[r] & TE \ar[r] & \pi^*TM \ar[r] & 0
+\end{tikzcd}\]
+%TODO Connection 1-form
 %
