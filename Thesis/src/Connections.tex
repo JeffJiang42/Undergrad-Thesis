@@ -2,7 +2,8 @@
 %
 \subsectionend $ $\\
 %
-\emph{Mathematics is a part of physics. Physics is an experimental science, a part of natural science. Mathematics is the part of physics where experiments are cheap.} \\
+\emph{Mathematics is a part of physics. Physics is an experimental science, a part of
+natural science. Mathematics is the part of physics where experiments are cheap.} \\
 %
 \ib{-- ~ V.I. Arnold}
 %
@@ -27,8 +28,9 @@ let $\pi : E \to M$ be a fiber bundle. The map $\pi$ determines a distinguished
 subspace $\ker d\pi_e \subset T_eE$, called the \ib{vertical subspace}
 which defines a distribution $V$ over $E$ called the \ib{vertical distribution}.
 A \ib{connection} on $E$ is another distribution $H \subset TE$ such that
-at every point $e \in E$, we have $V_e \oplus H_e = T_eE$. In other words,
-it is a choice of splitting of the short exact sequence of vector bundles
+at every point $e \in E$, we have $V_e \oplus H_e = T_eE$. We also refer to the
+distribution $H$ as a \ib{horizontal distribution}. In other words a connection
+is a choice of splitting of the short exact sequence of vector bundles
 \[\begin{tikzcd}
 0 \ar[r] & V \ar[r] & TE \ar[r] & \pi^*TM \ar[r] & 0
 \end{tikzcd}\]
@@ -36,7 +38,55 @@ If $E$ is a principal $G$-bundle, we ask for the horizontal distribution $H$
 to be $G$-invariant, i.e. $H_{p \cdot g} = d(R_g)_p(H_p)$, where $R_g : E \to E$
 denotes the right action of $g \in G$.
 \end{defn}
-%TODO, connections exist?
+%
+\begin{defn}
+Let $E \to M$ be a vector bundle. A \ib{$E$-valued $k$-form} is a section of
+the vector bundle $\Lambda^kT^*M \otimes E \to M$. We denote the space of
+$E$-valued $k$-forms by $\Omega_M^k(E)$.
+\end{defn}
+%
+We are mostly concerned with connections on principal bundles, which have a
+richer structure than connections on a general fiber bundle. Let $\pi : P \to M$
+be a principal $G$-bundle, and let $\mathfrak{g}$ denote the Lie algebra of $G$.
+Let $\exp : \g \to G$ denote the exponential map. Fix $x \in M$, a point
+$p \in \pi\inv(x)$, and an element $X \in \g$. This determines a curve
+$\gamma_X : I \to \pi\inv(x)$ with $\gamma_X(0) = p$ given by
+\[
+\gamma_X(t) = p \cdot \exp(tX)
+\]
+Since the action of $G$ preserves the fiber $\pi\inv(x)$, this curve lies
+entirely in the fiber $\pi\inv(x)$, so the tangent vector $\dt{\gamma}_X$
+at $t = 0$ is an element of the vertical space. In addition, since the
+action of $G$ is free, the tangent vector $\dt{\gamma}_X = 0$ if and only if
+$X = 0$, so the linear mapping $X \mapsto \dt{\gamma}_X$ is injective, and
+consequently, an isomorphism $\g \to V_p$. Doing this on all points of $P$
+then gives an isomorphism $\underline{\g} \to V$, where $\underline{\g}$ denotes
+the trivial bundle $M \times \g$. Under this isomorphism, the exact
+sequence of vector bundles becomes
+\[\begin{tikzcd}
+0 \ar[r] & \underline{\g} \ar[r] & TE \ar[r] & \pi^*TM \ar[r] & 0
+\end{tikzcd}\]
+Over a point $p \in P$, we have a direct sum decomposition $T_pP = V_p \oplus H_p$,
+giving us a projection map $T_pP \to V_p$. Using the identification of $V_p$
+with $\g$, this then determines a linear map $ \omega_p : T_pP \to \g$, where
+$\ker\omega_p = H_p$. Doing this over all fibers $\pi\inv(p)$, this determines
+a $\g$-valued $1$-form $\omega \in \Omega^1_P(\g)$ called the
+\ib{connection $1$-form}. From the connection $1$-form $\omega$, we can recover
+$H$ as the kernel of $\omega$.
+%
+\begin{prop}
+Let $\pi : P \to M$ be a principal $G$-bundle and $\omega \in \Omega^1_P(\g)$ a
+connection $1$-form on $P$. Then for $g \in G$, $g^*\omega = \Ad_{g\inv}\omega$.
+where $g^*$ denotes pullback by the action of $g$ on $P$, and $\Ad_{g\inv}$
+is the adjoint action of $g\inv$ on $\g$ given by differentiating the conjugation
+map $h \mapsto g\inv hg$ at the identity element $e$.
+\end{prop}
+%
+\begin{proof}%TODO
+Lmao
+\end{proof}
+%
+\iffalse
 Having defined a connection, we should check that such an object actually exists.
 To show this, we first need a few lemmas.
 %
@@ -50,28 +100,44 @@ exact sequence is a map $i : C \to B$ such that $\varphi \circ i = \id_C$.
 If a splitting exists, we say that the short exact sequence splits.
 \end{defn}
 %
-\begin{prop}
-Given a short exact sequence of vector spaces
+%TODO Splitting lemma
+\begin{lem}[\ib{The splitting lemma}]
+Let
 \[\begin{tikzcd}
 0 \ar[r] & A \ar[r, "\varphi"] & B \ar[r, "\psi"] & C \ar[r] & 0
 \end{tikzcd}\]
-A splitting $i : C \to B$ is equivalent to a linear map $j : B \to A$ with
-$\varphi \circ j = \id_B$.
-\end{prop}
+be a short exact sequence of vector spaces. Then the following are equivalent:
+\begin{enumerate}
+  \item The short exact sequence splits.
+  \item There is an isomorphism $\rho : B \to A \oplus C$ such that the diagram
+  \[\begin{tikzcd}
+  0 \ar[r] & A \ar[d, "\id_A"']\ar[r, "\varphi"] & B \ar[d, "\rho"] \ar[r, "\psi"]
+  & C \ar[r] \ar[d, "\id_C"]& 0 \\
+  0 \ar[r] & A \ar[r, hookrightarrow] & A \oplus C \ar[r] & C \ar[r] & 0
+  \end{tikzcd}\]
+  commutes, where the map $A \hookrightarrow A \oplus C$ is the inclusion
+  $a \mapsto a + 0$, and the map $A \oplus C \to C$ is the mapping
+  $a + c \mapsto c$.
+  \item There exists a linear map $j : B \to A$ such that $j \circ \varphi = \id_A$.
+\end{enumerate}
+\end{lem}
 %
-\begin{proof} %TODO
-Let $i : C \to A$ be a splitting.
+\begin{proof}
+We prove $(1) \implies (2) \implies (3) \implies (1)$. For $(1) \implies (2)$,
+suppose we have a splitting $i : C \to B$. Since $i$ is injective and
+$\psi \circ i = \id_C$, the image $i(C)$ must intersect $\ker\psi$ only
+at $0$. Then since the sequence is exact, $\ker\psi = \varphi(A)$, so
+$i(C) \cap \varphi(A) = 0$. Therefore, any element $b \in B$ can be written
+uniquely as $a + c$ with $a \in \varphi(A)$ and $c \in i(C)$. Then define
+$\rho : B \to A \oplus C$ by $\rho(b) = a + c$, where $a$ and $c$ are as above.\\
+
+For $(2) \implies (3)$, define $j : B \to A$ by $\tilde{j} \circ \rho$, where
+$\tilde{j} : A \oplus C \to A$ is the mapping $a + c \mapsto a$. \\
+
+For $(3) \implies (1)$, Fix a basis $c_1, \ldots c_n$ for $c$. We know that
+for each $c_i$ that $\psi\inv(c_i) = k_i + \varphi(A)$ for some $k_i \in B$.
+Then define $i : C \to B$ by $c_i \mapsto k_i$.
 \end{proof}
-%
-A splitting $i : C \to B$ can be thought of as equivalent data to an isomorphism
-$B \to A \oplus C$. Since the sequence is exact, the map $\varphi : A \to B$
-is injective, so we can identify $A$ with its image $\varphi(A) \subset B$.
-The splitting is also injective, giving an identification of $C$ with its
-image $i(C)$. Since $i$ is a splitting, $\psi \circ i = \id_C$, which implies
-that $i(C) \cap \ker\psi = \set{0}$, and since the sequence is exact,
-$\ker\psi = \varphi(A)$. Therefore, the map
-$\varphi \oplus i : A \oplus C \to B$ is injective, and by a dimension count,
-it is an isomorphism.
 %
 \begin{lem}
 Every short exact sequence of vector spaces
@@ -165,4 +231,8 @@ sequence of vector bundles becomes
 0 \ar[r] & \underline{\g} \ar[r] & TE \ar[r] & \pi^*TM \ar[r] & 0
 \end{tikzcd}\]
 %TODO Connection 1-form
+By the splitting lemma, a connection is equivalent to a bundle homomorphism
+$\theta : TE \to \underline{\g}$ such that the composition $\underline{\g} \to TE$
+followed by $\theta$ is the identity map on $\underline{\g}$.
+\fi
 %
