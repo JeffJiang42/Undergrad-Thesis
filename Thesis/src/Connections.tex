@@ -59,31 +59,61 @@ entirely in the fiber $\pi\inv(x)$, so the tangent vector $\dt{\gamma}_X$
 at $t = 0$ is an element of the vertical space. In addition, since the
 action of $G$ is free, the tangent vector $\dt{\gamma}_X = 0$ if and only if
 $X = 0$, so the linear mapping $X \mapsto \dt{\gamma}_X$ is injective, and
-consequently, an isomorphism $\g \to V_p$. Doing this on all points of $P$
-then gives an isomorphism $\underline{\g} \to V$, where $\underline{\g}$ denotes
-the trivial bundle $M \times \g$. Under this isomorphism, the exact
-sequence of vector bundles becomes
+consequently, an isomorphism $\g \to V_p$. Doing this over all points of the
+fiber, given $X \in \g$, we get a vector field $\tilde{X}$
+on the fiber $\pi\inv(x)$ by differentiating the right action of $\exp(tX)$.
+
+Defining these vector fields fiberwise  then gives an isomorphism $
+\underline{\g} \to V$, where $\underline{\g}$ denotes the trivial bundle
+$M \times \g$. Under this isomorphism, the exact sequence of vector bundles becomes
 \[\begin{tikzcd}
 0 \ar[r] & \underline{\g} \ar[r] & TE \ar[r] & \pi^*TM \ar[r] & 0
 \end{tikzcd}\]
+One important thing to note is how these vector fields transform under the
+right action of $G$.
+%
+\begin{prop}
+Let $X \in \g$, and let $\tilde{X}$ be the vector field on $P$ induced by
+$X$. Let $g \in G$, and let $R_g : P \to P$ denote the diffeomorphism given
+by right multiplication by $g$. Then
+\[
+(R_g)_*(\tilde{X}) = \widetilde{\Ad_{g\inv} X}
+\]
+Where $\Ad_{g\inv} : \g \to \g$ is the linear map obtained by differentiating the
+conjugation action $h \mapsto g\inv h g$ at the identity element of $G$.
+\end{prop}
+%
+\begin{proof} %TODO
+By definition, we have that
+\[
+\tilde{X}_p = \frac{d}{dt}\bigg\vert_{t=0} p \cdot \exp(tX)
+\]
+Therefore, we have that
+\begin{align*}
+[(R_g)_*(\tilde{X})]_{p\cdot g} &=
+d(R_g)_p\left( \frac{d}{dt}\bigg\vert_{t = 0} p\cdot \exp(tX) \right) \\
+&= \frac{d}{dt}\bigg\vert_{t = 0} p \cdot \exp(tX)g \\
+&= \frac{d}{dt}\bigg\vert_{t = 0}p \cdot g (g\inv \exp(tX)g)
+\end{align*}
+\end{proof}
+%
 Over a point $p \in P$, we have a direct sum decomposition $T_pP = V_p \oplus H_p$,
 giving us a projection map $T_pP \to V_p$. Using the identification of $V_p$
 with $\g$, this then determines a linear map $ \omega_p : T_pP \to \g$, where
 $\ker\omega_p = H_p$. Doing this over all fibers $\pi\inv(p)$, this determines
 a $\g$-valued $1$-form $\omega \in \Omega^1_P(\g)$ called the
 \ib{connection $1$-form}. From the connection $1$-form $\omega$, we can recover
-$H$ as the kernel of $\omega$.
+$H$ as the kernel of $\omega$. In addition, it is clear from the definition that
+given $X \in \g$, we have $\omega_p(\tilde{X}_p) = X$.
 %
 \begin{prop}
 Let $\pi : P \to M$ be a principal $G$-bundle and $\omega \in \Omega^1_P(\g)$ a
-connection $1$-form on $P$. Then for $g \in G$, $g^*\omega = \Ad_{g\inv}\omega$.
-where $g^*$ denotes pullback by the action of $g$ on $P$, and $\Ad_{g\inv}$
-is the adjoint action of $g\inv$ on $\g$ given by differentiating the conjugation
-map $h \mapsto g\inv hg$ at the identity element $e$.
+connection $1$-form on $P$. Then for $g \in G$, $R_g^*\omega = \Ad_{g\inv}\omega$.
+where $R_g^*$ denotes pullback by the right action of $g$ on $P$.
 \end{prop}
 %
 \begin{proof}%TODO
-Lmao
+
 \end{proof}
 %
 \iffalse
