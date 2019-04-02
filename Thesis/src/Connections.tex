@@ -39,6 +39,9 @@ to be $G$-invariant, i.e. $H_{p \cdot g} = d(R_g)_p(H_p)$, where $R_g : E \to E$
 denotes the right action of $g \in G$.
 \end{defn}
 %
+Note that for a point $e \in E$, the projection map $d\pi_e$ restricted to
+the horizontal subspace $H_e$ is a linear isomorphism $H_e \to T_{\pi(e)}X$.
+%
 \begin{defn}
 Let $E \to M$ be a vector bundle. A \ib{$E$-valued $k$-form} is a section of
 the vector bundle $\Lambda^kT^*M \otimes E \to M$. We denote the space of
@@ -65,9 +68,9 @@ on the fiber $\pi\inv(x)$ by differentiating the right action of $\exp(tX)$.
 
 Defining these vector fields fiberwise  then gives an isomorphism $
 \underline{\g} \to V$, where $\underline{\g}$ denotes the trivial bundle
-$M \times \g$. Under this isomorphism, the exact sequence of vector bundles becomes
+$P \times \g$. Under this isomorphism, the exact sequence of vector bundles becomes
 \[\begin{tikzcd}
-0 \ar[r] & \underline{\g} \ar[r] & TE \ar[r] & \pi^*TM \ar[r] & 0
+0 \ar[r] & \underline{\g} \ar[r] & TP \ar[r] & \pi^*TM \ar[r] & 0
 \end{tikzcd}\]
 One important thing to note is how these vector fields transform under the
 right action of $G$.
@@ -83,8 +86,8 @@ Where $\Ad_{g\inv} : \g \to \g$ is the linear map obtained by differentiating th
 conjugation action $h \mapsto g\inv h g$ at the identity element of $G$.
 \end{prop}
 %
-\begin{proof} %TODO
-By definition, we have that
+\begin{proof}
+Let $p \in P$. By definition, we have that
 \[
 \tilde{X}_p = \frac{d}{dt}\bigg\vert_{t=0} p \cdot \exp(tX)
 \]
@@ -93,7 +96,8 @@ Therefore, we have that
 [(R_g)_*(\tilde{X})]_{p\cdot g} &=
 d(R_g)_p\left( \frac{d}{dt}\bigg\vert_{t = 0} p\cdot \exp(tX) \right) \\
 &= \frac{d}{dt}\bigg\vert_{t = 0} p \cdot \exp(tX)g \\
-&= \frac{d}{dt}\bigg\vert_{t = 0}p \cdot g (g\inv \exp(tX)g)
+&= \frac{d}{dt}\bigg\vert_{t = 0}p \cdot g (g\inv \exp(tX)g) \\[5pt]
+&= \left( \widetilde{\Ad_g\inv X} \right)_{p \cdot g}
 \end{align*}
 \end{proof}
 %
@@ -112,9 +116,46 @@ connection $1$-form on $P$. Then for $g \in G$, $R_g^*\omega = \Ad_{g\inv}\omega
 where $R_g^*$ denotes pullback by the right action of $g$ on $P$.
 \end{prop}
 %
-\begin{proof}%TODO
-
+\begin{proof}
+Fix $p \in P$, and let $v \in T_pP$. Since $T_pP = V_p \oplus H_p$, we have
+that $v = \tilde{X}_p + h$ for $X \in \g$ and $h \in H_p$. We then compute
+\begin{align*}
+(R_g^*\omega)_p(v) &= (R_g^*\omega)_p(\tilde{X}_p + h) \\
+&= \omega_{p \cdot g}((R_g)_*(\tilde{X}_p ) + (R_g)_*h)
+\end{align*}
+Then since $(R_g)_*\tilde{X} = \widetilde{\Ad_{g\inv}X}$ and
+$(R_g)_*h \in H_{p \cdot g}$, we get that
+\begin{align*}
+\omega_{p \cdot g}((R_g)_*(\tilde{X}_p ) + (R_g)_*h) &=
+\omega_{p \cdot g}((\widetilde{\Ad_{g\inv}X})_{p\cdot g} + 0 \\
+&= \Ad_{g\inv} X \\
+&= \Ad_{g\inv}\omega(\tilde{X}_p + h)
+\end{align*}
 \end{proof}
+%
+We mentioned before that principal $G$-bundles can be thought of as
+generalizations of covering spaces, since for discrete $G$, a principal $G$-bundle
+is a covering space. One notion we want to generalize is the notion of path
+lifting. Given a covering space $\pi : P \to M$, a point $x \in M$, a point
+$p \in \pi\inv(x)$ in the fiber, and a curve $\gamma : I \to M$ with
+$\gamma(0) = x$, we use the fact that $p$ lies in a unique sheet
+$U_\alpha \subset \pi\inv(U)$ for some evenly covered neighborhood $U$ of $x$
+to lift $\gamma$ to a path $\tilde{\gamma} : I \to P$ starting at $p$. This relies
+on the fact that $\pi$ restricted to $U_\alpha$ is a diffeomorphism onto $U$.
+If $G$ is not discrete, we have no hope of this working without additional data
+since $P$ has a larger dimension than $M$. The connection $H \subset TP$ is
+exactly the data we need for path lifting. Using the same setup as above,
+the curve $\gamma$ determines a vector field $V$ along its image given by
+its velocity $V_{\gamma(t)} = \dt{\gamma}(t)$. Then since
+$d\pi_p\vert_{H_p} : H_p \to T_{\pi(p)}M$ is an isomorphism, there exists
+a unique horizontal vector $h_p \in T_pP$ at each point $p \in \pi\inv(\gamma(t))$
+satisfying $d\pi_p(h_p) = V_{\gamma(t)}$, which determines a vector field along
+the pullback bundle $\gamma^*TP$, which can naturally be thought of as a subset
+of $TP$. Integrating these vector fields gives a flow along the pullback bundle,
+and following the flow line starting at our favorite point in the fiber
+$\pi\inv(x)$ gives us a path $\tilde{\gamma} : I \to P$ such that
+$\pi \circ \tilde{\gamma} = \gamma$, i.e. a lift of $\gamma$.
+%TODO why covering spaces are a special case, why it's called a connection
 %
 \iffalse
 Having defined a connection, we should check that such an object actually exists.
@@ -130,7 +171,7 @@ exact sequence is a map $i : C \to B$ such that $\varphi \circ i = \id_C$.
 If a splitting exists, we say that the short exact sequence splits.
 \end{defn}
 %
-%TODO Splitting lemma
+%
 \begin{lem}[\ib{The splitting lemma}]
 Let
 \[\begin{tikzcd}
