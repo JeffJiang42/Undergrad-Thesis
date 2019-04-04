@@ -45,7 +45,10 @@ the horizontal subspace $H_e$ is a linear isomorphism $H_e \to T_{\pi(e)}X$.
 \begin{defn}
 Let $E \to M$ be a vector bundle. A \ib{$E$-valued $k$-form} is a section of
 the vector bundle $\Lambda^kT^*M \otimes E \to M$. We denote the space of
-$E$-valued $k$-forms by $\Omega_M^k(E)$.
+$E$-valued $k$-forms by $\Omega_M^k(E)$. In the case that $E \to M$ is a
+trivial bundle $E = M \times V$ for some vector space $V$, we abbreviate
+this as a $V$-valued $k$ form, and the space of $V$-valued $k$-forms is denoted
+$\Omega_M^k(V)$.
 \end{defn}
 %
 We are mostly concerned with connections on principal bundles, which have a
@@ -154,9 +157,113 @@ the pullback bundle $\gamma^*TP$, which can naturally be thought of as a subset
 of $TP$. Integrating these vector fields gives a flow along the pullback bundle,
 and following the flow line starting at our favorite point in the fiber
 $\pi\inv(x)$ gives us a path $\tilde{\gamma} : I \to P$ such that
-$\pi \circ \tilde{\gamma} = \gamma$, i.e. a lift of $\gamma$.
-%TODO why covering spaces are a special case, why it's called a connection
+$\pi \circ \tilde{\gamma} = \gamma$, i.e. a lift of $\gamma$. One important
+thing to note is how path lifting interacts with the group action.
 %
+\begin{prop}
+Let $\pi : P \to M$ be a principal $G$-bundle equipped with a connection
+$H \subset TP$, and let $\gamma : I \to M$ be a path in $M$ with $\gamma(0) = x$.
+Then let $\tilde{\gamma} : I \to P$ be the lift of $\gamma$ starting at $p$.
+Then the lift of $\gamma$ starting at $p \cdot g$ is $\gamma \circ R_g$,
+where $R_g$ is the right action of $g \in G$.
+\end{prop}
+%
+\begin{proof}
+Since the action of $R_g$ preserves the fibers of $\pi$,
+$\tilde{\gamma} \circ R_g$ satisfies $\pi \circ \gamma \circ R_g = \gamma$.
+By uniqueness of integral curves of the horizontal vector field,
+$\gamma \circ R_g$ must be the lift of $\gamma$ based at $p \cdot g$.
+\end{proof}
+%
+Path lifting gives us a notion of \ib{parallel transport} -- an identification of
+the fibers along a path on $M$.
+%
+\begin{defn}
+Let $\pi : P \to M$ be a principal $G$-bundle with $H \subset TP$ a connection.
+Let $\gamma : I \to M$ be a path starting at $x \in M$. The velocity vector
+field of $\gamma$ induces a horizontal vector field $V$ on $P$. Let
+$\gamma_p : I \to P$ denote the lift of $\gamma$ starting at $p \in \pi\inv(x)$.
+Define the \ib{parallel transport} maps $\tau_t : P_x \to P_{\gamma(t)}$ by
+$\tau_t(p) = \gamma_p(t)$
+\end{defn}
+%
+We note that the maps $\tau_t$ are isomorphisms, since the inverse map is given
+by parallel transport along the curve $\overline{\gamma}(t) = \gamma(1-t)$.
+The parallel transport maps justify the naming of a connection -- a connection
+gives the necessary to connect nearby fibers along a curve $\gamma$.
+This notion of path lifting carries over to any associated bundle $P \times_G F$,
+which is one way to see that the connection on $P$ induces a connection on
+every associated bundle. As before, let $\gamma : I \to M$ be a path
+with $\gamma(0) = x$, and let $[p,f] \in P \times_G F$ in the fiber over $x$,
+i.e. $p \in \pi\inv(x)$. Let $\tilde{\gamma} : I \to P$ denote the lift
+of $\gamma$ to $P$ starting at $p$. Then define
+$\widehat{\gamma} : I \to P \times_G F$ by
+$\widehat{\gamma}(t) = [\tilde{\gamma}(t), f]$, which is visibly a lift of
+$\gamma$ to $P \times_G F$ starting at $[p,f]$. However, we should check that
+this is independent of our choice of representative $[p,f]$. Let
+$[p\cdot g, g\inv \cdot f]$ be another representative of the point $[p,f]$.
+Then the lift of $\gamma$ to $P$ starting at $p \cdot g$ is the curve
+$\tilde{\gamma} \cdot g$, so using this representative, we would define
+$\widehat{\gamma}(t) = [\tilde{\gamma} \cdot g, g\inv \cdot f] =
+[\tilde{\gamma}(t), f]$, so this definition does not rely on our choice of
+representative. \\
+
+Given a principal $G$-bundle $\pi : P \to M$ and a vector space $V$ with
+a linear representation $\rho : G \to GL(V)$, let $E = P \times_G V$ be the
+associated bundle. We proved earlier that there is a bijective correspondence
+\[
+\Gamma_M(E) \longleftrightarrow
+\set{\psi : P \to V ~:~ \psi(p \cdot g) = \rho(g)\inv \cdot \psi(p)}
+\]
+Thinking of functions $P \to V$ as $0$-forms on $P$ valued in $V$ and sections
+of $E$ as $0$-forms on $M$ valued in $E$, we can write this correspondence more
+suggestively as
+\[
+\Omega_M^0(E) \longleftrightarrow
+\set{\alpha \in \Omega_P^0(V) ~:~ R_g^*\alpha = \alpha} \subset \Omega_P^0(V)
+\]
+Where $R_g^*$ denotes the pullback of $\alpha$ along right multiplication by
+$g \in G$. This notation suggests that this correspondence should generalize
+to arbitrary $k$-forms.
+%
+\begin{prop}
+There is a bijective correspondence
+\[
+\Omega_M^k(E) \longleftrightarrow
+\set{\alpha \in \Omega_P^k(V) ~:~ R_g^*\alpha = \alpha ~~\forall g \in G,~
+\iota_{\widehat{\xi}}(\alpha) = 0 ~~\forall \xi \in \g} \subset \Omega_P^k(V)
+\]
+Where $\iota_{\widehat{\xi}}(\alpha)$  denotes the interior multiplication
+of $\alpha$ with the vector field $\widehat{\xi}$ on $P$ induced by $\xi$, i.e.
+\[
+\iota_{\widehat{\xi}}(\alpha)(V_1, \ldots, V_{k-1}) =
+\alpha(\widehat{\xi}, V_1, \ldots, V_{k-1})
+\]
+For convenience, we denote this subset of $k$-forms on $P$ by
+$\Omega^{k,G}_P(V)$, where the superscript $G$ reminds us that these $k$-forms
+are $G$-invariant in the appropriate sense.
+\end{prop}
+%
+\begin{proof}%TODO Finish this
+We provide maps in both directions. Let $\pi_E : E \to M$ denote the bundle
+projection, and let $\omega \in \omega_M^k(E)$. We want to define
+$\widetilde{\omega} \in \Omega_P^{k,G}(V)$. Using $\pi$, we pullback
+$\omega$ to obtain a $k$-form $\pi^*\omega \in \Omega_P^k(E)$, and define
+$\tilde{\omega}$ as follows. Given a point $p \in P$ and $v \in T_pP$,
+$(\pi^*\omega)_p(v) = [p, a]$, where $[p,a]$ is the unique representative in
+it's class with $p$ in the first component. We then define
+$\tilde{\omega}_p(v) = a$.
+\end{proof}
+%
+
+%
+
+
+
+
+
+
+
 \iffalse
 Having defined a connection, we should check that such an object actually exists.
 To show this, we first need a few lemmas.
