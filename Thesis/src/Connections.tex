@@ -213,14 +213,14 @@ a linear representation $\rho : G \to GL(V)$, let $E = P \times_G V$ be the
 associated bundle. We proved earlier that there is a bijective correspondence
 \[
 \Gamma_M(E) \longleftrightarrow
-\set{\psi : P \to V ~:~ \psi(p \cdot g) = \rho(g)\inv \cdot \psi(p)}
+\set{\alpha : P \to V ~:~ \alpha(p \cdot g) = \rho(g)\inv \cdot \alpha(p)}
 \]
 Thinking of functions $P \to V$ as $0$-forms on $P$ valued in $V$ and sections
 of $E$ as $0$-forms on $M$ valued in $E$, we can write this correspondence more
 suggestively as
 \[
 \Omega_M^0(E) \longleftrightarrow
-\set{\alpha \in \Omega_P^0(V) ~:~ R_g^*\alpha = \alpha} \subset \Omega_P^0(V)
+\set{\alpha \in \Omega_P^0(V) ~:~ R_g^*\psi = \rho(g)\inv\alpha} \subset \Omega_P^0(V)
 \]
 Where $R_g^*$ denotes the pullback of $\alpha$ along right multiplication by
 $g \in G$. This notation suggests that this correspondence should generalize
@@ -230,7 +230,7 @@ to arbitrary $k$-forms.
 There is a bijective correspondence
 \[
 \Omega_M^k(E) \longleftrightarrow
-\set{\alpha \in \Omega_P^k(V) ~:~ R_g^*\alpha = \alpha ~~\forall g \in G,~
+\set{\alpha \in \Omega_P^k(V) ~:~ R_g^*\alpha = \rho(g)\inv\alpha ~~\forall g \in G,~
 \iota_{\widehat{\xi}}(\alpha) = 0 ~~\forall \xi \in \g} \subset \Omega_P^k(V)
 \]
 Where $\iota_{\widehat{\xi}}(\alpha)$  denotes the interior multiplication
