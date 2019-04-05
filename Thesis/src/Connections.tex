@@ -48,7 +48,8 @@ the vector bundle $\Lambda^kT^*M \otimes E \to M$. We denote the space of
 $E$-valued $k$-forms by $\Omega_M^k(E)$. In the case that $E \to M$ is a
 trivial bundle $E = M \times V$ for some vector space $V$, we abbreviate
 this as a $V$-valued $k$ form, and the space of $V$-valued $k$-forms is denoted
-$\Omega_M^k(V)$.
+$\Omega_M^k(V)$. In a local trivialization of $E$, an element
+$\omega \in \Omega^k_M(E)$ can be thought of as a vector of $k$-forms.
 \end{defn}
 %
 We are mostly concerned with connections on principal bundles, which have a
@@ -250,8 +251,7 @@ $\alpha$ is a $0$-form, so this agrees with our earlier correspondence.
 \end{rem*}
 %
 \begin{proof}%TODO Finish this
-We provide maps in both directions. Let $\pi_E : E \to M$ denote the bundle
-projection, and let $\omega \in \omega_M^k(E)$. We want to define
+We provide maps in both directions.L et $\omega \in \omega_M^k(E)$. We want to define
 $\widetilde{\omega} \in \Omega_P^{k,G}(V)$. Using $\pi$, we pullback
 $\omega$ to obtain a $k$-form $\pi^*\omega \in \Omega_P^k(E)$, and define
 $\tilde{\omega}$ as follows. Given a point $p \in P$ and $v \in T_pP$,
@@ -271,30 +271,92 @@ $\tilde{\omega}$ on vertical and horizontal vectors, since we have the direct
 sum decomposition $T_pP = V_p \oplus H_p$. We the only need to check the action
 of $\tilde{\omega}$ on horizontal vectors, since $\iota_\xi({\tilde{\omega}}) = 0$
 for any vertical vector field $\xi$ and the vertical space is invariant under the
-action of $G$. We first claim that for a horizontal vector $v \in H_p$, that
-$d\pi_p(v) = d\pi_{p \cdot g}((R_g)_*v)$ To show this, let $\gamma : I \to M$
-be a curve with $\gamma(0) = \pi(p)$ and velocity vector $\gamma'(0) = d\pi_p(v)$.
-Then let $\tilde{\gamma} : I \to P$ be the lift of $\gamma$ starting at $p$.
-From before, we know that $R_g \circ \tilde{\gamma}$ is the unique lift
-of $\gamma$ starting at $p \cdot g$, and by the chain rule, the velocity vector
-of $R_g \circ \tilde{\gamma}$ at $0$ is $(R_g)_*\tilde{\gamma}'(0) = (R_g)_*v$. Therefore,
-$(R_g)_*v$ is the unique horizontal lift of $d\pi_p(v)$ based at $p \cdot g$,
-so $d\pi_{p \cdot g}((R_g)_*v) = d\pi_p(v)$.
-
-Let $v_1, \ldots v_k \in H_p$ be horizontal vectors and $g \in G$.
-Then
-\begin{align*}
-(R_g^*\tilde{\omega})_p(v_1,\ldots v_k) &=
-\tilde{\omega}_{p \cdot g}((R_g)_*v_1, \ldots , (R_g)_* v_k)\\
-&=
-\end{align*}
+action of $G$. We first prove a lemma
 %
-
-
-%In the other direction, let $\alpha \in \Omega^{k,G}_P(V)$.
+\begin{lem*}
+Let $v \in H_p$ be a horizontal vector. Then
+$d\pi_p(v) = d\pi_{p \cdot g}((R_g)_*v)$
+\end{lem*}
+%
+\begin{proof}
+Let $\gamma : I \to M$ be a curve with $\gamma(0) = \pi(p)$ and velocity vector
+$\gamma'(0) = d\pi_p(v)$. Then let $\tilde{\gamma} : I \to P$ be the lift of
+$\gamma$ starting at $p$. From before, we know that $R_g \circ \tilde{\gamma}$
+is the unique lift of $\gamma$ starting at $p \cdot g$, and by the chain rule,
+the velocity vector of the curve $R_g \circ \tilde{\gamma}$ at $0$ is the vector
+$(R_g)_*\tilde{\gamma}'(0) = (R_g)_*v$. Therefore, $(R_g)_*v$ is the unique
+horizontal lift of $d\pi_p(v)$ based at $p \cdot g$, so
+$d\pi_{p \cdot g}((R_g)_*v) = d\pi_p(v)$.
 \end{proof}
 %
+Let $v_1, \ldots v_k \in H_p$ be horizontal vectors and $g \in G$. Then
+\[
+(R_g^*\tilde{\omega})_p(v_1,\ldots v_k) =
+\tilde{\omega}_{p \cdot g}((R_g)_*v_1, \ldots , (R_g)_* v_k)
+\]
+Then if $\tilde{\omega}_p(v_1, \ldots v_k) = a$, by definition this means that
+$(\pi^*\omega)_p(v_1, \ldots v_k) = [p,a]$. We also have that
+$(\pi^*\omega)_{p\cdot g}((R_g)_*v_1,\ldots (R_g)_*v_k) = [p,a]$, since
+$\pi(p \cdot g) = \pi(p)$ and that $d\pi_p(v_i) = d\pi_{p \cdot g}(v_i)$.
+We know that $[p,a] = [p \cdot g, \rho(g)\inv a]$, so we conclude that
+$R_g^*\tilde{\omega} = \rho(g)\inv\tilde{\omega}$.\\
 
+In the other direction, let $\alpha \in \Omega^{k,G}_P(V)$. We wish to define
+$\alpha' \in \Omega_M^k(E)$. Let $x \in M$ and $v_1, \ldots v_k \in T_xM$. Then
+define
+\[
+\alpha'_x(v_1, \ldots, v_k) = [p,\alpha_{p}(\tilde{v}_1, \ldots, \tilde{v}_k)]
+\]
+where $p \in \pi\inv(x)$ and the $\tilde{v}_i$ are the unique horizontal lifts
+of the $v_i$ at $p$. We first check that this definition is independent
+of out choice of $p \in \pi\inv(x)$. We know $\alpha$ satisfies
+$R_g^*\alpha = \rho(g)\inv\alpha$. Therefore, if we choose a different preimage
+$p \cdot g \in \pi\inv(x)$, we would define $\alpha'$ by
+\begin{align*}
+\alpha'_x(v_1, \ldots, v_k) &=
+[p \cdot g, (R_g^*\alpha)_{p}(\tilde{v}_1, \ldots, \tilde{v}_k) \\
+&= [p \cdot g, \rho(g)\alpha_p(\tilde{v}_1, \ldots \tilde{v}_k)] \\
+&= [p,\alpha_p(\tilde{v}_1, \ldots, \tilde{v}_k)]
+\end{align*}
+So this definition is independent of our choice of $p \in \pi\inv(x)$. It
+is then easily verified that the maps are inverses to each other.
+\end{proof}
+%
+This is an example of a relatively general phenomenon, in which appropriately
+$G$-invariant objects on the total space $P$ descend to objects on the base space
+$M$. \\
+
+The correspondence $\Omega^k_M(E) \leftrightarrow \Omega^{k,G}_P(V)$ gives
+us a natural way of discussing and extending covariant differentiation, which
+gives us a way of taking directional derivatives on $E$ with respect to tangent
+vectors on the base $M$.
+\begin{defn}
+Let $\pi : P \to M$ be a principal $G$-bundle with connection $1$-form
+$\Theta \in \Omega_P^1(\g)$. Let $\rho : G \to GL(V)$ be a linear representation,
+and let $\dt{\rho} : \g \to \End V$ denote the induced Lie algebra map. The
+\ib{covariant derivative} is a family of maps
+$\nabla_\Theta : \Omega_P^k(V) \to \Omega_P^{k+1}(V)$ given by
+\[
+\nabla_\Theta \psi = d\psi + \dt{\rho}(\Theta) \wedge \psi
+\]
+By $\dt{\rho}(\Theta)$, we mean that its action on a vector field $V$ is
+\[
+\dt{\rho}(\Theta)(V) = \dt{\rho}(\Theta(V))
+\]
+which makes sense since $\Theta_p(V_p)$ is an element of $\g$. Then
+to define $\dt{\rho}(\Theta) \wedge \psi$, we interpret $\dt{\rho}(\Theta)$
+as a matrix $\dt{\rho}(\Theta)^i_j$ of $1$-forms and $\psi$ as a vector
+$\psi^i$ of $k$-forms and define the wedge product as the usual matrix product
+\[
+(\dt{\rho}(\Theta) \wedge \psi)_i = \dt{\rho}(\Theta)^i_j \wedge \psi^j
+\]
+\end{defn}
+%
+We are especially interested in the restriction of the $\nabla_\Theta$ to
+the subspace $\Omega_P^{k,G}(V) \cong \Omega_M^k(E)$, where $E$ denotes
+the associated vector bundle $P \times_G V$. The first thing to check
+is that given $\alpha \in \Omega_P^{k,G}(V)$, its image $\nabla_\Theta\alpha$ is 
+an element of $\Omega_P^{k,G}(V)
 %
 
 
