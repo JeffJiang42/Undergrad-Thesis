@@ -239,10 +239,15 @@ of $\alpha$ with the vector field $\widehat{\xi}$ on $P$ induced by $\xi$, i.e.
 \iota_{\widehat{\xi}}(\alpha)(V_1, \ldots, V_{k-1}) =
 \alpha(\widehat{\xi}, V_1, \ldots, V_{k-1})
 \]
-For convenience, we denote this subset of $k$-forms on $P$ by
-$\Omega^{k,G}_P(V)$, where the superscript $G$ reminds us that these $k$-forms
-are $G$-invariant in the appropriate sense.
+for vector fields $V_1, \ldots , V_{k-1}$. For convenience, we denote this
+subset of $k$-forms on $P$ by $\Omega^{k,G}_P(V)$, where the superscript $G$
+reminds us that these $k$-forms are $G$-invariant in the appropriate sense.
 \end{prop}
+%
+\begin{rem*}
+Note that the condition $\iota_{\widehat{\xi}}(\alpha)$ hold vacuously when
+$\alpha$ is a $0$-form, so this agrees with our earlier correspondence.
+\end{rem*}
 %
 \begin{proof}%TODO Finish this
 We provide maps in both directions. Let $\pi_E : E \to M$ denote the bundle
@@ -252,7 +257,41 @@ $\omega$ to obtain a $k$-form $\pi^*\omega \in \Omega_P^k(E)$, and define
 $\tilde{\omega}$ as follows. Given a point $p \in P$ and $v \in T_pP$,
 $(\pi^*\omega)_p(v) = [p, a]$, where $[p,a]$ is the unique representative in
 it's class with $p$ in the first component. We then define
-$\tilde{\omega}_p(v) = a$.
+$\tilde{\omega}_p(v) = a$. We then must check that
+$\tilde{\omega} \in \Omega^{k,G}_P(V)$, so we must check
+\begin{enumerate}
+  \item $\iota_{\xi}(\tilde{\omega}) = 0$ for any vertical vector field $\xi$.
+  \item $R_g^*\tilde{\omega} = \rho(g)\inv\tilde{\omega}$.
+\end{enumerate}
+For the first condition, Let $\xi \in V$ be a vertical vector field. Then we know that
+$\iota_{\xi}(\pi^*\omega)= 0$, since $d\pi_p(\xi_p) = 0$ by the definition of the
+vertical space. Therefore, $\iota_{\xi}(\tilde{\omega}) = 0$, verifying the
+first condition. For the second condition, it suffices to check the action of
+$\tilde{\omega}$ on vertical and horizontal vectors, since we have the direct
+sum decomposition $T_pP = V_p \oplus H_p$. We the only need to check the action
+of $\tilde{\omega}$ on horizontal vectors, since $\iota_\xi({\tilde{\omega}}) = 0$
+for any vertical vector field $\xi$ and the vertical space is invariant under the
+action of $G$. We first claim that for a horizontal vector $v \in H_p$, that
+$d\pi_p(v) = d\pi_{p \cdot g}((R_g)_*v)$ To show this, let $\gamma : I \to M$
+be a curve with $\gamma(0) = \pi(p)$ and velocity vector $\gamma'(0) = d\pi_p(v)$.
+Then let $\tilde{\gamma} : I \to P$ be the lift of $\gamma$ starting at $p$.
+From before, we know that $R_g \circ \tilde{\gamma}$ is the unique lift
+of $\gamma$ starting at $p \cdot g$, and by the chain rule, the velocity vector
+of $R_g \circ \tilde{\gamma}$ at $0$ is $(R_g)_*\tilde{\gamma}'(0) = (R_g)_*v$. Therefore,
+$(R_g)_*v$ is the unique horizontal lift of $d\pi_p(v)$ based at $p \cdot g$,
+so $d\pi_{p \cdot g}((R_g)_*v) = d\pi_p(v)$.
+
+Let $v_1, \ldots v_k \in H_p$ be horizontal vectors and $g \in G$.
+Then
+\begin{align*}
+(R_g^*\tilde{\omega})_p(v_1,\ldots v_k) &=
+\tilde{\omega}_{p \cdot g}((R_g)_*v_1, \ldots , (R_g)_* v_k)\\
+&=
+\end{align*}
+%
+
+
+%In the other direction, let $\alpha \in \Omega^{k,G}_P(V)$.
 \end{proof}
 %
 
