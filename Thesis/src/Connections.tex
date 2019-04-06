@@ -352,12 +352,61 @@ $\psi^i$ of $k$-forms and define the wedge product as the usual matrix product
 \]
 \end{defn}
 %
-We are especially interested in the restriction of the $\nabla_\Theta$ to
-the subspace $\Omega_P^{k,G}(V) \cong \Omega_M^k(E)$, where $E$ denotes
+We often omit the subscript $\Theta$, and denote the covariant derivative by
+just $\nabla$. We are especially interested in the restriction of the $\nabla$
+to the subspace $\Omega_P^{k,G}(V) \cong \Omega_M^k(E)$, where $E$ denotes
 the associated vector bundle $P \times_G V$. The first thing to check
-is that given $\alpha \in \Omega_P^{k,G}(V)$, its image $\nabla_\Theta\alpha$ is 
-an element of $\Omega_P^{k,G}(V)
+is that given an element $\psi \in \Omega_P^{k,G}(V)$, its image
+$\nabla\psi$ is an element of $\Omega_P^{k+1,G}(V)$.
 %
+\begin{prop}
+Given $\psi \in \Omega_P^{k,G}(V)$, $\nabla\psi \in \Omega_P^{k+1,G}(V)$.
+\end{prop}
+%
+\begin{proof} %TODO Finish and check this :(
+We need to check two things:
+\begin{enumerate}
+  \item $\iota_{\xi}(\nabla\psi) = 0$ for any vertical vector field $\xi$.
+  \item $R_g^*\nabla\psi = \rho(g)\inv \nabla\psi$.
+\end{enumerate}
+For the first condition, let $\xi$ be a vertical vector field, and
+$V_1, \ldots V_k$ be arbitrary vector fields. Then by definition, we have
+\begin{align*}
+\iota_{\xi}(\nabla\psi)(V_1, \ldots V_k) &= \nabla\psi(\xi, V_1, \ldots V_k) \\
+&= (d\psi + \dt{\rho}(\Theta) \wedge \psi)(\xi, V_1, \ldots V_k)
+\end{align*}
+After fixing a basis for $V$, we compute the components to be
+\[
+(d\psi + \dt{\rho}(\Theta) \wedge \psi)^i(\xi, V_1, \ldots V_k) =
+(d\psi^i + \dt{\rho}(\Theta)^i_j \wedge \psi^j)(\xi, V_1, \ldots V_k) \\
+\]
+We then note that $\iota_\xi(\psi^j) = 0$ for all $j$, since
+$\psi \in \Omega_P^{k,G}(V)$.
+\end{proof}
+%
+The covariant derivative has a very geometric interpretation in terms of
+geodesics on the base manifold $M$ when applied to the $GL_n\R$ bundle of frames
+$\pi : \B(M) \to M$. The natural action of $GL_n\R$ on $\R^n$ allows us to
+define the associated vector bundle $\B(M) \times_{GL_n\R} \R^n$, which is
+naturally isomorphic to the tangent bundle $TM$ as we showed before. We can then
+define a natural $1$-form $\theta \in \Omega_{\B(M)}(\R^n)$ called the
+\ib{soldering form}. Given $b \in \B(M)$, we know that $b$ is a linear
+isomorphism $b : \R^n \to T_{\pi(b)}M$. Then given $v \in T_bP$, we
+define the action of $\theta$ by
+\[
+\theta_p(v) = b\inv(d\pi_p(v))
+\]
+The soldering form in some sense remembers that $\B(M)$ is the bundle of
+frames. Then given a connection $\Theta \in \Omega_P^1(\gl_n\R)$ on $\B(M)$,
+we use the $\Theta$ to define special vector fields on $P$, which we
+denote $\partial_i$.\footnote{Note that these vector fields are not coordinate
+vector fields, though we have in the past used the notation $\partial_i$ to
+denote coordinate vector fields.} Given $b \in P$, we define $\partial_i\vert_b$
+by $\partial_i\vert_b = \widetilde{b(e_1)}$, where $e_1$ denotes the first
+standard basis vector of $\R^n$ and $\widetilde{b(e_1)}$ is the unique horizontal
+lift of $b(e_1) \in T_{\pi(b)}M$ at $b$ with respect to the connection $\Theta$.
+The vector fields $\partial_i$ are defined analogously.
+%TODO relationship of connection with flatness - directional derivatives
 
 
 
