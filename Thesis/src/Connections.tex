@@ -485,63 +485,25 @@ we get
 \]
 \end{proof}
 %
-The covariant derivative has a very geometric interpretation in terms of
-geodesics on the base manifold $M$ when applied to the $GL_n\R$ bundle of frames
-$\pi : \B(M) \to M$. The natural action of $GL_n\R$ on $\R^n$ allows us to
-define the associated vector bundle $\B(M) \times_{GL_n\R} \R^n$, which is
-naturally isomorphic to the tangent bundle $TM$ as we showed before. We can then
-define a natural $1$-form $\theta \in \Omega_{\B(M)}(\R^n)$ called the
-\ib{soldering form}. Given $b \in \B(M)$, we know that $b$ is a linear
-isomorphism $b : \R^n \to T_{\pi(b)}M$. Then given $v \in T_bP$, we
-define the action of $\theta$ by
-\[
-\theta_p(v) = b\inv(d\pi_p(v))
-\]
-The soldering form in some sense remembers that $\B(M)$ is the bundle of
-frames. Then given a connection $\Theta \in \Omega_P^1(\gl_n\R)$ on $\B(M)$,
-we use the $\Theta$ to define special vector fields on $P$, which we
-denote $\partial_i$.\footnote{Note that these vector fields are not coordinate
-vector fields, though we have in the past used the notation $\partial_i$ to
-denote coordinate vector fields.} Given $b \in P$, we define $\partial_i\vert_b$
-by $\partial_i\vert_b = \widetilde{b(e_1)}$, where $e_1$ denotes the first
-standard basis vector of $\R^n$ and $\widetilde{b(e_1)}$ is the unique horizontal
-lift of $b(e_1) \in T_{\pi(b)}M$ at $b$ with respect to the connection $\Theta$.
-The vector fields $\partial_i$ are defined analogously, and together, the
-$\partial_i$ give a framing for the horizontal distribution on $\B(M)$.
-The connection $\Theta$ on $\B(M)$ induces a covariant derivative $\nabla$ on
-$TM$, which has a very special relationship with the vector fields $\partial_i$.
+\iffalse
+Specializing further to the case of the associated bundle
+$\B(M)\times_{GL_n\R} \R^n \cong TM$, the covariant derivative gives us a notion
+of acceleration and geodesics. A curve $\gamma : I \to M$ induces a velocity
+vector field $\gamma'(t)$, and we can compute the covariant derivative of
+$\gamma'(t)$ along itself, i.e. $\nabla_{\gamma'(t)}\gamma'$. Covariant
+differentiation of $\gamma'$ measures how much $\gamma'(t)$ differs from
+the parallel translate $\tau_t(\gamma'(0))$ of the initial velocity vector.
+A curve whose velocity vector field is parallel along itself is the generalization
+of a constant velocity curve in Euclidean space to the curve world of manifolds.
+Covariant differentiation measures how much the velocity $\gamma'(t)$ at time
+$t$ differs from the parallel translate $\tau_t(\gamma'(0))$ from the initial
+velocity, which is a measure of acceleration, and curves that satisfy
+$\nabla_{\gamma'(t)}\gamma' = 0$ are called \ib{geodesics}.
+\fi
 %
-\begin{prop}
-Let $M$ be a smooth manifold and $\pi : \B(M) \to M$ its $GL_n\R$ bundle
-of frames. Equip $\B(M)$ with a connection $\Theta$ and define the vector fields
-$\partial_i$ as above. Then given a vector space $W$ with a representation
-$\rho : GL_n\R \to GL(V)$ let $E \to M$ denote the associated bundle, and
-let $\nabla$ denote the covariant derivative on $E$ induced by $\Theta$. Then
-given a section $\psi \in \Omega_M^0(E)$, it has a corresponding
-$GL_n\R$-equivariant map $\tilde{\psi} : P \to W$. Then the covariant derivative
-of $\tilde{\psi}$ is given by the formula
-\[
-\nabla\tilde{\psi} = \partial_i\tilde{\psi} \otimes e^i
-\]
-where $e^i \in (\R^n)^*$ denotes the dual basis to the standard basis $e_i$.
-\end{prop}
-%
-\begin{proof} %TODO
-We first make sense of the formula. The covariant derivative $\nabla\psi$ is
-an element of $\Omega_M^1(E)$, which is a section of the bundle $E \otimes T^*M$.
-The bundle $T^*M$ is naturally isomorphic to the associated bundle
-$\B(M) \times_{GL_n\R} (\R^n)^*$ given by the dual to the standard representation
-of $GL_n\R$ on $\R^n$. Therefore, we get a representation of $GL_n\R$ on
-$W \otimes (\R^n)^*$, and $E \otimes T^*M$ is naturally isomorphic to the vector
-bundle $\B(M) \times_{GL_n\R} (W \otimes (\R^n)^*)$. Sections of this bundle
-are equivalent $GL_n\R$-equivariant maps $P \to W \otimes (\R^n)^*$. The action
-of the $\partial_i$ on $\tilde{\psi}$ produces $GL_n\R$-equivariant maps
-$\partial_i\psi$, so the tensor product $\partial_i\tilde{\psi} \otimes e^i$
-then defines a section of $E \otimes T^*M$.
-\end{proof}
-%
-%TODO relationship of connection with flatness - directional derivatives
-%TODO relationship of horizontal with acceleration - geodesics
+%TODO? Curvature?
+%TODO? relationship of connection with flatness - directional derivatives
+%TODO? relationship of horizontal with acceleration - geodesics
 
 
 
