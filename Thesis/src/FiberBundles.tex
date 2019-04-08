@@ -303,7 +303,10 @@ correspondence.
 %
 In some sense, the geometry of the associated fiber bundle $P \times_G F$
 is controlled by the group $G$, as $G$ determines a distinguished
-group of symmetries of the fiber $F$.
+group of symmetries of the fiber $F$. Given an element $p \in P$, the element
+$p$ determines a diffeomorphism $\varphi_p : F \to (P \times_G F)_{\pi(0)}$ via the
+mapping $f \mapsto [p,f]$, and the group action of $G$ on $P$ gives a
+transformation law on the associated bundle via the group action of $G$ on $F$.
 %
 \begin{exmp}[The tangent bundle as an associated bundle]
 Given a manifold $M$, we can take the frame bundle $\pi : \B(M) \to M$, which is a
@@ -332,12 +335,24 @@ under different coordinate transformations, which defines the symmetries of
 $TM$.
 \end{exmp}
 %
+In a similar fashion, the cotangent bundle $T^*M$ to a manifold $M$ is
+naturally isomorphic to the associated bundle $\B(M) \times_{GL_n\R} (\R^n)^*$,
+where $GL_n\R$ acts on $(\R^n)^*$ by the dual of the standard representation
+(i.e. $A \in GL_n\R acts by (A\inv)^*$.) \\
+%
+
 In general, given a rank $n$ vector bundle $E \to M$, we can construct the
 frame bundle  $\B(E)$ for $E$, where the fiber over $x \in M$ is the
 $GL_n\R$-torsor of bases for the fiber $E_x$. We can then
-recover $E$ by taking the associated bundle
-$\B(E) \times_{GL_n\R} \R^n$, so the process of taking frames and constructing
-associated bundles are inverses of each other.
+recover $E$ by taking the associated bundle $\B(E) \times_{GL_n\R} \R^n$,
+so the process of taking frames and constructing associated bundles are inverses
+of each other. In general, if $E$ is an associated vector bundle
+$P \times_G V$ obtained via a linear representation $\rho : G \to GL(V)$, the
+elements of $P$ have a natural interpretation as bases of the fibers of $E$.
+In this case, each element $p \in P$ determines a linear isomorphism
+$\varphi_p : V \to E_p$, giving a $G$-equivariant $\varphi : P \to \B(E)$ of
+$P$ to the frame bundle of $E$, where $G$ acts on $\B(E)$ through the
+representation $\rho$.
 %
 \begin{defn}
 Let $\pi : P \to M$ be a principal $G$-bundle, and $\rho : H \to G$ a group

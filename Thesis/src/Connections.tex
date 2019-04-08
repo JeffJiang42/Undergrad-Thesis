@@ -112,7 +112,21 @@ $\ker\omega_p = H_p$. Doing this over all fibers $\pi\inv(p)$, this determines
 a $\g$-valued $1$-form $\omega \in \Omega^1_P(\g)$ called the
 \ib{connection $1$-form}. From the connection $1$-form $\omega$, we can recover
 $H$ as the kernel of $\omega$. In addition, it is clear from the definition that
-given $X \in \g$, we have $\omega_p(\tilde{X}_p) = X$.
+given $X \in \g$, we have $\omega_p(\tilde{X}_p) = X$. \\
+%TODO Special case of vector bundles
+
+In the case of a vector bundle $E \to M$, we can also construct a connection
+$1$-form. Given any point $p \in E_x$, we get a linear isomorphism of the
+fiber $E_x$ with the vertical space $V_p \subset T_pE$ via the mapping
+\[
+v \mapsto \frac{d}{dt}\bigg\vert_{t = 0} p + tv
+\]
+A horizontal distribution $H$ then gives us a projection map $T_pE \to V_p$
+on each tangent space, and composing with the inverse isomorphism $V_p \to E_x$,
+we get a linear map $\omega_p : T_pP \to E_x$. Doing this over all fibers gives
+and $\pi^* E$ valued $1$-form $\omega \in \Omega^1_E(\pi^*E)$, which is
+also called the connection $1$-from. As with principal bundles, the horizontal
+distribution is recovered as the kernel of $\omega$.
 %
 \begin{prop}
 Let $\pi : P \to M$ be a principal $G$-bundle and $\omega \in \Omega^1_P(\g)$ a
@@ -181,8 +195,7 @@ the fibers along a path on $M$.
 %
 \begin{defn}
 Let $\pi : P \to M$ be a principal $G$-bundle with $H \subset TP$ a connection.
-Let $\gamma : I \to M$ be a path starting at $x \in M$. The velocity vector
-field of $\gamma$ induces a horizontal vector field $V$ on $P$. Let
+Let $\gamma : I \to M$ be a path starting at $x \in M$. Let
 $\gamma_p : I \to P$ denote the lift of $\gamma$ starting at $p \in \pi\inv(x)$.
 Define the \ib{parallel transport} maps $\tau_t : P_x \to P_{\gamma(t)}$ by
 $\tau_t(p) = \gamma_p(t)$
@@ -207,21 +220,67 @@ Then the lift of $\gamma$ to $P$ starting at $p \cdot g$ is the curve
 $\tilde{\gamma} \cdot g$, so using this representative, we would define
 $\widehat{\gamma}(t) = [\tilde{\gamma} \cdot g, g\inv \cdot f] =
 [\tilde{\gamma}(t), f]$, so this definition does not rely on our choice of
-representative. \\
+representative. Another way to see how the connection on $P$ induces a
+connection on the associated bundle $P \times_G F$ is by looking at the
+horizontal distribution $H \subset TP$. This includes into the tangent bundle
+$T(P \times F)$ as the subbundle $H \times \set{0}$, where $0$ denotes the
+zero section of $TF$. The $G$-invariance of $H$ then guarantees that $H$
+descends to to quotient $P \times F / G = P \times_G F$, giving a connection on
+$P \times_G F$.
 
-Given a principal $G$-bundle $\pi : P \to M$ and a vector space $V$ with
-a linear representation $\rho : G \to GL(V)$, let $E = P \times_G V$ be the
-associated bundle. We proved earlier that there is a bijective correspondence
+This induced connection has a very nice interpretation when we have an associated
+vector bundle. Let $\rho : G \to GL(W)$ be a linear representation. Then let
+$E = P \times_G W$ denote the associated vector bundle induced by $\rho$.
+Recall from before that given a point $x \in M$ in the base and a point
+$p \in P_x$ in the fiber over $x$, $p$ determines a linear isomorphism
+$\varphi_p : W \to E_x$, so we have a map $\varphi : P \to \B(E)$. We then
+compute the differential $d\varphi : TP \to T(\B(E))$. The connection $H$
+on $P$ gives a decomposition $TP = V \oplus H$ into the vertical and
+horizontal distributions, and we have natural identifications of $\underline{\g}$
+with $W$ and of $\End W$ with the vertical space of $\B(E)$. Then the differential
+$d\varphi$ is given by
+\begin{align*}
+d\varphi : \underline{\g} \oplus H &\to T(\B(E)) \\
+(\xi, h) &\mapsto \dt{\rho}(\xi)
+\end{align*}
+The lack of dependence on the horizontal component reflects that the change
+of bases induced by the $G$-action on $P$ preserves the fiber. Without
+using the direct sum decomposition of $T_pP$, this becomes
+\[
+d\varphi_p(v) = \dt{\rho}(\Theta)(v)
+\]
+Recall from before that there is a bijective correspondence
 \[
 \Gamma_M(E) \longleftrightarrow
-\set{\alpha : P \to V ~:~ \alpha(p \cdot g) = \rho(g)\inv \cdot \alpha(p)}
+\set{\alpha : P \to W ~:~ \alpha(p \cdot g) = \rho(g)\inv \cdot \alpha(p)}
 \]
-Thinking of functions $P \to V$ as $0$-forms on $P$ valued in $V$ and sections
-of $E$ as $0$-forms on $M$ valued in $E$, we can write this correspondence more
-suggestively as
+We want to interpret what parallel transport means in this context. Let
+$\psi : M \to E \in \Gamma_M(E)$ be a section and $\tilde{\psi} : P \to W$ its
+corresponding $G$-equivariant map. Then let $\gamma : I \to M$ be a curve with
+$\gamma(0) = x$. In terms of the associated map $\tilde{\psi} : P \to W$, we
+want to determine $\tilde{\psi}$ along the fibers of the curve $\gamma$. For
+every $p_t \in P_{\gamma(t)}$, there is a unique way to express $\psi(\gamma(t))$ as
+$[p_t, v_p(t)]$, and $\tilde{\psi}(\gamma(t)) = v_p(t)$ for some vector valued
+function $v_p : I \to W$. Using the connection on $P$, we get a horizontal lift
+$\tilde{\gamma}_p : I \to P$ for any $p$ in the fiber $P_x$. This then
+induces a horizontal lift of $\gamma$ to any point $[p, v]$ in the fiber $E_x$ given by
+\[
+t \mapsto [\gamma_p(t), v]
+\]
+In other words, the curve $\gamma_p$ in $P$ gives a distinguished path of frames
+along the curve $\gamma$, and the horizontal lift of $\gamma$ to $E$ is simply the
+same vector $v$ expressed in all of these frames. The frames along this
+path give isomorphisms $\varphi_{\gamma(t)} : W \to E_{\gamma(t)}$, and the
+inverse maps give identifications with $W$, allowing us to do the usual vector
+operations with vectors in \emph{different fibers} of $E$. \\
+
+We now generalize the correspondence $\Gamma_M(E)$ with $G$-equivariant maps
+$P \to W$. Thinking of functions $P \to W$ as $0$-forms on $P$ valued in $W$ and
+sections of $E$ as $0$-forms on $M$ valued in $E$, we can write this
+correspondence more suggestively as
 \[
 \Omega_M^0(E) \longleftrightarrow
-\set{\alpha \in \Omega_P^0(V) ~:~ R_g^*\psi = \rho(g)\inv\alpha} \subset \Omega_P^0(V)
+\set{\alpha \in \Omega_P^0(W) ~:~ R_g^*\psi = \rho(g)\inv\alpha} \subset \Omega_P^0(W)
 \]
 Where $R_g^*$ denotes the pullback of $\alpha$ along right multiplication by
 $g \in G$. This notation suggests that this correspondence should generalize
@@ -231,8 +290,8 @@ to arbitrary $k$-forms.
 There is a bijective correspondence
 \[
 \Omega_M^k(E) \longleftrightarrow
-\set{\alpha \in \Omega_P^k(V) ~:~ R_g^*\alpha = \rho(g)\inv\alpha ~~\forall g \in G,~
-\iota_{\widehat{\xi}}(\alpha) = 0 ~~\forall \xi \in \g} \subset \Omega_P^k(V)
+\set{\alpha \in \Omega_P^k(W) ~:~ R_g^*\alpha = \rho(g)\inv\alpha ~~\forall g \in G,~
+\iota_{\widehat{\xi}}(\alpha) = 0 ~~\forall \xi \in \g} \subset \Omega_P^k(W)
 \]
 Where $\iota_{\widehat{\xi}}(\alpha)$  denotes the interior multiplication
 of $\alpha$ with the vector field $\widehat{\xi}$ on $P$ induced by $\xi$, i.e.
@@ -241,7 +300,7 @@ of $\alpha$ with the vector field $\widehat{\xi}$ on $P$ induced by $\xi$, i.e.
 \alpha(\widehat{\xi}, V_1, \ldots, V_{k-1})
 \]
 for vector fields $V_1, \ldots , V_{k-1}$. For convenience, we denote this
-subset of $k$-forms on $P$ by $\Omega^{k,G}_P(V)$, where the superscript $G$
+subset of $k$-forms on $P$ by $\Omega^{k,G}_P(W)$, where the superscript $G$
 reminds us that these $k$-forms are $G$-invariant in the appropriate sense.
 \end{prop}
 %
@@ -252,13 +311,13 @@ $\alpha$ is a $0$-form, so this agrees with our earlier correspondence.
 %
 \begin{proof}%TODO Finish this
 We provide maps in both directions.L et $\omega \in \omega_M^k(E)$. We want to define
-$\widetilde{\omega} \in \Omega_P^{k,G}(V)$. Using $\pi$, we pullback
+$\widetilde{\omega} \in \Omega_P^{k,G}(W)$. Using $\pi$, we pullback
 $\omega$ to obtain a $k$-form $\pi^*\omega \in \Omega_P^k(E)$, and define
 $\tilde{\omega}$ as follows. Given a point $p \in P$ and $v \in T_pP$,
 $(\pi^*\omega)_p(v) = [p, a]$, where $[p,a]$ is the unique representative in
 it's class with $p$ in the first component. We then define
 $\tilde{\omega}_p(v) = a$. We then must check that
-$\tilde{\omega} \in \Omega^{k,G}_P(V)$, so we must check
+$\tilde{\omega} \in \Omega^{k,G}_P(W)$, so we must check
 \begin{enumerate}
   \item $\iota_{\xi}(\tilde{\omega}) = 0$ for any vertical vector field $\xi$.
   \item $R_g^*\tilde{\omega} = \rho(g)\inv\tilde{\omega}$.
@@ -301,7 +360,7 @@ $\pi(p \cdot g) = \pi(p)$ and that $d\pi_p(v_i) = d\pi_{p \cdot g}(v_i)$.
 We know that $[p,a] = [p \cdot g, \rho(g)\inv a]$, so we conclude that
 $R_g^*\tilde{\omega} = \rho(g)\inv\tilde{\omega}$.\\
 
-In the other direction, let $\alpha \in \Omega^{k,G}_P(V)$. We wish to define
+In the other direction, let $\alpha \in \Omega^{k,G}_P(W)$. We wish to define
 $\alpha' \in \Omega_M^k(E)$. Let $x \in M$ and $v_1, \ldots v_k \in T_xM$. Then
 define
 \[
@@ -326,16 +385,16 @@ This is an example of a relatively general phenomenon, in which appropriately
 $G$-invariant objects on the total space $P$ descend to objects on the base space
 $M$. \\
 
-The correspondence $\Omega^k_M(E) \leftrightarrow \Omega^{k,G}_P(V)$ gives
+The correspondence $\Omega^k_M(E) \leftrightarrow \Omega^{k,G}_P(W)$ gives
 us a natural way of discussing and extending covariant differentiation, which
 gives us a way of taking directional derivatives on $E$ with respect to tangent
 vectors on the base $M$.
 \begin{defn}
 Let $\pi : P \to M$ be a principal $G$-bundle with connection $1$-form
-$\Theta \in \Omega_P^1(\g)$. Let $\rho : G \to GL(V)$ be a linear representation,
+$\Theta \in \Omega_P^1(\g)$. Let $\rho : G \to GL(W)$ be a linear representation,
 and let $\dt{\rho} : \g \to \End V$ denote the induced Lie algebra map. The
 \ib{covariant derivative} is a family of maps
-$\nabla_\Theta : \Omega_P^k(V) \to \Omega_P^{k+1}(V)$ given by
+$\nabla_\Theta : \Omega_P^k(W) \to \Omega_P^{k+1}(W)$ given by
 \[
 \nabla_\Theta \psi = d\psi + \dt{\rho}(\Theta) \wedge \psi
 \]
@@ -356,11 +415,11 @@ We often omit the subscript $\Theta$, and denote the covariant derivative by
 just $\nabla$. We are especially interested in the restriction of the $\nabla$
 to the subspace $\Omega_P^{k,G}(V) \cong \Omega_M^k(E)$, where $E$ denotes
 the associated vector bundle $P \times_G V$. The first thing to check
-is that given an element $\psi \in \Omega_P^{k,G}(V)$, its image
-$\nabla\psi$ is an element of $\Omega_P^{k+1,G}(V)$.
+is that given an element $\psi \in \Omega_P^{k,G}(W)$, its image
+$\nabla\psi$ is an element of $\Omega_P^{k+1,G}(W)$.
 %
 \begin{prop}
-Given $\psi \in \Omega_P^{k,G}(V)$, $\nabla\psi \in \Omega_P^{k+1,G}(V)$.
+Given $\psi \in \Omega_P^{k,G}(W)$, $\nabla\psi \in \Omega_P^{k+1,G}(W)$.
 \end{prop}
 %
 \begin{proof} %TODO Finish and check this :(
@@ -375,13 +434,55 @@ $V_1, \ldots V_k$ be arbitrary vector fields. Then by definition, we have
 \iota_{\xi}(\nabla\psi)(V_1, \ldots V_k) &= \nabla\psi(\xi, V_1, \ldots V_k) \\
 &= (d\psi + \dt{\rho}(\Theta) \wedge \psi)(\xi, V_1, \ldots V_k)
 \end{align*}
-After fixing a basis for $V$, we compute the components to be
+After fixing a basis for $W$, we compute the components to be
 \[
 (d\psi + \dt{\rho}(\Theta) \wedge \psi)^i(\xi, V_1, \ldots V_k) =
 (d\psi^i + \dt{\rho}(\Theta)^i_j \wedge \psi^j)(\xi, V_1, \ldots V_k) \\
 \]
 We then note that $\iota_\xi(\psi^j) = 0$ for all $j$, since
-$\psi \in \Omega_P^{k,G}(V)$.
+$\psi \in \Omega_P^{k,G}(W)$.
+\end{proof}
+%
+We are especially interested in the covariant derivative on sections
+$\Omega^0_M(E)$, as $\nabla$ is best interpreted as a directional derivative
+of a section $\psi$ in the direction of a tangent vector $\xi \in T_pM$.
+%
+\begin{prop}
+Let $\pi : P \to M$, $\Theta \in \Omega_1^P(\g)$, $\rho : G \to GL(W)$,
+$\dt{\rho} : \g \to \End W$ and $E = P \times_G W$ be as above. Then given a
+section $\psi \in \Omega_M^0(E)$, and a vector $\xi \in T_xM$,
+\[
+\nabla\psi(\xi) = \frac{d}{dt}\bigg\vert_{t = 0} \tau_t\inv(\psi(\tilde{\gamma}(t)))
+\]
+where $\tilde{\gamma} : I \to E$ is the lift of a curve $\gamma :I \to M$
+where $\gamma(0) = x$ and $\gamma'(0) = \xi$ and $\tau_t$ denotes the parallel
+transport maps along $\gamma$.
+\end{prop}
+%
+\begin{proof} % TODO
+We let $\tilde{\psi} : P \to W$ denote the map associated to the section $\psi$,
+and $\varphi_t : W \to E_{\gamma(t)}$ the isomorphisms induced by the
+horizontal lift of $\gamma$ to $\psi(x) = \psi(\gamma(0))$. Along $\gamma$,
+$\tilde{\psi}$ is given by a function $I \to W$ induced by the horizontal
+lift of $\gamma$ to $\psi(x)$. The quantity we wish
+to compute now is
+\[
+\frac{d}{dt}\bigg\vert_{t = 0}\varphi_t (\tilde{\psi}(\gamma(t)))
+\]
+after fixing bases, the $i^{th}$ component is
+\begin{align*}
+\frac{d}{dt}\bigg\vert_{t = 0}(\varphi_t)^i_j\tilde{\psi}(\gamma(t))^j &=
+\tilde{\psi}^j(0)(d\varphi_t)^i_j(0) + (\varphi_0)^i_j d\psi^j(t) \\
+&= \rho(\Theta)(\xi)^i_j\tilde{\psi}(0)^j + d\psi^j(\xi)
+\end{align*}
+where we use the product rule for differentiating the matrix equation and the
+fact that $d\varphi_p(X) = \rho(\Theta_p(X))$ for any tangent
+vector $X \in T_pP$. Translating this back into the world of sections of $E$,
+we get
+\[
+\frac{d}{dt}\bigg\vert_{t = 0} \tau_t\inv(\psi(\tilde{\gamma}(t)))
+= d\psi + \rho(\Theta)\psi = \nabla\psi
+\]
 \end{proof}
 %
 The covariant derivative has a very geometric interpretation in terms of
@@ -405,8 +506,50 @@ denote coordinate vector fields.} Given $b \in P$, we define $\partial_i\vert_b$
 by $\partial_i\vert_b = \widetilde{b(e_1)}$, where $e_1$ denotes the first
 standard basis vector of $\R^n$ and $\widetilde{b(e_1)}$ is the unique horizontal
 lift of $b(e_1) \in T_{\pi(b)}M$ at $b$ with respect to the connection $\Theta$.
-The vector fields $\partial_i$ are defined analogously.
+The vector fields $\partial_i$ are defined analogously, and together, the
+$\partial_i$ give a framing for the horizontal distribution on $\B(M)$.
+The connection $\Theta$ on $\B(M)$ induces a covariant derivative $\nabla$ on
+$TM$, which has a very special relationship with the vector fields $\partial_i$.
+%
+\begin{prop}
+Let $M$ be a smooth manifold and $\pi : \B(M) \to M$ its $GL_n\R$ bundle
+of frames. Equip $\B(M)$ with a connection $\Theta$ and define the vector fields
+$\partial_i$ as above. Then given a vector space $W$ with a representation
+$\rho : GL_n\R \to GL(V)$ let $E \to M$ denote the associated bundle, and
+let $\nabla$ denote the covariant derivative on $E$ induced by $\Theta$. Then
+given a section $\psi \in \Omega_M^0(E)$, it has a corresponding
+$GL_n\R$-equivariant map $\tilde{\psi} : P \to W$. Then the covariant derivative
+of $\tilde{\psi}$ is given by the formula
+\[
+\nabla\tilde{\psi} = \partial_i\tilde{\psi} \otimes e^i
+\]
+where $e^i \in (\R^n)^*$ denotes the dual basis to the standard basis $e_i$.
+\end{prop}
+%
+\begin{proof} %TODO
+We first make sense of the formula. The covariant derivative $\nabla\psi$ is
+an element of $\Omega_M^1(E)$, which is a section of the bundle $E \otimes T^*M$.
+The bundle $T^*M$ is naturally isomorphic to the associated bundle
+$\B(M) \times_{GL_n\R} (\R^n)^*$ given by the dual to the standard representation
+of $GL_n\R$ on $\R^n$. Therefore, we get a representation of $GL_n\R$ on
+$W \otimes (\R^n)^*$, and $E \otimes T^*M$ is naturally isomorphic to the vector
+bundle $\B(M) \times_{GL_n\R} (W \otimes (\R^n)^*)$. Sections of this bundle
+are equivalent $GL_n\R$-equivariant maps $P \to W \otimes (\R^n)^*$. The action
+of the $\partial_i$ on $\tilde{\psi}$ produces $GL_n\R$-equivariant maps
+$\partial_i\psi$, so the tensor product $\partial_i\tilde{\psi} \otimes e^i$
+then defines a section of $E \otimes T^*M$.
+\end{proof}
+%
 %TODO relationship of connection with flatness - directional derivatives
+%TODO relationship of horizontal with acceleration - geodesics
+
+
+
+
+
+
+
+
 
 
 
