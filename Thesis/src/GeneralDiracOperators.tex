@@ -110,14 +110,14 @@ which is the de Rham differential $d$.
 %
 The preceding discussion was all done with $\B(M)$ and $G = GL_n\R$, but the
 discussion applies to any principal bundle $P$ with a reduction of structure
-group to $\B(M)$, like $\B_O(M$, $\B_{SO}(M)$, and $\B_{\Spin}(M)$. \\
+group to $\B(M)$, like $\B_O(M)$, $\B_{SO}(M)$, and $\B_{\Spin}(M)$. \\
 %
 %TODO Levi-Civita, torsion?
 
 Let $(M,g)$ be a Riemannian manifold. The Riemannian metric $G$ gives a
 reduction of structure group to $O_n$, giving us the orthonormal frame bundle
 $\B_O(M)$. It is a wonderful fact that we have a canonical choice of connection
-on $\B_O(M)$.
+on $\B_O(M)$, where we ask for a quantity called the torsion tensor to vanish.
 %
 \begin{thm}[\ib{Fundamental Theorem of Riemannian Geometry}]
 There exists a unique torsion-free connection $\Theta$ on $\B_O(M)$.
@@ -158,4 +158,39 @@ The product $\B_{\Spin} \times \Cliff_{n,0}(\R)$ admits a free right action of
 $\Cliff_{n,0}(\R)$ given by right multiplication on the second factor. This
 commutes with left multiplication on $\Cliff_{n,0}(\R)$, so this descends to a
 free right action of $\Cliff_{n,0}(\R)$ on the fibers of $\S(M) \to M$, giving
-each fiber the structure of a right $\Cliff_{n,0}(\R)$ module.
+each fiber the structure of a right $\Cliff_{n,0}(\R)$ module. \\
+%
+
+Equip $\R^n$ with the standard inner product, and let
+$b :(\R^n)^* \times (\R^n)^* \to \R$ be the induced inner product on $(\R^n)^*$.
+Using the double cover $\Spin_n \to SO_n$, the group $\Spin_n$ acts on
+$(\R^n)^*$ through the dual representation of $SO_n$ on $(\R^n)^*$. In addition,
+$\Spin_n$ acts naturally on $\Cliff((\R^n)^*, b)$ by left multiplication, where
+we think of $\Spin_n$ as a subgroup of the group of units
+$\Cliff((\R^n)^*, b)^\times$. The \ib{Clifford multiplication map}
+$c : (\R^n)^* \to \Aut(\Cliff((\R^n)^*, b))$ given by $c(v) = va$ is easily
+verified to be $\Spin_n$-equivariant, so we can apply our recipe for
+constructing differential operators to construct the Dirac operator.
+%
+\begin{defn}
+Let $(M,g)$ be a oriented Riemannian manifold equipped with a Spin structure
+$\varphi : \B_{\Spin}(M) \to \B_{SO}(M)$ and spinor bundle $\S(M) \to M$.
+Using the Spin connection on $\B_{\Spin}(M)$, define the horizontal
+vector fields $\partial_i$ on $\B_{\Spin}(M)$ by
+\[
+\partial_i\vert_p = \widetilde{\varphi(p)(e_i)}
+\]
+where $\widetilde{\varphi(p)(e_i)}$ denotes the horizontal lift of the
+image of $e_i$ under $\varphi(p) \in \B_{SO}(M)$ to $T(\B_{\Spin}(M))$.
+The \ib{Dirac operator} is the first order differential operator
+\begin{align*}
+D : \Gamma_M(\S(M)) &\to \Gamma_M(\S(M)) \\
+\psi &\mapsto c(e^k)\partial_k\psi
+\end{align*}
+where we interpret $\psi$ as a $\Spin_n$-equivariant map
+$\B_{\Spin}(M) \to \Cliff_{n,0}(\R)$.
+\end{defn}
+%
+Note that this agrees with our previous definitions of Dirac operators on $\R^n$,
+as well as the ones we defined on $S^1$.
+%
