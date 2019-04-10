@@ -1,5 +1,5 @@
 %
-\section{Dirac Operators on Manifolds}
+\section{Dirac Operators}
 %
 To discuss Dirac operators on manifolds, we restrict the previous discussion
 to the case where the principal bundle we're concerned with is the principal
@@ -25,10 +25,11 @@ denote coordinate vector fields.} Given $b \in P$, we define $\partial_i\vert_b$
 by $\partial_i\vert_b = \widetilde{b(e_1)}$, where $e_1$ denotes the first
 standard basis vector of $\R^n$ and $\widetilde{b(e_1)}$ is the unique horizontal
 lift of $b(e_1) \in T_{\pi(b)}M$ at $b$ with respect to the connection $\Theta$.
-The vector fields $\partial_i$ are defined analogously, and together, the
-$\partial_i$ give a framing for the horizontal distribution on $\B(M)$.
-The connection $\Theta$ on $\B(M)$ induces a covariant derivative $\nabla$ on
-$TM$, which has a very special relationship with the vector fields $\partial_i$.
+The vector fields $\partial_2, \ldots \partial_n$ are defined analogously,
+and together the $\partial_i$ give a framing for the horizontal distribution on
+$\B(M)$. The connection $\Theta$ on $\B(M)$ induces a covariant derivative $\nabla$
+on any associated vector bundle $E \to M$, which has a very special relationship
+with the vector fields $\partial_i$.
 %
 \begin{prop}
 Let $M$ be a smooth manifold and $\pi : \B(M) \to M$ its $GL_n\R$ bundle
@@ -89,6 +90,22 @@ D_\sigma : \Gamma_M(E) &\to \Gamma_M(F) \\
 \psi &\mapsto [\sigma(e^k)](\partial_k\psi)
 \end{align*}
 Where we interpret $\psi$ as a $GL_n\R$-equivariant map $P \to A$.
+%
+This method for constructing differential operator has already manifested itself
+in several differential operators we have discussed.
+%
+\begin{exmp}
+Given a vector space $W$ with a $GL_n\R$ action, which gives an associated
+bundle $\B(M) \times_{GL_n\R} W$. A connection on $\B(M)$ induces a
+covariant derivative operator $\nabla$ on sections of the associated bundle.
+In terms of the horizontal vector
+fields $\partial_i$ defined on $\B(M)$, $\nabla$ is given by
+\[
+\nabla\psi = \partial_k\psi \otimes e^k
+\]
+Let $T : (R^n)^* \to \hom((\R^n)^*, W)$ be the map where $T(v)(w) = w \otimes v$.
+Then $\nabla = T(e^k)\partial_k$
+\end{exmp}
 %
 \begin{exmp}
 Consider $\Lambda^k(\R^n)^*$ and $\Lambda^{k+1}(\R^n)^*$, which have a natural

@@ -125,7 +125,7 @@ A horizontal distribution $H$ then gives us a projection map $T_pE \to V_p$
 on each tangent space, and composing with the inverse isomorphism $V_p \to E_x$,
 we get a linear map $\omega_p : T_pP \to E_x$. Doing this over all fibers gives
 and $\pi^* E$ valued $1$-form $\omega \in \Omega^1_E(\pi^*E)$, which is
-also called the connection $1$-from. As with principal bundles, the horizontal
+also called the connection $1$-form. As with principal bundles, the horizontal
 distribution is recovered as the kernel of $\omega$.
 %
 \begin{prop}
@@ -186,7 +186,7 @@ where $R_g$ is the right action of $g \in G$.
 \begin{proof}
 Since the action of $R_g$ preserves the fibers of $\pi$,
 $\tilde{\gamma} \circ R_g$ satisfies $\pi \circ \gamma \circ R_g = \gamma$.
-By uniqueness of integral curves of the horizontal vector field,
+By uniqueness of integral curves horizontal lift of the velocity vector field,
 $\gamma \circ R_g$ must be the lift of $\gamma$ based at $p \cdot g$.
 \end{proof}
 %
@@ -204,7 +204,7 @@ $\tau_t(p) = \gamma_p(t)$
 We note that the maps $\tau_t$ are isomorphisms, since the inverse map is given
 by parallel transport along the curve $\overline{\gamma}(t) = \gamma(1-t)$.
 The parallel transport maps justify the naming of a connection -- a connection
-gives the necessary to connect nearby fibers along a curve $\gamma$.
+provides the necessary data to connect nearby fibers along a curve $\gamma$.
 This notion of path lifting carries over to any associated bundle $P \times_G F$,
 which is one way to see that the connection on $P$ induces a connection on
 every associated bundle. As before, let $\gamma : I \to M$ be a path
@@ -226,54 +226,17 @@ horizontal distribution $H \subset TP$. This includes into the tangent bundle
 $T(P \times F)$ as the subbundle $H \times \set{0}$, where $0$ denotes the
 zero section of $TF$. The $G$-invariance of $H$ then guarantees that $H$
 descends to to quotient $P \times F / G = P \times_G F$, giving a connection on
-$P \times_G F$.
+$P \times_G F$. \\
+%
 
 This induced connection has a very nice interpretation when we have an associated
 vector bundle. Let $\rho : G \to GL(W)$ be a linear representation. Then let
 $E = P \times_G W$ denote the associated vector bundle induced by $\rho$.
-Recall from before that given a point $x \in M$ in the base and a point
-$p \in P_x$ in the fiber over $x$, $p$ determines a linear isomorphism
-$\varphi_p : W \to E_x$, so we have a map $\varphi : P \to \B(E)$. We then
-compute the differential $d\varphi : TP \to T(\B(E))$. The connection $H$
-on $P$ gives a decomposition $TP = V \oplus H$ into the vertical and
-horizontal distributions, and we have natural identifications of $\underline{\g}$
-with $W$ and of $\End W$ with the vertical space of $\B(E)$. Then the differential
-$d\varphi$ is given by
-\begin{align*}
-d\varphi : \underline{\g} \oplus H &\to T(\B(E)) \\
-(\xi, h) &\mapsto \dt{\rho}(\xi)
-\end{align*}
-The lack of dependence on the horizontal component reflects that the change
-of bases induced by the $G$-action on $P$ preserves the fiber. Without
-using the direct sum decomposition of $T_pP$, this becomes
-\[
-d\varphi_p(v) = \dt{\rho}(\Theta)(v)
-\]
 Recall from before that there is a bijective correspondence
 \[
 \Gamma_M(E) \longleftrightarrow
 \set{\alpha : P \to W ~:~ \alpha(p \cdot g) = \rho(g)\inv \cdot \alpha(p)}
 \]
-We want to interpret what parallel transport means in this context. Let
-$\psi : M \to E \in \Gamma_M(E)$ be a section and $\tilde{\psi} : P \to W$ its
-corresponding $G$-equivariant map. Then let $\gamma : I \to M$ be a curve with
-$\gamma(0) = x$. In terms of the associated map $\tilde{\psi} : P \to W$, we
-want to determine $\tilde{\psi}$ along the fibers of the curve $\gamma$. For
-every $p_t \in P_{\gamma(t)}$, there is a unique way to express $\psi(\gamma(t))$ as
-$[p_t, v_p(t)]$, and $\tilde{\psi}(\gamma(t)) = v_p(t)$ for some vector valued
-function $v_p : I \to W$. Using the connection on $P$, we get a horizontal lift
-$\tilde{\gamma}_p : I \to P$ for any $p$ in the fiber $P_x$. This then
-induces a horizontal lift of $\gamma$ to any point $[p, v]$ in the fiber $E_x$ given by
-\[
-t \mapsto [\gamma_p(t), v]
-\]
-In other words, the curve $\gamma_p$ in $P$ gives a distinguished path of frames
-along the curve $\gamma$, and the horizontal lift of $\gamma$ to $E$ is simply the
-same vector $v$ expressed in all of these frames. The frames along this
-path give isomorphisms $\varphi_{\gamma(t)} : W \to E_{\gamma(t)}$, and the
-inverse maps give identifications with $W$, allowing us to do the usual vector
-operations with vectors in \emph{different fibers} of $E$. \\
-
 We now generalize the correspondence $\Gamma_M(E)$ with $G$-equivariant maps
 $P \to W$. Thinking of functions $P \to W$ as $0$-forms on $P$ valued in $W$ and
 sections of $E$ as $0$-forms on $M$ valued in $E$, we can write this
@@ -309,7 +272,7 @@ Note that the condition $\iota_{\widehat{\xi}}(\alpha)$ hold vacuously when
 $\alpha$ is a $0$-form, so this agrees with our earlier correspondence.
 \end{rem*}
 %
-\begin{proof}%TODO Finish this
+\begin{proof}
 We provide maps in both directions.L et $\omega \in \omega_M^k(E)$. We want to define
 $\widetilde{\omega} \in \Omega_P^{k,G}(W)$. Using $\pi$, we pullback
 $\omega$ to obtain a $k$-form $\pi^*\omega \in \Omega_P^k(E)$, and define
@@ -329,8 +292,8 @@ first condition. For the second condition, it suffices to check the action of
 $\tilde{\omega}$ on vertical and horizontal vectors, since we have the direct
 sum decomposition $T_pP = V_p \oplus H_p$. We the only need to check the action
 of $\tilde{\omega}$ on horizontal vectors, since $\iota_\xi({\tilde{\omega}}) = 0$
-for any vertical vector field $\xi$ and the vertical space is invariant under the
-action of $G$. We first prove a lemma
+for any vertical vector field $\xi$ and the vertical distribution is invariant
+under the action of $G$. We first prove a lemma
 %
 \begin{lem*}
 Let $v \in H_p$ be a horizontal vector. Then
@@ -393,10 +356,10 @@ vectors on the base $M$.
 Let $\pi : P \to M$ be a principal $G$-bundle with connection $1$-form
 $\Theta \in \Omega_P^1(\g)$. Let $\rho : G \to GL(W)$ be a linear representation,
 and let $\dt{\rho} : \g \to \End V$ denote the induced Lie algebra map. The
-\ib{covariant derivative} is a family of maps
-$\nabla_\Theta : \Omega_P^k(W) \to \Omega_P^{k+1}(W)$ given by
+\ib{exterior covariant derivative} is a family of maps
+$d_\Theta : \Omega_P^k(W) \to \Omega_P^{k+1}(W)$ given by
 \[
-\nabla_\Theta \psi = d\psi + \dt{\rho}(\Theta) \wedge \psi
+d_\Theta \psi = d\psi + \dt{\rho}(\Theta) \wedge \psi
 \]
 By $\dt{\rho}(\Theta)$, we mean that its action on a vector field $V$ is
 \[
@@ -411,36 +374,111 @@ $\psi^i$ of $k$-forms and define the wedge product as the usual matrix product
 \]
 \end{defn}
 %
-We often omit the subscript $\Theta$, and denote the covariant derivative by
-just $\nabla$. We are especially interested in the restriction of the $\nabla$
+We are especially interested in the restriction of the $d_\Theta$
 to the subspace $\Omega_P^{k,G}(V) \cong \Omega_M^k(E)$, where $E$ denotes
 the associated vector bundle $P \times_G V$. The first thing to check
 is that given an element $\psi \in \Omega_P^{k,G}(W)$, its image
-$\nabla\psi$ is an element of $\Omega_P^{k+1,G}(W)$.
+$d_\Theta\psi$ is an element of $\Omega_P^{k+1,G}(W)$.
 %
 \begin{prop}
-Given $\psi \in \Omega_P^{k,G}(W)$, $\nabla\psi \in \Omega_P^{k+1,G}(W)$.
+Given $\psi \in \Omega_P^{k,G}(W)$, $d_\Theta\psi \in \Omega_P^{k+1,G}(W)$.
 \end{prop}
 %
 \begin{proof} %TODO Finish and check this :(
 We need to check two things:
 \begin{enumerate}
-  \item $\iota_{\xi}(\nabla\psi) = 0$ for any vertical vector field $\xi$.
-  \item $R_g^*\nabla\psi = \rho(g)\inv \nabla\psi$.
+  \item $\iota_{\xi}(d_\Theta\psi) = 0$ for any vertical vector field $\xi$.
+  \item $R_g^*d_\Theta\psi = \rho(g)\inv d_\Theta\psi$.
 \end{enumerate}
-For the first condition, let $\xi$ be a vertical vector field, and
-$V_1, \ldots V_k$ be arbitrary vector fields. Then by definition, we have
-\begin{align*}
-\iota_{\xi}(\nabla\psi)(V_1, \ldots V_k) &= \nabla\psi(\xi, V_1, \ldots V_k) \\
-&= (d\psi + \dt{\rho}(\Theta) \wedge \psi)(\xi, V_1, \ldots V_k)
-\end{align*}
-After fixing a basis for $W$, we compute the components to be
+For the first condition, it suffices to check for  $\xi \in \g$ and
+$\widehat{\xi}$ its corresponding vertical vector field.
+We then note that $\iota_{\widehat{\xi}}(\psi^j) = 0$ for all $j$, since
+$\psi \in \Omega_P^{k,G}(W)$. To compute $\iota_{\widehat{\xi}}(d\psi)$, we use
+a useful lemma attributed to Cartan
+%
+\begin{lem*}[\ib{Cartan's Magic Formula}]
+Let $\xi$ be a vector field and $\omega$ a $k$-form, and let $\L_\xi$ denote
+the Lie derivative along $\xi$. Then
 \[
-(d\psi + \dt{\rho}(\Theta) \wedge \psi)^i(\xi, V_1, \ldots V_k) =
-(d\psi^i + \dt{\rho}(\Theta)^i_j \wedge \psi^j)(\xi, V_1, \ldots V_k) \\
+\L_\xi\omega = d(\iota_\xi(\omega)) + \iota_\xi(d\omega)
 \]
-We then note that $\iota_\xi(\psi^j) = 0$ for all $j$, since
-$\psi \in \Omega_P^{k,G}(W)$.
+\end{lem*}
+%
+By the lemma, we have that
+$\L_{\widehat{\xi}}\psi = d\iota_{\widehat{\xi}}(\psi) + \iota_\xi(d\psi)$.
+By assumption, $d(\iota_{\widehat{\xi}}(\psi)) = d(0) = 0$, so
+$\L_{\widehat{\xi}}\psi = \iota_{\widehat{\xi}}(d\psi)$.
+The flow of $\xi$ is given by right multiplication $R_{\exp(t\xi)}$, so
+\[
+\L_{\widehat{\xi}}\psi = \frac{d}{dt}\bigg\vert_{t=0}R^*_{\exp(t\xi)}\psi
+\]
+Then since $\psi \in \Omega^{k,G}_P(W)$, we have that
+$R_{\exp(t\xi)}^*\psi = \rho(g)\inv\psi$, and using this we compute
+\begin{align*}
+\L_{\widehat{\xi}}\psi &= \frac{d}{dt}\bigg\vert_{t=0}R^*_{\exp(t\xi)}\psi \\[5pt]
+&= \frac{d}{dt}\bigg\vert_{t=0}\rho(\exp(t\xi))\inv\psi \\[5pt]
+&= -\dt{\rho}(\xi)\psi
+\end{align*}
+So $\L_{\widehat{\xi}}\psi = -\dt{\rho}(\xi)\psi = \iota_\xi(d\psi)$. To
+compute $\iota_{\widehat{\xi}}(\dt{\rho}(\Theta) \wedge \psi)$, we use another
+helpful identity regarding interior multiplication and the wedge product.
+%
+\begin{lem*}
+Let $\xi$ be a vector field, and let $\omega$ be a $k$-form and let $\eta$
+be an $\ell$-form. Then
+\[
+\iota_\xi(\omega \wedge \eta) = \iota_\xi(\omega) \wedge \eta
++ (-1)^k\omega \wedge \iota_\xi(\eta)
+\]
+\end{lem*}
+%
+Fix a basis for $W$, so $\rho(\Theta)$ is a matrix of $1$-forms and $\psi$
+is a vector of $k$-forms. The $i^{th}$ component of
+$\dt{\rho}(\Theta) \wedge \psi$ is
+\[
+(\dt{\rho(\Theta)} \wedge \psi)^i =\rho(\Theta)^i_j \wedge \psi^j
+\]
+Then using our lemma, we compute
+\begin{align*}
+\iota_{\widehat{\xi}}((\dt{\rho}(\Theta) \wedge \psi)^i) &=
+\iota_{\widehat{\xi}}(\dt{\rho}(\Theta)^i_j) \wedge \psi^j - \dt{\rho}(\Theta)^i_j
+\wedge \iota_{\widehat{\xi}}(\psi^j) \\
+&= \dt{\rho}(\Theta(\widehat{\xi}))^i_j\psi^j \\
+&= \dt{\rho}(\xi)\psi
+\end{align*}
+Where we use the fact that $\Theta(\widehat{\xi}) = \xi$ and that
+$\iota_{\widehat{\xi}}(\psi^j) = 0$ for all $j$ since $\iota_\xi(\psi) = 0$.
+Therefore, we have that
+\[
+\iota_{\widehat{\xi}}(d_\Theta\psi) = \iota_{\widehat{\xi}}(d\psi) +
+\iota_{\widehat{\xi}}(\dt{\rho}(\Theta) \wedge \psi) = -\dt{\rho}(\xi)\psi
++ \dt{\rho}(\xi)\psi = 0
+\]
+We now want to verify the second condition. By definition,
+\[
+R_g^*d_\Theta\psi = R_g^*d\psi + R_g^*(\dt{\rho}(\Theta) \wedge \psi)
+\]
+We compute the pullbacks on each term. Pullback commutes with $d$, so we
+have that
+\[
+R_g^*d\psi = d(R^*_g\psi) = d(\rho(g)\inv\psi) = \rho(g)\inv d\psi
+\]
+For the other term, we fix a basis for $W$, and we compute
+the $i^{th}$ component of $R_g^*(\dt{\rho}(\Theta) \wedge \psi)$ to be
+\begin{align*}
+R_g^*(\dt{\rho}(\Theta) \wedge \psi)^i
+&= R^*_g(\dt{\rho}(\Theta)^i_j \wedge \psi^j) \\
+&= \dt{\rho}(R_g^*\Theta)^i_j \wedge (R^*_g\psi)^j \\
+&= \dt{\rho}(\Ad_{g\inv}\Theta)^i_j \wedge (\rho(g)\inv)^j_a\psi^a \\
+&= (\rho(g)\inv)^i_k\dt{\rho}(\Theta)^k_\ell\rho(g)^\ell_j
+\wedge (\rho(g)\inv)^j_a\psi^a \\
+&= (\rho(g)\inv)^i_k\dt{\rho}(\Theta)^k_\ell\rho(g)^\ell_j(\rho(g)\inv)^j_a
+\wedge \psi^a \\
+&= (\rho(g)\inv)^i_k\dt{\rho}(\Theta)^k_a \wedge \psi^a \\
+&= (\rho(g)\inv\dt{\rho}(\Theta))^i_a \wedge \psi^a \\
+\end{align*}
+Therefore, $R_g^*(\dt{\rho}(\Theta) \wedge \psi) =
+\rho(g)\inv \dt{\rho}(\Theta) \wedge \psi$
 \end{proof}
 %
 We are especially interested in the covariant derivative on sections
@@ -448,7 +486,7 @@ $\Omega^0_M(E)$, as $\nabla$ is best interpreted as a directional derivative
 of a section $\psi$ in the direction of a tangent vector $\xi \in T_pM$.
 %
 \begin{prop}
-Let $\pi : P \to M$, $\Theta \in \Omega_1^P(\g)$, $\rho : G \to GL(W)$,
+Let $\pi : P \to M$, $\Theta \in \Omega^1_P(\g)$, $\rho : G \to GL(W)$,
 $\dt{\rho} : \g \to \End W$ and $E = P \times_G W$ be as above. Then given a
 section $\psi \in \Omega_M^0(E)$, and a vector $\xi \in T_xM$,
 \[
@@ -460,46 +498,8 @@ transport maps along $\gamma$.
 \end{prop}
 %
 \begin{proof} % TODO
-We let $\tilde{\psi} : P \to W$ denote the map associated to the section $\psi$,
-and $\varphi_t : W \to E_{\gamma(t)}$ the isomorphisms induced by the
-horizontal lift of $\gamma$ to $\psi(x) = \psi(\gamma(0))$. Along $\gamma$,
-$\tilde{\psi}$ is given by a function $I \to W$ induced by the horizontal
-lift of $\gamma$ to $\psi(x)$. The quantity we wish
-to compute now is
-\[
-\frac{d}{dt}\bigg\vert_{t = 0}\varphi_t (\tilde{\psi}(\gamma(t)))
-\]
-after fixing bases, the $i^{th}$ component is
-\begin{align*}
-\frac{d}{dt}\bigg\vert_{t = 0}(\varphi_t)^i_j\tilde{\psi}(\gamma(t))^j &=
-\tilde{\psi}^j(0)(d\varphi_t)^i_j(0) + (\varphi_0)^i_j d\psi^j(t) \\
-&= \rho(\Theta)(\xi)^i_j\tilde{\psi}(0)^j + d\psi^j(\xi)
-\end{align*}
-where we use the product rule for differentiating the matrix equation and the
-fact that $d\varphi_p(X) = \rho(\Theta_p(X))$ for any tangent
-vector $X \in T_pP$. Translating this back into the world of sections of $E$,
-we get
-\[
-\frac{d}{dt}\bigg\vert_{t = 0} \tau_t\inv(\psi(\tilde{\gamma}(t)))
-= d\psi + \rho(\Theta)\psi = \nabla\psi
-\]
+
 \end{proof}
-%
-\iffalse
-Specializing further to the case of the associated bundle
-$\B(M)\times_{GL_n\R} \R^n \cong TM$, the covariant derivative gives us a notion
-of acceleration and geodesics. A curve $\gamma : I \to M$ induces a velocity
-vector field $\gamma'(t)$, and we can compute the covariant derivative of
-$\gamma'(t)$ along itself, i.e. $\nabla_{\gamma'(t)}\gamma'$. Covariant
-differentiation of $\gamma'$ measures how much $\gamma'(t)$ differs from
-the parallel translate $\tau_t(\gamma'(0))$ of the initial velocity vector.
-A curve whose velocity vector field is parallel along itself is the generalization
-of a constant velocity curve in Euclidean space to the curve world of manifolds.
-Covariant differentiation measures how much the velocity $\gamma'(t)$ at time
-$t$ differs from the parallel translate $\tau_t(\gamma'(0))$ from the initial
-velocity, which is a measure of acceleration, and curves that satisfy
-$\nabla_{\gamma'(t)}\gamma' = 0$ are called \ib{geodesics}.
-\fi
 %
 %TODO? Curvature?
 %TODO? relationship of connection with flatness - directional derivatives
