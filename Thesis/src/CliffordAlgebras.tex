@@ -219,18 +219,58 @@ isomorphic to the exterior algebra $\Lambda^\bullet(V)$. To construct the isomor
 we first construct an algebra homomorphism $\Cliff(V,b) \to \End(\Lambda^\bullet(V))$.
 where we map $v \in V$
 to $\varepsilon(v) + 1/2 \iota(v)$, where
-\[
-[\varepsilon(v) +\frac{1}{2}\iota(v)](w) = v \wedge w + \frac{1}{2}b(v,w)
-\]
+\begin{align*}
+&\varepsilon(v)(\omega) = v \wedge \omega \\
+&\iota(v)(v_1 \wedge\cdots\wedge v_k)
+= \sum_{i = 1}^k (-1)^{k+1}
+\langle v,v_i\rangle v_1 \wedge \cdots \widehat{v_i} \cdots \wedge v_k
+\end{align*}
+where $\widehat{v_i}$ indicates that the $i^{th}$ term in the wedge product is missing.
 This map satisfies the Clifford relations, so it extends to a unique map
-$\varphi : \Cliff(M) \to \End(\Lambda^\bullet(V))$. Then the mapping
+$\varphi : \Cliff(V,b) \to \End(\Lambda^\bullet(V))$. Then the mapping
 $v \mapsto \varphi(v)(1)$ is the desired isomorphism
-$\Cliff(V,b) \to \Lambda^\bullet(V)$. Of course, $\Cliff(V,b)$ and
+$\Cliff(V,b) \to \Lambda^\bullet(V)$. In particular, if $e_i$ is an orthogonal basis
+for $V$,
+\[
+\varphi(e_{i_1}e_{i_2}\cdots e_{i_k}) = e_{i_1}\wedge e_{i_2}\wedge\cdots\wedge e_{i_k}
+\]
+Of course, $\Cliff(V,b)$ and
 $\Lambda^\bullet(V)$ are noncanonically isomorphic, since they are the same dimension
 and the even and odd subspaces are the same dimensions, but the key point here is that
-the isomorphism is canonical. \\
+the isomorphism is canonical. Since them map is not an algebra homomorphism, a useful
+thing to note is how multiplication in the Clifford algebra looks like in the exterior
+algebra under the isomorphism $\varphi$.
 %
-
+\begin{prop}
+For $v \in V$ and $\eta \in \Cliff(V,b)$
+\[
+\varphi(v\eta) = v \wedge \eta + \iota(v)(\eta)
+\]
+\end{prop}
+%
+\begin{proof}
+Fix an orthogonal basis $\set{e_i^\pm}$ where $(e_i^+)^2 = 1$,
+$(e_i^-)^2 = -1$. It suffices to check that the identity holds when $v$ is a
+basis vector and $\eta$ is a product of basis vectors. We compute
+\begin{align*}
+e_i^\pm e_{i_1}^\pm\cdots e_{i_k}^\pm &= \begin{cases}
+\pm e_{i_2}\cdots e_{i_k} & e_{i_1}^\pm = e_i^\pm \\
+e_1e_{i_1}\cdots e_{i_k} & e_i^\pm \neq e_{i_1}^\pm
+\end{cases}
+\end{align*}
+In addition, we have that
+\begin{align*}
+e_i^\pm \wedge (e_{i_1}^\pm\wedge\cdots\wedge e_{i_k}^\pm)
++ \iota(e_i^\pm)(e_{i_1}^\pm\wedge\cdots\wedge e_{i_k}^\pm) = \begin{cases}
+0 \pm e_{i_2}^\pm \wedge \cdots \wedge e_{i_k}^\pm & e_1^\pm = e_{i_1}^\pm \\
+e_i^\pm \wedge e_{i_1}^\pm \wedge\cdots\wedge e_{i_k}^\pm, & e_i^\pm \neq e_{i_1}^\pm
+\end{cases}
+\end{align*}
+Then using the fact that $\varphi$ sends products of orthogonal vectors to
+wedges of orthogonal vectors, we see that the desired identity holds on a basis,
+completing the proof.
+\end{proof}
+%
 There is an extremely nice relationship between a Clifford algebra
 and its even subalgebra.
 %
