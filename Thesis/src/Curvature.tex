@@ -1,3 +1,21 @@
 %
 \section{Curvature}
 %
+An important quantity associated to a connection is it's \ib{curvature}, which
+heuristically measures its deviation from our standard notions of a directional
+derivative. We first discuss curvature on principal bundles, and will then
+explore its relationship with associated bundles.
+%
+\begin{defn}
+Let $G$ be a Lie group with Lie algebra $\g$, and $\pi : P \to M$ a principal $G$-bundle.
+Let $\Theta \in \Omega_P^1(\g)$ be a connection on $P$. The \ib{curvature tensor} is
+a $2$-form $\Omega \in \Omega_P^2(\g)$ defined by the equation
+\[
+\Omega = d\Theta + \frac{1}{2}[\Theta \wedge \Theta]
+\]
+where the action of $[\Theta \wedge \Theta]$ on $X$ is defined to be
+\[
+[\Theta \wedge \Theta](X) = [\Theta(X), \Theta(X)]
+\]
+\end{defn}
+%
