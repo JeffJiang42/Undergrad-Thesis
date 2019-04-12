@@ -5,22 +5,22 @@ One important application of Clifford algebras and Spin groups comes from
 physics. In the process of developing a relativistic equation for the electron,
 Paul Dirac saw the need for a first order differential operator $D$ such
 that $D$ squared to the Laplace operator.\footnote{One reason for choosing this sign
-convention for $\Delta$ is that the spectrum of $\Delta$
+ convention for $\Delta$ is that the spectrum of $\Delta$
 is positive with this choice of sign}
 \[
-\Delta = -\sum_i \frac{\partial^2}{\partial(x^i)^2}
+ \Delta = -\sum_i \frac{\partial^2}{\partial(x^i)^2}
 \]
 If $D$ were the be first order, it would have to be written as
 \[
-D = a^i \frac{\partial}{\partial x^i}
+ D = a^i \frac{\partial}{\partial x^i}
 \]
 for some coefficients $a^i$. However, it is clear that choosing scalar coefficients
 for the $a^i$ will not suffice. For example, in $\R^2$ with the standard coordinates
 $x$ and $y$, any first order operator $D = a^1\partial_x + a^2\partial_y$ satisfies
 \[
-D^2 = \left(a^1\frac{\partial}{\partial x} + a^2\frac{\partial}{\partial y}\right)^2
-= (a^1)^2\frac{\partial^2}{\partial x^2} + a^1a^2\frac{\partial^2}{\partial x \partial y}
-+ a^2a^1 \frac{\partial^2}{\partial y \partial x} + (a^2)^2 \frac{\partial^2}{\partial y^2}
+ D^2 = \left(a^1\frac{\partial}{\partial x} + a^2\frac{\partial}{\partial y}\right)^2
+ = (a^1)^2\frac{\partial^2}{\partial x^2} + a^1a^2\frac{\partial^2}{\partial x \partial y}
+ + a^2a^1 \frac{\partial^2}{\partial y \partial x} + (a^2)^2 \frac{\partial^2}{\partial y^2}
 \]
 From this equation, we see that the $a^i$ must square to $-1$, and we must also
 have that $a^1a^2 + a^2a^1 = 0$ in order for the mixed partial terms to vanish.
@@ -29,14 +29,14 @@ However, the required relations are exactly the relations between orthogonal
 basis vectors in the Clifford algebra $\Cliff_{0,n}(\R)$!
 %
 \begin{defn}
-Let $\set{e_i}$ be the standard basis for $\R^n$, $\set{e^i}$
-\footnote{The choice of using the dual basis elements $e^i$ instead of the
-$e_i$ is so that $D$ behaves tensorially with respect to coordinate change.}
-its dual basis, and $x^1, \ldots ,x^n$ the standard coordinates on $\R^n$.
-The \ib{Dirac operator} on $\R^n$ is the first order differential operator
-\[
-D = e^i\frac{\partial}{\partial x^i}
-\]
+ Let $\set{e_i}$ be the standard basis for $\R^n$, $\set{e^i}$
+ \footnote{The choice of using the dual basis elements $e^i$ instead of the
+ $e_i$ is so that $D$ behaves tensorially with respect to coordinate change.}
+ its dual basis, and $x^1, \ldots ,x^n$ the standard coordinates on $\R^n$.
+ The \ib{Dirac operator} on $\R^n$ is the first order differential operator
+ \[
+  D = e^i\frac{\partial}{\partial x^i}
+ \]
 \end{defn}
 %
 It is not clear from the definition what function space $D$ should act on.
@@ -58,17 +58,17 @@ then gives a basis for $C^\infty(\R, \Cliff_{0,1}(\R))$ as a
 $C^\infty(\R)$ module where for any $f : \R \to \Cliff_{0,1}(\R)$, we have the
 decomposition $f(x) = u(x) + e^1 v(x)$ , giving a column vector representation
 \[
-f = \begin{pmatrix}
-u \\
-v
-\end{pmatrix}
+ f = \begin{pmatrix}
+ u \\
+ v
+ \end{pmatrix}
 \]
 The Dirac operator is $e^1\partial_x$, which is represented in matrix form as
 \[
-D = \begin{pmatrix}
-0 & -\partial_x \\
-\partial_x & 0
-\end{pmatrix}
+ D = \begin{pmatrix}
+ 0 & -\partial_x \\
+ \partial_x & 0
+ \end{pmatrix}
 \]
 Note that the matrix is block off-diagonal. The vector space
 $C^\infty(\R, \Cliff_{0,1}(\R))$ has a natural grading where the even elements
@@ -91,12 +91,12 @@ where the component functions are all elements of $C^\infty(\R^2)$. In this
 basis, the action of the Dirac operator $D = e^1\partial_x + e^2\partial_y$
 is represented by the matrix of differential operators
 \[
-D = \begin{pmatrix}
-0 & 0 & -\partial_x & -\partial_y \\
-0 & 0 & -\partial_y & \partial_x \\
-\partial_x & \partial_y & 0 & 0 \\
-\partial_y & -\partial_x & 0 & 0
-\end{pmatrix}
+ D = \begin{pmatrix}
+ 0 & 0 & -\partial_x & -\partial_y \\
+ 0 & 0 & -\partial_y & \partial_x \\
+ \partial_x & \partial_y & 0 & 0 \\
+ \partial_y & -\partial_x & 0 & 0
+ \end{pmatrix}
 \]
 which is actually a familiar differential operator in disguise. We make the
 identification of $\Cliff_{0,2}(\R)$ with the quaternions $\H$, which
@@ -106,21 +106,21 @@ isomorphisms of the even and odd subspaces of $\Cliff_{0,2}(\R)$ with $\C$,
 giving an isomorphism of $\Cliff_{0,2}(\R)$ with $\H = \C \oplus \C$. The
 operator in the top right block is then exactly twice the differential operator
 \[
--\frac{\partial}{\partial z} = -\frac{1}{2}\left( \frac{\partial}{\partial x}
-- i \frac{\partial}{\partial y}\right)
+ -\frac{\partial}{\partial z} = -\frac{1}{2}\left( \frac{\partial}{\partial x}
+ - i \frac{\partial}{\partial y}\right)
 \]
 on functions $\R^2 \to \C$, and the operator in the bottom block is the twice
 the operator
 \[
-\frac{\partial}{\partial \overline{z}} = \frac{1}{2}\left( \frac{\partial}{\partial x}
-+ i \frac{\partial}{\partial y}\right)
+ \frac{\partial}{\partial \overline{z}} = \frac{1}{2}\left( \frac{\partial}{\partial x}
+ + i \frac{\partial}{\partial y}\right)
 \]
 So $D$ is more compactly represented under this identification as
 \[
-D = \begin{pmatrix}
-0 & 2\partial_z \\
-2\partial_{\overline{z}} & 0
-\end{pmatrix}
+ D = \begin{pmatrix}
+ 0 & 2\partial_z \\
+ 2\partial_{\overline{z}} & 0
+ \end{pmatrix}
 \]
 In $4$ dimensions, the irreducible module over $\Cliff_{0,3} \cong M_2\H$ is
 $\H^2$. This has a direct sum decomposition as $\H^2 = \H \oplus \H$, allowing
@@ -130,22 +130,22 @@ The quaternions admit operators similar to the operators $\partial_z$ and
 $\partial_{\overline{z}}$, which are
 %
 \begin{align*}
-\frac{\partial}{\partial q} &= \frac{1}{4}\left( \frac{\partial}{\partial x^1}
-- i \frac{\partial}{\partial x^2} - j\frac{\partial}{\partial x^3}
-- k \frac{\partial}{\partial x^4}\right) \\[5pt]
-\frac{\partial}{\partial \overline{q}} &= \frac{1}{4}\left( \frac{\partial}{\partial x^1}
-+ i \frac{\partial}{\partial x^2} + j\frac{\partial}{\partial x^3}
-+ k \frac{\partial}{\partial x^4}\right)
+ \frac{\partial}{\partial q}            & = \frac{1}{4}\left( \frac{\partial}{\partial x^1} 
+ - i \frac{\partial}{\partial x^2} - j\frac{\partial}{\partial x^3}
+ - k \frac{\partial}{\partial x^4}\right) \\[5pt]
+ \frac{\partial}{\partial \overline{q}} & = \frac{1}{4}\left( \frac{\partial}{\partial x^1} 
+ + i \frac{\partial}{\partial x^2} + j\frac{\partial}{\partial x^3}
+ + k \frac{\partial}{\partial x^4}\right)
 \end{align*}
 %
 Using these identifications, the Dirac operator is compactly represented as
 \[
-D = \begin{pmatrix}
-0 & -4\partial_q \\
-4\partial_{\overline{q}} & 0
-\end{pmatrix}
+ D = \begin{pmatrix}
+ 0 & -4\partial_q \\
+ 4\partial_{\overline{q}} & 0
+ \end{pmatrix}
 \]
 which encodes quaternionic analogues of the Cauchy-Riemann equations.
 %
-%TODO More stuff later, maybe in another section?
+%
 %

@@ -3,11 +3,11 @@
 \subsectionend $ $\\
 %
 \emph{Not all the geometrical structures are ``equal". It would seem that the
-Riemannian and complex structures, with their contacts with other fields of
-mathematics and with their richness in results, should occupy a central position
-in differential geometry. A unifying idea is the notion of a $G$-structure, which
-is the modern version of an equivalence problem first emphasized and exploited
-in its various special cases by \'Elie Cartan.} \\
+ Riemannian and complex structures, with their contacts with other fields of
+ mathematics and with their richness in results, should occupy a central position
+ in differential geometry. A unifying idea is the notion of a $G$-structure, which
+ is the modern version of an equivalence problem first emphasized and exploited
+ in its various special cases by \'Elie Cartan.} \\
 %
 \ib{-- ~ Shiing-Shen Chern}
 %
@@ -96,22 +96,22 @@ the restrictions to the fibers $\varphi\vert_{E_x}$ are linear maps.
 %
 \begin{exmp} \enumbreak
 \begin{enumerate}
-  \item Given a smooth manifold $M$, the tangent bundle $TM = \coprod_{p \in M} T_pM$
-  is a vector bundle, where the projection $\pi : TM \to M$ is the mapping
-  $(p,v) \mapsto p$. The rank of $TM$ is the dimension of $M$.
-  Local coordinates on $(x^i)$ on $U \subset M$ induce maps
-  $\pi\inv(U) \to U \times \R^n$, where
-  $(p,v) \mapsto (x^1(p), \ldots x^n(p), v^1, \ldots v^n)$, where the $v^i$ are
-  the components of $v$ with respect to the coordinate bases $\partial_i$.
-  These maps define a basis for a topology on $TM$, which we then give
-  a smooth structure by declaring the projection $\pi : TM \to M$ to be
-  smooth. In addition, these maps define local trivializations for $TM$,
-  showing that it is a vector bundle.
-  \item A point in $\RP^n$ is a line $\ell$ in $\R^{n+1}$. The \ib{tautological
-  bundle} over $\RP^n$ is the bundle where the fiber over $\ell$ is the subspace
-  $\ell$ itself. An analogous construction can be done for Grassmannians
-  $\mathrm{Gr}_k(V)$, which parameterize $k$-dimensional subspaces of
-  a vector space $V$.
+\item Given a smooth manifold $M$, the tangent bundle $TM = \coprod_{p \in M} T_pM$
+is a vector bundle, where the projection $\pi : TM \to M$ is the mapping
+$(p,v) \mapsto p$. The rank of $TM$ is the dimension of $M$.
+Local coordinates on $(x^i)$ on $U \subset M$ induce maps
+$\pi\inv(U) \to U \times \R^n$, where
+$(p,v) \mapsto (x^1(p), \ldots x^n(p), v^1, \ldots v^n)$, where the $v^i$ are
+the components of $v$ with respect to the coordinate bases $\partial_i$.
+These maps define a basis for a topology on $TM$, which we then give
+a smooth structure by declaring the projection $\pi : TM \to M$ to be
+smooth. In addition, these maps define local trivializations for $TM$,
+showing that it is a vector bundle.
+\item A point in $\RP^n$ is a line $\ell$ in $\R^{n+1}$. The \ib{tautological
+bundle} over $\RP^n$ is the bundle where the fiber over $\ell$ is the subspace
+$\ell$ itself. An analogous construction can be done for Grassmannians
+$\mathrm{Gr}_k(V)$, which parameterize $k$-dimensional subspaces of
+a vector space $V$.
 \qedhere\end{enumerate}
 \end{exmp}
 %
@@ -124,8 +124,8 @@ are smooth.
 Almost all of the groups we have discussed previously are Lie groups.
 \begin{exmp} \enumbreak
 \begin{enumerate}
-  \item The orthogonal groups $O_n$ and special orthogonal groups $SO_n$ are Lie groups.
-  \item The unitary groups $U_n$ and special unitary groups $SU_n$ are Lie groups.
+\item The orthogonal groups $O_n$ and special orthogonal groups $SO_n$ are Lie groups.
+\item The unitary groups $U_n$ and special unitary groups $SU_n$ are Lie groups.
 \qedhere\end{enumerate}
 \end{exmp}
 %
@@ -141,18 +141,18 @@ Let $G$ be a Lie group, and $M$ a smooth manifold. A \ib{principal } $G$\ib{-bun
 over $M$ is the data of
 %
 \begin{enumerate}
-  \item A smooth manifold $P$ with a map $\pi : P \to M$.
-  \item A smooth right $G$-action on $P$ that preserves the fibers of $\pi$ and
-  is free and transitive on the fibers of $\pi$.
-  \item For every point $p \in M$, a neighborhood $U \subset M$ containing $p$ and
-  a $G$-equivariant diffeomorphism $\varphi: \pi\inv(U) \to U \times G$ (where
-  the right action on $U \times G$ is right multiplication on the second factor)
-  such that we get the commutative diagram
-  \[\begin{tikzcd}
-  \pi\inv(U) \ar[dr, "\pi"']\ar[rr, "\varphi"]&& U \times G \ar[dl, "p_U"]\\
-  & U
-  \end{tikzcd}\]
-  where $p_U$ denotes projection onto the first factor.
+\item A smooth manifold $P$ with a map $\pi : P \to M$.
+\item A smooth right $G$-action on $P$ that preserves the fibers of $\pi$ and
+is free and transitive on the fibers of $\pi$.
+\item For every point $p \in M$, a neighborhood $U \subset M$ containing $p$ and
+a $G$-equivariant diffeomorphism $\varphi: \pi\inv(U) \to U \times G$ (where
+the right action on $U \times G$ is right multiplication on the second factor)
+such that we get the commutative diagram
+\[\begin{tikzcd}
+\pi\inv(U) \ar[dr, "\pi"']\ar[rr, "\varphi"]&& U \times G \ar[dl, "p_U"]\\
+& U
+\end{tikzcd}\]
+where $p_U$ denotes projection onto the first factor.
 \end{enumerate}
 A \ib{principal bundle homomorphism} is a bundle homomorphism $\varphi : P \to Q$
 that is $G$-equivariant.
@@ -214,8 +214,8 @@ Then $\psi$ is of the form $\psi(p) = (\pi(p), \tilde{\psi}(p))$ for some
 $\tilde{\psi} : \pi\inv(U) \to G$, satisfying $\tilde{\psi}(p\cdot g) = \tilde{\psi}(p)g$.
 Define
 \begin{align*}
-\varphi : \Phi\inv(U) &\to U \times F \\
-[p,f] &\mapsto (\pi(p), \tilde{\psi}(p)\cdot f)
+\varphi : \Phi\inv(U) & \to U \times F                           \\
+[p,f]                 & \mapsto (\pi(p), \tilde{\psi}(p)\cdot f)
 \end{align*}
 We first note that this is well defined on equivalence classes, since
 \[
@@ -231,17 +231,17 @@ by $\alpha(u,f) = [\psi\inv(u,e), f]$, where $e$ denotes the identity element
 of $G$. We then claim that $\alpha$ is the inverse. We compute
 %
 \begin{align*}
-(\varphi \circ \alpha)(u,f) &= \varphi[\psi\inv(u,e),f] \\
-&= (u, e\cdot f)\\
-&= (u,f)
+(\varphi \circ \alpha)(u,f) & = \varphi[\psi\inv(u,e),f] \\
+                            & = (u, e\cdot f)            \\
+                            & = (u,f)
 \end{align*}
 %
 In the other direction, we compute
 %
 \begin{align*}
-(\alpha \circ \varphi)[p,f] &= \alpha(\pi(p), \tilde{\psi}(p)) \\
-&= [\psi\inv(\pi(p), e), f] \\
-&= [p, f]
+(\alpha \circ \varphi)[p,f] & = \alpha(\pi(p), \tilde{\psi}(p)) \\
+                            & = [\psi\inv(\pi(p), e), f]        \\
+                            & = [p, f]
 \end{align*}
 %
 Therefore, $\varphi$ is a local trivialization, giving us that
@@ -324,7 +324,7 @@ elements of $\B(M) \times_{GL_n\R} \R^n$ are represented by pairs $(b, v)$,
 where $b: \R^n \to T_{\pi(b)}M$ is a linear isomorphism, and $v$ is a vector in $\R^n$.
 Then define $\varphi$ by
 \[
-\varphi[b,v] = (\pi(b), b(v))
+ \varphi[b,v] = (\pi(b), b(v))
 \]
 This is well defined, since $\varphi[b\circ g, g\inv(v)] = (\pi(b \circ g),
 (b\circ g)(g\inv(v))) = (\pi(b), b(v))$. This is an isomorphism, where the
@@ -355,11 +355,11 @@ $P$ to the frame bundle of $E$, where $G$ acts on $\B(E)$ through the
 representation $\rho$.
 %
 \begin{defn}
-Let $\pi : P \to M$ be a principal $G$-bundle, and $\rho : H \to G$ a group
-homomorphism. The map $\rho$ gives $G$ a left $H$ action where
-$h \cdot p = \rho(h) \cdot p$. A \ib{reduction of structure group} is the
-data of a principal $H$ bundle $\varphi : Q \to M$ and an $H$-equivariant bundle
-homomorphism $F : Q \to P$.
+ Let $\pi : P \to M$ be a principal $G$-bundle, and $\rho : H \to G$ a group
+ homomorphism. The map $\rho$ gives $G$ a left $H$ action where
+ $h \cdot p = \rho(h) \cdot p$. A \ib{reduction of structure group} is the
+ data of a principal $H$ bundle $\varphi : Q \to M$ and an $H$-equivariant bundle
+ homomorphism $F : Q \to P$.
 \end{defn}
 %
 The map $F : Q \to P$ induces a map $\tilde{F} : Q \times_H G \to P$, where we
@@ -368,29 +368,29 @@ on equivalences classes since
 %TODO this next line might be unnecessary, since it is the same map
 %constructed using the correspondence with sections -- double check this.
 \[
-(q \cdot h, \rho(h)\inv g) \mapsto F(q \cdot h)\rho(h)\inv g = F(q)\rho(h)\rho(h)\inv g
-= F(q)g
+ (q \cdot h, \rho(h)\inv g) \mapsto F(q \cdot h)\rho(h)\inv g = F(q)\rho(h)\rho(h)\inv g
+ = F(q)g
 \]
 %
 \begin{exmp}[Reduction from $GL_n\R$ to $O_n$]
-Let $M$ be a smooth manifold, and $\pi : \B(M) \to M$ its bundle of frames.
-The inclusion map $\iota: O_n \hookrightarrow GL_n\R$ gives an action of $O_n$ on
-$\B(M)$, where given $b \in \B(M)$ and $T \in O_n$, $b \cdot T = b \cdot \iota(T)$.
-We then take the quotient by this $O_n$ action, giving us a quotient map
-$q : \B(M) \to \B(M) / O_n$. Since the inclusion is injective, the $O_n$ action
-is free on $\B(M)$, so this gives $q : \B(M) \to \B(M) / O_n$ the structure of a
-$O_n$ bundle. In addition, the action of $O_n$ preserves the fibers of
-$\pi : \B(M) \to M$, so $\pi$ descends to the quotient, so $\B(M) / O_n \to M$
-is a fiber bundle over $M$ with model fiber $GL_n\R / O_n$. Since $GL_n\R$ deformation
-retracts onto $O_n$ via the Gram-Schmidt algorithm, $GL_n\R / O_n$ is
-contractible, so the fiber bundle $\B(M)/ O_n \to M$ admits global sections.
-Then given a section $\sigma : M \to \B(M) / O_n$, this gives an $O_n$ bundle
-over $M$ via the pullback $\sigma^*\B(M)$. In addition, we get a $O_n$-equivariant
-map $\sigma^*\B(M) \to \B(M)$ given by $(p, b) \mapsto (p, \iota(b))$. The
-bundle $\sigma^*\B(M)$ can be thought of as the bundle of orthonormal frames
-with respect to a Riemannian metric on $M$, and the fact that $\B(M) / O_n$
-admits sections corresponds to the fact that every manifold admits a Riemannian
-metric.
+ Let $M$ be a smooth manifold, and $\pi : \B(M) \to M$ its bundle of frames.
+ The inclusion map $\iota: O_n \hookrightarrow GL_n\R$ gives an action of $O_n$ on
+ $\B(M)$, where given $b \in \B(M)$ and $T \in O_n$, $b \cdot T = b \cdot \iota(T)$.
+ We then take the quotient by this $O_n$ action, giving us a quotient map
+ $q : \B(M) \to \B(M) / O_n$. Since the inclusion is injective, the $O_n$ action
+ is free on $\B(M)$, so this gives $q : \B(M) \to \B(M) / O_n$ the structure of a
+ $O_n$ bundle. In addition, the action of $O_n$ preserves the fibers of
+ $\pi : \B(M) \to M$, so $\pi$ descends to the quotient, so $\B(M) / O_n \to M$
+ is a fiber bundle over $M$ with model fiber $GL_n\R / O_n$. Since $GL_n\R$ deformation
+ retracts onto $O_n$ via the Gram-Schmidt algorithm, $GL_n\R / O_n$ is
+ contractible, so the fiber bundle $\B(M)/ O_n \to M$ admits global sections.
+ Then given a section $\sigma : M \to \B(M) / O_n$, this gives an $O_n$ bundle
+ over $M$ via the pullback $\sigma^*\B(M)$. In addition, we get a $O_n$-equivariant
+ map $\sigma^*\B(M) \to \B(M)$ given by $(p, b) \mapsto (p, \iota(b))$. The
+ bundle $\sigma^*\B(M)$ can be thought of as the bundle of orthonormal frames
+ with respect to a Riemannian metric on $M$, and the fact that $\B(M) / O_n$
+ admits sections corresponds to the fact that every manifold admits a Riemannian
+ metric.
 \end{exmp}
 %
 Principal bundles can be thought of as a generalization of covering spaces.
@@ -402,12 +402,12 @@ cover is an infinitely sheeted cover. Discreteness of $G$ allows for a very
 complete description of all principal $G$-bundles over a given manifold $M$.
 %
 \begin{defn}
-Let $(M,x_0)$ be a pointed topological space (in our case, usually a manifold),
-i.e. a space $M$ with a choice of distinguished basepoint $x_0 \in M$. Then
-a \ib{pointed principal $G$-bundle} over $M$ is the data of a principal $G$-bundle
-$\pi : P \to M$, along with a choice of basepoint $p_0 \in \pi\inv(x_0)$. We
-denote this as $\pi : (P,p_0) \to (M, x_0)$. We denote the set of isomorphism
-classes of pointed principal $G$-bundles over $(M,x_0)$ as $\Bun_G(M ,x_0)$.
+ Let $(M,x_0)$ be a pointed topological space (in our case, usually a manifold),
+ i.e. a space $M$ with a choice of distinguished basepoint $x_0 \in M$. Then
+ a \ib{pointed principal $G$-bundle} over $M$ is the data of a principal $G$-bundle
+ $\pi : P \to M$, along with a choice of basepoint $p_0 \in \pi\inv(x_0)$. We
+ denote this as $\pi : (P,p_0) \to (M, x_0)$. We denote the set of isomorphism
+ classes of pointed principal $G$-bundles over $(M,x_0)$ as $\Bun_G(M ,x_0)$.
 \end{defn}
 %
 We now recall some properties of covering spaces. A pointed covering space
@@ -431,37 +431,37 @@ group element $g \in G$, so the holonomy action determines a group homomorphism
 $\pi_1(M, x_0) \to G$. In fact, the holonomy completely determines the bundle.
 %
 \begin{thm}
-For a discrete group $G$ and a connected manifold $M$, there is a bijection
-\[
-\Bun_G(M,x_0) \longleftrightarrow \hom(\pi_1(M,x_0), G)
-\]
+ For a discrete group $G$ and a connected manifold $M$, there is a bijection
+ \[
+  \Bun_G(M,x_0) \longleftrightarrow \hom(\pi_1(M,x_0), G)
+ \]
 \end{thm}
 %
 \begin{proof}
-We once more provide maps in both directions. Every pointed principal $G$-bundle
-$(P,p_0) \to (M, x_0)$ determines a group homomorphism $\pi_1(M,x_0) \to G$
-by the holonomy action. In the other direction, given a group homomorphism
-$\varphi : \pi_1(M, x_0) \to G$, we want to construct a pointed principal $G$
-bundle $(P, p_0) \to (M, x_0)$ with holonomy $\varphi$. Every connected pointed manifold
-$(M, x_0)$ has a \ib{universal cover} $(\tilde{M}, \tilde{x}_0) \to (M,x_0)$,
-which has a free and transitive action by $\pi_1(M,x_0)$, making it a pointed
-principal $\pi_1(M,x_0)$ bundle over $(M,x_0)$. In addition, the homomorphism
-$\varphi : \pi_1(M, x_0) \to G$ determines a left action of $\pi_1(M,x_0)$
-on $G$ by $[\gamma] \cdot g = \varphi[\gamma] g$. This allows us to define
-the associated bundle
-\[
-P = \tilde{M} \times_{\pi_1(M, x_0)} G = \tilde{M} \times G
-/ (x,g) \sim (x \cdot [\gamma], \varphi[\gamma]\inv g)
-\]
-where our distinguished basepoint $p_0 \in P$ is $p_0 = [\tilde{x}_0, e]$.
-This is a fiber bundle with model fiber $G$, and the right action of $G$
-on $\tilde{M} \times G$ descends to a free an transitive action on the quotient,
-making it a principal $G$-bundle. We then check the holonomy action of a
-loop $[\gamma] \in \pi_1(M, x_0)$. We compute for $p$ in the fiber over $x_0$
-\[
-p \cdot [\gamma] = [\tilde{x_0} \cdot [\gamma], h] \sim [x_0, \varphi[\gamma]\cdot h]
-\]
-So the holonomy is $\varphi$, giving us the desired correspondence.
+ We once more provide maps in both directions. Every pointed principal $G$-bundle
+ $(P,p_0) \to (M, x_0)$ determines a group homomorphism $\pi_1(M,x_0) \to G$
+ by the holonomy action. In the other direction, given a group homomorphism
+ $\varphi : \pi_1(M, x_0) \to G$, we want to construct a pointed principal $G$
+ bundle $(P, p_0) \to (M, x_0)$ with holonomy $\varphi$. Every connected pointed manifold
+ $(M, x_0)$ has a \ib{universal cover} $(\tilde{M}, \tilde{x}_0) \to (M,x_0)$,
+ which has a free and transitive action by $\pi_1(M,x_0)$, making it a pointed
+ principal $\pi_1(M,x_0)$ bundle over $(M,x_0)$. In addition, the homomorphism
+ $\varphi : \pi_1(M, x_0) \to G$ determines a left action of $\pi_1(M,x_0)$
+ on $G$ by $[\gamma] \cdot g = \varphi[\gamma] g$. This allows us to define
+ the associated bundle
+ \[
+  P = \tilde{M} \times_{\pi_1(M, x_0)} G = \tilde{M} \times G
+  / (x,g) \sim (x \cdot [\gamma], \varphi[\gamma]\inv g)
+ \]
+ where our distinguished basepoint $p_0 \in P$ is $p_0 = [\tilde{x}_0, e]$.
+ This is a fiber bundle with model fiber $G$, and the right action of $G$
+ on $\tilde{M} \times G$ descends to a free an transitive action on the quotient,
+ making it a principal $G$-bundle. We then check the holonomy action of a
+ loop $[\gamma] \in \pi_1(M, x_0)$. We compute for $p$ in the fiber over $x_0$
+ \[
+  p \cdot [\gamma] = [\tilde{x_0} \cdot [\gamma], h] \sim [x_0, \varphi[\gamma]\cdot h]
+ \]
+ So the holonomy is $\varphi$, giving us the desired correspondence.
 \end{proof}
 %
 The set $\Bun_G(M, x_0)$ comes equipped with an action of $G$, where the action
@@ -480,9 +480,9 @@ the lift of $\gamma$ to $(P, p_0 \cdot g)$ is the path
 $\tilde{\gamma}_g(t) = \tilde{\gamma}(t) \cdot g$. Then
 %
 \begin{align*}
-\tilde{\gamma_g(1)} &= \tilde{\gamma}(1) \cdot g \\
-&= p_0 \cdot \varphi[\gamma] \cdot g \\
-&= p_0 \cdot g \cdot g\inv \cdot \varphi[\gamma] \cdot g
+ \tilde{\gamma_g(1)} & = \tilde{\gamma}(1) \cdot g                             \\
+                     & = p_0 \cdot \varphi[\gamma] \cdot g                     \\
+                     & = p_0 \cdot g \cdot g\inv \cdot \varphi[\gamma] \cdot g
 \end{align*}
 %
 So $\varphi_g = g \inv\cdot\varphi\cdot g$.

@@ -12,11 +12,14 @@ natural science. Mathematics is the part of physics where experiments are cheap.
 \section{Connections}
 %
 We previously defined the Dirac operator $D$ on $\R^n$ and explored some
-instances of $D$ in low dimensions. The constructions implicitly used the
+instances of $D$ in low dimensions. Somewhat surprisingly, the generalization
+of the Dirac operator to the nonlinear world of manifolds provides an incredibly
+general framework for first order differential operators on Riemannian manifolds.
+The construction of $D$ on $\R^n$ implicitly used the
 Riemannian geometry on $\R^n$, along with its associated Spin structure.
 To explore the Dirac operator in more generality on manifolds, we need to
-develop some of the Riemannian geometry in the nonlinear world of manifolds.
-%TODO Motivate connections, distributions, generalization of vector fields
+develop some of the geometry necessary in order to construct all of the necessary pieces
+to discuss the Dirac operator.
 %
 \begin{defn}
 Let $M$ be a smooth manifold. A \ib{distribution} on $X$ is a vector subbundle
@@ -485,20 +488,60 @@ We are especially interested in the covariant derivative on sections
 $\Omega^0_M(E)$, as $\nabla$ is best interpreted as a directional derivative
 of a section $\psi$ in the direction of a tangent vector $\xi \in T_pM$.
 %
-\begin{prop}
+\begin{defn}
 Let $\pi : P \to M$, $\Theta \in \Omega^1_P(\g)$, $\rho : G \to GL(W)$,
 $\dt{\rho} : \g \to \End W$ and $E = P \times_G W$ be as above. Then given a
-section $\psi \in \Omega_M^0(E)$, and a vector $\xi \in T_xM$,
+section $\psi \in \Omega_M^0(E)$, and a vector $\xi \in T_xM$, define
+the \ib{covariant derivative} of $\psi$ in the direction $\xi$ by
 \[
 \nabla\psi(\xi) = \frac{d}{dt}\bigg\vert_{t = 0} \tau_t\inv(\psi(\tilde{\gamma}(t)))
 \]
 where $\tilde{\gamma} : I \to E$ is the lift of a curve $\gamma :I \to M$
 where $\gamma(0) = x$ and $\gamma'(0) = \xi$ and $\tau_t$ denotes the parallel
 transport maps along $\gamma$.
+\end{defn}
+%
+Note that $\nabla$ is an operator $\Omega_M^0(E) \to \Omega^1_M(E)$ --
+we've already seen one operator with the same domain and codomain, the
+exterior covariant derivative $d_\Theta$. As the name suggests, these
+concepts agree.
+%
+\begin{prop}
+The operator $\nabla$ is equal to $d_\Theta : \Omega_M^0(E) \to \Omega_M^1(E)$.
 \end{prop}
 %
 \begin{proof} % TODO
+We note that the formulas we gave for $\nabla$ and $d_\Theta$ use different
+interpretations of sections of $E \to M$, so we need to translate one
+operator into the language of the other. Let $\psi \in \Omega^0_M(E)$,
+and $\tilde{\psi} \in \Omega^0_P(W)$ its corresponding $G$-equivariant map
+$P \to W$. Let $\xi \in T_xM$ be a tangent vector, and $\gamma : I \to M$
+a curve with $\gamma(0) = x$ and $\gamma'(0) = \xi$. Then let
+$\tilde{\gamma}_p : I \to P$ denote the horizontal lift of $\gamma$ to the point
+$p$ in the fiber $P_x$. The image $\psi(\gamma(t)) \in E_{\gamma(t)}$ determines
+a $G$-equivariant map $P_{\gamma(t)} \to W$, where we map each element
+$p \in P_{\gamma(t)}$ to the second component of its representative for
+$\psi(\gamma(t))$, and this is exactly the restriction
+$\tilde{\psi}\vert_{P_{\gamma(t)}}$. Under this identification, the
+covariant derivative is given at the point $p \in P_x$ by
 
+\[
+\nabla\tilde{\psi}(\tilde{\xi})
+= \frac{d}{dt}\bigg\vert_{t=0} \tilde{\psi}(\tilde{\gamma}_p(t))
+\]
+where $\tilde{\xi}$ denotes the horizontal lift of $\xi$ to $T_pP$.
+We now verify that $\nabla$ and $d_\Theta$ agree.
+\begin{align*}
+\nabla\tilde{\psi}(\tilde{\xi})
+&= \frac{d}{dt}\bigg\vert_{t=0} \tilde{\psi}(\tilde{\gamma}_p(t)) \\
+&= d\tilde{\psi}(\tilde{\xi})
+\end{align*}
+We then note that since $\tilde{\xi}$ is horizontal,
+$(\dt{\rho}(\Theta)\psi)(\tilde{\xi}) = 0$, so
+\[
+d_\Theta\tilde{\psi}(\tilde{\xi}) = d\tilde{\psi}(\tilde{\xi})
+= \nabla\tilde{\psi}(\tilde{\xi})
+\]
 \end{proof}
 %
 %TODO? Curvature?

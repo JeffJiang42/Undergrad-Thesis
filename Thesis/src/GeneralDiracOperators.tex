@@ -14,14 +14,14 @@ define a natural $1$-form $\theta \in \Omega_{\B(M)}(\R^n)$ called the
 isomorphism $b : \R^n \to T_{\pi(b)}M$. Then given $v \in T_bP$, we
 define the action of $\theta$ by
 \[
-\theta_p(v) = b\inv(d\pi_p(v))
+ \theta_p(v) = b\inv(d\pi_p(v))
 \]
 The soldering form in some sense remembers that $\B(M)$ is the bundle of
 frames. Then given a connection $\Theta \in \Omega_P^1(\gl_n\R)$ on $\B(M)$,
 we use the $\Theta$ to define special vector fields on $P$, which we
 denote $\partial_i$.\footnote{Note that these vector fields are not coordinate
-vector fields, though we have in the past used the notation $\partial_i$ to
-denote coordinate vector fields.} Given $b \in P$, we define $\partial_i\vert_b$
+ vector fields, though we have in the past used the notation $\partial_i$ to
+ denote coordinate vector fields.} Given $b \in P$, we define $\partial_i\vert_b$
 by $\partial_i\vert_b = \widetilde{b(e_1)}$, where $e_1$ denotes the first
 standard basis vector of $\R^n$ and $\widetilde{b(e_1)}$ is the unique horizontal
 lift of $b(e_1) \in T_{\pi(b)}M$ at $b$ with respect to the connection $\Theta$.
@@ -32,48 +32,48 @@ on any associated vector bundle $E \to M$, which has a very special relationship
 with the vector fields $\partial_i$.
 %
 \begin{prop}
-Let $M$ be a smooth manifold and $\pi : \B(M) \to M$ its $GL_n\R$ bundle
-of frames. Equip $\B(M)$ with a connection $\Theta$ and define the vector fields
-$\partial_i$ as above. Then given a vector space $W$ with a representation
-$\rho : GL_n\R \to GL(W)$ let $E \to M$ denote the associated bundle, and
-let $\nabla$ denote the covariant derivative on $E$ induced by $\Theta$. Then
-given a section $\psi \in \Omega_M^0(E)$, it has a corresponding
-$GL_n\R$-equivariant map $\tilde{\psi} : P \to W$. Then the covariant derivative
-of $\tilde{\psi}$ is given by the formula
-\[
-\nabla\tilde{\psi} = \partial_i\tilde{\psi} \otimes e^i
-\]
-where $e^i \in (\R^n)^*$ denotes the dual basis to the standard basis $e_i$.
+ Let $M$ be a smooth manifold and $\pi : \B(M) \to M$ its $GL_n\R$ bundle
+ of frames. Equip $\B(M)$ with a connection $\Theta$ and define the vector fields
+ $\partial_i$ as above. Then given a vector space $W$ with a representation
+ $\rho : GL_n\R \to GL(W)$ let $E \to M$ denote the associated bundle, and
+ let $\nabla$ denote the covariant derivative on $E$ induced by $\Theta$. Then
+ given a section $\psi \in \Omega_M^0(E)$, it has a corresponding
+ $GL_n\R$-equivariant map $\tilde{\psi} : P \to W$. Then the covariant derivative
+ of $\tilde{\psi}$ is given by the formula
+ \[
+  \nabla\tilde{\psi} = \partial_i\tilde{\psi} \otimes e^i
+ \]
+ where $e^i \in (\R^n)^*$ denotes the dual basis to the standard basis $e_i$.
 \end{prop}
 %
 \begin{proof}
-We first make sense of the formula. The covariant derivative $\nabla\psi$ is
-an element of $\Omega_M^1(E)$, which is a section of the bundle $E \otimes T^*M$.
-The bundle $T^*M$ is naturally isomorphic to the associated bundle
-$\B(M) \times_{GL_n\R} (\R^n)^*$ given by the dual to the standard representation
-of $GL_n\R$ on $\R^n$. Therefore, we get a representation of $GL_n\R$ on
-$W \otimes (\R^n)^*$, and $E \otimes T^*M$ is naturally isomorphic to the vector
-bundle $\B(M) \times_{GL_n\R} (W \otimes (\R^n)^*)$. Sections of this bundle
-are equivalent $GL_n\R$-equivariant maps $P \to W \otimes (\R^n)^*$. The action
-of the $\partial_i$ on $\tilde{\psi}$ produces $GL_n\R$-equivariant maps
-$\partial_i\psi : P \to W$, so the tensor product
-$\partial_i\tilde{\psi} \otimes e^i$ then defines a section of $E \otimes T^*M$. \\
+ We first make sense of the formula. The covariant derivative $\nabla\psi$ is
+ an element of $\Omega_M^1(E)$, which is a section of the bundle $E \otimes T^*M$.
+ The bundle $T^*M$ is naturally isomorphic to the associated bundle
+ $\B(M) \times_{GL_n\R} (\R^n)^*$ given by the dual to the standard representation
+ of $GL_n\R$ on $\R^n$. Therefore, we get a representation of $GL_n\R$ on
+ $W \otimes (\R^n)^*$, and $E \otimes T^*M$ is naturally isomorphic to the vector
+ bundle $\B(M) \times_{GL_n\R} (W \otimes (\R^n)^*)$. Sections of this bundle
+ are equivalent $GL_n\R$-equivariant maps $P \to W \otimes (\R^n)^*$. The action
+ of the $\partial_i$ on $\tilde{\psi}$ produces $GL_n\R$-equivariant maps
+ $\partial_i\psi : P \to W$, so the tensor product
+ $\partial_i\tilde{\psi} \otimes e^i$ then defines a section of $E \otimes T^*M$. \\
 
-We then want to verify that this formula is true. Fix $x \in X$, $v \in T_xM$,
-and $b \in \pi\inv(x)$. The element $b$ determines a basis $b(e_1), \ldots b(e_n)$
-for $T_xM$. In this basis, $v$ has the representation $v^ib(e_i)$. Each
-of the $b(e_i)$ lift to $\partial_i\vert_b$, so the horizontal lift of $v$ to $b$
-is $v^i\partial_i\vert_b$. Then let
-$\tilde{\gamma} : (-\varepsilon, \varepsilon) \to P$ be an integral curve of
-$v^i\partial_i$. Then $\gamma = \pi \circ \tilde{\gamma}$ is a curve in $M$
-with $\gamma'(0) = v$, so the covariant derivative $(\nabla\tilde{\psi})_b(v)$ is
-given by
-\begin{align*}
-(\nabla\tilde{\psi})_b(v) &= \frac{d}{dt}\bigg\vert_{t=0}
-\tilde{\psi}(\tilde{\gamma}(t)) \\
-&= v^i\partial_i\tilde{\psi}
-\end{align*}
-Therefore, $\nabla\psi = \partial_i \otimes e^i$.
+ We then want to verify that this formula is true. Fix $x \in X$, $v \in T_xM$,
+ and $b \in \pi\inv(x)$. The element $b$ determines a basis $b(e_1), \ldots b(e_n)$
+ for $T_xM$. In this basis, $v$ has the representation $v^ib(e_i)$. Each
+ of the $b(e_i)$ lift to $\partial_i\vert_b$, so the horizontal lift of $v$ to $b$
+ is $v^i\partial_i\vert_b$. Then let
+ $\tilde{\gamma} : (-\varepsilon, \varepsilon) \to P$ be an integral curve of
+ $v^i\partial_i$. Then $\gamma = \pi \circ \tilde{\gamma}$ is a curve in $M$
+ with $\gamma'(0) = v$, so the covariant derivative $(\nabla\tilde{\psi})_b(v)$ is
+ given by
+ \begin{align*}
+  (\nabla\tilde{\psi})_b(v) & = \frac{d}{dt}\bigg\vert_{t=0}
+  \tilde{\psi}(\tilde{\gamma}(t)) \\
+                            & = v^i\partial_i\tilde{\psi}
+ \end{align*}
+ Therefore, $\nabla\psi = \partial_i \otimes e^i$.
 \end{proof}
 %
 The vector fields $\partial_i$ on $\B(M)$ also give a recipe for constructing
@@ -86,8 +86,8 @@ of a $GL_n\R$ representation. Then given a $GL_n\R$-equivariant map
 $\sigma : (\R^n)^* \to \hom(A,B)$, we can define a first order differential
 operator
 \begin{align*}
-D_\sigma : \Gamma_M(E) &\to \Gamma_M(F) \\
-\psi &\mapsto [\sigma(e^k)](\partial_k\psi)
+ D_\sigma : \Gamma_M(E) & \to \Gamma_M(F)                       \\
+ \psi                   & \mapsto [\sigma(e^k)](\partial_k\psi)
 \end{align*}
 Where we interpret $\psi$ as a $GL_n\R$-equivariant map $P \to A$.
 %
@@ -95,41 +95,40 @@ This method for constructing differential operator has already manifested itself
 in several differential operators we have discussed.
 %
 \begin{exmp}
-Given a vector space $W$ with a $GL_n\R$ action, which gives an associated
-bundle $\B(M) \times_{GL_n\R} W$. A connection on $\B(M)$ induces a
-covariant derivative operator $\nabla$ on sections of the associated bundle.
-In terms of the horizontal vector
-fields $\partial_i$ defined on $\B(M)$, $\nabla$ is given by
-\[
-\nabla\psi = \partial_k\psi \otimes e^k
-\]
-Let $T : (R^n)^* \to \hom((\R^n)^*, W)$ be the map where $T(v)(w) = w \otimes v$.
-Then $\nabla = T(e^k)\partial_k$
+ Given a vector space $W$ with a $GL_n\R$ action, which gives an associated
+ bundle $\B(M) \times_{GL_n\R} W$. A connection on $\B(M)$ induces a
+ covariant derivative operator $\nabla$ on sections of the associated bundle.
+ In terms of the horizontal vector
+ fields $\partial_i$ defined on $\B(M)$, $\nabla$ is given by
+ \[
+  \nabla\psi = \partial_k\psi \otimes e^k
+ \]
+ Let $T : (R^n)^* \to \hom((\R^n)^*, W)$ be the map where $T(v)(w) = w \otimes v$.
+ Then $\nabla = T(e^k)\partial_k$
 \end{exmp}
 %
 \begin{exmp}
-Consider $\Lambda^k(\R^n)^*$ and $\Lambda^{k+1}(\R^n)^*$, which have a natural
-$GL_n\R$ action, and let
-$\varepsilon : (\R^n)^* \to \hom(\Lambda^k(\R^n)^,\Lambda^{k+1}(\R^n)^*)$
-be the exterior multiplication map, i.e.
-\[
-\varepsilon(v)(w) = v \wedge w
-\]
-This map is easily seen to be $GL_n\R$-equivariant. Using our recipe, we get a
-differential operator
-\begin{align*}
-D_\varepsilon : \Omega^k_M &\to \Omega^{k+1}_M \\
-\psi &\mapsto [\varepsilon(e^k)](\partial_k\psi)
-\end{align*}
-which is the de Rham differential $d$.
-%TODO Prove this.
+ Consider $\Lambda^k(\R^n)^*$ and $\Lambda^{k+1}(\R^n)^*$, which have a natural
+ $GL_n\R$ action, and let
+ $\varepsilon : (\R^n)^* \to \hom(\Lambda^k(\R^n)^,\Lambda^{k+1}(\R^n)^*)$
+ be the exterior multiplication map, i.e.
+ \[
+  \varepsilon(v)(w) = v \wedge w
+ \]
+ This map is easily seen to be $GL_n\R$-equivariant. Using our recipe, we get a
+ differential operator
+ \begin{align*}
+  D_\varepsilon : \Omega^k_M & \to \Omega^{k+1}_M                         \\
+  \psi                       & \mapsto [\varepsilon(e^k)](\partial_k\psi)
+ \end{align*}
+ which is the de Rham differential $d$.
+ %TODO Prove this.
 \end{exmp}
 %
 The preceding discussion was all done with $\B(M)$ and $G = GL_n\R$, but the
 discussion applies to any principal bundle $P$ with a reduction of structure
 group to $\B(M)$, like $\B_O(M)$, $\B_{SO}(M)$, and $\B_{\Spin}(M)$. \\
 %
-%TODO Levi-Civita, torsion?
 
 Let $(M,g)$ be a Riemannian manifold. The Riemannian metric $G$ gives a
 reduction of structure group to $O_n$, giving us the orthonormal frame bundle
@@ -137,7 +136,7 @@ $\B_O(M)$. It is a wonderful fact that we have a canonical choice of connection
 on $\B_O(M)$, where we ask for a quantity called the torsion tensor to vanish.
 %
 \begin{thm}[\ib{Fundamental Theorem of Riemannian Geometry}]
-There exists a unique torsion-free connection $\Theta$ on $\B_O(M)$.
+ There exists a unique torsion-free connection $\Theta$ on $\B_O(M)$.
 \end{thm}
 We call this connection the \ib{Levi-Civita connection}. If in addition,
 $M$ is oriented, we have a reduction of structure group to $\B_{SO}(M$), and
@@ -146,29 +145,128 @@ connection as the Levi-Civita connection. Going further, if $M$ is Spin,
 we get a canonical choice of connection on $\B_{\Spin}(M)$.
 %
 \begin{defn}
-Let $(M,g)$ be a Spin manifold, and let $\Theta$ be the Levi-Civita connection
-on the oriented orthonormal frame bundle $\B_{SO}(M)$. The double cover
-$\pi : \B_{\Spin} \to \B_{SO}(M)$ gives a natural isomorphism
-\[
-T(\B_{\Spin}(M)) \to \pi^*(T\B_{SO}(M))
-\]
-So the pullback of the horizontal distribution $H$ determined by $\Theta$
-defines a connection on $\B_{\Spin}(M)$ called the \ib{Spin connection}.
+ Let $(M,g)$ be a Spin manifold, and let $\Theta$ be the Levi-Civita connection
+ on the oriented orthonormal frame bundle $\B_{SO}(M)$. The double cover
+ $\pi : \B_{\Spin} \to \B_{SO}(M)$ gives a natural isomorphism
+ \[
+  T(\B_{\Spin}(M)) \to \pi^*(T\B_{SO}(M))
+ \]
+ So the pullback of the horizontal distribution $H$ determined by $\Theta$
+ defines a connection on $\B_{\Spin}(M)$ called the \ib{Spin connection}.
 \end{defn}
 %
 We saw in $\R^n$ that the Dirac operator $D$ acted on functions
 $\psi \in C^\infty(\R^n, V)$ for a Clifford module $V$. Over a manifold $M$,
 these Clifford modules might vary over each point of the manifold, so the
 Dirac operator should act on sections $\Gamma_M(\S)$ for some bundle $\S \to M$
-of Clifford modules over $M$.
+of Clifford modules over $M$. \\
+%
+
+While we have discussed Spin structures extensively, and Dirac operators are
+of particular importance to Spin geometry, they are not dependent on a Spin structure.
+Note that the Dirac operator we defined on $\R^n$ only required a nondegenerate
+bilinear form, which we used to construct the Clifford algebra. This suggests
+that the only structure necessary to define a Dirac operator is a Riemannian metric.
 %
 \begin{defn}
-Let $(M,g)$ be an oriented Riemannian manifold equipped with a Spin structure.
-The Clifford algebra $\Cliff_{n,0}(\R)$ comes equipped with a natural left
-action of $\Spin_n \subset \Cliff_{n,0}(\R)$ given by left multiplication by
-$\Spin_n \subset \Cliff_{n,0}(\R)$. Then the \ib{Spinor bundle} $\S(M) \to M$ is
-defined as the associated bundle $\B_{\Spin}(M) \times_{\Spin_n} \Cliff_{n,0}(\R)$,
-which is a vector bundle with model fiber $\Cliff_{n,0}(\R)$.
+Let $(M,g)$ be an oriented Riemannian manifold, giving us a reduction of structure
+group $\B_{SO}(M) \to \B(M)$. Under the standard representation, $SO_n$ acts on $\R^n$
+with the standard inner product by isometries, so every element $A \in SO_n$ induces
+an algebra automorphism  $\rho_A : \Cliff_{n,0}(\R) \to \Cliff_{n,0}(\R)$, giving
+$\Cliff_{n,0}(\R)$ the structure of a $SO_n$ representation. The \ib{Clifford bundle}
+of $M$ is the associated vector bundle
+\[
+\Cliff(M) = \B_{SO}(M) \times_{SO_n} \Cliff_{n,0}(\R)
+\]
+\end{defn}
+%
+In fact, the bundle $\Cliff(M) \to M$ is a bundle of Clifford algebras over $M$, where
+over each point $p \in M$, the fiber $\Cliff(M)_p$ is $\Cliff(T_pM, g_p)$. Working
+fiberwise, the natural vector space isomorphism
+$\Cliff(T_pM, g_p) \to \Lambda^\bullet(T_pM,)$ determines  a vector bundle isomorphism
+$\Cliff(M) \to \Lambda^\bullet(TM)$. Using the Riemannian metric, we get an isomorphism
+$TM \to T^*M$, and the composition of these isomorphisms determines a vector bundle
+isomorphism $\Cliff(M) \to \Lambda^\bullet(T^*M)$. In the case that the manifold
+$M$ admits a Spin structure, we can define further bundles.
+%
+\begin{defn}
+Let $(M,g)$ be an oriented Riemannian manifold equipped with a Spin structure
+$\B_{\Spin}(M) \to \B_{SO}(M)$, and let $\S$ be a left Clifford module over
+$\Cliff_{n,0}(\R)$. The inclusion $\Spin_n \hookrightarrow \Cliff_{n,0}(\R)$ gives $\M$
+the structure of a $\Spin_n$ representation. A \ib{spinor bundle} over $\M$ is the
+associated vector bundle
+\[
+\B_\Spin(M) \times{\Spin_n} \S
+\]
+\end{defn}
+%
+As one would expect, there is an intimate relationship between the Clifford bundle
+and a Spinor bundle over a Spin manifold. Namely, a spinor bundle $\S$ is a
+bundle of left Clifford modules over $\Cliff(M)$, i.e. each fiber $\S_p$ is a left
+Clifford module over the corresponding fiber $\Cliff(M)_p$. In addition, the
+Levi-Civita and Spin connections induce canonical connections on $\Cliff(M)$ and
+any spinor bundle $\S$. This gives us the ingredients to define a general
+Dirac operator. \\
+%
+
+Equip $\R^n$ with the standard inner product, and let
+$b :(\R^n)^* \times (\R^n)^* \to \R$ be the induced inner product on $(\R^n)^*$.
+Using the double cover $\Spin_n \to SO_n$, the group $\Spin_n$ acts on
+$(\R^n)^*$ through the dual representation of $SO_n$ on $(\R^n)^*$. In addition,
+$\Spin_n$ acts naturally on any Clifford module $\S$ by left multiplication, where
+we think of $\Spin_n$ as a subgroup of the group of units
+$\Cliff((\R^n)^*, b)^\times$. The \ib{Clifford multiplication map}
+$c : (\R^n)^* \to \End(\S))$ given by $c(v) = va$ is easily
+verified to be $\Spin_n$-equivariant, so we can apply our recipe for
+constructing differential operators to construct the Dirac operator.
+%
+\begin{defn}
+ Let $(M,g)$ be a oriented Riemannian manifold equipped with a Spin structure
+ $\varphi : \B_{\Spin}(M) \to \B_{SO}(M)$ and spinor bundle $\S \to M$.
+ Using the Spin connection on $\B_{\Spin}(M)$, define the horizontal
+ vector fields $\partial_i$ on $\B_{\Spin}(M)$ by
+ \[
+  \partial_i\vert_p = \widetilde{\varphi(p)(e_i)}
+ \]
+ where $\widetilde{\varphi(p)(e_i)}$ denotes the horizontal lift of the
+ image of $e_i$ under $\varphi(p) \in \B_{SO}(M)$ to $T(\B_{\Spin}(M))$.
+ The \ib{Dirac operator} is the first order differential operator
+ \begin{align*}
+  D : \Gamma_M(\S) & \to \Gamma_M(\S)          \\
+  \psi                & \mapsto c(e^k)\partial_k\psi
+ \end{align*}
+ where we interpret $\psi$ as a $\Spin_n$-equivariant map
+ $\B_{\Spin}(M) \to \Cliff_{n,0}(\R)$.
+\end{defn}
+Note that this agrees with our previous definitions of Dirac operators on $\R^n$,
+as well as the ones we defined on $S^1$. \\
+%
+
+A special spinor bundle to consider over a Spin manifold $M$ is when the Clifford
+module is $\Cliff_{n,0}(\R)$ itself, giving us a spinor bundle
+\[
+\S(M) = \B_{\Spin_n} \times_{\Spin_n} \Cliff_{n,0}(\R)
+\]
+The Clifford algebra $\Cliff_{n,0}$ is also a \emph{right} Clifford module over
+itself, and this action commutes with the $\Spin_n$ action on the left. Therefore,
+the right action of $\Cliff_{n,0}(\R)$ on $\B_{\Spin}(M) \times \Cliff_{n,0}(\R)$
+descends to a right action on $\Cliff_{n,0}(\R)$ on $\S(M)$, giving each fiber
+the structure of a right Clifford module. In addition, the space of sections
+$\Gamma_M(\S(M))$ of $\S(M)$ also inherit the structure of a Clifford module.
+This right action commutes with Clifford  multiplication, so Clifford multiplication is
+$\Cliff_{n,0}(\R)$ linear. Therefore, the Dirac operator defines a $\Cliff_{n,0}(\R)$
+linear map $\Gamma_M(\S(M)) \to \Gamma_M(\S(M))$.
+)
+%
+\iffalse
+%
+\begin{defn}
+ Let $(M,g)$ be an oriented Riemannian manifold equipped with a Spin structure.
+ The Clifford algebra $\Cliff_{n,0}(\R)$ comes equipped with a natural left
+ action of $\Spin_n \subset \Cliff_{n,0}(\R)$ given by left multiplication by
+ $\Spin_n \subset \Cliff_{n,0}(\R)$. Then the \ib{Spinor bundle} $\S(M) \to M$ is
+ defined as the associated bundle $\B_{\Spin}(M) \times_{\Spin_n} \Cliff_{n,0}(\R)$,
+ which is a vector bundle with model fiber $\Cliff_{n,0}(\R)$.
 \end{defn}
 %
 The product $\B_{\Spin} \times \Cliff_{n,0}(\R)$ admits a free right action of
@@ -190,24 +288,25 @@ verified to be $\Spin_n$-equivariant, so we can apply our recipe for
 constructing differential operators to construct the Dirac operator.
 %
 \begin{defn}
-Let $(M,g)$ be a oriented Riemannian manifold equipped with a Spin structure
-$\varphi : \B_{\Spin}(M) \to \B_{SO}(M)$ and spinor bundle $\S(M) \to M$.
-Using the Spin connection on $\B_{\Spin}(M)$, define the horizontal
-vector fields $\partial_i$ on $\B_{\Spin}(M)$ by
-\[
-\partial_i\vert_p = \widetilde{\varphi(p)(e_i)}
-\]
-where $\widetilde{\varphi(p)(e_i)}$ denotes the horizontal lift of the
-image of $e_i$ under $\varphi(p) \in \B_{SO}(M)$ to $T(\B_{\Spin}(M))$.
-The \ib{Dirac operator} is the first order differential operator
-\begin{align*}
-D : \Gamma_M(\S(M)) &\to \Gamma_M(\S(M)) \\
-\psi &\mapsto c(e^k)\partial_k\psi
-\end{align*}
-where we interpret $\psi$ as a $\Spin_n$-equivariant map
-$\B_{\Spin}(M) \to \Cliff_{n,0}(\R)$.
+ Let $(M,g)$ be a oriented Riemannian manifold equipped with a Spin structure
+ $\varphi : \B_{\Spin}(M) \to \B_{SO}(M)$ and spinor bundle $\S(M) \to M$.
+ Using the Spin connection on $\B_{\Spin}(M)$, define the horizontal
+ vector fields $\partial_i$ on $\B_{\Spin}(M)$ by
+ \[
+  \partial_i\vert_p = \widetilde{\varphi(p)(e_i)}
+ \]
+ where $\widetilde{\varphi(p)(e_i)}$ denotes the horizontal lift of the
+ image of $e_i$ under $\varphi(p) \in \B_{SO}(M)$ to $T(\B_{\Spin}(M))$.
+ The \ib{Dirac operator} is the first order differential operator
+ \begin{align*}
+  D : \Gamma_M(\S(M)) & \to \Gamma_M(\S(M))          \\
+  \psi                & \mapsto c(e^k)\partial_k\psi
+ \end{align*}
+ where we interpret $\psi$ as a $\Spin_n$-equivariant map
+ $\B_{\Spin}(M) \to \Cliff_{n,0}(\R)$.
 \end{defn}
 %
 Note that this agrees with our previous definitions of Dirac operators on $\R^n$,
 as well as the ones we defined on $S^1$.
+\fi
 %

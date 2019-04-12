@@ -122,9 +122,9 @@ $p$ positive entries and $q$ negative entries, we say $b$ has signature $(p,q)$.
 Any bilinear form $b$ of signature $(p,q)$ admits a basis $\set{e_i}$ satisfying
 %
 \begin{enumerate}
-  \item For $1 \leq i \leq p$, we have $b(e_i,e_i) = 1$
-  \item For $p+1 \leq j \leq p+q$, we have $b(e_j,e_j) = -1$
-  \item For $i \neq j$, we have $b(e_i,e_j) = 0$
+\item For $1 \leq i \leq p$, we have $b(e_i,e_i) = 1$
+\item For $p+1 \leq j \leq p+q$, we have $b(e_j,e_j) = -1$
+\item For $i \neq j$, we have $b(e_i,e_j) = 0$
 \end{enumerate}
 %
 Any such basis then determines an isomorphism $(V,b) \to \R^{p,q}$, and we
@@ -142,9 +142,9 @@ bases as $v^ie_i$ and $w^ie_i$ (using Einstein summation convention),
 and derive the useful relation
 %
 \begin{align*}
-vw + wv &= v^iw^je_ie_j + v^iw^je_je_i \\
-&= v^iw^i(e_i^2 + e_i^2) \\
-&= 2b(v,w)
+vw + wv & = v^iw^je_ie_j + v^iw^je_je_i \\
+     & = v^iw^i(e_i^2 + e_i^2)       \\
+     & = 2b(v,w)
 \end{align*}
 where we use the fact that the $e_i$ are orthogonal to deduce that
 $e_ie_j = -e_je_i$ if $i \neq j$.
@@ -181,23 +181,23 @@ addition is done mod $2$.
 %
 \begin{exmp}\enumbreak
 \begin{enumerate}
-  \item Any $\R$-algebra $A$ can be made into a graded algebra where we let
-  $A^0 = A$ and $A^1 = 0$.
-  \item The exterior algebra $\Lambda^\bullet V$ of a vector space $V$ is
-  a $\Z/2\Z$ graded algebra (in fact, it has a $\Z$ grading as well), where the
-  grading is
-  $\Lambda^\bullet V = \Lambda^{\text{even}} V \oplus \Lambda^{\text{odd}} V$
-  where $\Lambda^{\text{even}} V$ is the subspace spanned by even products of
-  vectors and $\Lambda^{\text{odd}} V$ is the subspace spanned by odd products of vectors.
-  \item Let $V = V^0 \oplus V^1$ be a $\Z/2\Z$ graded vector space. Then the
-  algebra of endomorphisms $\End V$ can be endowed with the structure of a
-  graded algebra, where the even subspace consists of linear maps preserving
-  the decomposition $V^0 \oplus V^1$, and the odd subspace consists of
-  linear maps $T$ reversing the decomposition, i.e. $T(V^i) = V^{i + 1 \mod 2}$.
-  In a ordered basis where the first elements are all even and the last
-  elements are all odd, the even elements of $\End V$ are block diagonal,
-  while the odd elements are block off-diagonal.
-\qedhere\end{enumerate}
+\item Any $\R$-algebra $A$ can be made into a graded algebra where we let
+    $A^0 = A$ and $A^1 = 0$.
+\item The exterior algebra $\Lambda^\bullet V$ of a vector space $V$ is
+    a $\Z/2\Z$ graded algebra (in fact, it has a $\Z$ grading as well), where the
+    grading is
+    $\Lambda^\bullet V = \Lambda^{\text{even}} V \oplus \Lambda^{\text{odd}} V$
+    where $\Lambda^{\text{even}} V$ is the subspace spanned by even products of
+    vectors and $\Lambda^{\text{odd}} V$ is the subspace spanned by odd products of vectors.
+\item Let $V = V^0 \oplus V^1$ be a $\Z/2\Z$ graded vector space. Then the
+    algebra of endomorphisms $\End V$ can be endowed with the structure of a
+    graded algebra, where the even subspace consists of linear maps preserving
+    the decomposition $V^0 \oplus V^1$, and the odd subspace consists of
+    linear maps $T$ reversing the decomposition, i.e. $T(V^i) = V^{i + 1 \mod 2}$.
+    In a ordered basis where the first elements are all even and the last
+    elements are all odd, the even elements of $\End V$ are block diagonal,
+    while the odd elements are block off-diagonal.
+    \qedhere\end{enumerate}
 \end{exmp}
 %
 For the most part, the algebras we work with will be $\Z/2\Z$ graded, so
@@ -212,7 +212,26 @@ Where $\Cliff^0(V,b)$ is the $\R$-span of all even products of basis vectors,
 and $\Cliff^1(V,b)$ is the $\R$-span of all odd products of basis vectors.
 Since the product of even elements is again even, the subspace
 $\Cliff^0(V,b)$ forms a subalgebra, and is called the \ib{even
-subalgebra}. There is an extremely nice relationship between a Clifford algebra
+subalgebra}. \\
+
+As $\Z/2\Z$-graded \emph{vector spaces}, $\Cliff(V,b)$ is \emph{naturally}
+isomorphic to the exterior algebra $\Lambda^\bullet(V)$. To construct the isomorphism,
+we first construct an algebra homomorphism $\Cliff(V,b) \to \End(\Lambda^\bullet(V))$.
+where we map $v \in V$
+to $\varepsilon(v) + 1/2 \iota(v)$, where
+\[
+[\varepsilon(v) +\frac{1}{2}\iota(v)](w) = v \wedge w + \frac{1}{2}b(v,w)
+\]
+This map satisfies the Clifford relations, so it extends to a unique map
+$\varphi : \Cliff(M) \to \End(\Lambda^\bullet(V))$. Then the mapping
+$v \mapsto \varphi(v)(1)$ is the desired isomorphism
+$\Cliff(V,b) \to \Lambda^\bullet(V)$. Of course, $\Cliff(V,b)$ and
+$\Lambda^\bullet(V)$ are noncanonically isomorphic, since they are the same dimension
+and the even and odd subspaces are the same dimensions, but the key point here is that
+the isomorphism is canonical. \\
+%
+
+There is an extremely nice relationship between a Clifford algebra
 and its even subalgebra.
 %
 \begin{thm}
@@ -225,10 +244,10 @@ Fix a basis $\set{e_1^+, \ldots e_p^+, e_1^- \ldots e_q^-}$ for $\R^{p,q}$, wher
 $(e_i^+)^2 = 1$ and $(e_i^-)^2 = -1$. We then compute
 %
 \begin{align*}
-(e_i^+e_j^+)^2 &= -(e_i^+)^2(e_j^+)^2 = -1 \\
-(e_i^-e_j^-)^2 &= -(e_i^-)^2(e_j^-)^2 = -1 \\
-(e_i^+e_j^-)^2 &= -(e_i^+)^2(e_i^-)^2 = 1 \\
-(e_i^-e_j^+)^2 &= -(e_i^-)^2(e_j^+)^2 = 1
+(e_i^+e_j^+)^2 & = -(e_i^+)^2(e_j^+)^2 = -1 \\
+(e_i^-e_j^-)^2 & = -(e_i^-)^2(e_j^-)^2 = -1 \\
+(e_i^+e_j^-)^2 & = -(e_i^+)^2(e_i^-)^2 = 1  \\
+(e_i^-e_j^+)^2 & = -(e_i^-)^2(e_j^+)^2 = 1
 \end{align*}
 %
 Assume $q \neq 0$. Then a generating set for $\Cliff_{p,q}^0(\R)$ is
@@ -239,8 +258,8 @@ All the elements in the first set square to $1$, and all the elements in the
 second set square to $-1$. We then get an isomorphism
 $\Cliff^0_{p,q}(\R) \to \Cliff_{p,q-1}$ via the mappings
 \begin{align*}
-e_1^-e_j^+ &\mapsto e_j^+ \\
-e_1^-e_k^- &\mapsto e_{k-1}^-
+e_1^-e_j^+ & \mapsto e_j^+     \\
+e_1^-e_k^- & \mapsto e_{k-1}^-
 \end{align*}
 In the case where $p \neq 0$, we have that an equally good generating set for
 $\Cliff_{p,q}^0(\R)$ is
@@ -250,8 +269,8 @@ $\Cliff_{p,q}^0(\R)$ is
 Where the elements in the first set square to $-1$ and the elements of the second
 set square to $1$. Then the mappings
 \begin{align*}
-e_1^+e_j^+ &\mapsto e_{j-1}^- \\
-e_1^+e_j^- &\mapsto e_j^+
+e_1^+e_j^+ & \mapsto e_{j-1}^- \\
+e_1^+e_j^- & \mapsto e_j^+
 \end{align*}
 gives the isomorphism $\Cliff_{p,q}^0(\R) \to \Cliff_{q, p-1}$.
 \end{proof}
@@ -306,12 +325,12 @@ We then define the bases $\set{e_i^\pm}$ and $\set{f_i^\pm}$ analogously for
 $\R^{p,q}$ and $\R^{t,s}$ respectively. Then define $\varphi$ by
 %
 \begin{align*}
-\varphi(b_i^+) &= \begin{cases}
-e_i^+ \otimes 1 & 1 \leq i \leq p \\
+\varphi(b_i^+)  & = \begin{cases}
+e_i^+ \otimes 1 & 1 \leq i \leq p     \\
 1 \otimes f_i^+ & p+1 \leq i \leq p+t
 \end{cases} \\
-\varphi(b_i^-) &= \begin{cases}
-e_i^- \otimes 1 & 1 \leq i \leq q \\
+\varphi(b_i^-)  & = \begin{cases}
+e_i^- \otimes 1 & 1 \leq i \leq q     \\
 1 \otimes f_i^- & q+1 \leq i \leq q+s
 \end{cases}
 \end{align*}
@@ -322,9 +341,9 @@ $\Cliff_{p+t,q+s}(\R)$ will be an isomorphism by a dimension count. Showing
 the Clifford relations amounts to showing
 %
 \begin{enumerate}
-  \item $\varphi(b_i^+)^2 = 1$
-  \item $\varphi(b_i^-)^2 = -1$
-  \item The images of any pair of distinct basis vectors anticommute.
+\item $\varphi(b_i^+)^2 = 1$
+\item $\varphi(b_i^-)^2 = -1$
+\item The images of any pair of distinct basis vectors anticommute.
 \end{enumerate}
 %
 The first two are relations are clear from how we defined $\varphi$. To show
@@ -334,9 +353,9 @@ anticommute, because $e_i^+$ and $e_j^+$ anticommute. In the case where
 $1 \leq i \leq p$ and $p+1 \leq j \leq p+t$, we compute
 %
 \begin{align*}
-\varphi(b_i^+)\varphi(b_j^+) + \varphi(b_j^+)\varphi(b_i+) &=
+\varphi(b_i^+)\varphi(b_j^+) + \varphi(b_j^+)\varphi(b_i+) & =
 (e_i^+ \otimes 1)(1 \otimes f_j^+) + (1\otimes f_j^+)(e_i^+ \otimes 1) \\
-&= e_i^+ \otimes f_j^+ - e_i^+ \otimes f_j^+
+                                                           & = e_i^+ \otimes f_j^+ - e_i^+ \otimes f_j^+
 \end{align*}
 where we use the Koszul sign rule for the second term, noting that $f_j+$ and
 $e_i^+$ are both odd elements. The proof that the images of the $b_i^-$ anti commute with
@@ -364,37 +383,37 @@ algebras over $\R$.
 %
 \begin{exmp}[\ib{Some low dimensional examples}]\enumbreak
 \begin{enumerate}
-  \item The Clifford algebra $\Cliff_{0,0}(\R)$ is isomorphic to $\R$.
-  \item As ungraded algebras, the Clifford algebra $\Cliff_{0,1}(\R)$ is isomorphic
-  to $\C$, where the isomorphism is given by $e_1 \mapsto i$.
-  \item As ungraded algebras, $\Cliff_{0,2}(\R)$ is isomorphic to the quaternions
-  $\H$, where the isomorphism is given by $e_1 \mapsto i$ and $e_2 \mapsto j$.
-  \item As graded algebras, $\Cliff_{1,1}(\R)$ is isomorphic to $\End(\R^{1|1})$,
-  where $\R^{1|1}$ denotes the $\Z/2\Z$ graded vector space $\R \oplus \R$.
-  The isomorphism is given by
-  \[
-  e_1^+ \mapsto \begin{pmatrix}
-  0 & 1 \\
-  1 & 0
-  \end{pmatrix} \qquad e_1^- \mapsto \begin{pmatrix}
-  0 & 1 \\
-  -1 & 0
-  \end{pmatrix}
-  \]
-  \item As ungraded algebras $\Cliff_{1,0}(\R)$ is isomorphic to the product
-  algebra $\R \times \R$, where $e_1 \mapsto (1,-1)$.
-  \item As ungraded algebras, $\Cliff_{2,0}(\R)$ is isomorphic to the algebra $M_2\R$
-  of $2 \times 2$ matrices with coefficients in $\R$. The isomorphism is given by
-  \[
-  e_1 \mapsto \begin{pmatrix}
-  0 & 1 \\
-  1 & 0
-  \end{pmatrix} \qquad e_2 \mapsto \begin{pmatrix}
-  1 & 0 \\
-  0 & -1
-  \end{pmatrix}
-  \]
-\qedhere\end{enumerate}
+\item The Clifford algebra $\Cliff_{0,0}(\R)$ is isomorphic to $\R$.
+\item As ungraded algebras, the Clifford algebra $\Cliff_{0,1}(\R)$ is isomorphic
+      to $\C$, where the isomorphism is given by $e_1 \mapsto i$.
+\item As ungraded algebras, $\Cliff_{0,2}(\R)$ is isomorphic to the quaternions
+      $\H$, where the isomorphism is given by $e_1 \mapsto i$ and $e_2 \mapsto j$.
+\item As graded algebras, $\Cliff_{1,1}(\R)$ is isomorphic to $\End(\R^{1|1})$,
+      where $\R^{1|1}$ denotes the $\Z/2\Z$ graded vector space $\R \oplus \R$.
+      The isomorphism is given by
+      \[
+       e_1^+ \mapsto \begin{pmatrix}
+       0 & 1 \\
+       1 & 0
+       \end{pmatrix} \qquad e_1^- \mapsto \begin{pmatrix}
+       0 & 1 \\
+       -1 & 0
+       \end{pmatrix}
+      \]
+\item As ungraded algebras $\Cliff_{1,0}(\R)$ is isomorphic to the product
+      algebra $\R \times \R$, where $e_1 \mapsto (1,-1)$.
+\item As ungraded algebras, $\Cliff_{2,0}(\R)$ is isomorphic to the algebra $M_2\R$
+      of $2 \times 2$ matrices with coefficients in $\R$. The isomorphism is given by
+      \[
+       e_1 \mapsto \begin{pmatrix}
+       0 & 1 \\
+       1 & 0
+       \end{pmatrix} \qquad e_2 \mapsto \begin{pmatrix}
+       1 & 0 \\
+       0 & -1
+       \end{pmatrix}
+      \]
+      \qedhere\end{enumerate}
 \end{exmp}
 %
 To classify all Clifford algebras as ungraded algebras, it suffices to know
@@ -402,27 +421,27 @@ the following table, which is derived by identifying a few low dimensional
 Clifford algebras and using the fact that the graded tensor product of
 Clifford algebras is another Clifford algebra. \\\\
 \resizebox{.72\width}{!}{
-\centering
-\begin{tabular}{c |c|c|c|c|c|c|c|c|}
-\hline
-7 & $M_8\C$ & $M_8\H$ & $M_8\H \times M_8\H$ & $M_{16}\H$ & $M_{32}\C$ & $M_{64}\R$ & $M_{64}\R \times M_{64}\R$ & $M_{128}\R$ \\
-\hline
-6 & $M_4\H$ & $M_4\H \times M_4\H$ & $M_8\H$ & $M_{16}\C$ & $M_{32}\R$ & $M_{32}\R \times M_{32}\R$ & $M_{64}\R$ & $M_{64}\C$ \\
-\hline
-5 & $M_2\H \times M_2\H$ & $M_4\H$ & $M_8\C$ & $M_{16}\R$ & $M_{16}\R \times M_{16}\R$ & $M_{32}\R$ & $M_{32}\C$ & $M_{32}\H$ \\
-\hline
-4 & $M_2\H$ & $M_4\C$ & $M_8\R$ & $M_8\R \times M_8\R$ & $M_{16}\R$ & $M_{16}\C$ & $M_{16}\H$ & $M_{16}\H \times M_{16}\H$ \\
-\hline
-3 & $M_2\C$ & $M_4\R$ & $M_4\R \times M_4\R$ & $M_8\R$ & $M_8\C$ & $M_8\H$ & $M_8\H \times M_8\H$ & $M_{16}\H$ \\
-\hline
-2 & $M_2\R$ & $M_2\R \times M_2\R$ & $M_4\R$ & $M_4\C$ & $M_4\H$ & $M_4\H \times M_4\H$ & $M_8\H$ & $M_{16}\C$ \\
-\hline
-1 & $\R \times \R$ & $M_2\R$ & $M_2\C$ & $M_2\H$ & $M_2\H \times M_2\H$ & $M_4\H$ & $M_8\C$ & $M_{16}\R$ \\
-\hline
-0 &  $\R$ & $\C$ & $\H$ & $\H \times \H$ & $M_2\H$ & $M_4\C$ & $M_8\R$ & $M_8\R \times M_8\R$\\
-\hline
-\slashbox{p}{q} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7
-\end{tabular}
+ \centering
+ \begin{tabular}{c |c|c|c|c|c|c|c|c|}
+  \hline
+  7               & $M_8\C$              & $M_8\H$              & $M_8\H \times M_8\H$ & $M_{16}\H$           & $M_{32}\C$                 & $M_{64}\R$                 & $M_{64}\R \times M_{64}\R$ & $M_{128}\R$                \\
+  \hline
+  6               & $M_4\H$              & $M_4\H \times M_4\H$ & $M_8\H$              & $M_{16}\C$           & $M_{32}\R$                 & $M_{32}\R \times M_{32}\R$ & $M_{64}\R$                 & $M_{64}\C$                 \\
+  \hline
+  5               & $M_2\H \times M_2\H$ & $M_4\H$              & $M_8\C$              & $M_{16}\R$           & $M_{16}\R \times M_{16}\R$ & $M_{32}\R$                 & $M_{32}\C$                 & $M_{32}\H$                 \\
+  \hline
+  4               & $M_2\H$              & $M_4\C$              & $M_8\R$              & $M_8\R \times M_8\R$ & $M_{16}\R$                 & $M_{16}\C$                 & $M_{16}\H$                 & $M_{16}\H \times M_{16}\H$ \\
+  \hline
+  3               & $M_2\C$              & $M_4\R$              & $M_4\R \times M_4\R$ & $M_8\R$              & $M_8\C$                    & $M_8\H$                    & $M_8\H \times M_8\H$       & $M_{16}\H$                 \\
+  \hline
+  2               & $M_2\R$              & $M_2\R \times M_2\R$ & $M_4\R$              & $M_4\C$              & $M_4\H$                    & $M_4\H \times M_4\H$       & $M_8\H$                    & $M_{16}\C$                 \\
+  \hline
+  1               & $\R \times \R$       & $M_2\R$              & $M_2\C$              & $M_2\H$              & $M_2\H \times M_2\H$       & $M_4\H$                    & $M_8\C$                    & $M_{16}\R$                 \\
+  \hline
+  0               & $\R$                 & $\C$                 & $\H$                 & $\H \times \H$       & $M_2\H$                    & $M_4\C$                    & $M_8\R$                    & $M_8\R \times M_8\R$       \\
+  \hline
+  \slashbox{p}{q} & 0                    & 1                    & 2                    & 3                    & 4                          & 5                          & 6                          & 7
+ \end{tabular}
 }
 $ $\\\\\\
 To read the table, the bottom left entry is $\Cliff_{0,0} \cong \R$, and moving to

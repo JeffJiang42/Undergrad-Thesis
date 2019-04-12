@@ -2,21 +2,21 @@
 \section{Clifford Modules}
 %
 \begin{defn}
-A (left) \ib{Clifford module} for the Clifford algebra $\Cliff_{p,q}(\R)$ is a module
-for $\Cliff_{p,q}(\R)$ in the usual sense i.e. a real vector space $V$ equipped
-with an algebra action $\bullet: \Cliff_{p,q}(\R) \times V \to V$ satisfying
-the following properties
-\begin{enumerate}
+ A (left) \ib{Clifford module} for the Clifford algebra $\Cliff_{p,q}(\R)$ is a module
+ for $\Cliff_{p,q}(\R)$ in the usual sense i.e. a real vector space $V$ equipped
+ with an algebra action $\bullet: \Cliff_{p,q}(\R) \times V \to V$ satisfying
+ the following properties
+ \begin{enumerate}
   \item Every element of $\Cliff_{p,q}(\R)$ acts linearly on $V$.
   \item $(AB) \cdot v = A\cdot(B \cdot v)$ for all $v \in V$.
   \item $(A + B) \cdot v = A\cdot v + B\cdot V$ for all $v \in V$.
-\end{enumerate}
-Equivalently, it is the data of a real vector space $V$ and an algebra homomorphism
-$\Cliff_{p,q}(\R) \to \End(V)$.
+ \end{enumerate}
+ Equivalently, it is the data of a real vector space $V$ and an algebra homomorphism
+ $\Cliff_{p,q}(\R) \to \End(V)$.
 \end{defn}
 %
 \begin{defn}
-A Clifford module is \ib{irreducible} if there exist no proper nontrivial submodules.
+ A Clifford module is \ib{irreducible} if there exist no proper nontrivial submodules.
 \end{defn}
 %
 From the classification of Clifford algebras, all the Clifford algebras are either
@@ -27,58 +27,58 @@ are direct sums of irreducible modules. Therefore, classifying all Clifford
 modules reduces to classifying the irreducible Clifford modules.
 %
 \begin{thm}
-Let $\F = \R$, $\C$, or $\H$. Then any nontrivial irreducible module for
-$M_n\F$ is isomorphic to $\F^n$ with the standard action.
+ Let $\F = \R$, $\C$, or $\H$. Then any nontrivial irreducible module for
+ $M_n\F$ is isomorphic to $\F^n$ with the standard action.
 \end{thm}
 %
 \begin{proof}
-We first note that $M_n\F$ acts transitively on $\F^n$, which implies that
-it is irreducible. We then must show that $\F^n$ is, up to isomorphism, the only
-irreducible $M_n\F$ module. The matrix algebra $M_n\F$ admits an increasing
-chain of left ideals
-\[
-0 = I_0 \subset I_1 \subset \ldots \subset I_n = M_n\F
-\]
-where $I_k$ is the set of matrices where only the first $k$ columns are nonzero.
-These ideals have the property that the quotient $I_k / I_{k-1}$ is isomorphic
-to $\F^n$ as a left $M_n\F$ module. Then let $M$ be some nontrivial irreducible
-$M_n\F$ module, and fix $m \in M$. Then the orbit $M_n\F \cdot m$ of $m$
-under the algebra action is a nonzero submodule, so it must be all of $M$.
-Then the map $\varphi : M_n\F \to M$ given by $A \mapsto A \cdot m$ is
-a surjective map of left $M_n\F$ modules. Then there must exist some smallest
-$k$ such that $\varphi(I_k)$ is nonzero, and by construction,
-$\varphi\vert_{I_k}$ factors through the quotient $I_k / I_{k-1}$, which
-is isomorphic to $\F^n$ with the standard action. Then since $\F^n$ is irreducible,
-this gives us a nonzero map between irreducible modules, which is an isomorphism
-by Schur's Lemma.
+ We first note that $M_n\F$ acts transitively on $\F^n$, which implies that
+ it is irreducible. We then must show that $\F^n$ is, up to isomorphism, the only
+ irreducible $M_n\F$ module. The matrix algebra $M_n\F$ admits an increasing
+ chain of left ideals
+ \[
+  0 = I_0 \subset I_1 \subset \ldots \subset I_n = M_n\F
+ \]
+ where $I_k$ is the set of matrices where only the first $k$ columns are nonzero.
+ These ideals have the property that the quotient $I_k / I_{k-1}$ is isomorphic
+ to $\F^n$ as a left $M_n\F$ module. Then let $M$ be some nontrivial irreducible
+ $M_n\F$ module, and fix $m \in M$. Then the orbit $M_n\F \cdot m$ of $m$
+ under the algebra action is a nonzero submodule, so it must be all of $M$.
+ Then the map $\varphi : M_n\F \to M$ given by $A \mapsto A \cdot m$ is
+ a surjective map of left $M_n\F$ modules. Then there must exist some smallest
+ $k$ such that $\varphi(I_k)$ is nonzero, and by construction,
+ $\varphi\vert_{I_k}$ factors through the quotient $I_k / I_{k-1}$, which
+ is isomorphic to $\F^n$ with the standard action. Then since $\F^n$ is irreducible,
+ this gives us a nonzero map between irreducible modules, which is an isomorphism
+ by Schur's Lemma.
 \end{proof}
 %
 \begin{thm}
-Any nontrivial irreducible module for $M_n\F \times M_n\F$ is isomorphic to
-either $\F^n$ where the left factor acts in the usual way, and the right factor
-acts by $0$, or $\F^n$ where the left factor acts by $0$ and the right factor
-acts in the usual way.
+ Any nontrivial irreducible module for $M_n\F \times M_n\F$ is isomorphic to
+ either $\F^n$ where the left factor acts in the usual way, and the right factor
+ acts by $0$, or $\F^n$ where the left factor acts by $0$ and the right factor
+ acts in the usual way.
 \end{thm}
 %
 \begin{proof}
-Let $R$ denote $\F^n$ where the right factor acts nontrivially, and let $L$
-denote $\F^n$ where the left factor acts nontrivially. Both $L$ and $R$ are
-irreducible since $M_n\F \times M_n\F$ acts transitively on them. To show
-that they are the only irreducible modules up to isomorphism, we use a similar
-technique as above. Let $I_k$ denote the chain of increasing ideals in $M_n\F$,
-as we used above. Then $M_n\F \times M_n\F$ admits a chain of increasing left
-ideals $J_k$
-\[
-0 = J_0 \subset I_1 \times \set{0} \subset \ldots \subset M_n\F \times \set{0}
-\subset M_n\F \times I_1 \subset \ldots \subset M_n\F \times M_n\F = J_{2n}
-\]
-We note that for $1 \leq k \leq n$, we have that $J_k / J_{k-1}$ is isomorphic to
-$L$, and for $n+1 \leq k \leq 2n$, we have that $J_k / J_{k-1}$ is isomorphic to
-$R$. Then given a nontrivial irreducible module $M$ and a nonzero element $m$,
-we get a surjective map $\varphi : M_n\F \times M_n\F$ where $A \mapsto A\cdot m$.
-Like before, there exists some smallest $k$ such that $\varphi(J_k)$ is nonzero,
-which then factors through to an isomorphism $J_k / J_{k-1} \to M$, so $M$
-is either isomorphic to $R$ or $L$.
+ Let $R$ denote $\F^n$ where the right factor acts nontrivially, and let $L$
+ denote $\F^n$ where the left factor acts nontrivially. Both $L$ and $R$ are
+ irreducible since $M_n\F \times M_n\F$ acts transitively on them. To show
+ that they are the only irreducible modules up to isomorphism, we use a similar
+ technique as above. Let $I_k$ denote the chain of increasing ideals in $M_n\F$,
+ as we used above. Then $M_n\F \times M_n\F$ admits a chain of increasing left
+ ideals $J_k$
+ \[
+  0 = J_0 \subset I_1 \times \set{0} \subset \ldots \subset M_n\F \times \set{0}
+  \subset M_n\F \times I_1 \subset \ldots \subset M_n\F \times M_n\F = J_{2n}
+ \]
+ We note that for $1 \leq k \leq n$, we have that $J_k / J_{k-1}$ is isomorphic to
+ $L$, and for $n+1 \leq k \leq 2n$, we have that $J_k / J_{k-1}$ is isomorphic to
+ $R$. Then given a nontrivial irreducible module $M$ and a nonzero element $m$,
+ we get a surjective map $\varphi : M_n\F \times M_n\F$ where $A \mapsto A\cdot m$.
+ Like before, there exists some smallest $k$ such that $\varphi(J_k)$ is nonzero,
+ which then factors through to an isomorphism $J_k / J_{k-1} \to M$, so $M$
+ is either isomorphic to $R$ or $L$.
 \end{proof}
 %
 This then gives a full classification of the irreducible ungraded Clifford
@@ -88,9 +88,9 @@ Since the Clifford algebras are $\Z/2\Z$ graded, we have an analogous notion
 of a graded Clifford module.
 %
 \begin{defn}
-Let $A = A^0 \oplus A^1$ be a $\Z/2\Z$ graded algebra. Then a $\Z/2\Z$
-\ib{graded module} for $A$ is a module $M = M^0 \oplus M^1$ for $A$ such that
-$A^i \cdot M^j \subset M^{i + j \mod 2}$.
+ Let $A = A^0 \oplus A^1$ be a $\Z/2\Z$ graded algebra. Then a $\Z/2\Z$
+ \ib{graded module} for $A$ is a module $M = M^0 \oplus M^1$ for $A$ such that
+ $A^i \cdot M^j \subset M^{i + j \mod 2}$.
 \end{defn}
 %
 A \ib{graded Clifford module} is then a $\Z/2\Z$ graded module for a Clifford
@@ -100,40 +100,40 @@ classification of the ungraded Clifford modules, and we have the relationship
 between $\Cliff_{p,q}(\R)$ and its even subalgebra $\Cliff_{p,q}^0(\R)$.
 %
 \begin{thm}
-There is a bijective correspondence
-\[
-\set{\text{Ungraded Clifford modules over } \Cliff_{p,q}^0(\R)} \longleftrightarrow
-\set{\text{Graded Clifford modules over} \Cliff_{p,q}(\R)}
-\]
+ There is a bijective correspondence
+ \[
+  \set{\text{Ungraded Clifford modules over } \Cliff_{p,q}^0(\R)} \longleftrightarrow
+  \set{\text{Graded Clifford modules over} \Cliff_{p,q}(\R)}
+ \]
 \end{thm}
 %
 \begin{proof}
-We provide maps in both directions. Let $M = M^0 \oplus M^1$ be a graded
-module for $\Cliff_{p,q}(\R)$. The action of $\Cliff_{p,q}^0(\R)$ preserves
-the even subspace $M^0$, which gives $M^0$ the structure of an ungraded
-$\Cliff_{p,q}^0(\R)$ module. Let $r$ denote the mapping $M \mapsto M^0$. \\
-
-In the other direction, let $V$ be an ungraded module over $\Cliff_{p,q}^0(\R)$.
-Then let $t$ denote the mapping
-$V \mapsto V' = \Cliff_{p,q}(\R) \otimes_{\Cliff_{p,q}^0(\R)} V$.
-Where we treat $\Cliff_{p,q}(\R)$ as a left module under multiplication by
-elements of $\Cliff_{p,q}^0(\R)$. We then endow $V'$ the structure of a
-$\Cliff_{p,q}(\R)$ module, where $\Cliff_{p,q}(\R)$ acts on the $\Cliff_{p,q}(\R)$
-factor by left multiplication. We further impose the grading on $V'$ where
-\[
-V' = ( \Cliff^0_{p,q}(\R) \otimes_{\Cliff^0_{p,q}(\R)} V) \oplus
-(\Cliff^1_{p,q}(\R) \otimes_{\Cliff^1_{p,q}(\R)} V)
-\]
-We then claim that these two maps are inverses, which we will verify by showing
-that the compositions $r \circ t$ and $t \circ r$ are identity. We first show
-that $r \circ t$ is identity. Let $V$ be an ungraded module over $\Cliff_{p,q}^0(\R)$.
-Then the even subalgebra of $t(V) = \Cliff_{p,q} \otimes_{\Cliff_{p,q}^0(\R)} V$
-is $\Cliff^0_{p,q}(\R) \otimes_{\Cliff^0_{p,q}(\R)} V$, which is naturally isomorphic
-to $V$ itself. In the other direction, let $M = M^0 \otimes M^1$ be a module for
-$\Cliff_{p,q}(\R)$. Showing that $t \circ r$ is the identity then amounts to showing
-that $\Cliff_{p,q}(\R) \otimes_{\Cliff_{p,q}^0(\R)} M^0$ is isomorphic to $M$.
-The desired isomorphism is explicitly determined by the mapping
-$a \otimes m \mapsto a \cdot m$.
+ We provide maps in both directions. Let $M = M^0 \oplus M^1$ be a graded
+ module for $\Cliff_{p,q}(\R)$. The action of $\Cliff_{p,q}^0(\R)$ preserves
+ the even subspace $M^0$, which gives $M^0$ the structure of an ungraded
+ $\Cliff_{p,q}^0(\R)$ module. Let $r$ denote the mapping $M \mapsto M^0$. \\
+ 
+ In the other direction, let $V$ be an ungraded module over $\Cliff_{p,q}^0(\R)$.
+ Then let $t$ denote the mapping
+ $V \mapsto V' = \Cliff_{p,q}(\R) \otimes_{\Cliff_{p,q}^0(\R)} V$.
+ Where we treat $\Cliff_{p,q}(\R)$ as a left module under multiplication by
+ elements of $\Cliff_{p,q}^0(\R)$. We then endow $V'$ the structure of a
+ $\Cliff_{p,q}(\R)$ module, where $\Cliff_{p,q}(\R)$ acts on the $\Cliff_{p,q}(\R)$
+ factor by left multiplication. We further impose the grading on $V'$ where
+ \[
+  V' = ( \Cliff^0_{p,q}(\R) \otimes_{\Cliff^0_{p,q}(\R)} V) \oplus
+  (\Cliff^1_{p,q}(\R) \otimes_{\Cliff^1_{p,q}(\R)} V)
+ \]
+ We then claim that these two maps are inverses, which we will verify by showing
+ that the compositions $r \circ t$ and $t \circ r$ are identity. We first show
+ that $r \circ t$ is identity. Let $V$ be an ungraded module over $\Cliff_{p,q}^0(\R)$.
+ Then the even subalgebra of $t(V) = \Cliff_{p,q} \otimes_{\Cliff_{p,q}^0(\R)} V$
+ is $\Cliff^0_{p,q}(\R) \otimes_{\Cliff^0_{p,q}(\R)} V$, which is naturally isomorphic
+ to $V$ itself. In the other direction, let $M = M^0 \otimes M^1$ be a module for
+ $\Cliff_{p,q}(\R)$. Showing that $t \circ r$ is the identity then amounts to showing
+ that $\Cliff_{p,q}(\R) \otimes_{\Cliff_{p,q}^0(\R)} M^0$ is isomorphic to $M$.
+ The desired isomorphism is explicitly determined by the mapping
+ $a \otimes m \mapsto a \cdot m$.
 \end{proof}
 %
 From this theorem, understanding graded Clifford modules is equivalent to understanding
@@ -164,12 +164,12 @@ we observe that the inclusions of $\Cliff_{p,q}(\R)$ into $\Cliff_{p+1,q}(\R)$
 and $\Cliff_{p,q+1}$ all fall into one of the following four cases.
 %
 \begin{enumerate}
-  \item $M_n\F \hookrightarrow M_n\F'$ where $\F = \R$ or $\C$, and $\F' = \C$
-  or $\H$ is the division algebra of twice the dimension of $\F$ as a
-  vector space over $\R$.
-  \item $M_n\F \times M_n\F \hookrightarrow M_{2n}\F$.
-  \item $M_n\F' \hookrightarrow M_{2n}\F$, where $\F$ and $\F'$ are defined as above.
-  \item $M_n\F \hookrightarrow M_n\F \times M_n\F$.
+ \item $M_n\F \hookrightarrow M_n\F'$ where $\F = \R$ or $\C$, and $\F' = \C$
+       or $\H$ is the division algebra of twice the dimension of $\F$ as a
+       vector space over $\R$.
+ \item $M_n\F \times M_n\F \hookrightarrow M_{2n}\F$.
+ \item $M_n\F' \hookrightarrow M_{2n}\F$, where $\F$ and $\F'$ are defined as above.
+ \item $M_n\F \hookrightarrow M_n\F \times M_n\F$.
 \end{enumerate}
 %
 Using semisimplicity of the Clifford algebras, along with out classification of
@@ -177,73 +177,73 @@ the ungraded Clifford modules, we then compute the cokernels for all of these
 cases.
 %
 \begin{enumerate}
-  \item In this case, the irreducible module for $M_n\F'$ is $(\F')^n$, which is
-  twice the dimension of $\F^n$ as an $\R$ vector space. Then since both
-  $M_n\F$ and $M_n\F'$ admit only a single irreducible module, the monoid homomorphism
-  is a map $\Z^{\geq 0} \to \Z^{\geq 0}$ where $1 \mapsto 2$. The cokernel is then
-  the group $\Z/2\Z$.
-  \item The algebra $M_n\F \times M_n\F$ injects into $M_{2n}\F$ as block matrices
-  of the form
-  \[
-  \begin{pmatrix}
-  A & 0 \\
-  0 & B
-  \end{pmatrix}
-  \]
-  with $A,B \in M_n\F$. From this, we see that the irreducible module $\F^{2n}$
-  decomposes into a direct sum of the two irreducible modules for $M_n\F \times M_n\F$.
-  The monoid homomorphism $\Z^{\geq 0} \to \Z^{\geq 0} \times \Z^{\geq 0}$ is
-  then given by $1 \mapsto (1,1)$, and the cokernel is the group $\Z$.
-  \item In this case, the irreducible modules $(\F')^n$ and $\F^{2n}$ are the
-  same dimension as vector spaces over $\R$, so the monoid homomorphism is given
-  by $1\mapsto 1$, so the cokernel is the trivial group $0$.
-  \item In this case, both irreducible modules for the product $M_n\F \times M_n\F$
-  are the same dimension as the irreducible module for $M_n\F$, so the monoid homomorphism
-  $\Z^{\geq 0 }\times \Z^{\geq 0} \to \Z^{\geq 0}$ is given by $(1,0) \mapsto 1$
-  and $(0,1) \mapsto 1$, so the cokernel is again the trivial group $0$.
+ \item In this case, the irreducible module for $M_n\F'$ is $(\F')^n$, which is
+       twice the dimension of $\F^n$ as an $\R$ vector space. Then since both
+       $M_n\F$ and $M_n\F'$ admit only a single irreducible module, the monoid homomorphism
+       is a map $\Z^{\geq 0} \to \Z^{\geq 0}$ where $1 \mapsto 2$. The cokernel is then
+       the group $\Z/2\Z$.
+ \item The algebra $M_n\F \times M_n\F$ injects into $M_{2n}\F$ as block matrices
+       of the form
+       \[
+        \begin{pmatrix}
+         A & 0 \\
+         0 & B 
+        \end{pmatrix}
+       \]
+       with $A,B \in M_n\F$. From this, we see that the irreducible module $\F^{2n}$
+       decomposes into a direct sum of the two irreducible modules for $M_n\F \times M_n\F$.
+       The monoid homomorphism $\Z^{\geq 0} \to \Z^{\geq 0} \times \Z^{\geq 0}$ is
+       then given by $1 \mapsto (1,1)$, and the cokernel is the group $\Z$.
+ \item In this case, the irreducible modules $(\F')^n$ and $\F^{2n}$ are the
+       same dimension as vector spaces over $\R$, so the monoid homomorphism is given
+       by $1\mapsto 1$, so the cokernel is the trivial group $0$.
+ \item In this case, both irreducible modules for the product $M_n\F \times M_n\F$
+       are the same dimension as the irreducible module for $M_n\F$, so the monoid homomorphism
+       $\Z^{\geq 0 }\times \Z^{\geq 0} \to \Z^{\geq 0}$ is given by $(1,0) \mapsto 1$
+       and $(0,1) \mapsto 1$, so the cokernel is again the trivial group $0$.
 \end{enumerate}
 %
 With these cokernels in hand, we can fill in the table \\\\
 %
 \resizebox{.72\width}{!}{
-\centering
-\begin{tabular}{c |c|c|c|c|c|c|c|c|}
-\hline
-7 & \slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$0$} & \slashbox{$\Z$}{$\Z$} &
-\slashbox{$0$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} &
-\slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$\Z/2\Z$}\\
-\hline
-6 & \slashbox{$0$}{$0$} & \slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$0$} &
-\slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z$}{$\Z$} &
-\slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$\Z/2\Z$}\\
-\hline
-5 &  \slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} &
-\slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$\Z/2\Z$} &
-\slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$0$}\\
-\hline
-4 & \slashbox{$0$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} &
-\slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$\Z/2\Z$} &
-\slashbox{$0$}{$0$} & \slashbox{$\Z$}{$\Z$}\\
-\hline
-3 &  \slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z$}{$\Z$} &
-\slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$0$} &
-\slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$0$}\\
-\hline
-2 & \slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$\Z/2\Z$} &
-\slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$0$} & \slashbox{$\Z$}{$\Z$} &
-\slashbox{$0$}{$0$} & \slashbox{$\Z/2\Z$}{$0$}\\
-\hline
-1 & \slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$\Z/2\Z$} &
-\slashbox{$0$}{$0$} & \slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$0$} &
-\slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z/2\Z$}{$0$}\\
-\hline
-0 & \slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$\Z/2\Z$} & \slashbox{0}{0} &
-\slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} &
-\slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z$}{$\Z$}\\
-\hline
-\slashbox{p}{q} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7
-\end{tabular}
-} \\\\\\
+ \centering
+ \begin{tabular}{c |c|c|c|c|c|c|c|c|}
+  \hline
+  7 & \slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$0$} & \slashbox{$\Z$}{$\Z$} &
+  \slashbox{$0$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} &
+  \slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$\Z/2\Z$}\\
+  \hline
+  6 & \slashbox{$0$}{$0$} & \slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$0$} &
+  \slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z$}{$\Z$} &
+  \slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$\Z/2\Z$}\\
+  \hline
+  5 &  \slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} &
+  \slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$\Z/2\Z$} &
+  \slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$0$}\\
+  \hline
+  4 & \slashbox{$0$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} &
+  \slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$\Z/2\Z$} &
+  \slashbox{$0$}{$0$} & \slashbox{$\Z$}{$\Z$}\\
+  \hline
+  3 &  \slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z$}{$\Z$} &
+  \slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$0$} &
+  \slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$0$}\\
+  \hline
+  2 & \slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$\Z/2\Z$} &
+  \slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$0$} & \slashbox{$\Z$}{$\Z$} &
+  \slashbox{$0$}{$0$} & \slashbox{$\Z/2\Z$}{$0$}\\
+  \hline
+  1 & \slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$\Z/2\Z$} &
+  \slashbox{$0$}{$0$} & \slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$0$} &
+  \slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z/2\Z$}{$0$}\\
+  \hline
+  0 & \slashbox{$0$}{$\Z/2\Z$} & \slashbox{$0$}{$\Z/2\Z$} & \slashbox{0}{0} &
+  \slashbox{$\Z$}{$\Z$} & \slashbox{$0$}{$0$} & \slashbox{$\Z/2\Z$}{$0$} &
+  \slashbox{$\Z/2\Z$}{$0$} & \slashbox{$\Z$}{$\Z$}\\
+  \hline
+  \slashbox{p}{q} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 
+ \end{tabular}
+ } \\\\\\
 where the top left corner of each box is the cokernel for the monoid homomorphism
 induced by the inclusion $\Cliff_{p,q}(\R) \hookrightarrow \Cliff_{p+1,q}(\R)$,
 and the bottom right  corner is the cokernel for the monoid homomorphism induced
@@ -253,7 +253,7 @@ one square. The periodicity patterns in this table are one of the many
 forms of \ib{Bott periodicity}, which has wide ranging implications in homotopy
 theory and $K$-theory. The sequence
 \[
-\Z/2\Z \qquad \Z/2\Z \qquad 0 \qquad \Z \qquad 0 \qquad 0 \qquad 0 \qquad \Z
+ \Z/2\Z \qquad \Z/2\Z \qquad 0 \qquad \Z \qquad 0 \qquad 0 \qquad 0 \qquad \Z
 \]
 is affectionately called the \ib{Bott song}.
 %
