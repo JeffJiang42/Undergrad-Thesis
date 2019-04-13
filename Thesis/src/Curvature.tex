@@ -19,3 +19,47 @@ where the action of $[\Theta \wedge \Theta]$ on $X$ is defined to be
 \]
 \end{defn}
 %
+The first thing to note is that it descends to the base manifold $M$, i.e. it defines
+an element of $\Omega_M^2(\g_P)$, where $\g_P$ is the \ib{adjoint bundle} of $P$,
+which is the associated vector bundle $P \times_G \g$, where the action of $G$ on
+$\g$ is the adjoint action. This is due to the following properties of $\Omega$.
+%
+\begin{prop} \enumbreak
+\begin{enumerate}
+  \item $R_g^*\Omega = \Ad_{g\inv}\Omega$
+  \item $\iota_{\widehat{\xi}}(\Omega) = 0$ for all $\xi \in \g$.
+\end{enumerate}
+\end{prop}
+%
+\begin{proof}
+For the first property, we compute
+\begin{align*}
+R_g^*\Omega &= R_g^*d\Theta + \frac{1}{2} R_g^*[\Theta \wedge \Theta] \\
+&= d(R_g^*\Theta)+ \frac{1}{2}[R_g^*\Theta \wedge R_g^*\Theta]\\
+&= \Ad_{g\inv}d\Theta + \frac{1}{2}[\Ad_{g\inv}\Theta \wedge \Ad_{g\inv}\Theta] \\
+&= \Ad_g\inv\Omega
+\end{align*}
+where we use the fact that pullback commutes with exterior derivative and
+the wedge product, and the fact that the adjoint action of $G$ on $\g$ commutes with
+brackets. For the second property, let $\xi \in \g$. We then compute
+\[
+\iota_{\widehat{\xi}}(\Omega) = \iota_{\widehat{\xi}}(d\Theta)
++ \iota_{\widehat{\xi}}([\Theta \wedge \Theta])
+\]
+We compute the value of the terms separately. To compute $\iota_{\widehat{\xi}}(d\Theta)$,
+we use Cartan's magic formula again to get
+\[
+\L_{\widehat{\xi}}\Theta = d(\iota_{\widehat{\xi}}(\Theta))
++ \iota_{\widehat{\xi}}(d\Theta) = 0 + \iota_{\widehat{\xi}}(\Theta)
+\]
+since $\iota_{\widehat{\xi}}(\Theta) = \xi$ for any $\xi \in \g$, and $d$ of a
+constant form is $0$. Therefore,
+$\L_{\widehat{\xi}}\Theta = \iota_{\widehat{\xi}}(d\Theta)$. We then note that
+\begin{align*}
+\L_{\widehat{\xi}}\Theta &= \frac{d}{dt}\bigg\vert_{t = 0} R_{\exp(t\xi)}^*\Theta \\
+&= \frac{d}{dt}\bigg\vert_{t=0} \Ad_{\exp(t\xi)}\Theta \\
+&= -[\xi, \Theta]
+\end{align*}
+where we use the fact that the derivative of $\Ad$ is the Lie bracket.
+\end{proof}
+%
