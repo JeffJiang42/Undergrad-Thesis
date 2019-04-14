@@ -13,9 +13,9 @@ a $2$-form $\Omega \in \Omega_P^2(\g)$ defined by the equation
 \[
 \Omega = d\Theta + \frac{1}{2}[\Theta \wedge \Theta]
 \]
-where the action of $[\Theta \wedge \Theta]$ on $X$ is defined to be
+where the action of $[\Theta \wedge \Theta]$ on $X,Y$ is defined to be
 \[
-[\Theta \wedge \Theta](X) = [\Theta(X), \Theta(X)]
+[\Theta \wedge \Theta](X,Y) = [\Theta(X), \Theta(Y)]
 \]
 \end{defn}
 %
@@ -41,10 +41,10 @@ R_g^*\Omega &= R_g^*d\Theta + \frac{1}{2} R_g^*[\Theta \wedge \Theta] \\
 \end{align*}
 where we use the fact that pullback commutes with exterior derivative and
 the wedge product, and the fact that the adjoint action of $G$ on $\g$ commutes with
-brackets. For the second property, let $\xi \in \g$. We then compute
+brackets. For the second property, let $\xi \in \g$. We then have that
 \[
 \iota_{\widehat{\xi}}(\Omega) = \iota_{\widehat{\xi}}(d\Theta)
-+ \iota_{\widehat{\xi}}([\Theta \wedge \Theta])
++ \iota_{\widehat{\xi}}[\Theta \wedge \Theta]
 \]
 We compute the value of the terms separately. To compute $\iota_{\widehat{\xi}}(d\Theta)$,
 we use Cartan's magic formula again to get
@@ -57,9 +57,71 @@ constant form is $0$. Therefore,
 $\L_{\widehat{\xi}}\Theta = \iota_{\widehat{\xi}}(d\Theta)$. We then note that
 \begin{align*}
 \L_{\widehat{\xi}}\Theta &= \frac{d}{dt}\bigg\vert_{t = 0} R_{\exp(t\xi)}^*\Theta \\
-&= \frac{d}{dt}\bigg\vert_{t=0} \Ad_{\exp(t\xi)}\Theta \\
+&= \frac{d}{dt}\bigg\vert_{t=0} \Ad_{\exp(t\xi)\inv}\Theta \\
 &= -[\xi, \Theta]
 \end{align*}
-where we use the fact that the derivative of $\Ad$ is the Lie bracket.
+where the action of $[\xi, \Theta]$ on $X$ is $[\xi, \Theta](X) = [\xi,\Theta(X)]$,
+and we use the fact that the derivative of $\Ad$ is the Lie bracket. We then compute
+\[
+\iota_{\widehat{\xi}}[\Theta \wedge \Theta] =
+[\iota_{\widehat{\xi}}(\Theta) \wedge \Theta] = [\xi, \Theta]
+\]
+Therefore, $\iota_{\widehat{\xi}}(\Omega) = 0$, so the curvature form descends to a
+form in $\Omega_M^2(\g_P)$.
 \end{proof}
+%TODO Biachi Identity?
+%
+Having defined the curvature form, we explore its relationship with associated
+vector bundles of a principal bundle $\pi : P \to M$ equipped with a connection $\Theta$.
+Let $W$ be a vector space with a homomorphism $\rho : G \to GL(W)$, and
+$\dt{\rho} : \g \to \End W$ its associated Lie algebra map. Then let $E \to M$ be
+the associated vector bundle $E = P \times_G W$. Recall that the connection $\Theta$ on
+$P$ induces an exterior covariant derivative
+%
+\begin{align*}
+d_\Theta : \Omega^k_M(E) &\to \Omega^{k+1}_M(E) \\
+\psi &\mapsto d\psi + \dt{\rho}(\Theta) \wedge \psi
+\end{align*}
+%
+which gives us a sequence of maps
+\[\begin{tikzcd}
+\Omega^0_M(E) \ar[r, "d_\Theta"] & \Omega^1_M(E) \ar[r, "d_\Theta"]
+& \Omega^2_M(E) \ar[r, "d_\Theta"]  & \cdots
+\end{tikzcd}\]
+However, this does \emph{not} form a complex, i.e. $d_\Theta^2 \neq 0$. For
+$\psi \in \Omega^0_M(E)$, we compute
+%
+\begin{align*}
+d_\Theta^2\psi &= d_\Theta(d\psi + \dt{\rho}(\Theta)\psi) \\
+&= d^2\psi + \dt{\rho}(\Theta) \wedge d\psi + d(\dt{\rho}(\Theta)\psi)
++ \dt{\rho}(\Theta) \wedge \dt{\rho}(\Theta)\psi \\
+&= \dt{\rho}(\Theta) \wedge d\psi + d(\dt{\rho}(\Theta)\psi)
++ \dt{\rho}(\Theta) \wedge \dt{\rho}(\Theta)\psi
+\end{align*}
+%
+We wan to relate this to the curvature form $\Omega$ on $P$. To do this, we use a
+useful lemma.
+%
+\begin{lem}
+\[
+\dt{\rho}(\Theta) \wedge \dt{\rho}(\Theta) = \dt{\rho}([\Theta \wedge \Theta])
+\]
+\end{lem}
+%
+% TODO Figure out what is happening with the 1/2
+\begin{proof}
+
+\end{proof}
+%
+Therefore, the curvature form $\Omega$ on $P$ determines an $\End E$ valued
+$2-$form on any associated vector bundle $E$.
+%
+\begin{defn}
+Let $P$ be a principal bundle with connection, and $\Omega$ the curvature form.
+$\rho : G \to GL(W)$ a representation, with corresponding Lie algebra representation
+$\dt{\rho} : \g \to \End W$. $E = P \times_G W$. The \ib{curvature transformation} is a
+$2$-form $R \in \Omega^2(\End E)$ defined by $R = \dt{\rho}(\Omega)$.
+\end{defn}
+%
+Given tangent vectors $V,W$, we often denote the endomorphism $R(V,W)$ by $R_{V,W}$.
 %
