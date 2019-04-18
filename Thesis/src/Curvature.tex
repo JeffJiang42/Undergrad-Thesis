@@ -1,7 +1,7 @@
 %
 \section{Curvature}
 %
-An important quantity associated to a connection is it's \ib{curvature}, which
+An important quantity associated to a connection is its \ib{curvature}, which
 heuristically measures its deviation from our standard notions of a directional
 derivative. We first discuss curvature on principal bundles, and will then
 explore its relationship with associated bundles.
@@ -15,8 +15,10 @@ a $2$-form $\Omega \in \Omega_P^2(\g)$ defined by the equation
 \]
 where the action of $[\Theta \wedge \Theta]$ on $X,Y$ is defined to be
 \[
-[\Theta \wedge \Theta](X,Y) = [\Theta(X), \Theta(Y)]
+[\Theta \wedge \Theta](X,Y) = [\Theta(X), \Theta(Y)] - [\Theta(Y), \Theta(X)] =
+2[\Theta(X), \Theta(Y)]
 \]
+For this reason, some denote $1/2[\Theta \wedge \Theta]$ as just $[\Theta, \Theta]$.
 \end{defn}
 %
 The first thing to note is that it descends to the base manifold $M$, i.e. it defines
@@ -46,8 +48,8 @@ brackets. For the second property, let $\xi \in \g$. We then have that
 \iota_{\widehat{\xi}}(\Omega) = \iota_{\widehat{\xi}}(d\Theta)
 + \iota_{\widehat{\xi}}[\Theta \wedge \Theta]
 \]
-We compute the value of the terms separately. To compute $\iota_{\widehat{\xi}}(d\Theta)$,
-we use Cartan's magic formula again to get
+We compute the value of the terms separately. To compute
+$\iota_{\widehat{\xi}}(d\Theta)$, we use Cartan's magic formula again to get
 \[
 \L_{\widehat{\xi}}\Theta = d(\iota_{\widehat{\xi}}(\Theta))
 + \iota_{\widehat{\xi}}(d\Theta) = 0 + \iota_{\widehat{\xi}}(\Theta)
@@ -96,32 +98,57 @@ d_\Theta^2\psi &= d_\Theta(d\psi + \dt{\rho}(\Theta)\psi) \\
 &= d^2\psi + \dt{\rho}(\Theta) \wedge d\psi + d(\dt{\rho}(\Theta)\psi)
 + \dt{\rho}(\Theta) \wedge \dt{\rho}(\Theta)\psi \\
 &= \dt{\rho}(\Theta) \wedge d\psi + d(\dt{\rho}(\Theta)\psi)
-+ \dt{\rho}(\Theta) \wedge \dt{\rho}(\Theta)\psi
++ \dt{\rho}(\Theta) \wedge \dt{\rho}(\Theta)\psi \\
+&= \dt{\rho} \wedge d\psi + \dt{\rho}(d\Theta)\psi - \dt{\rho} \wedge d\psi
++ \dt{\rho}(\Theta) \wedge \dt{\rho}(\Theta)\psi \\
+&= \dt{\rho}(d\Theta)\psi + \dt{\rho}(\Theta) \wedge \dt{\rho}(\Theta)\psi
 \end{align*}
 %
-We wan to relate this to the curvature form $\Omega$ on $P$. To do this, we use a
-useful lemma.
+We want to relate this to the curvature form $\Omega$ on $P$. To do this, we use a
+small lemma.
 %
 \begin{lem}
 \[
-\dt{\rho}(\Theta) \wedge \dt{\rho}(\Theta) = \dt{\rho}([\Theta \wedge \Theta])
+\dt{\rho}(\Theta) \wedge \dt{\rho}(\Theta) = \frac{1}{2}\dt{\rho}([\Theta \wedge \Theta])
 \]
 \end{lem}
 %
-% TODO Figure out what is happening with the 1/2
-\begin{proof}
-
-\end{proof}
+The proof of the lemma just involves doing the matrix computation, and using the
+definition of the wedge of $1$-forms when computing the matrix commutator
+for the left hand side. We then compute
+\begin{align*}
+\dt{\rho}(\Omega) &= \dt{\rho}\left(d\Theta + \frac{1}{2}[\Theta \wedge \Theta]\right) \\
+&= d(\dt{\rho}(\Theta)) + \frac{1}{2}\dt{\rho}([\Theta \wedge \Theta]) \\
+&= d(\dt{\rho}(\Theta)) + \dt{\rho}(\Theta) \wedge \dt{\rho}(\Theta) \\
+&= d^2_\Theta\psi
+\end{align*}
 %
-Therefore, the curvature form $\Omega$ on $P$ determines an $\End E$ valued
-$2-$form on any associated vector bundle $E$.
+The from this we see that curvature form $\Omega$ on $P$ determines an $\End E$ valued
+$2-$form on any associated vector bundle $E$, and is in some sense the measurement
+of the failure of the sequence of maps $d_\Theta$ to be a complex.
 %
 \begin{defn}
-Let $P$ be a principal bundle with connection, and $\Omega$ the curvature form.
+Let $P$ be a principal bundle with connection $\Theta$, and $\Omega$ the curvature form.
 $\rho : G \to GL(W)$ a representation, with corresponding Lie algebra representation
-$\dt{\rho} : \g \to \End W$. $E = P \times_G W$. The \ib{curvature transformation} is a
-$2$-form $R \in \Omega^2(\End E)$ defined by $R = \dt{\rho}(\Omega)$.
+$\dt{\rho} : \g \to \End W$. Let $E = P \times_G W$. The \ib{curvature transformation}
+is a $2$-form $R \in \Omega^2(\End E)$ defined by
+\[
+R = \dt{\rho}(\Omega)
+\]
 \end{defn}
 %
 Given tangent vectors $V,W$, we often denote the endomorphism $R(V,W)$ by $R_{V,W}$.
+%TODO Curvature on vector bundles discussion -- Ricci tensor
+%
+An identity that will be future use is the following proposition.
+%
+\begin{prop}
+Let $R \in \Omega^2_M(\End TM)$ be the curvature transformation of a Riemannian
+manifold, i.e. the curvature induced by the Levi-Civita connection. Then for any tangent
+vectors $V,W,X$
+\[
+R_{V, W}X + R_{X, V}W + R_{W, X}V = 0
+\]
+In other words, the sum over all cyclic permutations of the arguments is $0$.
+\end{prop}
 %
