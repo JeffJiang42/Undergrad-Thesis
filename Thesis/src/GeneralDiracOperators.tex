@@ -279,10 +279,10 @@ with the exterior derivative $d$.
 \begin{prop}
 The operator $d^*$ is given by
 \[
-d^* = \iota(e^j)\partial_k
+d^* = \iota(e^k)\partial_k
 \]
-where $\iota(e^j)(\omega) = \langle e^j, \omega \rangle$ is the inner product of
-$e^j$ and $\omega$ induced by the Riemannian metric.
+where $\iota(e^k)(\omega) = \langle e^k, \omega \rangle$ is the inner product of
+$e^k$ and $\omega$ induced by the Riemannian metric.
 \end{prop}
 %
 Using $d$ and $d^*$, we construct the \ib{Hodge Laplacian}
@@ -395,7 +395,15 @@ structure of a graded Clifford module, where the grading is given by
 \Gamma_M^0(\S(M)) = \Gamma_M(\S^0(M)) \qquad \Gamma_M^1(\S(M)) = \Gamma_M(\S^1(M))
 \]
 Since multiplication by a vector is odd, Clifford multiplication is odd, so
-the Dirac operator is an odd operator with respect to this grading of $\Gamma_M(\S(M))$
+the Dirac operator is an odd operator with respect to this grading of $\Gamma_M(\S(M))$,
+and has the block form
+\[
+\begin{pmatrix}
+0 & D^1 \\
+D^0 & 0
+\end{pmatrix}
+\]
+where $D^i$ is the Dirac operator restricted to the subspace $\Gamma_M^i(\S(M))$.
 The Clifford algebra $\Cliff_{n,0}$ is also a \emph{right} Clifford module over
 itself, and this action commutes with the $\Spin_n$ action on the left. Therefore,
 the right action of $\Cliff_{n,0}(\R)$ on $\B_{\Spin}(M) \times \Cliff_{n,0}(\R)$
@@ -412,34 +420,65 @@ v \cdot m = m \cdot \alpha(A(v))
 \]
 For example, let $e_i^-$ be the standard orthogonal basis for $\R^{0,n}$, and
 $e_i^+$ the standard orthogonal basis for $\R^{n,0}$. Then the left action of
-$e_i^-$ is the right action of $-e_i^+$.  In addition, the Dirac operator has the
-special property of being an \ib{elliptic operator}. We will not define this property,
-but we will use some consequences of elliptic theory and functional analysis to deduce
-certain properties of $D$. In particular we will use three properties of $D$.
+$e_i^-$ is the right action of $-e_i^+$. Since right multiplication commutes
+with left multiplication, and the action of $\Cliff_{0,n}(\R)$ is defined
+in terms of this right action, the Dirac operator is $\Cliff_{0,n}(\R)$ linear,
+i.e. it commutes with the $\Cliff_{0,n}(\R)$ action on the left.
+The fact that $D$ is $\Cliff_{0,n}(\R)$ linear implies that for
+$\psi \in \Gamma^0_M(\S(M))$ and $v \in \R^{0,n} \subset \Cliff_{0,n}(\R)$, we have that
+\[
+D(v\cdot\psi) = D^1(v\psi) = v\cdot D\psi = v \cdot D^0\psi
+\]
+We can then define a new odd operator
+$\widetilde{D} : \Gamma_M(\S(M)) \to \Gamma_M(\S(M))$ by
+\[
+\widetilde{D} =\begin{pmatrix}
+0 & -D^1 \\
+D^0 & 0
+\end{pmatrix}
+\]
+We claim that $\widetilde{D}$ anticommutes with the left action of any vector
+$v \in \R^{0,n} \subset \Cliff_{0,n}(\R)$. It suffices to show this on the
+subspaces $\Gamma_M^0(\S(M))$ and $\Gamma_M^1(\S(M))$. In the first case,
+let $\psi$ be an even section of $\S(M)$. Then for $v \in \R^{0,n}$, we compute
+$v \cdot \psi \in \Gamma_M^1(\S(M))$, since multiplication by odd elements is odd,
+so $\tilde{D}(v \cdot \psi) = -D^1(v\psi)$. On the other hand
+\[
+v \cdot \widetilde{D}\psi = v \cdot D^0\psi = D^1(v\psi)
+\]
+since $D$ is $\Cliff_{0,n}(\R)$ linear. The computation in the odd case is similar.\\
+%
+
+The Dirac operator has the special property of being an
+\ib{elliptic operator}. We will not define this property, but we will use some
+consequences of elliptic theory and functional analysis to deduce
+certain properties of $D$ and the Dirac Laplacian $D^2$. In particular we will use
+several properties of $-D^2$.
 %TODO talk about the metric on sections via the fiber metric. Need compactness and
 % skew self adjointness?
 \begin{enumerate}
-  \item $-D^2$ is positive, i.e. all the eigenvalues are positive. This does not need
+  \item $-D^2$ is positive and self adjoint, i.e. all the eigenvalues are positive,
+  and
+  \[
+  (-D^2\psi_1, \psi_2) = (\psi_1, -D^2\psi_2)
+  \]
+  where the inner product is defined
+  by integrating over $M$ using the fiber metric on $\S(M)$. This does not need
   elliptic theory to be verified.
-  \item $D^2$ has a discrete spectrum -- its eigenvalues form a discrete subset
+  \item $-D^2$ has a discrete spectrum -- its eigenvalues form a discrete subset
   of $\R$.
-  \item $D$ has finite dimensional eigenspace. In particular, $D$ has a finite
+  \item $-D^2$ has finite dimensional eigenspaces. In particular, $D$ has a finite
   dimensional kernel.
 \end{enumerate}
 %
-
-\iffalse
-With these properties in had, we make a few observations. We first note that $\ker D$
-is itself a Clifford module with respect to the right action of $\Cliff_{n,0}(\R)$,
-since $D$ commutes with the right Clifford action. Then since it is finite dimensional,
-it determines an element of the $K$-Theory group $KO^n(\mathrm{pt})$. In addition, $D$
-preserves the eigenspaces of $-D^2$. This is because $D$ commutes with
-$-D^2$, and commuting operators preserve eigenspaces. Let $E_\lambda$ denote the
-eigenspace of $D^2$ with eigenvalue $\lambda^2$. Again, since the right Clifford action
-commutes with $D$, these eigenspaces are preserved by the right Clifford action,
-giving them the structure of right $\Cliff_{n,0}(\R)$ modules. In addition, the
-operator $F_\lambda = D / \lambda\vert_{E_\lambda}$ satisfies
-$F_\lambda^2 = D^2 / \lambda^2 = -\id_{E_\lambda}$, and commutes with the right
-Clifford action
-\fi
+With these properties in hand, we make some observations. We first note that
+any eigenspace of $-D^2$ is preserved by the left action of $\Cliff_{0,n}(\R)$, since
+the left action commutes with $-D^2$, and commuting operators preserve eigenspaces.
+Then the fact that the eigenspaces are finite dimensional implies that they are all
+finite dimensional $\Cliff_{0,n}(\R)$ modules. In fact, the eigenspaces are graded
+modules, since they decompose into the even and odd components by intersecting with
+$\S^0(M)$ and $\S^1(M)$. Let $E_\lambda$ denote the $\lambda^2$-eigenspace of $-D^2$.
+By multiplying out the  matrices, it is easy to see that $\tilde{D}$ commutes with
+$-D^2$, so it preserves $E_\lambda$. Then define the map
+$F_\lambda = \tilde{D}/\lambda\vert_{E_\lambda}$.
 %
