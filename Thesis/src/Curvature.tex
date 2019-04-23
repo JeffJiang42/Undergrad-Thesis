@@ -125,7 +125,8 @@ for the left hand side. We then compute
 %
 The from this we see that curvature form $\Omega$ on $P$ determines an $\End E$ valued
 $2-$form on any associated vector bundle $E$, and is in some sense the measurement
-of the failure of the sequence of maps $d_\Theta$ to be a complex.
+of the failure of the sequence of maps $d_\Theta$ to be a complex, and coincides
+with the usual notion of curvature on vector bundles.
 %
 \begin{defn}
 Let $P$ be a principal bundle with connection $\Theta$, and $\Omega$ the curvature form.
@@ -135,20 +136,52 @@ is a $2$-form $R \in \Omega^2(\End E)$ defined by
 \[
 R = \dt{\rho}(\Omega)
 \]
+Given tangent vectors $V,W$, we often denote the endomorphism $R(V,W)$ by $R_{V,W}$.
 \end{defn}
 %
-Given tangent vectors $V,W$, we often denote the endomorphism $R(V,W)$ by $R_{V,W}$.
+Let $(M,g)$ be a Riemannian manifold. The Riemannian metric $G$ gives a
+reduction of structure group to $O_n$, giving us the orthonormal frame bundle
+$\B_O(M)$. It is a wonderful fact that we have a canonical choice of connection
+on $\B_O(M)$, where we ask for the torsion tensor
+\[
+T(X,Y) = \nabla_XY -\nabla_Y X - [X,Y]
+\]
+to vanish.
+%
+\begin{thm}[\ib{Fundamental Theorem of Riemannian Geometry}]
+ There exists a unique torsion-free connection $\Theta$ on $\B_O(M)$.
+\end{thm}
+We call this connection the \ib{Levi-Civita connection}. If in addition,
+$M$ is oriented, we have a reduction of structure group to $\B_{SO}(M$), and
+the Levi-Civita connection restricts to this bundle. We also refer to this
+connection as the Levi-Civita connection. Since the torsion tensor vanishes, this
+implies that the covariant derivative $\nabla$ on $TM$ satisfies the identity
+\[
+\nabla_VW - \nabla_WV = [V,W]
+\]
 %TODO Curvature on vector bundles discussion -- Ricci tensor
 %
-An identity that will be future use is the following proposition.
+Dirac operators have a very intimate relationship with curvature, so we
+take inventory of several identities and definitions that we will need in the future.
+The first relates the curvature transformation for a Riemannian manifold with the
+covariant derivative on $TM$.
 %
 \begin{prop}
-Let $R \in \Omega^2_M(\End TM)$ be the curvature transformation of a Riemannian
-manifold, i.e. the curvature induced by the Levi-Civita connection. Then for any tangent
-vectors $V,W,X$
+Let $R \in \Omega^2_M(\End TM)$ be the curvature transformation for a Riemannian
+manifold $M$ i.e. the curvature induced by the Levi-Civita connection on $\B_{O}(M)$.
+Then let $\nabla$ denote the covariant derivative on $TM$, again induced by
+the Levi-Civita connection. Then for tangent vectors $V,W,X$, we have
 \[
-R_{V, W}X + R_{X, V}W + R_{W, X}V = 0
+R_{V,W}X = \nabla_V\nabla_W X - \nabla_W\nabla_V X - \nabla_{[V,W]} X
 \]
-In other words, the sum over all cyclic permutations of the arguments is $0$.
+\end{prop}
+%
+\begin{prop}
+Let $R$ be the curvature transformation for a Riemannian manifold $M$. Then for any
+tangent vectors $V,W,X,Y$
+\begin{enumerate}
+  \item $R_{V, W}X + R_{X, V}W + R_{W, X}V = 0$
+  \item $\langle R_{V,W}X,Y\rangle = \langle R_{X,Y}V, W\rangle$
+\end{enumerate}
 \end{prop}
 %

@@ -1,0 +1,153 @@
+%
+\section{Index Theory}
+%
+%TODO motivation?
+A special spinor bundle to consider over a compact Spin manifold $M$ is when the Clifford
+module is $\Cliff_{n,0}(\R)$ itself, giving us a spinor bundle
+\[
+\S(M) = \B_{\Spin}(M) \times_{\Spin_n} \Cliff_{n,0}(\R)
+\]
+This is a $\Z/2\Z$-graded spinor bundle, with subbundles
+\[
+\S^0(M) = \B_{\Spin}(M) \times_{\Spin_n} \Cliff_{n,0}^0(\R) \qquad
+\S^1(M) = \B_{\Spin}(M) \times_{\Spin_n} \Cliff_{n,0}^1(\R)
+\]
+In addition, the space of sections $\Gamma_M(\S(M))$ of $\S(M)$ also inherits the
+structure of a graded Clifford module, where the grading is given by
+\[
+\Gamma_M^0(\S(M)) = \Gamma_M(\S^0(M)) \qquad \Gamma_M^1(\S(M)) = \Gamma_M(\S^1(M))
+\]
+Fix a fiber metric $\langle\cdot,\cdot\rangle$ on $\S(M)$ in which Clifford
+multiplication is orthogonal. This  induces an inner product $(\cdot,\cdot)$ on
+$\Gamma_M(\S(M))$ defined by
+\[
+(\psi, \varphi) = \int_M \langle \psi, \varphi \rangle dV_g
+\]
+where the inner product is taken fiberwise to obtain a smooth function
+$\langle \psi,\varphi\rangle$, and $dV_g$ is the Riemannian volume form.
+Since multiplication by a vector is odd, Clifford multiplication is odd, so
+the Dirac operator is an odd operator with respect to this grading of $\Gamma_M(\S(M))$,
+and has the block form
+\[
+\begin{pmatrix}
+0 & D_1 \\
+D_0 & 0
+\end{pmatrix}
+\]
+where $D_i$ is the Dirac operator restricted to the subspace $\Gamma_M^i(\S(M))$.
+The Clifford algebra $\Cliff_{n,0}$ is also a \emph{right} Clifford module over
+itself, and this action commutes with the $\Spin_n$ action on the left. Therefore,
+the right action of $\Cliff_{n,0}(\R)$ on $\B_{\Spin}(M) \times \Cliff_{n,0}(\R)$
+descends to a right action on $\Cliff_{n,0}(\R)$ on $\S(M)$, giving each fiber
+the structure of a right Clifford module. The right Clifford action then induces
+a \emph{left} $\Cliff_{0,n}(\R)$ action. Recall that there is an automorphism
+$\alpha : \Cliff_{p,q} \to \Cliff_{p,q}$ that extends the mapping $v \mapsto -v$
+on $\R^{p,q}$. There is a linear isomorphism $A : \Cliff_{n,0}(\R) \to \Cliff_{0,n}(\R)$
+determined by the identity map $\R^n \to \R^n$, thought of as a map
+$\R^{n,0} \to \R^{0,n}$. Then the left $\Cliff_{0,n}$ action on $\S(M)$ is defined
+to be
+\[
+v \cdot m = m \cdot \alpha(A(v))
+\]
+For example, let $e_i^-$ be the standard orthogonal basis for $\R^{0,n}$, and
+$e_i^+$ the standard orthogonal basis for $\R^{n,0}$. Then the left action of
+$e_i^-$ is the right action of $-e_i^+$. In addition, this action respects
+the grading of $\S(M)$, i.e. multiplication by even elements preserves the grading
+and multiplication by odd elements reverses the grading. Since right
+multiplication commutes with left multiplication, and the action of
+$\Cliff_{0,n}(\R)$ is defined in terms of this right action, the Dirac operator is
+$\Cliff_{0,n}(\R)$ linear, i.e. it commutes with the $\Cliff_{0,n}(\R)$ action on the
+left. The fact that $D$ is $\Cliff_{0,n}(\R)$ linear implies that for
+$\psi \in \Gamma^0_M(\S(M))$ and $v \in \R^{0,n} \subset \Cliff_{0,n}(\R)$, we have that
+\[
+D(v\cdot\psi) = D_1(v\psi) = v\cdot D\psi = v \cdot D_0\psi
+\]
+The Dirac operator has the special property of being an
+\ib{elliptic operator}. We will not define this property, but we will use some
+consequences of elliptic theory and functional analysis to deduce
+certain properties of $D$.
+%TODO talk about the metric on sections via the fiber metric. Need compactness and
+% skew self adjointness?
+%TODO figure out what's going on.
+\begin{enumerate}
+  \item The Dirac operator is skew-adjoint with respect to the inner product on
+  $\Gamma_M(\S(M))$, i.e.
+  \[
+  (D\psi,\varphi) = (\psi, -D\varphi)
+  \]
+  With respect to the block decomposition into $D_0$ and $D_1$, this implies that
+  $-D_1$ is the adjoint to $D_0$ with respect to $(\cdot,\cdot)$.
+  \item $D$ has finite dimensional kernel.
+\end{enumerate}
+%
+Recall that $D$ commutes with the left $\Cliff_{0,n}(\R)$ action.This then implies that
+the left action of $\Cliff_{0,n}(\R)$ preserves the kernel of $D$, so it carries
+a left $\Cliff_{0,n}(\R)$ action. In addition, $\ker D$ has a $\Z/2\Z$ grading obtained
+by intersection with $\S^0(M)$ and $\S^1(M)$, and the $\Cliff_{0,n}(\R)$ action
+respects this grading, giving $\ker D$ the structure of a graded Clifford module.
+This determines a $K$-Theory class $[\ker D] \in KO^{-n}(\mathrm{pt})$ called
+the \ib{index} of $D$.
+%
+\begin{exmp}
+Recall that we have two Spin structures on $S^1$, corresponding to the connected
+and disconnected double covers of the circle. After making appropriate identifications,
+sections of their corresponding spinor bundles are given by $2\pi$ periodic functions
+$\R \to \C$, but the Dirac operators for the two Spin structures differ. We computed
+earlier that the Dirac operator for the connected Spin structure is
+\[
+D = i\frac{d}{d\theta} + \frac{1}{2}
+\]
+and the Dirac operator for the disconnected Spin structure is $D = i\partial_\theta$.
+We then made the observation that the former had no kernel, which implies that
+the index determines the trivial element in $KO^{-1}(\mathrm{pt}) = \Z/2\Z$.
+The Dirac operator corresponding to the disconnected Spin structure has a
+$2$ dimensional kernel given by the constant functions $\R \to \C$, so its
+index determines the nontrivial $K$-Theory class in $KO^{-1}(\mathrm{pt})$.
+\end{exmp}
+%
+\begin{exmp}[\ib{Indices on the torus}]
+
+\end{exmp}
+
+%
+
+
+
+
+
+
+
+
+%
+\iffalse
+We can then define a new odd operator
+$\widetilde{D} : \Gamma_M(\S(M)) \to \Gamma_M(\S(M))$ by
+\[
+\widetilde{D} =\begin{pmatrix}
+0 & -D^1 \\
+D^0 & 0
+\end{pmatrix}
+\]
+We claim that $\widetilde{D}$ anticommutes with the left action of any vector
+$v \in \R^{0,n} \subset \Cliff_{0,n}(\R)$. It suffices to show this on the
+subspaces $\Gamma_M^0(\S(M))$ and $\Gamma_M^1(\S(M))$. In the first case,
+let $\psi$ be an even section of $\S(M)$. Then for $v \in \R^{0,n}$, we compute
+$v \cdot \psi \in \Gamma_M^1(\S(M))$, since multiplication by odd elements is odd,
+so $\tilde{D}(v \cdot \psi) = -D^1(v\psi)$. On the other hand
+\[
+v \cdot \widetilde{D}\psi = v \cdot D^0\psi = D^1(v\psi)
+\]
+since $D$ is $\Cliff_{0,n}(\R)$ linear. The computation in the odd case is similar.\\
+%
+With these properties in hand, we make some observations. We first note that
+any eigenspace of $-D^2$ is preserved by the left action of $\Cliff_{0,n}(\R)$, since
+the left action commutes with $-D^2$, and commuting operators preserve eigenspaces.
+Then the fact that the eigenspaces are finite dimensional implies that they are all
+finite dimensional $\Cliff_{0,n}(\R)$ modules. In fact, the eigenspaces are graded
+modules, since they decompose into the even and odd components by intersecting with
+$\S^0(M)$ and $\S^1(M)$. Let $E_\lambda$ denote the $\lambda^2$-eigenspace of $-D^2$.
+By multiplying out the  matrices, it is easy to see that $\tilde{D}$ commutes with
+$-D^2$, so it preserves $E_\lambda$. Then define the map
+$F_\lambda = \tilde{D}/\lambda\vert_{E_\lambda}$.
+\fi
+%

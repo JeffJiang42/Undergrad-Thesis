@@ -33,7 +33,6 @@ and $\S^-$. Then given a Spin structure on $M$ with a principal $\Spin_n$ bundle
 $P$, the \ib{spinor bundle} over $M$ is the associated vector bundle
 $P \times_{\Spin_n} \S$, which can be thought of as a Spin analogue to
 the tangent bundle of $M$.
-\raggedbottom
 %
 \begin{exmp}[Spin structures on $S^1$]
 The group $\Spin_1$ is equal to $\set{\pm 1}$, so a Spin structure on $S^1$.
@@ -117,6 +116,32 @@ by their Dirac operators.
 %
 \end{exmp}
 %
+In fact, every sphere is a Spin manifold
+%
+\begin{thm}
+For all $n \in \Z^{\geq 0}$, $S^n$ is a Spin manifold.
+\end{thm}
+%
+\begin{proof}
+We use the standard embedding of $S^n$ into $\R^{n+1}$. Given a point $p \in S^n$, the
+tangent space $T_pS^n = p^\perp$, where we take the orthogonal complement in $\R^{n+1}$
+equipped with the standard inner product, and has an orientation induced by the standard
+orientation on $\R^{n+1}$. We use this to define a fiber bundle
+$\pi : SO_{n+1} \to S^n$ with fiber $SO_n$. Given a matrix $A \in SO_{n+1}$, the
+first column determines a point in $p \in S^n$, and the remaining columns determine
+an oriented basis $b_A$ of $p^\perp = T_pS^n$. Then the mapping $\pi(A) = b_A$
+is the oriented orthonormal frame bundle $\B_{SO}(S^n)$, and the total space is
+diffeomorphic to $SO_{n+1}$. Then let $\rho : \Spin_{n+1} \to SO_{n+1}$ denote the
+standard double cover. The composition $\rho \circ \pi : \Spin_{n+1} \to S^n$ is
+a principal $\Spin_n$ bundle over $S^n$, where the fiber over $p \in S^n$ is the
+subgroup of $\Spin_{n+1}$ isomorphic to $\Spin_n$ that covers the fiber of
+$\pi\inv(p)$, giving the desired reduction of structure group to $\Spin_n$.
+\end{proof}
+%
+In particular, the Spin structure over $S^2$ is the Hopf fibration $S^3 \to S^2$,
+since $SO_3 \cong \RP^3$.\\
+%
+
 Given an oriented manifold $M$, we get a reduction of structure group
 of the frame bundle $\B(M)$ to $SO_n$, giving us a principal $SO_n$ bundle
 $\B_{SO}(M)$. If $M$ has a nonempty boundary, this induces an orientation on
@@ -145,7 +170,7 @@ preserving linear isometry $(\R, \langle \cdot,\cdot\rangle) \to (T_pM, g_p)$, a
 using the normal vector, we define a subbundle
 $\B_{SO}(\partial M) \subset \B_{SO}(M)\vert_{\partial M}$ by
 \[
-\B_{SO}(\partial M) = \set{(p,b) \in \B_{SO}(M)\vert_{\partial M} ~:~
+\B_{SO}(\partial M) = \set{(p, b) \in \B_{SO}(M)\vert_{\partial M} ~:~
 b(e_1) = N_p}
 \]
 where $e_1$ denotes the first standard basis vector of $\R^n$, and $\pi$ is
@@ -270,4 +295,5 @@ over a point $\theta \in \partial D^2$ is the two point set
 which tells us that the $\Spin_1$-bundle $\B_{\Spin}(\partial D^2)$ is the
 connected double cover given by $g \mapsto g^2$.
 \end{exmp}
+%
 %
