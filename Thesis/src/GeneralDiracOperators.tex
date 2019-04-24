@@ -479,10 +479,47 @@ Then
 \[
 D^2 = \nabla^*\nabla + \frac{1}{4}\kappa
 \]
-where $\kappa$ denotes the scalar curvature of $M$.
+where $\kappa$ denotes the scalar curvature of $M$, which is obtained by taking
+the trace of the Ricci tensor. In an orthonormal frame of $M$, $\kappa$ is given by
+the expression
+\[
+\kappa = -\sum_{i, j}\langle R_{e_i, e_j}(e_i), e_j \rangle
+\]
 \end{thm}
 %
 \begin{proof} %TODO
-Once more, we use the Weitzenb\"ock formula, and compute the curvature term.
+Once more, we use the Weitzenb\"ock formula, and compute the curvature term, which
+involves the curvature $R^\S$ of the spinor bundle. Recall that $R^\S$ is expressed
+in terms of the Riemannian curvature by the formula
+\[
+R^\S_{V,W}(\psi) = \frac{1}{4}\sum_{i, j}\langle R_{V,W}e_i, e_j \rangle e_ie_j
+\]
+The curvature term in the Weitzenb\"ock formula then becomes
+\begin{align*}
+\frac{1}{2}\sum_{i,j}e_ie_jR^\S_{e_i,e_j}
+&=\frac{1}{8}\sum_{i,j}\sum_{k,\ell}e_ie_j\langle R_{e_i, e_j}(e_k), e_\ell \rangle
+e_ke_\ell \\
+&= \frac{1}{8}\sum_{i,j,k,\ell} \langle R_{e_i, e_j}(e_k), e_\ell \rangle e_ie_je_ke_\ell
+\end{align*}
+We note that since $R$ antisymmetric in the first pair of indices and in the
+second pair of indices, any term where $i = j$ or $k = \ell$ vanishes.
+Using this, we compute
+\begin{align*}
+\frac{1}{8}\sum_{i,j,k,\ell} \langle R_{e_i, e_j}(e_k), e_\ell \rangle e_ie_je_ke_\ell
+&= \frac{1}{8} \sum_\ell \left( \sum_{i \neq j = k}
+\langle R_{e_i, e_j}(e_k), e_\ell \rangle e_ie_je_k + \sum_{i = k \neq j}  \langle
+R_{e_i, e_j}(e_k), e_\ell \rangle e_ie_je_k\right)e_\ell \\
+&= \frac{1}{8}\sum_\ell \left( \sum_{i,j} \langle R_{e_i, e_j}(e_j), e_\ell \rangle
+e_ie_je_j + \sum_{i,j} \langle R_{e_i, e_j}(e_i), e_\ell \rangle e_ie_je_i\right)
+e_\ell \\
+&= \frac{1}{8} \left(-\sum_{i,j,\ell} \langle R_{e_j,e_i}(e_j), e_\ell \rangle
+e_ie_\ell - \sum_{i,j,\ell} \langle R_{e_i, e_j}(e_i), e_\ell \rangle e_je_\ell\right) \\
+&= \frac{1}{8} \left(-\sum_{i,j,\ell} \langle R_{e_i,e_j}(e_i), e_\ell \rangle
+e_je_\ell - \sum_{i,j,\ell} \langle R_{e_i, e_j}(e_i), e_\ell \rangle e_je_\ell\right) \\
+&= -\frac{1}{4} \sum_{i,j,\ell} \langle R_{e_i, e_j}(e_i), e_\ell \rangle e_je_\ell \\
+&= \frac{1}{4} \kappa
+\end{align*}
+where the last equality comes from the fact that Clifford multiplication between unit
+vectors is anticommutative, leaving only the summation over $j = \ell$, and $e_j^2 = 1$.
 \end{proof}
 %
