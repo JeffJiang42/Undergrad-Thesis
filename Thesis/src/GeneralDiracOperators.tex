@@ -382,7 +382,7 @@ $D = \sum_i e_i\nabla_{e_i}$. We then compute
 D^2 &= \sum_{i,j}(e_i\nabla_{e_i})(e_j\nabla_{e_j}) \\
 &= \sum_{i,j} e_ie_j\nabla_{e_i}\nabla_{e_j} \\
 &= \sum_i e_i^2\nabla_{e_i}\nabla_{e_j} + \sum_{j < k} e_j e_k\nabla_{e_j}\nabla_{e_k} \\
-&= -\sum_i \nabla^2_{e_i}
+&= \sum_i \nabla^2_{e_i}
 + \sum_{j < k} e_je_k (\nabla^2_{e_j, e_k} - \nabla^2_{e_k, e_j}) \\
 &= \nabla^*\nabla + \frac{1}{2}\sum_{i, j} e_i e_j R_{e_i, e_j}
 \end{align*}
@@ -483,7 +483,7 @@ where $\kappa$ denotes the scalar curvature of $M$, which is obtained by taking
 the trace of the Ricci tensor. In an orthonormal frame of $M$, $\kappa$ is given by
 the expression
 \[
-\kappa = -\sum_{i, j}\langle R_{e_i, e_j}(e_i), e_j \rangle
+\kappa = \trace(\mathrm{Ric}) = \sum_{i} \langle \mathrm{Ric}(e_i), e_i \rangle
 \]
 \end{thm}
 %
@@ -517,9 +517,10 @@ e_ie_\ell - \sum_{i,j,\ell} \langle R_{e_i, e_j}(e_i), e_\ell \rangle e_je_\ell\
 &= \frac{1}{8} \left(-\sum_{i,j,\ell} \langle R_{e_i,e_j}(e_i), e_\ell \rangle
 e_je_\ell - \sum_{i,j,\ell} \langle R_{e_i, e_j}(e_i), e_\ell \rangle e_je_\ell\right) \\
 &= -\frac{1}{4} \sum_{i,j,\ell} \langle R_{e_i, e_j}(e_i), e_\ell \rangle e_je_\ell \\
-&= \frac{1}{4} \kappa
+&= -\frac{1}{4} \sum_{j, \ell} \langle \mathrm{Ric}(e_j), e_\ell \rangle e_je_\ell
 \end{align*}
-where the last equality comes from the fact that Clifford multiplication between unit
-vectors is anticommutative, leaving only the summation over $j = \ell$, and $e_j^2 = 1$.
+where the last equality comes from the fact that Clifford multiplication between
+orthogonal unit vectors is anticommutative, leaving only the summation over $j = \ell$,
+along with the fact that $e_j^2 = 1$.
 \end{proof}
 %
