@@ -171,13 +171,28 @@ of $M$ is the associated vector bundle
 \end{defn}
 %
 In fact, the bundle $\Cliff(M) \to M$ is a bundle of Clifford algebras over $M$, where
-over each point $p \in M$, the fiber $\Cliff(M)_p$ is $\Cliff(T_pM, g_p)$. Working
+over each point $p \in M$, the fiber $\Cliff(M)_p$ is $\Cliff(T_pM, g_p)$.
+As a bundle of algebras, we can talk about bundles of modules over $\Cliff(M)$, which
+are vector bundles $E \to M$ such that each fiber $E_x$ is a module over $\Cliff(M)_x$.
+One example of such a bundle is $\Lambda^\bullet(TM)$. Working
 fiberwise, the natural vector space isomorphism
 $\Cliff(T_pM, g_p) \to \Lambda^\bullet(T_pM,)$ determines  a vector bundle isomorphism
 $\Cliff(M) \to \Lambda^\bullet(TM)$. Using the Riemannian metric, we get an isomorphism
 $TM \to T^*M$, and the composition of these isomorphisms determines a vector bundle
-isomorphism $\Cliff(M) \to \Lambda^\bullet(T^*M)$. In the case that the manifold
-$M$ admits a Spin structure, we can define further bundles.
+isomorphism $\Cliff(M) \to \Lambda^\bullet(T^*M)$.
+%
+\begin{prop}
+Let $(M,g)$ be a Riemannian manifold, and $E \to M$ a bundle of left modules over
+$\Cliff(M)$ equipped with a fiber metric under which Clifford multiplication is
+orthogonal. Equip $E$ with a connection compatible with the fiber metric, and let
+$R$ denote the curvature transformation associated to this connection.
+\[
+R_{V,W} = -\frac{1}{4}\sum_{i, j}\langle R_{V,W}e_i, e_j \rangle e_ie_j
+\]
+where $R$ denotes the Riemannian curvature transformation of $M$.
+\end{prop}
+%
+In the case that the manifold $M$ admits a Spin structure, we can define further bundles.
 %
 \begin{defn}
 Let $(M,g)$ be an oriented Riemannian manifold equipped with a Spin structure
@@ -193,18 +208,9 @@ associated vector bundle
 The Levi-Civita and Spin connections induce canonical connections on $\Cliff(M)$ and
 any spinor bundle $\S$. Since the Spin connection is derived from the Levi-Civita
 connection, the curvature on a spinor bundle $\S$ is closely related to the
-Riemannian curvature.
+Riemannian curvature. \\
 %
-\begin{prop}
-Let $(M,g)$ be a Spin manifold, and $\S$ a spinor bundle over $M$. Let $R^\S$
-denote the curvature tensor on $\S$ associated to the Spin connection on $\B_{\Spin}(M)$.
-Then $R^\S$ satisfies
-\[
-R^\S_{V,W} = \frac{1}{4}\sum_{i, j}\langle R_{V,W}e_i, e_j \rangle e_ie_j
-\]
-where $R$ denotes the Riemannian curvature transformation of $M$.
-\end{prop}
-%
+
 As one would expect, there is an intimate relationship between the Clifford bundle
 and a spinor bundle over a Spin manifold. Namely, a spinor bundle $\S$ is a
 bundle of left Clifford modules over $\Cliff(M)$, i.e. each fiber $\S_p$ is a left
@@ -320,26 +326,28 @@ D = (\varepsilon(e^k) + \iota(e^k))\partial_k = d + d^*
 The Dirac operator has an intimate relationship with another Laplacian operator.
 \begin{defn}
 Let $(M,g)$ be a oriented Riemannian manifold, equipped with the Levi-Civita connection
-$\Theta$ on $\B_{SO}(M)$, and let $\nabla$ denote the covariant derivative on $TM$.
-The \ib{connection Laplacian} on $M$ is map $\nabla^*\nabla : \Gamma(TM) \to \Gamma(TM)$
-defined by
+$\Theta$ on $\B_{SO}(M)$, and let $\widetilde{\nabla}$ denote the covariant derivative
+on $TM$. Let $E \to M$ be a vector bundle equipped with a fiber metric and compatible
+connection $\nabla$. The \ib{connection Laplacian} is a map
+$\nabla^*\nabla : \Gamma_M(E) \to \Gamma_M(E)$ defined by
 \[
 \nabla^*\nabla\psi = \trace(\nabla^2\psi)
 \]
 where $\nabla^2$ is the $2$-form defined on vector fields $V,W$ by
 \[
-\nabla^2_{V,W}\psi = \nabla_V\nabla_W\psi - \nabla_{\nabla_VW}\psi
+\nabla^2_{V,W}\psi = \nabla_V\nabla_W\psi - \nabla_{\widetilde{\nabla}_VW}\psi
 \]
 for tangent vectors $V,W$ and a vector field $\psi$. In an orthonormal frame $\set{e_i}$
-for $TM$, $\nabla^*\nabla$ has the coordinate formula
+for $E$, $\nabla^*\nabla$ has the coordinate formula
 \[
 \nabla^*\nabla\psi = \sum_i \nabla^2_{e_i, e_i}\psi
 \]
 \end{defn}
 %
 \begin{lem}
-For a Riemannian manifold $(M,g)$, let $\nabla^2$ be defined as above, and let $R$
-denote its curvature transformation. Then for vector fields $V,W$,
+For a Riemannian manifold $(M,g)$ and vector bundle $E \to M$, let $\nabla^2$  and
+$\nabla$ be defined as above, and let $R$ denote the curvature transformation for $E$.
+Then for vector fields $V,W$,
 \[
 \nabla^2_{V,W} - \nabla^2_{W,V} = R_{V,W}
 \]
@@ -348,15 +356,37 @@ denote its curvature transformation. Then for vector fields $V,W$,
 \begin{proof}
 We compute
 \begin{align*}
-\nabla^2_{V,W} - \nabla^2_{W,V} &= \nabla_V\nabla_W - \nabla_{\nabla_VW}
+\nabla^2_{V,W} - \nabla^2_{W,V} &= \nabla_V\nabla_W - \nabla_{\widetilde{\nabla}_VW}
 - (\nabla_W\nabla_V - \nabla_{\nabla_W V}) \\
-&= \nabla_V\nabla_W - \nabla_W\nabla_V - (\nabla_{\nabla_VW} - \nabla_{\nabla_WV}) \\
-&= \nabla_V\nabla_W - \nabla_W\nabla_V - \nabla_{\nabla_VW - \nabla_WV} \\
+&= \nabla_V\nabla_W - \nabla_W\nabla_V - (\nabla_{\widetilde{\nabla}_VW}
+- \nabla_{\widetilde{\nabla}_WV}) \\
+&= \nabla_V\nabla_W - \nabla_W\nabla_V - \nabla_{\widetilde{\nabla}_VW
+- \widetilde{\nabla}_WV} \\
 &= \nabla_V\nabla_W - \nabla_W\nabla_V - \nabla_{[V,W]} \\
 &= R_{V,W}
 \end{align*}
-where we use the fact that $\nabla_VW - \nabla_WV = [V,W]$ since the Levi-Civita
-connection is torsion free.
+where we use the fact that $\widetilde{\nabla}_VW - \widetilde{\nabla}_WV = [V,W]$ since
+the Levi-Civita connection is torsion free.
+\end{proof}
+%
+The fiber metric $\langle\cdot,\cdot\rangle$ on $\S(M)$ induces an inner product
+$(\cdot,\cdot)$ on $\Gamma_M(\S(M))$ defined by
+\[
+(\psi, \varphi) = \int_M \langle \psi, \varphi \rangle dV_g
+\]
+where the inner product is taken fiberwise to obtain a smooth function
+$\langle \psi,\varphi\rangle$, and $dV_g$ is the Riemannian volume form.
+%
+\begin{prop}
+With respect to the inner product $(\cdot,\cdot)$ defined above, the connection
+Laplacian is formally self adjoint i.e.
+\[
+(\nabla^*\nabla \psi, \varphi) = (\psi, \nabla^*\nabla\varphi)
+\]
+\end{prop}
+%
+\begin{proof} %TODO
+
 \end{proof}
 %
 We two different ``Laplacian type" operators on a manifold -- the connection
@@ -367,8 +397,8 @@ The miracle is that the difference is a zeroth order operator, i.e. a tensor, wh
 only involves the curvature of the manifold.
 %
 \begin{thm}[\ib{The Weitzenb\"ock Formula}]
-Let $\set{e_i}$ denote a local orthonormal frame of any bundle $\S \to M$ of left
-modules over $\Cliff(M)$ equipped with a compatible fiber metric. Then
+Let $\S \to M$ be a bundle of left modules over $\Cliff(M)$ equipped with a compatible
+fiber metric and connection, and let $\set{e_i}$ be a orthonormal frame. Then
 \[
 D^2 = \nabla^*\nabla + \frac{1}{2}\sum_{i, j} e_i e_j R^\S_{e_i, e_j}
 \]
@@ -376,15 +406,19 @@ where $R^\S$ denotes the curvature transformation of the bundle $\S$.
 \end{thm}
 %
 \begin{proof}
-In the orthonormal frame $\set{e_i}$, the Dirac operator is expressed as
-$D = \sum_i e_i\nabla_{e_i}$. We then compute
+It suffices to verify this identity pointwise. Fix a point $p \in M$ and an orthonormal
+frame $\set{e_i}$ for $\S$ such that at $p$, the covariant derivatives
+$\nabla_{e_i}e_j = 0$. In the orthonormal frame $\set{e_i}$, the Dirac operator is
+expressed as $D = \sum_i e_i\nabla_{e_i}$, and the operator $\nabla^2$ is just given
+by $\nabla^2_{e_i,e_j} = \nabla_{e_i}\nabla_{e_j}$ at the point $p$. We then compute at
+$p$
 \begin{align*}
 D^2 &= \sum_{i,j}(e_i\nabla_{e_i})(e_j\nabla_{e_j}) \\
 &= \sum_{i,j} e_ie_j\nabla_{e_i}\nabla_{e_j} \\
 &= \sum_i e_i^2\nabla_{e_i}\nabla_{e_j} + \sum_{j < k} e_j e_k\nabla_{e_j}\nabla_{e_k} \\
 &= \sum_i \nabla^2_{e_i}
 + \sum_{j < k} e_je_k (\nabla^2_{e_j, e_k} - \nabla^2_{e_k, e_j}) \\
-&= \nabla^*\nabla + \frac{1}{2}\sum_{i, j} e_i e_j R_{e_i, e_j}
+&= \nabla^*\nabla + \frac{1}{2}\sum_{i, j} e_i e_j R^\S_{e_i, e_j}
 \end{align*}
 \end{proof}
 %
@@ -451,23 +485,27 @@ We then compute for each case.
   \begin{align*}
   \sum_{i \neq j = k}\langle R_{\psi,e_k}(e_i), e_j\rangle e_ie_je_k
   &= \sum_{i \neq j} \langle R_{\psi, e_j}(e_i), e_j\rangle e_i \\
-  &= \sum_{i,j} \langle R_{\psi, e_j}(e_i), e_j \rangle e_i
+  &= \sum_{i,j} \langle R_{\psi, e_j}(e_i), e_j \rangle e_i \\
+  &= \sum_{i,j} \langle R_{e_j, \psi}(e_j),e_i \rangle e_i \\
+  &= \sum_{j} R_{e_j, \psi}(e_j) \\
+  &= \mathrm{Ric}(\psi)
   \end{align*}
-  where we use the fact that the terms where $i = j$ are $0$.
-  \item This computation is exactly the same as the previous case, giving us
-  $\sum_{i \neq j} \langle R_{\psi, e_j}(e_i), e_j \rangle e_i$ after renaming indices.
+  where we use the fact that the terms where $i = j$ are $0$, and the antisymmetry
+  in the first pair and second pair of indices.
+  \item In this case, we compute
+  \begin{align*}
+  \sum_{i = k \neq j}\langle R_{\psi,e_k}(e_i), e_j\rangle e_ie_je_k
+  &= \sum_{i,j} \langle R_{\psi, e_i}(e_i), e_j \rangle e_ie_je_i \\
+  &= -\sum_{i,j} \langle R_{\psi, e_i}(e_i), e_j \rangle e_j \\
+  &= \sum_{i,j} \langle R_{e_i, \psi}(e_i) , e_j \rangle e_j \\
+  &= \mathrm{Ric}(\psi)
+  \end{align*}
   \item This term vanishes, where we use the fact that $e_ie_j = -e_je_i$.
 \end{enumerate}
-Therefore, the entire summation is just
+Therefore, the curvature term is just
 \[
-\frac{1}{2} \left( 2\sum_{i, j}\langle R_{\psi, e_j}(e_i), e_j \rangle e_i \right)
+\frac{1}{2} \left( 2\mathrm{Ric}(\psi) \right) = \mathrm{Ric}(\psi)
 \]
-We then use the fact that $R$ is symmetric in the first pair of indices and in
-the second pair of indices to conclude that this is equal to
-\begin{align*}
-\sum_{i,j}\langle R_{e_j,\psi}(e_j), e_i \rangle e_i &= \sum_j R_{e_j, \psi}(e_j) \\
-&= \mathrm{Ric}(\psi)
-\end{align*}
 \end{proof}
 %TODO More curvature related results
 Furthermore, if $M$ is a Spin manifold, we can go even further.
@@ -497,30 +535,53 @@ R^\S_{V,W}(\psi) = \frac{1}{4}\sum_{i, j}\langle R_{V,W}e_i, e_j \rangle e_ie_j
 The curvature term in the Weitzenb\"ock formula then becomes
 \begin{align*}
 \frac{1}{2}\sum_{i,j}e_ie_jR^\S_{e_i,e_j}
-&=\frac{1}{8}\sum_{i,j}\sum_{k,\ell}e_ie_j\langle R_{e_i, e_j}(e_k), e_\ell \rangle
+&= -\frac{1}{8}\sum_{i,j}\sum_{k,\ell}e_ie_j\langle R_{e_i, e_j}(e_k), e_\ell \rangle
 e_ke_\ell \\
-&= \frac{1}{8}\sum_{i,j,k,\ell} \langle R_{e_i, e_j}(e_k), e_\ell \rangle e_ie_je_ke_\ell
+&= -\frac{1}{8}\sum_{i,j,k,\ell} \langle R_{e_i, e_j}(e_k), e_\ell \rangle
+e_ie_je_ke_\ell
 \end{align*}
 We note that since $R$ antisymmetric in the first pair of indices and in the
 second pair of indices, any term where $i = j$ or $k = \ell$ vanishes.
 Using this, we compute
 \begin{align*}
-\frac{1}{8}\sum_{i,j,k,\ell} \langle R_{e_i, e_j}(e_k), e_\ell \rangle e_ie_je_ke_\ell
-&= \frac{1}{8} \sum_\ell \left( \sum_{i \neq j = k}
+-\frac{1}{8}\sum_{i,j,k,\ell} \langle R_{e_i, e_j}(e_k), e_\ell \rangle e_ie_je_ke_\ell
+&= -\frac{1}{8} \sum_\ell \left( \sum_{i \neq j = k}
 \langle R_{e_i, e_j}(e_k), e_\ell \rangle e_ie_je_k + \sum_{i = k \neq j}  \langle
 R_{e_i, e_j}(e_k), e_\ell \rangle e_ie_je_k\right)e_\ell \\
-&= \frac{1}{8}\sum_\ell \left( \sum_{i,j} \langle R_{e_i, e_j}(e_j), e_\ell \rangle
+&= -\frac{1}{8}\sum_\ell \left( \sum_{i,j} \langle R_{e_i, e_j}(e_j), e_\ell \rangle
 e_ie_je_j + \sum_{i,j} \langle R_{e_i, e_j}(e_i), e_\ell \rangle e_ie_je_i\right)
 e_\ell \\
-&= \frac{1}{8} \left(-\sum_{i,j,\ell} \langle R_{e_j,e_i}(e_j), e_\ell \rangle
+&= -\frac{1}{8} \left(-\sum_{i,j,\ell} \langle R_{e_j,e_i}(e_j), e_\ell \rangle
 e_ie_\ell - \sum_{i,j,\ell} \langle R_{e_i, e_j}(e_i), e_\ell \rangle e_je_\ell\right) \\
-&= \frac{1}{8} \left(-\sum_{i,j,\ell} \langle R_{e_i,e_j}(e_i), e_\ell \rangle
+&= -\frac{1}{8} \left(-\sum_{i,j,\ell} \langle R_{e_i,e_j}(e_i), e_\ell \rangle
 e_je_\ell - \sum_{i,j,\ell} \langle R_{e_i, e_j}(e_i), e_\ell \rangle e_je_\ell\right) \\
-&= -\frac{1}{4} \sum_{i,j,\ell} \langle R_{e_i, e_j}(e_i), e_\ell \rangle e_je_\ell \\
-&= -\frac{1}{4} \sum_{j, \ell} \langle \mathrm{Ric}(e_j), e_\ell \rangle e_je_\ell
+&= \frac{1}{4} \sum_{i,j,\ell} \langle R_{e_i, e_j}(e_i), e_\ell \rangle e_je_\ell \\
+&= \frac{1}{4} \sum_{j, \ell} \langle \mathrm{Ric}(e_j), e_\ell \rangle e_je_\ell \\
+&= \frac{1}{4} \kappa
 \end{align*}
 where the last equality comes from the fact that Clifford multiplication between
 orthogonal unit vectors is anticommutative, leaving only the summation over $j = \ell$,
 along with the fact that $e_j^2 = 1$.
+\end{proof}
+%
+This relationship between curvature and the Dirac Laplacian gives striking results
+regarding the topology of Riemannian and Spin manifolds.
+%
+\begin{thm}
+Let $M$ be a closed Riemannian manifold (i.e. compact and $\partial M = \emptyset)$.
+If the Ricci tensor is positive, the the first Betti number $b_1(M) = 0$.
+\end{thm}
+%
+\begin{proof} %TODO
+
+\end{proof}
+%
+\begin{thm}
+Let $M$ be a compact Spin manifold with positive scalar curvature. Then for any
+spinor bundle $\S \to M$ with Dirac operator $D$, the kernel of $D$ is trivial.
+\end{thm}
+%
+\begin{proof} %TODO
+
 \end{proof}
 %
