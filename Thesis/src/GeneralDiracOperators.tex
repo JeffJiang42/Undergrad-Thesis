@@ -369,8 +369,9 @@ where we use the fact that $\widetilde{\nabla}_VW - \widetilde{\nabla}_WV = [V,W
 the Levi-Civita connection is torsion free.
 \end{proof}
 %
-The fiber metric $\langle\cdot,\cdot\rangle$ on $\S(M)$ induces an inner product
-$(\cdot,\cdot)$ on $\Gamma_M(\S(M))$ defined by
+If $M$ is a compact manifold, a fiber metric $\langle\cdot,\cdot\rangle$ on
+any vector bundle $E \to M$ induces an inner product $(\cdot,\cdot)$ on
+$\Gamma_M(E)$ defined by
 \[
 (\psi, \varphi) = \int_M \langle \psi, \varphi \rangle dV_g
 \]
@@ -383,10 +384,21 @@ Laplacian is formally self adjoint i.e.
 \[
 (\nabla^*\nabla \psi, \varphi) = (\psi, \nabla^*\nabla\varphi)
 \]
+equivalently, $(\nabla\psi, \nabla\varphi) = (\psi, \varphi)$.
 \end{prop}
 %
 \begin{proof} %TODO
-
+We show the latter equality $(\nabla\psi, \nabla\varphi) = (\psi, \varphi)$. Fix
+a point $p \in M$ and an orthonormal frame $\set{e_i}$ of $TM$ about $p$ such that all
+the covariant derivatives $\nabla_{e_i}$ vanish at $p$ (e.g. geodesic normal
+coordinates). Then in the fiber $E_p$, we
+compute
+\begin{align*}
+\langle \nabla^*\nabla\psi, \varphi \rangle
+&= \sum_j \langle \nabla_{e_j}\nabla_{e_j}\psi, \varphi \rangle \\
+&= \sum_j e_j\langle \nabla_{e_j}\psi,\varphi \rangle
+- \langle\nabla_{e_j}\psi,\nabla_{e_j}\varphi \rangle
+\end{align*}
 \end{proof}
 %
 We two different ``Laplacian type" operators on a manifold -- the connection
@@ -407,8 +419,8 @@ where $R^\S$ denotes the curvature transformation of the bundle $\S$.
 %
 \begin{proof}
 It suffices to verify this identity pointwise. Fix a point $p \in M$ and an orthonormal
-frame $\set{e_i}$ for $\S$ such that at $p$, the covariant derivatives
-$\nabla_{e_i}e_j = 0$. In the orthonormal frame $\set{e_i}$, the Dirac operator is
+frame $\set{e_i}$ for $TM$ such that at $p$, the covariant derivatives
+$\nabla_{e_i}$ vanish at $p$. In the orthonormal frame $\set{e_i}$, the Dirac operator is
 expressed as $D = \sum_i e_i\nabla_{e_i}$, and the operator $\nabla^2$ is just given
 by $\nabla^2_{e_i,e_j} = \nabla_{e_i}\nabla_{e_j}$ at the point $p$. We then compute at
 $p$
@@ -507,7 +519,7 @@ Therefore, the curvature term is just
 \frac{1}{2} \left( 2\mathrm{Ric}(\psi) \right) = \mathrm{Ric}(\psi)
 \]
 \end{proof}
-%TODO More curvature related results
+%
 Furthermore, if $M$ is a Spin manifold, we can go even further.
 %
 \begin{thm}[\ib{Lichnerowicz}]
