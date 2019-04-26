@@ -380,7 +380,8 @@ $\langle \psi,\varphi\rangle$, and $dV_g$ is the Riemannian volume form.
 %
 \begin{prop}
 With respect to the inner product $(\cdot,\cdot)$ defined above, the connection
-Laplacian is formally self adjoint i.e.
+Laplacian on a vector bundle over a closed Riemannian manifold (i.e. compact and
+boundaryless) is formally self adjoint i.e.
 \[
 (\nabla^*\nabla \psi, \varphi) = (\psi, \nabla^*\nabla\varphi)
 \]
@@ -399,7 +400,44 @@ compute
 &= \sum_j e_j\langle \nabla_{e_j}\psi,\varphi \rangle
 - \langle\nabla_{e_j}\psi,\nabla_{e_j}\varphi \rangle
 \end{align*}
+where we use compatibility of $\nabla$ with the metric. The first term can
+be rewritten as $\dv X$ for a vector field $X$ on $M$ defined by the equation
+\[
+\langle X, Y \rangle = \langle \nabla_Y\psi,\varphi \rangle
+\]
+So we rewrite
+\[
+\langle \nabla^*\nabla\psi,\varphi\rangle=\dv X-\langle\nabla\psi,\nabla\varphi\rangle
+\]
+We then want to integrate both sides -- to do so we use integration by parts.
+\begin{lem}[\ib{Integration by parts}]
+Let $(M,g)$ be a compact Riemannian manifold with boundary, and let $f \in C^\infty(M)$.
+Let $N$ denote the outward unit normal vector field on $\partial M$. Then for any
+vector field $X$ on $M$, we have
+\[
+\int_M \langle \grad f, X\rangle dV_g
+= \int_{\partial M} \langle X,N \rangle dV_{\tilde{g}}
++ \int_M (f\dv X) dV_g
+\]
+where $dV_{\tilde{g}}$ denotes the Riemannian volume form on $\partial M$ induced
+by $M$.
+\end{lem}
+Then integrating on both sides, we find
+\begin{align*}
+(\nabla^*\nabla\psi,\varphi)
+&= \int_M \dv X ~dV_g - \int_M \langle \nabla\psi,\nabla\varphi \rangle dV_g \\
+&= 0 + \int_M \langle \nabla\psi,\nabla\varphi \rangle dV_g \\
+&= (\nabla\psi,\nabla\varphi)
+\end{align*}
+where we use the fact that $\partial M = \emptyset$, and that the function $f$ in
+the integration by parts formula is the constant function $1$.
 \end{proof}
+%
+\begin{cor}
+Let $E \to M$ be a vector bundle over a closed Riemannian manifold, equipped with
+a fiber metric and compatible connection. Then $\nabla^*\nabla\psi = 0$ if and only
+if $\psi = 0$.
+\end{cor}
 %
 We two different ``Laplacian type" operators on a manifold -- the connection
 Laplacian $\nabla^*\nabla$, and the Dirac Laplacian $D^2$. A natural question
@@ -581,19 +619,43 @@ regarding the topology of Riemannian and Spin manifolds.
 %
 \begin{thm}
 Let $M$ be a closed Riemannian manifold (i.e. compact and $\partial M = \emptyset)$.
-If the Ricci tensor is positive, the the first Betti number $b_1(M) = 0$.
+If the Ricci tensor is positive, i.e. for all vector fields $V$,
+$\langle \mathrm{Ric}(V), V\rangle \geq 0$ with equality if and only if $V = 0$, the
+first Betti number $b_1(M) = 0$.
 \end{thm}
 %
-\begin{proof} %TODO
-
+\begin{proof}
+From Hodge theory, the space $\mathcal{H}^1(M)$ of harmonic $1$-forms on $M$ is
+isomorphic to the the first de Rham cohomology group $H^1_{dR}(M)$. Let
+$\psi \in \Omega^1_M$ be a harmonic form. (i.e. $\Delta\psi = 0$). Then
+$0 = \nabla^*\nabla\psi + \mathrm{Ric}(\psi)$, so
+$-\nabla^*\nabla\psi = \mathrm{Ric}(\psi)$. We then compute
+\begin{align*}
+\int_M \langle \mathrm{Ric}(\psi),\psi \rangle dV_g
+&= -\int_M \langle \nabla^*\nabla\psi,\psi\rangle dV_g \\
+&= -\int_M \langle \nabla\psi,\nabla\varphi\rangle dV_g \\
+&= -\norm{\nabla\psi}^2
+\end{align*}
+Since $\mathrm{Ric}$ is positive, the integral
+$\int_M \langle \mathrm{Ric}(\psi),\psi \rangle dV_g \geq 0$ with equality if and
+only if $\psi = 0$. On the other hand, $-\norm{\psi} \leq 0$ so we conclude that
+$\psi = 0$. Therefore, the only harmonic form on $M$ is $0$, so $b_1(M) = 0$.
 \end{proof}
 %
 \begin{thm}
-Let $M$ be a compact Spin manifold with positive scalar curvature. Then for any
+Let $M$ be a closed Spin manifold with positive scalar curvature. Then for any
 spinor bundle $\S \to M$ with Dirac operator $D$, the kernel of $D$ is trivial.
 \end{thm}
 %
 \begin{proof} %TODO
-
+Let $\psi \in \Gamma_M(\S)$ where $D\psi = 0$. We then $0 = \nabla^*\nabla + \kappa/4$,
+so $-\nabla^*\nabla\psi = \kappa\psi/4$. Integrating both sides, we find that
+\begin{align*}
+\int_M \kappa\norm{\psi}^2 dV_g
+&= -\int_M \langle \nabla^*\nabla\psi, \psi \rangle dV_g \\
+&= -\norm{\nabla\psi}^2
+\end{align*}
+Then since $\kappa$ and $\norm{\psi}^2$ are both nonnegative, we conclude
+that $\psi = 0$.
 \end{proof}
 %
