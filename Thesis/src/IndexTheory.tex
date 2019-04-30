@@ -31,54 +31,46 @@ The Clifford algebra $\Cliff_{n,0}$ is also a \emph{right} Clifford module over
 itself, and this action commutes with the $\Spin_n$ action on the left. Therefore,
 the right action of $\Cliff_{n,0}(\R)$ on $\B_{\Spin}(M) \times \Cliff_{n,0}(\R)$
 descends to a right action on $\Cliff_{n,0}(\R)$ on $\S(M)$, giving each fiber
-the structure of a right Clifford module. The right Clifford action then induces
-a \emph{left} $\Cliff_{0,n}(\R)$ action. Recall that there is an automorphism
-$\alpha : \Cliff_{p,q} \to \Cliff_{p,q}$ that extends the mapping $v \mapsto -v$
-on $\R^{p,q}$. There is a linear isomorphism $A : \Cliff_{n,0}(\R) \to \Cliff_{0,n}(\R)$
-determined by the identity map $\R^n \to \R^n$, thought of as a map
-$\R^{n,0} \to \R^{0,n}$. Then the left $\Cliff_{0,n}$ action on $\S(M)$ is defined
-to be
+the structure of a right $\Cliff_{n,0}(\R)$ module. This induces a left action of the
+opposite algebra, where for $a \in \Cliff_{n,0}^\mathrm{op}(\R)$ and a homogeneous
+element $m \in \Cliff_{n,0}(\R)$, we have
 \[
-v \cdot m = m \cdot \alpha(A(v))
+a \cdot m = (-1)^{|a||b|}m \cdot a
 \]
-For example, let $e_i^-$ be the standard orthogonal basis for $\R^{0,n}$, and
-$e_i^+$ the standard orthogonal basis for $\R^{n,0}$. Then the left action of
-$e_i^-$ is the right action of $-e_i^+$. In addition, this action respects
-the grading of $\S(M)$, i.e. multiplication by even elements preserves the grading
-and multiplication by odd elements reverses the grading. Since right
-multiplication commutes with left multiplication, and the action of
-$\Cliff_{0,n}(\R)$ is defined in terms of this right action, the Dirac operator is
-$\Cliff_{0,n}(\R)$ linear, i.e. it commutes with the $\Cliff_{0,n}(\R)$ action on the
-left. The fact that $D$ is $\Cliff_{0,n}(\R)$ linear implies that for
-$\psi \in \Gamma^0_M(\S(M))$ and $v \in \R^{0,n} \subset \Cliff_{0,n}(\R)$, we have that
-\[
-D(v\cdot\psi) = D_1(v\psi) = v\cdot D\psi = v \cdot D_0\psi
-\]
-The Dirac operator has the special property of being an
-\ib{elliptic operator}. We will not define this property, but we will use some
-consequences of elliptic theory and functional analysis to deduce
-certain properties of $D$.
-%TODO talk about the metric on sections via the fiber metric. Need compactness and
-% skew self adjointness?
-%TODO figure out what's going on.
-\begin{enumerate}
-  \item The Dirac operator is skew-adjoint with respect to the inner product on
-  $\Gamma_M(\S(M))$, i.e.
-  \[
-  (D\psi,\varphi) = (\psi, -D\varphi)
-  \]
-  With respect to the block decomposition into $D_0$ and $D_1$, this implies that
-  $-D_1$ is the adjoint to $D_0$ with respect to $(\cdot,\cdot)$.
-  \item $D$ has finite dimensional kernel.
-\end{enumerate}
+Using the isomorphism of $\Cliff_{n,0}^{\mathrm{op}}(\R)$ with $\Cliff_{0,n}(\R)$, this
+gives the fibers the structure of a left $\Cliff_{0,n}(\R)$ module.
 %
-Recall that $D$ commutes with the left $\Cliff_{0,n}(\R)$ action.This then implies that
-the left action of $\Cliff_{0,n}(\R)$ preserves the kernel of $D$, so it carries
-a left $\Cliff_{0,n}(\R)$ action. In addition, $\ker D$ has a $\Z/2\Z$ grading obtained
-by intersection with $\S^0(M)$ and $\S^1(M)$, and the $\Cliff_{0,n}(\R)$ action
-respects this grading, giving $\ker D$ the structure of a graded Clifford module.
-This determines a $K$-Theory class $[\ker D] \in KO^{-n}(\mathrm{pt})$ called
-the \ib{index} of $D$.
+\begin{prop}
+The Dirac operator $D$ on $\S(M)$ commutes (in the graded sense) with the left
+action of $\Cliff_{0,n}(\R)$, i.e. for a homogeneous element $a \in \Cliff_{0,n}(\R)$,
+we have that $aD = (-1)^{|a|} Da$, since $D$ is an odd operator.
+\end{prop}
+%
+\begin{proof}
+It suffices to verify this on homogeneous elements of $\Gamma_M(\S(M))$ and
+$\Cliff_{0,n}(\R)$ Let $\psi \in \Gamma_M(\S(M))$ and $a \in \Cliff_{0,n}(\R)$ be
+homogeneous. We then compute
+\begin{align*}
+a D(\psi) &= a(e^j\partial_j\psi) \\
+&= (-1)^{|a|(|\psi| + 1)} (e^j\partial_j) a
+\end{align*}
+where we use the fact that $D$ is an odd operator to conclude that the parity of
+$D\psi$ is $|\psi| + 1 \mod 2$. Doing this in the other order, we compute
+\begin{align*}
+D(a\psi) = (-1)^{|a||\psi|}e^j\partial_j(\psi)a
+\end{align*}
+So $D$ and $a$ commute in the graded sense.
+\end{proof}
+%
+To discuss the index of the Dirac operator, we need to make some assumptions from
+elliptic theory and functional analysis. The first is the kernel of $D$ is finite
+dimensional. Recall that $D$ commutes with the left $\Cliff_{0,n}(\R)$ action.
+This then implies that the left action of $\Cliff_{0,n}(\R)$ preserves the kernel of
+$D$, so it carries a left $\Cliff_{0,n}(\R)$ action. In addition, $\ker D$ has a
+$\Z/2\Z$ grading obtained by intersection with $\S^0(M)$ and $\S^1(M)$, and the
+$\Cliff_{0,n}(\R)$ action respects this grading, giving $\ker D$ the structure of a
+graded Clifford module. This determines a $K$-Theory class
+$[\ker D] \in KO^{-n}(\mathrm{pt})$ called the \ib{index} of $D$.
 %
 \begin{exmp}
 Recall that we have two Spin structures on $S^1$, corresponding to the connected
@@ -97,49 +89,129 @@ $2$ dimensional kernel given by the constant functions $\R \to \C$, so its
 index determines the nontrivial $K$-Theory class in $KO^{-1}(\mathrm{pt})$.
 \end{exmp}
 %
-\begin{exmp}[\ib{Indices on the torus}]
-
+\begin{exmp}[\ib{Indices on the $2$-sphere}]
+Recall that one of the corollaries of the Weitzenb\"ock formula is that on a closed
+Spin manifold $M$ with positive scalar curvature, the kernel of the Dirac operator $D$
+is trivial. This tells us that the $K$-Theory index of $D$ is the trivial element of
+$KO^{-2}(\mathrm{pt}) \cong \Z/2\Z$.
 \end{exmp}
-
 %
-
-
-
-
-
-
-
-
-%
-\iffalse
-We can then define a new odd operator
-$\widetilde{D} : \Gamma_M(\S(M)) \to \Gamma_M(\S(M))$ by
+\begin{exmp}[\ib{Indices on the torus}]
+Identify torus $T^2$ as the square with opposite edges identified. Explicitly,
 \[
-\widetilde{D} =\begin{pmatrix}
-0 & -D^1 \\
-D^0 & 0
+T^2 = S / \left( (-1, x) \sim (1,x) \quad (x, -1) \sim (x, 1) \right)
+\]
+Then the oriented orthonormal frame bundle is the quotient
+\[
+S \times SO_2 / \left( (-1, A) \sim (1, A) \quad (A,-1) \sim (A, 1) \right)
+\]
+This simply glues the fibers over the identified edge via the identity map on $SO_2$.
+Let $\rho : \Spin_2 \to SO_2$ be the double cover. Then Spin structures over $T^2$
+are principal $\Spin_2$-bundles $P \to \B_{SO}(T^2)$ with a $\Spin_2$-equivariant map
+$P \to \B_{SO}(T^2)$. Any such bundle will arise as a quotient of $S \times \Spin_2$
+via identifications on the boundary. Since we glued together $\B_SO(T^2)$ using the
+identity map on the boundaries, we require this gluing to be done via multiplication
+by an element of $\rho\inv(1) = \set{\pm 1} \subset \Spin_2$. This gives us $4$
+different spin structures, corresponding to a choice of $\pm 1$ on the two pairs of
+edges. Name the bundles $P_{i,j}$, where $i$ denotes the choice on the top and
+bottom edges, and $j$ denotes the choice on the left and right edges. In dimension $2$,
+the Clifford algebra $\Cliff_{2,0}(\R)$ splits into two $\Spin_2$-representation,
+which inherit a complex structure from the action of the element $e_1e_2$, and under
+this complex structure, are conjugates with each other. Identifying
+$\Spin_2 \cong S^1$, $\Cliff_{2,0}(\R) \cong \C \oplus \overline{\C}$ as a Spin
+representation, where $e^{i\theta} \in S^1$ acts on $\C$ by $e^{i\theta}$ and on
+$\overline{\C}$ by $e^{-i\theta}$. Sections of the spinor bundle
+\[
+\S(T^2) = P_{i,j} \times_{\Spin_2} (\C \oplus \overline{\C})
+\]
+then correspond to functions $\R^2 \to \C \oplus \overline{\C}$ that are
+$\Spin_2$-equivariant, which corresponds to  either $2\pi$-periodicity or
+antiperiodicity in the vertical and horizontal directions. These correspond with our
+choices of $\pm 1$ for the gluing on the edges. For example, if we glued the left and
+right edges by the identity, we get an periodic condition in the horizontal direction,
+and if we glued by negative identity, we get an antiperiodic condition in the horizontal
+direction. Therefore, under suitable trivializations, a section
+$\psi \in \Gamma_{T^2}(\S(T^2))$ is a periodic function
+$\C \to \C \oplus \overline{\C}$ using the standard identification $\R^2 \cong \C$.
+We then can apply the Dirac operator $D$ we defined on $\R^2$. Using our sign
+convention, by fixing a suitable basis for  $\Cliff_{0,2}(\R)$, the Dirac operator is
+given by the matrix
+\[
+D = \begin{pmatrix}
+0 & -2\partial_z \\
+2\partial_{\overline{z}} & 0
 \end{pmatrix}
 \]
-We claim that $\widetilde{D}$ anticommutes with the left action of any vector
-$v \in \R^{0,n} \subset \Cliff_{0,n}(\R)$. It suffices to show this on the
-subspaces $\Gamma_M^0(\S(M))$ and $\Gamma_M^1(\S(M))$. In the first case,
-let $\psi$ be an even section of $\S(M)$. Then for $v \in \R^{0,n}$, we compute
-$v \cdot \psi \in \Gamma_M^1(\S(M))$, since multiplication by odd elements is odd,
-so $\tilde{D}(v \cdot \psi) = -D^1(v\psi)$. On the other hand
-\[
-v \cdot \widetilde{D}\psi = v \cdot D^0\psi = D^1(v\psi)
-\]
-since $D$ is $\Cliff_{0,n}(\R)$ linear. The computation in the odd case is similar.\\
+We then compute the index of the Dirac operator for each of the Spin structures.
+Note that it suffices to compute the index of the operator $\partial_{\overline{z}}$
+restricted to $\C$, where we use the equivalence of graded modules with ungraded modules
+over the even subalgebra, and restrict the Dirac operator to the even subspace
+of sections.
+\begin{enumerate}
+  \item For the bundle $P_{1,1} \to T^2$, sections correspond to $2\pi$-periodic
+  functions $\C \to \C$ in both the horizontal and vertical directions. In this case,
+  the kernel of $\partial_{\overline{z}}$ is the space constant functions $\C \to \C$,
+  which implies that the index of the Dirac operator is the nontrivial element
+  in $KO^{-2}(\mathrm{pt})$.
+  \item For the bundle $P_{1,-1} \to T^2$, the sections correspond to functions
+  $\C \to \C$ that are $2\pi$-periodic in the imaginary direction and
+  $2\pi$-antiperiodic in the real direction. Therefore, like with the circle,
+  we can write any such function as a product $e^{ix/2}\psi(z)$ using coordinates
+  $z = x + iy$, and $\psi$ is periodic in both directions. Applying
+  $\partial_{\overline{z}}$ to $e^{ix/2}\psi(z)$, we get
+  \begin{align*}
+  \frac{\partial}{\partial\overline{z}}(e^{ix/2}\psi(z))
+  &= \frac{\partial}{\partial\overline{z}}(e^{ix/2})\psi(z)
+  + e^{ix/2}\frac{\partial}{\partial\overline{z}}\psi(z) \\[5pt]
+  &= \left[\frac{1}{2}\left(\frac{\partial}{\partial x}
+  + i \frac{\partial}{\partial y}\right)(e^{ix/2}) \right] \psi(z)
+  + e^{ix/2}\frac{\partial}{\partial\overline{z}}\psi(z) \\[5pt]
+  &= \frac{i}{4}e^{ix/2}\psi(z) + e^{ix/2}\frac{\partial}{\partial\overline{z}}
+  \end{align*}
+  So using the identification with periodic functions, the Dirac operator is given by
+  $\partial_{\overline{z}} + i/4$, which has trivial kernel, so the index is
+  $0$.
+  \item A similar computation holds in the case of $P_{-1,1}$, though in this case
+  the Dirac operator is $\partial_{\overline{z}} - 1/4$.
+  \item In the case of $P_{-1,-1} \to T^2$, sections are antiperiodic functions
+  in both directions, which can be written as $e^{iz}\psi(z)$ where $\psi$ is
+  $2\pi$-periodic in both directions. Applying $\partial_{\overline{z}}$, we compute
+  \begin{align*}
+  \frac{\partial}{\partial\overline{z}}e^{iz}\psi(z)
+  &= \frac{\partial}{\partial\overline{z}}(e^{iz/2})\psi(z)
+  + e^{iz/2}\frac{\partial}{\partial\overline{z}}\psi(z) \\[5pt]
+  &= e^{iz/2}\frac{\partial}{\partial\overline{z}}\psi(z)
+  \end{align*}
+  where we use the fact that $e^{iz/2}$ is holomorphic to conclude that
+  $\partial_{\overline{z}}\e^{iz/2} = 0$. Therefore, the kernel again consists
+  of constant functions, so the index is the nontrivial element of
+  $KO^{-2}(\mathrm{pt})$.
+\end{enumerate}
+\end{exmp}
+
+An interesting thing to study is the index of $-D^2$, which also has some very nice
+properties that we will use, namely
+\begin{enumerate}
+  \item $-D^2$ is elliptic
+  \item The eigenvalues of $-D^2$ are discrete and nonnegative
+\end{enumerate}
 %
-With these properties in hand, we make some observations. We first note that
-any eigenspace of $-D^2$ is preserved by the left action of $\Cliff_{0,n}(\R)$, since
-the left action commutes with $-D^2$, and commuting operators preserve eigenspaces.
-Then the fact that the eigenspaces are finite dimensional implies that they are all
-finite dimensional $\Cliff_{0,n}(\R)$ modules. In fact, the eigenspaces are graded
-modules, since they decompose into the even and odd components by intersecting with
-$\S^0(M)$ and $\S^1(M)$. Let $E_\lambda$ denote the $\lambda^2$-eigenspace of $-D^2$.
-By multiplying out the  matrices, it is easy to see that $\tilde{D}$ commutes with
-$-D^2$, so it preserves $E_\lambda$. Then define the map
-$F_\lambda = \tilde{D}/\lambda\vert_{E_\lambda}$.
-\fi
+The elliptic theory and functional analysis requires completing the space
+$\Gamma_M(\S(M))$ into Sobelev spaces, and an important result called \ib{elliptic
+regularity} ensures that the eigenvectors of the elliptic operator $-D^2$ are smooth
+sections. Let $E_\lambda$ denote the eigenspace of $-D^2$ with eigenvalue $\lambda^2$
+(which we can choose since $-D^2$ is positive). Then $E_\lambda$ is also a graded
+$\Cliff_{0,n}(\R)$ module, where the grading is obtained by intersecting $E_\lambda$
+with the even and odd subspaces of $\Gamma_M(\S(M))$. Then since $D$ commutes with
+$-D^2$, it preserves and restricts to an odd operator on $E_\lambda$. In addition,
+it commutes (in the graded sense) with the $\Cliff_{0,n}(\R)$ action on $E_\lambda$,
+so the operator
+\[
+F_\lambda = \frac{D}{\lambda}\bigg\vert_{E_\lambda}
+\]
+squares to $-1$ on $E_\lambda$, so it defines an additional Clifford generator on
+$E_\lambda$. This implies that the $K$-Theory class of $E_\lambda$ is trivial, since
+we can extend $E_\lambda$ to a $\Cliff_{0, n+1}(\R)$ module via $F_\lambda$. This
+tells us that all the information about the index is contained in the kernel, and is
+unaffected by the eigenspaces of the operator $-D^2$.
 %
