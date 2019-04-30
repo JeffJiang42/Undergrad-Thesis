@@ -70,7 +70,10 @@ $D$, so it carries a left $\Cliff_{0,n}(\R)$ action. In addition, $\ker D$ has a
 $\Z/2\Z$ grading obtained by intersection with $\S^0(M)$ and $\S^1(M)$, and the
 $\Cliff_{0,n}(\R)$ action respects this grading, giving $\ker D$ the structure of a
 graded Clifford module. This determines a $K$-Theory class
-$[\ker D] \in KO^{-n}(\mathrm{pt})$ called the \ib{index} of $D$.
+$[\ker D] \in KO^{-n}(\mathrm{pt})$ called the \ib{index} of $D$. Recall that
+there is an equivalence between graded modules over $\Cliff_{0,n}(\R)$ and
+ungraded modules over $\Cliff_{0,n}^0$, so the index can be equivalently be
+defined as the $K$-Theory class $[\ker D_0]$ as ungraded modules.
 %
 \begin{exmp}
 Recall that we have two Spin structures on $S^1$, corresponding to the connected
@@ -148,47 +151,27 @@ restricted to $\C$, where we use the equivalence of graded modules with ungraded
 over the even subalgebra, and restrict the Dirac operator to the even subspace
 of sections.
 \begin{enumerate}
-  \item For the bundle $P_{1,1} \to T^2$, sections correspond to $2\pi$-periodic
+  \item For the bundle $P_{1,1} \to T^2$, even sections correspond to $2\pi$-periodic
   functions $\C \to \C$ in both the horizontal and vertical directions. In this case,
-  the kernel of $\partial_{\overline{z}}$ is the space constant functions $\C \to \C$,
-  which implies that the index of the Dirac operator is the nontrivial element
+  the kernel of $\partial_{\overline{z}}$ is the space of holomorphic functions
+  $\psi$ that are periodic in both the real and imaginary directions. Any such function
+  is determined by its values on the unit square, which is compact, so any such
+  $\psi$ is bounded and entire. By Liouville's theorem, $\psi$ is constant, so
+  the index of the Dirac operator is the nontrivial class in
+  $KO^{-2}(\mathrm{pt}) \cong \Z/2\Z$.
+  \item For the bundle $P_{1,-1} \to T^2$, the even sections correspond with
+  functions $C\to \C$ that are $2\pi$-periodic in the imaginary direction and
+  $2\pi$-antiperiodic in the real direction. Again, Liouville's theorem any such
+  function must be constant, but the only constant function that is antiperiodic
+  must be $0$. Therefore, the index of the Dirac operator is the trivial class
   in $KO^{-2}(\mathrm{pt})$.
-  \item For the bundle $P_{1,-1} \to T^2$, the sections correspond to functions
-  $\C \to \C$ that are $2\pi$-periodic in the imaginary direction and
-  $2\pi$-antiperiodic in the real direction. Therefore, like with the circle,
-  we can write any such function as a product $e^{ix/2}\psi(z)$ using coordinates
-  $z = x + iy$, and $\psi$ is periodic in both directions. Applying
-  $\partial_{\overline{z}}$ to $e^{ix/2}\psi(z)$, we get
-  \begin{align*}
-  \frac{\partial}{\partial\overline{z}}(e^{ix/2}\psi(z))
-  &= \frac{\partial}{\partial\overline{z}}(e^{ix/2})\psi(z)
-  + e^{ix/2}\frac{\partial}{\partial\overline{z}}\psi(z) \\[5pt]
-  &= \left[\frac{1}{2}\left(\frac{\partial}{\partial x}
-  + i \frac{\partial}{\partial y}\right)(e^{ix/2}) \right] \psi(z)
-  + e^{ix/2}\frac{\partial}{\partial\overline{z}}\psi(z) \\[5pt]
-  &= \frac{i}{4}e^{ix/2}\psi(z) + e^{ix/2}\frac{\partial}{\partial\overline{z}}
-  \end{align*}
-  So using the identification with periodic functions, the Dirac operator is given by
-  $\partial_{\overline{z}} + i/4$, which has trivial kernel, so the index is
-  $0$.
-  \item A similar computation holds in the case of $P_{-1,1}$, though in this case
-  the Dirac operator is $\partial_{\overline{z}} - 1/4$.
-  \item In the case of $P_{-1,-1} \to T^2$, sections are antiperiodic functions
-  in both directions, which can be written as $e^{iz}\psi(z)$ where $\psi$ is
-  $2\pi$-periodic in both directions. Applying $\partial_{\overline{z}}$, we compute
-  \begin{align*}
-  \frac{\partial}{\partial\overline{z}}e^{iz}\psi(z)
-  &= \frac{\partial}{\partial\overline{z}}(e^{iz/2})\psi(z)
-  + e^{iz/2}\frac{\partial}{\partial\overline{z}}\psi(z) \\[5pt]
-  &= e^{iz/2}\frac{\partial}{\partial\overline{z}}\psi(z)
-  \end{align*}
-  where we use the fact that $e^{iz/2}$ is holomorphic to conclude that
-  $\partial_{\overline{z}}e^{iz/2} = 0$. Therefore, the kernel again consists
-  of constant functions, so the index is the nontrivial element of
-  $KO^{-2}(\mathrm{pt})$.
+  \item A similar argument as the previous case shows that the index of the Dirac
+  operator on $P_{-1,1} \to T^2$ is trivial.
+  \item Again, a similar argument shows that the index of the Dirac operator
+  for $P_{1,1} \to T^2$ is trivial.
 \end{enumerate}
 \end{exmp}
-
+%
 An interesting thing to study is the index of $-D^2$, which also has some very nice
 properties that we will use, namely
 \begin{enumerate}
@@ -196,10 +179,11 @@ properties that we will use, namely
   \item The eigenvalues of $-D^2$ are discrete and nonnegative
 \end{enumerate}
 %
-The elliptic theory and functional analysis requires completing the space
-$\Gamma_M(\S(M))$ into Sobelev spaces, and an important result called \ib{elliptic
+The elliptic theory and functional analysis requires taking Sobelev completions of
+$\Gamma_M(\S(M))$, as well as an important result called \ib{elliptic
 regularity} ensures that the eigenvectors of the elliptic operator $-D^2$ are smooth
-sections. Let $E_\lambda$ denote the eigenspace of $-D^2$ with eigenvalue $\lambda^2$
+sections as opposed to general elements of a Sobelev space. Let $E_\lambda$ denote the
+eigenspace of $-D^2$ with eigenvalue $\lambda^2$
 (which we can choose since $-D^2$ is positive). Then $E_\lambda$ is also a graded
 $\Cliff_{0,n}(\R)$ module, where the grading is obtained by intersecting $E_\lambda$
 with the even and odd subspaces of $\Gamma_M(\S(M))$. Then since $D$ commutes with
