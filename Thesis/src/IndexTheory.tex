@@ -169,9 +169,26 @@ of sections.
   operator on $P_{-1,1} \to T^2$ is trivial.
   \item Again, a similar argument shows that the index of the Dirac operator
   for $P_{1,1} \to T^2$ is trivial.
-\end{enumerate}
+\qedhere\end{enumerate}
 \end{exmp}
 %
+Index theory is also useful for studying general Riemannian manifolds. Let
+$(M,g)$ be a Riemannian manifold of dimension $4n + 1$. In this dimension, the
+volume element $\omega = e_1\cdots e_{4n+1} \in \Cliff_{n,0}$ satisfies $\omega^ = -1$.
+In addition, $\omega \in \Cliff_{n,0}^1(\R)$, so multiplication by $\omega$ is an
+operator on $\Cliff_{n,0}(\R)$. Then if we consider the Clifford bundle
+$\Cliff(M)$, then $\omega$ determines an odd bundle homomorphism
+$\Cliff(M) \to \Cliff(M)$ that squares to $-\id_{\Cliff(M)}$. This gives
+$\Cliff(M)$ the structure of a bundle of graded modules over $\Cliff_{0,1}$, where
+$e_1$ acts by $\omega$. In addition, $\omega$ preserves the kernel of the Dirac operator
+$D$, so the kernel of $D$ determines an element in $KO^{-1}(\mathrm{pt})$. Recall
+that under the isomorphism $\Cliff(M) \cong \Lambda^\bullet(M)$, the Dirac operator
+is given by $d + d^*$. Then computing the index reduces to computing the kernel
+of $d + d^*$ restricted to $\Omega^{\text{even}}_M$, which is exactly the space
+$\mathcal{H}$ of even degree harmonic forms. This tells us that the index
+is the sum of all the even Betti numbers of $M$, reduced mod $2$, and is called
+the \ib{Kervaire semicharacteristic}. \\
+
 An interesting thing to study is the index of $-D^2$, which also has some very nice
 properties that we will use, namely
 \begin{enumerate}
@@ -197,5 +214,10 @@ squares to $-1$ on $E_\lambda$, so it defines an additional Clifford generator o
 $E_\lambda$. This implies that the $K$-Theory class of $E_\lambda$ is trivial, since
 we can extend $E_\lambda$ to a $\Cliff_{0, n+1}(\R)$ module via $F_\lambda$. This
 tells us that all the information about the index is contained in the kernel, and is
-unaffected by the eigenspaces of the operator $-D^2$.
+unaffected by the eigenspaces of the operator $-D^2$. This suggests that
+the index of an elliptic operator is a relatively stable object under perturbations
+of the operator and of the underlying structures on the manifold. Indeed, it is a
+triumph of Atiyah and Singer to realize this index as a topological invariant of the
+underlying manifold, by equating the \ib{analytic index} (what we call the index)
+of an elliptic operator with a topological invariant called the \ib{topological index}.
 %
