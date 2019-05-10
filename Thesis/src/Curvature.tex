@@ -46,7 +46,7 @@ the wedge product, and the fact that the adjoint action of $G$ on $\g$ commutes 
 brackets. For the second property, let $\xi \in \g$. We then have that
 \[
 \iota_{\widehat{\xi}}(\Omega) = \iota_{\widehat{\xi}}(d\Theta)
-+ \iota_{\widehat{\xi}}[\Theta \wedge \Theta]
++ \frac{1}{2}\iota_{\widehat{\xi}}[\Theta \wedge \Theta]
 \]
 We compute the value of the terms separately. To compute
 $\iota_{\widehat{\xi}}(d\Theta)$, we use Cartan's magic formula again to get
@@ -65,13 +65,12 @@ $\L_{\widehat{\xi}}\Theta = \iota_{\widehat{\xi}}(d\Theta)$. We then note that
 where the action of $[\xi, \Theta]$ on $X$ is $[\xi, \Theta](X) = [\xi,\Theta(X)]$,
 and we use the fact that the derivative of $\Ad$ is the Lie bracket. We then compute
 \[
-\iota_{\widehat{\xi}}[\Theta \wedge \Theta] =
-[\iota_{\widehat{\xi}}(\Theta) \wedge \Theta] = [\xi, \Theta]
+\frac{1}{2}\iota_{\widehat{\xi}}[\Theta \wedge \Theta] =
+\frac{1}{2}[\iota_{\widehat{\xi}}(\Theta) \wedge \Theta] = [\xi, \Theta]
 \]
 Therefore, $\iota_{\widehat{\xi}}(\Omega) = 0$, so the curvature form descends to a
 form in $\Omega_M^2(\g_P)$.
 \end{proof}
-%TODO Biachi Identity?
 %
 Having defined the curvature form, we explore its relationship with associated
 vector bundles of a principal bundle $\pi : P \to M$ equipped with a connection $\Theta$.
@@ -123,7 +122,7 @@ for the left hand side. We then compute
 &= d^2_\Theta\psi
 \end{align*}
 %
-The from this we see that curvature form $\Omega$ on $P$ determines an $\End E$ valued
+From this we see that curvature form $\Omega$ on $P$ determines an $\End E$ valued
 $2-$form on any associated vector bundle $E$, and is in some sense the measurement
 of the failure of the sequence of maps $d_\Theta$ to be a complex, and coincides
 with the usual notion of curvature on vector bundles.

@@ -69,7 +69,7 @@ of $P_1$ into $\C$, this entirely determines how we need to map the other compon
 in order to remain $\Spin_1$-equivariant. This further allows us to identify
 sections of the spinor bundle with $2\pi$-periodic functions $\R \to \C$.
 
-In the second case, the bundle is also trivial! We again contruct a trivialization
+In the second case, the bundle is also trivial! We again construct a trivialization
 for the associated bundle by providing a $\Spin_1$-equivariant map
 $\sigma : P_2 \to \C$. Using the parameterization of $P_2$ with angles
 $\theta \in [0,4\pi)$, the $\Spin_1$ action on $P_2$ is given by
@@ -116,10 +116,10 @@ by their Dirac operators.
 %
 \end{exmp}
 %
-In fact, every sphere is a Spin manifold
+Spin manifolds are relatively plentiful. In fact, every sphere is a Spin manifold.
 %
 \begin{thm}
-For all $n \in \Z^{\geq 0}$, $S^n$ is a Spin manifold.
+For all $n \in \Z^{> 0}$, $S^n$ is a Spin manifold.
 \end{thm}
 %
 \begin{proof}
@@ -137,9 +137,30 @@ a principal $\Spin_n$ bundle over $S^n$, giving the desired Spin structure.
 \end{proof}
 %
 In particular, the Spin structure over $S^2$ is the Hopf fibration $S^3 \to S^2$,
-since $SO_3 \cong \RP^3$.\\
+since $SO_3 \cong \RP^3$. In addition, every other oriented surface admits a
+Spin structure.
 %
-
+\begin{thm}
+Every oriented surface admits a Spin structure. In particular, if $\Sigma$ is a
+surface of genus $g$, then $\Sigma$ admits $2^{2g}$ Spin structures.
+\end{thm}
+%
+\begin{proof}
+From the classification of surfaces, every oriented surface $\Sigma$ of genus $g$
+is realized as a quotient of a $4g$-gon $D$ by identifying pairs of edges. The
+bundle of oriented orthonormal frames $\B_{SO}(\Sigma)$ is then realized as a
+quotient of the bundle $\B_{SO}(D)$, which is the trivial bundle, since $D$ is
+topologically a disk. This amounts to providing isomorphisms between the bundles
+over the identified edges, and in this case, the isomorphisms are given by the
+identity map on $SO_2$. Likewise, the bundle $\B_{\Spin}(\Sigma)$ will also arise
+as a quotient of the trivial bundle $D \times \Spin_2$, where we specify gluing data
+on the identified edges. In order for $\B_{\Spin}(\Sigma)$ to admit a
+$\Spin_2$-equivariant map $\B_{\Spin}(\Sigma) \to \B_{SO}(\Sigma)$, this gluing
+must be done with a preimage of the identity element of $SO_2$, i.e. a choice
+of $1$ or $-1$ for each pair of identified edges. Since there are $2g$ pairs of
+identified edges, this gives $2^{2g}$ different Spin structures on $\Sigma$.
+\end{proof}
+%
 Given an oriented manifold $M$, we get a reduction of structure group
 of the frame bundle $\B(M)$ to $SO_n$, giving us a principal $SO_n$ bundle
 $\B_{SO}(M)$. If $M$ has a nonempty boundary, this induces an orientation on
